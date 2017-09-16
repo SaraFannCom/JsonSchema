@@ -1,0 +1,272 @@
+{
+    "description": "Response to method feed.getAll", 
+    "required": [
+        "response", 
+        "run_time", 
+        "server_time", 
+        "error", 
+        "error_text", 
+        "error_url"
+    ], 
+    "additionalProperties": false, 
+    "$schema": "http://json-schema.org/draft-04/schema#", 
+    "type": "object", 
+    "properties": {
+        "server_time": {
+            "type": "number", 
+            "description": "Server time (unix)"
+        }, 
+        "error_url": {
+            "type": "string", 
+            "description": "Link to error page"
+        }, 
+        "run_time": {
+            "type": "number", 
+            "description": "Run time"
+        }, 
+        "error": {
+            "type": "number", 
+            "description": "Error code"
+        }, 
+        "response": {
+            "additionalProperties": false, 
+            "required": [
+                "last_id", 
+                "count", 
+                "items"
+            ], 
+            "type": "object", 
+            "properties": {
+                "count": {
+                    "type": "number", 
+                    "description": "Count responses"
+                }, 
+                "items": {
+                    "items": {
+                        "required": [
+                            "id", 
+                            "product_type", 
+                            "status", 
+                            "created_at", 
+                            "updated_at", 
+                            "is_mine", 
+                            "created_at_formated", 
+                            "updated_at_formated", 
+                            "likes_count", 
+                            "comments_count", 
+                            "api_url", 
+                            "web_url"
+                        ], 
+                        "type": "object", 
+                        "properties": {
+                            "image": {
+                                "type": [
+                                    "object", 
+                                    "null"
+                                ], 
+                                "$ref": "objects.json#/definitions/images/image"
+                            }, 
+                            "updated_at": {
+                                "minLength": 1, 
+                                "type": "string"
+                            }, 
+                            "images": {
+                                "minItems": 0, 
+                                "items": {
+                                    "type": [
+                                        "object", 
+                                        "null"
+                                    ], 
+                                    "$ref": "objects.json#/definitions/images/image"
+                                }, 
+                                "type": "array"
+                            }, 
+                            "web_url": {
+                                "minLength": 1, 
+                                "type": "string"
+                            }, 
+                            "longitude": {
+                                "type": "number"
+                            }, 
+                            "owner": {
+                                "type": "object", 
+                                "$ref": "objects.json#/definitions/additional/owner"
+                            }, 
+                            "created_at_formated": {
+                                "minLength": 1, 
+                                "type": "string"
+                            }, 
+                            "id": {
+                                "type": "number"
+                            }, 
+                            "category": {
+                                "type": [
+                                    "array", 
+                                    "object", 
+                                    "null"
+                                ], 
+                                "$ref": "objects.json#/definitions/products/category"
+                            }, 
+                            "pay_type": {
+                                "type": [
+                                    "number", 
+                                    "null"
+                                ]
+                            }, 
+                            "api_url": {
+                                "minLength": 1, 
+                                "type": "string"
+                            }, 
+                            "zip": {
+                                "type": [
+                                    "string", 
+                                    "null"
+                                ]
+                            }, 
+                            "prepayment_data": {
+                                "type": [
+                                    "object", 
+                                    "null", 
+                                    "array", 
+                                    "boolean"
+                                ]
+                            }, 
+                            "is_mine": {
+                                "type": "boolean"
+                            }, 
+                            "latitude": {
+                                "type": "number"
+                            }, 
+                            "status": {
+                                "type": "number"
+                            }, 
+                            "description": {
+                                "type": "string"
+                            }, 
+                            "city": {
+                                "type": [
+                                    "object", 
+                                    "null"
+                                ], 
+                                "$ref": "objects.json#/definitions/geo/city"
+                            }, 
+                            "has_partner": {
+                                "type": "number"
+                            }, 
+                            "price": {
+                                "type": [
+                                    "string", 
+                                    "null"
+                                ]
+                            }, 
+                            "address": {
+                                "type": [
+                                    "string", 
+                                    "null"
+                                ]
+                            }, 
+                            "item_id": {
+                                "type": "number"
+                            }, 
+                            "sell_count": {
+                                "type": [
+                                    "number", 
+                                    "null"
+                                ]
+                            }, 
+                            "properties": {
+                                "type": "object", 
+                                "$ref": "objects.json#/definitions/products/p_properties"
+                            }, 
+                            "likes_count": {
+                                "type": "number"
+                            }, 
+                            "count": {
+                                "type": "number"
+                            }, 
+                            "distance": {
+                                "type": [
+                                    "string", 
+                                    "number", 
+                                    "null"
+                                ]
+                            }, 
+                            "product_type": {
+                                "minLength": 1, 
+                                "enum": [
+                                    "buynow", 
+                                    "advert", 
+                                    "classic", 
+                                    "quick", 
+                                    "penny", 
+                                    "tender", 
+                                    "null"
+                                ], 
+                                "type": "string"
+                            }, 
+                            "name": {
+                                "minLength": 1, 
+                                "type": "string"
+                            }, 
+                            "country": {
+                                "type": [
+                                    "object", 
+                                    "null"
+                                ], 
+                                "$ref": "objects.json#/definitions/geo/country"
+                            }, 
+                            "created_at": {
+                                "minLength": 1, 
+                                "type": "string"
+                            }, 
+                            "partner_komission": {
+                                "type": [
+                                    "number", 
+                                    "null"
+                                ]
+                            }, 
+                            "updated_at_formated": {
+                                "minLength": 1, 
+                                "type": "string"
+                            }, 
+                            "item_type": {
+                                "minLength": 1, 
+                                "type": "string"
+                            }, 
+                            "comments_count": {
+                                "type": "number"
+                            }, 
+                            "deposit": {
+                                "type": [
+                                    "number", 
+                                    "null"
+                                ]
+                            }, 
+                            "action_type": {
+                                "minLength": 1, 
+                                "type": "string"
+                            }, 
+                            "region": {
+                                "type": [
+                                    "object", 
+                                    "null"
+                                ], 
+                                "$ref": "objects.json#/definitions/geo/region"
+                            }
+                        }
+                    }, 
+                    "type": "array", 
+                    "description": "List of responses"
+                }, 
+                "last_id": {
+                    "type": "string", 
+                    "description": "Last ID"
+                }
+            }
+        }, 
+        "error_text": {
+            "type": "string", 
+            "description": "Error text"
+        }
+    }
+}

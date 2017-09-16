@@ -1,0 +1,17 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#", 
+    "required": [
+        "id"
+    ], 
+    "type": "object", 
+    "description": "Method to get users data", 
+    "properties": {
+        "id": {
+            "type": [
+                "integer", 
+                "string"
+            ], 
+            "description": "User ID or IDs, comma separated"
+        }
+    }
+}

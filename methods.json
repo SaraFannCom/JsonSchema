@@ -1,0 +1,1453 @@
+{
+    "errors": {}, 
+    "methods": {
+        "auth": {
+            "confirmSms": {
+                "request": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "description": "Method to confirm registration sms", 
+                    "properties": {
+                        "code": {
+                            "description": "Code from sms", 
+                            "maxLength": 4, 
+                            "minLength": 4, 
+                            "type": "integer"
+                        }
+                    }, 
+                    "required": [
+                        "code"
+                    ], 
+                    "type": "object"
+                }, 
+                "response": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "additionalProperties": false, 
+                    "description": "Response to auth.confirmSms method", 
+                    "properties": {
+                        "access_token": {
+                            "description": "Token for other requests", 
+                            "type": "string"
+                        }, 
+                        "error": {
+                            "description": "Error code", 
+                            "type": "number"
+                        }, 
+                        "error_text": {
+                            "description": "Error text", 
+                            "type": "string"
+                        }, 
+                        "error_url": {
+                            "description": "Link to error page", 
+                            "type": "string"
+                        }, 
+                        "expire": {
+                            "description": "Token expire", 
+                            "type": "number"
+                        }
+                    }, 
+                    "required": [
+                        "access_token", 
+                        "expire", 
+                        "error", 
+                        "error_text", 
+                        "error_url"
+                    ], 
+                    "type": "object"
+                }
+            }, 
+            "login": {
+                "request": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "description": "Method touser login", 
+                    "properties": {
+                        "login": {
+                            "description": "User login, phone or email", 
+                            "minLength": 1, 
+                            "type": "string"
+                        }, 
+                        "password": {
+                            "description": "User password", 
+                            "minLength": 5, 
+                            "type": "string"
+                        }
+                    }, 
+                    "required": [
+                        "login", 
+                        "password"
+                    ], 
+                    "type": "object"
+                }, 
+                "response": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "additionalProperties": false, 
+                    "description": "Response to auth.login", 
+                    "properties": {
+                        "access_token": {
+                            "description": "Token for other requests", 
+                            "type": "string"
+                        }, 
+                        "error": {
+                            "description": "Error code", 
+                            "type": "number"
+                        }, 
+                        "error_text": {
+                            "description": "Error text", 
+                            "type": "string"
+                        }, 
+                        "error_url": {
+                            "description": "Link to error page", 
+                            "type": "string"
+                        }, 
+                        "expire": {
+                            "description": "Token expire", 
+                            "type": "number"
+                        }
+                    }, 
+                    "required": [
+                        "access_token", 
+                        "expire", 
+                        "error", 
+                        "error_text", 
+                        "error_url"
+                    ], 
+                    "type": "object"
+                }
+            }, 
+            "sendSms": {
+                "request": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "description": "Method to send registration sms", 
+                    "properties": {
+                        "phone": {
+                            "description": "Phone", 
+                            "minLength": 11, 
+                            "type": "string"
+                        }
+                    }, 
+                    "required": [
+                        "phone"
+                    ], 
+                    "type": "object"
+                }, 
+                "response": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "additionalProperties": false, 
+                    "description": "Response to method auth.sendSms", 
+                    "properties": {
+                        "error": {
+                            "description": "Error code", 
+                            "type": "number"
+                        }, 
+                        "error_text": {
+                            "description": "Error text", 
+                            "type": "string"
+                        }, 
+                        "error_url": {
+                            "description": "Link to error page", 
+                            "type": "string"
+                        }
+                    }, 
+                    "required": [
+                        "error"
+                    ], 
+                    "type": "object"
+                }
+            }
+        }, 
+        "blogs": {
+            "get": {
+                "request": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "description": "Method to get one blog", 
+                    "properties": {
+                        "id": {
+                            "description": "Blog ID ", 
+                            "minNum": 1, 
+                            "type": "integer"
+                        }, 
+                        "last_id": {
+                            "description": "Last blog ID", 
+                            "type": "string"
+                        }, 
+                        "limit": {
+                            "default": 20, 
+                            "description": "Limit", 
+                            "minNum": 1, 
+                            "type": "integer"
+                        }
+                    }, 
+                    "required": [
+                        "id"
+                    ], 
+                    "type": "object"
+                }, 
+                "response": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "description": "Response to blogs.get", 
+                    "properties": {
+                        "error": {
+                            "description": "Error code", 
+                            "type": "number"
+                        }, 
+                        "error_text": {
+                            "description": "Error text", 
+                            "type": "string"
+                        }, 
+                        "error_url": {
+                            "description": "Link to error page", 
+                            "type": "string"
+                        }, 
+                        "response": {
+                            "properties": {
+                                "count": {
+                                    "description": "Count responses", 
+                                    "type": "number"
+                                }, 
+                                "items": {
+                                    "description": "List of responses", 
+                                    "items": {
+                                        "$ref": "objects.json#/definitions/blogs/blog_post", 
+                                        "type": "object"
+                                    }, 
+                                    "type": "array"
+                                }, 
+                                "last_id": {
+                                    "description": "Last ID", 
+                                    "type": [
+                                        "string", 
+                                        "integer"
+                                    ]
+                                }
+                            }, 
+                            "required": [
+                                "last_id", 
+                                "count", 
+                                "items"
+                            ], 
+                            "type": "object"
+                        }, 
+                        "run_time": {
+                            "description": "Run time", 
+                            "type": "number"
+                        }, 
+                        "server_time": {
+                            "description": "Server time (unix)", 
+                            "type": "number"
+                        }
+                    }, 
+                    "required": [
+                        "response", 
+                        "run_time", 
+                        "server_time", 
+                        "error", 
+                        "error_text", 
+                        "error_url"
+                    ], 
+                    "type": "object"
+                }
+            }, 
+            "getAll": {
+                "request": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "description": "Method to get all blogs posts", 
+                    "properties": {
+                        "last_id": {
+                            "description": "Last ID", 
+                            "type": "string"
+                        }, 
+                        "limit": {
+                            "default": 20, 
+                            "description": "Limit", 
+                            "minNum": 1, 
+                            "type": "integer"
+                        }
+                    }, 
+                    "required": [], 
+                    "type": "object"
+                }, 
+                "response": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "description": "Response to method blogs.getAll", 
+                    "properties": {
+                        "error": {
+                            "description": "Error code", 
+                            "type": "number"
+                        }, 
+                        "error_text": {
+                            "description": "Error text", 
+                            "type": "string"
+                        }, 
+                        "error_url": {
+                            "description": "Link to error page", 
+                            "type": "string"
+                        }, 
+                        "response": {
+                            "properties": {
+                                "count": {
+                                    "description": "Count responses", 
+                                    "type": "number"
+                                }, 
+                                "items": {
+                                    "description": "List of responses", 
+                                    "items": {
+                                        "$ref": "objects.json#/definitions/blogs/blog_post", 
+                                        "type": "object"
+                                    }, 
+                                    "type": "array"
+                                }, 
+                                "last_id": {
+                                    "description": "Last ID", 
+                                    "type": "string"
+                                }
+                            }, 
+                            "required": [
+                                "last_id", 
+                                "count", 
+                                "items"
+                            ], 
+                            "type": "object"
+                        }, 
+                        "run_time": {
+                            "description": "Run time", 
+                            "type": "number"
+                        }, 
+                        "server_time": {
+                            "description": "Server time (unix)", 
+                            "type": "number"
+                        }
+                    }, 
+                    "required": [
+                        "response", 
+                        "run_time", 
+                        "server_time", 
+                        "error", 
+                        "error_text", 
+                        "error_url"
+                    ], 
+                    "type": "object"
+                }
+            }, 
+            "getPost": {
+                "request": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "description": "Method to get one blog post", 
+                    "properties": {
+                        "id": {
+                            "description": "Blog post ID", 
+                            "minNum": 1, 
+                            "type": "integer"
+                        }
+                    }, 
+                    "required": [
+                        "id"
+                    ], 
+                    "type": "object"
+                }, 
+                "response": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "description": "Response to method blogs.getPost", 
+                    "properties": {
+                        "error": {
+                            "description": "Error code", 
+                            "type": "number"
+                        }, 
+                        "error_text": {
+                            "description": "Error text", 
+                            "type": "string"
+                        }, 
+                        "error_url": {
+                            "description": "Link to error page", 
+                            "type": "string"
+                        }, 
+                        "response": {
+                            "properties": {
+                                "count": {
+                                    "description": "Count responses", 
+                                    "type": "number"
+                                }, 
+                                "items": {
+                                    "description": "List of responses", 
+                                    "items": {
+                                        "$ref": "objects.json#/definitions/blogs/blog_post", 
+                                        "type": "object"
+                                    }, 
+                                    "type": "array"
+                                }
+                            }, 
+                            "required": [
+                                "count", 
+                                "items"
+                            ], 
+                            "type": "object"
+                        }, 
+                        "run_time": {
+                            "description": "Run time", 
+                            "type": "number"
+                        }, 
+                        "server_time": {
+                            "description": "Server time (unix)", 
+                            "type": "number"
+                        }
+                    }, 
+                    "required": [
+                        "response", 
+                        "run_time", 
+                        "server_time", 
+                        "error", 
+                        "error_text", 
+                        "error_url"
+                    ], 
+                    "type": "object"
+                }
+            }
+        }, 
+        "feed": {
+            "getAll": {
+                "request": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "description": "Method to get all feed", 
+                    "properties": {
+                        "filters": {
+                            "description": "Filters", 
+                            "properties": {
+                                "distance": {
+                                    "description": "Distance to find", 
+                                    "minNum": 1, 
+                                    "type": "integer"
+                                }, 
+                                "item_type": {
+                                    "description": "Item types", 
+                                    "enum": [
+                                        "product", 
+                                        "blog_post", 
+                                        "wall_post", 
+                                        "all"
+                                    ], 
+                                    "minNum": 1, 
+                                    "type": "string"
+                                }, 
+                                "latitude": {
+                                    "description": "Latitude", 
+                                    "minNum": 1, 
+                                    "type": [
+                                        "number", 
+                                        "null"
+                                    ]
+                                }, 
+                                "longitude": {
+                                    "description": "Longitude", 
+                                    "minNum": 1, 
+                                    "type": [
+                                        "number", 
+                                        "null"
+                                    ]
+                                }, 
+                                "product_type": {
+                                    "description": "Product types", 
+                                    "enum": [
+                                        "buynow", 
+                                        "advert", 
+                                        "classic", 
+                                        "quick", 
+                                        "penny", 
+                                        "tender", 
+                                        "all", 
+                                        "null"
+                                    ], 
+                                    "minNum": 1, 
+                                    "type": "string"
+                                }
+                            }, 
+                            "type": "object"
+                        }, 
+                        "last_id": {
+                            "description": "Last ID", 
+                            "type": "string"
+                        }, 
+                        "limit": {
+                            "default": 20, 
+                            "description": "Limit", 
+                            "minNum": 1, 
+                            "type": "integer"
+                        }
+                    }, 
+                    "required": [], 
+                    "type": "object"
+                }, 
+                "response": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "additionalProperties": false, 
+                    "description": "Response to method feed.getAll", 
+                    "properties": {
+                        "error": {
+                            "description": "Error code", 
+                            "type": "number"
+                        }, 
+                        "error_text": {
+                            "description": "Error text", 
+                            "type": "string"
+                        }, 
+                        "error_url": {
+                            "description": "Link to error page", 
+                            "type": "string"
+                        }, 
+                        "response": {
+                            "additionalProperties": false, 
+                            "properties": {
+                                "count": {
+                                    "description": "Count responses", 
+                                    "type": "number"
+                                }, 
+                                "items": {
+                                    "description": "List of responses", 
+                                    "items": {
+                                        "properties": {
+                                            "action_type": {
+                                                "minLength": 1, 
+                                                "type": "string"
+                                            }, 
+                                            "address": {
+                                                "type": [
+                                                    "string", 
+                                                    "null"
+                                                ]
+                                            }, 
+                                            "api_url": {
+                                                "minLength": 1, 
+                                                "type": "string"
+                                            }, 
+                                            "category": {
+                                                "$ref": "objects.json#/definitions/products/category", 
+                                                "type": [
+                                                    "array", 
+                                                    "object", 
+                                                    "null"
+                                                ]
+                                            }, 
+                                            "city": {
+                                                "$ref": "objects.json#/definitions/geo/city", 
+                                                "type": [
+                                                    "object", 
+                                                    "null"
+                                                ]
+                                            }, 
+                                            "comments_count": {
+                                                "type": "number"
+                                            }, 
+                                            "count": {
+                                                "type": "number"
+                                            }, 
+                                            "country": {
+                                                "$ref": "objects.json#/definitions/geo/country", 
+                                                "type": [
+                                                    "object", 
+                                                    "null"
+                                                ]
+                                            }, 
+                                            "created_at": {
+                                                "minLength": 1, 
+                                                "type": "string"
+                                            }, 
+                                            "created_at_formated": {
+                                                "minLength": 1, 
+                                                "type": "string"
+                                            }, 
+                                            "deposit": {
+                                                "type": [
+                                                    "number", 
+                                                    "null"
+                                                ]
+                                            }, 
+                                            "description": {
+                                                "type": "string"
+                                            }, 
+                                            "distance": {
+                                                "type": [
+                                                    "string", 
+                                                    "number", 
+                                                    "null"
+                                                ]
+                                            }, 
+                                            "has_partner": {
+                                                "type": "number"
+                                            }, 
+                                            "id": {
+                                                "type": "number"
+                                            }, 
+                                            "image": {
+                                                "$ref": "objects.json#/definitions/images/image", 
+                                                "type": [
+                                                    "object", 
+                                                    "null"
+                                                ]
+                                            }, 
+                                            "images": {
+                                                "items": {
+                                                    "$ref": "objects.json#/definitions/images/image", 
+                                                    "type": [
+                                                        "object", 
+                                                        "null"
+                                                    ]
+                                                }, 
+                                                "minItems": 0, 
+                                                "type": "array"
+                                            }, 
+                                            "is_mine": {
+                                                "type": "boolean"
+                                            }, 
+                                            "item_id": {
+                                                "type": "number"
+                                            }, 
+                                            "item_type": {
+                                                "minLength": 1, 
+                                                "type": "string"
+                                            }, 
+                                            "latitude": {
+                                                "type": "number"
+                                            }, 
+                                            "likes_count": {
+                                                "type": "number"
+                                            }, 
+                                            "longitude": {
+                                                "type": "number"
+                                            }, 
+                                            "name": {
+                                                "minLength": 1, 
+                                                "type": "string"
+                                            }, 
+                                            "owner": {
+                                                "$ref": "objects.json#/definitions/additional/owner", 
+                                                "type": "object"
+                                            }, 
+                                            "partner_komission": {
+                                                "type": [
+                                                    "number", 
+                                                    "null"
+                                                ]
+                                            }, 
+                                            "pay_type": {
+                                                "type": [
+                                                    "number", 
+                                                    "null"
+                                                ]
+                                            }, 
+                                            "prepayment_data": {
+                                                "type": [
+                                                    "object", 
+                                                    "null", 
+                                                    "array", 
+                                                    "boolean"
+                                                ]
+                                            }, 
+                                            "price": {
+                                                "type": [
+                                                    "string", 
+                                                    "null"
+                                                ]
+                                            }, 
+                                            "product_type": {
+                                                "enum": [
+                                                    "buynow", 
+                                                    "advert", 
+                                                    "classic", 
+                                                    "quick", 
+                                                    "penny", 
+                                                    "tender", 
+                                                    "null"
+                                                ], 
+                                                "minLength": 1, 
+                                                "type": "string"
+                                            }, 
+                                            "properties": {
+                                                "$ref": "objects.json#/definitions/products/p_properties", 
+                                                "type": "object"
+                                            }, 
+                                            "region": {
+                                                "$ref": "objects.json#/definitions/geo/region", 
+                                                "type": [
+                                                    "object", 
+                                                    "null"
+                                                ]
+                                            }, 
+                                            "sell_count": {
+                                                "type": [
+                                                    "number", 
+                                                    "null"
+                                                ]
+                                            }, 
+                                            "status": {
+                                                "type": "number"
+                                            }, 
+                                            "updated_at": {
+                                                "minLength": 1, 
+                                                "type": "string"
+                                            }, 
+                                            "updated_at_formated": {
+                                                "minLength": 1, 
+                                                "type": "string"
+                                            }, 
+                                            "web_url": {
+                                                "minLength": 1, 
+                                                "type": "string"
+                                            }, 
+                                            "zip": {
+                                                "type": [
+                                                    "string", 
+                                                    "null"
+                                                ]
+                                            }
+                                        }, 
+                                        "required": [
+                                            "id", 
+                                            "product_type", 
+                                            "status", 
+                                            "created_at", 
+                                            "updated_at", 
+                                            "is_mine", 
+                                            "created_at_formated", 
+                                            "updated_at_formated", 
+                                            "likes_count", 
+                                            "comments_count", 
+                                            "api_url", 
+                                            "web_url"
+                                        ], 
+                                        "type": "object"
+                                    }, 
+                                    "type": "array"
+                                }, 
+                                "last_id": {
+                                    "description": "Last ID", 
+                                    "type": "string"
+                                }
+                            }, 
+                            "required": [
+                                "last_id", 
+                                "count", 
+                                "items"
+                            ], 
+                            "type": "object"
+                        }, 
+                        "run_time": {
+                            "description": "Run time", 
+                            "type": "number"
+                        }, 
+                        "server_time": {
+                            "description": "Server time (unix)", 
+                            "type": "number"
+                        }
+                    }, 
+                    "required": [
+                        "response", 
+                        "run_time", 
+                        "server_time", 
+                        "error", 
+                        "error_text", 
+                        "error_url"
+                    ], 
+                    "type": "object"
+                }
+            }
+        }, 
+        "products": {
+            "addToCart": {
+                "request": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "description": "Method to add products to cart", 
+                    "properties": {
+                        "count": {
+                            "default": 1, 
+                            "description": "Count products to add to cart", 
+                            "type": "integer"
+                        }, 
+                        "id": {
+                            "description": "Product ID", 
+                            "minNum": 1, 
+                            "type": "integer"
+                        }
+                    }, 
+                    "required": [
+                        "id"
+                    ], 
+                    "type": "object"
+                }, 
+                "response": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "description": "Response to method products.addToCart", 
+                    "properties": {
+                        "error": {
+                            "description": "Error code", 
+                            "type": "number"
+                        }, 
+                        "error_text": {
+                            "description": "Error text", 
+                            "type": "string"
+                        }, 
+                        "error_url": {
+                            "description": "Link to error page", 
+                            "type": "string"
+                        }, 
+                        "run_time": {
+                            "description": "Run time", 
+                            "type": "number"
+                        }, 
+                        "server_time": {
+                            "description": "Server time (unix)", 
+                            "type": "number"
+                        }
+                    }, 
+                    "required": [
+                        "error", 
+                        "server_time", 
+                        "run_time"
+                    ], 
+                    "type": "object"
+                }
+            }, 
+            "directBuy": {
+                "request": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "description": "Method to direct buy product", 
+                    "properties": {
+                        "count": {
+                            "default": 1, 
+                            "description": "Count products to buy", 
+                            "type": "integer"
+                        }, 
+                        "id": {
+                            "description": "Product ID", 
+                            "minNum": 1, 
+                            "type": "integer"
+                        }
+                    }, 
+                    "required": [
+                        "id"
+                    ], 
+                    "type": "object"
+                }, 
+                "response": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "description": "Response to method products.directBuy", 
+                    "properties": {
+                        "error": {
+                            "description": "Error code", 
+                            "type": "number"
+                        }, 
+                        "error_text": {
+                            "description": "Error text", 
+                            "type": "string"
+                        }, 
+                        "error_url": {
+                            "description": "Link to error page", 
+                            "type": "string"
+                        }, 
+                        "run_time": {
+                            "description": "Run time", 
+                            "type": "number"
+                        }, 
+                        "server_time": {
+                            "description": "Server time (unix)", 
+                            "type": "number"
+                        }
+                    }, 
+                    "required": [
+                        "error", 
+                        "server_time", 
+                        "run_time"
+                    ], 
+                    "type": "object"
+                }
+            }, 
+            "get": {
+                "request": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "description": "Method to get product or products data", 
+                    "properties": {
+                        "id": {
+                            "description": "Product ID or IDs, comma separated", 
+                            "minNum": 1, 
+                            "type": "integer"
+                        }
+                    }, 
+                    "required": [
+                        "id"
+                    ], 
+                    "type": "object"
+                }, 
+                "response": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "description": "Response to method products.get", 
+                    "properties": {
+                        "error": {
+                            "description": "Error code", 
+                            "type": "number"
+                        }, 
+                        "error_text": {
+                            "description": "Error text", 
+                            "type": "string"
+                        }, 
+                        "error_url": {
+                            "description": "Link to error page", 
+                            "type": "string"
+                        }, 
+                        "response": {
+                            "properties": {
+                                "count": {
+                                    "description": "Count responses", 
+                                    "type": "number"
+                                }, 
+                                "items": {
+                                    "description": "List of responses", 
+                                    "items": {
+                                        "$ref": "objects.json#/definitions/products/product", 
+                                        "type": "object"
+                                    }, 
+                                    "type": "array"
+                                }
+                            }, 
+                            "required": [
+                                "count", 
+                                "items"
+                            ], 
+                            "type": "object"
+                        }, 
+                        "run_time": {
+                            "description": "Run time", 
+                            "type": "number"
+                        }, 
+                        "server_time": {
+                            "description": "Server time (unix)", 
+                            "type": "number"
+                        }
+                    }, 
+                    "required": [
+                        "response", 
+                        "run_time", 
+                        "server_time", 
+                        "error", 
+                        "error_text", 
+                        "error_url"
+                    ], 
+                    "type": "object"
+                }
+            }
+        }, 
+        "shops": {
+            "get": {
+                "request": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "description": "Method to get shop data", 
+                    "properties": {
+                        "id": {
+                            "description": "Shop ID", 
+                            "minNum": 1, 
+                            "type": "integer"
+                        }
+                    }, 
+                    "required": [
+                        "id"
+                    ], 
+                    "type": "object"
+                }, 
+                "response": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "description": "Response to method shops.getAll", 
+                    "properties": {
+                        "error": {
+                            "description": "Error code", 
+                            "type": "number"
+                        }, 
+                        "error_text": {
+                            "description": "Error text", 
+                            "type": "string"
+                        }, 
+                        "error_url": {
+                            "description": "Link to error page", 
+                            "type": "string"
+                        }, 
+                        "response": {
+                            "properties": {
+                                "count": {
+                                    "description": "Count responses", 
+                                    "type": "number"
+                                }, 
+                                "items": {
+                                    "description": "List of responses", 
+                                    "items": {
+                                        "$ref": "objects.json#/definitions/shops/shop", 
+                                        "type": "object"
+                                    }, 
+                                    "type": "array"
+                                }
+                            }, 
+                            "required": [
+                                "count", 
+                                "items"
+                            ], 
+                            "type": "object"
+                        }, 
+                        "run_time": {
+                            "description": "Run time", 
+                            "type": "number"
+                        }, 
+                        "server_time": {
+                            "description": "Server time (unix)", 
+                            "type": "number"
+                        }
+                    }, 
+                    "required": [
+                        "response", 
+                        "run_time", 
+                        "server_time", 
+                        "error", 
+                        "error_text", 
+                        "error_url"
+                    ], 
+                    "type": "object"
+                }
+            }, 
+            "getAll": {
+                "request": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "description": "Method to get shops list", 
+                    "properties": {
+                        "filters": {
+                            "description": "Filters", 
+                            "properties": {
+                                "is_mine": {
+                                    "description": "Show only my shops", 
+                                    "minNum": 1, 
+                                    "type": "integer"
+                                }, 
+                                "is_subscribed": {
+                                    "description": "Show only my subscribes", 
+                                    "minNum": 1, 
+                                    "type": "integer"
+                                }, 
+                                "latitude": {
+                                    "description": "Latitude", 
+                                    "minNum": 1, 
+                                    "type": [
+                                        "number", 
+                                        "null"
+                                    ]
+                                }, 
+                                "longitude": {
+                                    "description": "lLongitude", 
+                                    "minNum": 1, 
+                                    "type": [
+                                        "number", 
+                                        "null"
+                                    ]
+                                }
+                            }, 
+                            "type": "object"
+                        }, 
+                        "last_id": {
+                            "description": "Last ID", 
+                            "type": "string"
+                        }, 
+                        "limit": {
+                            "description": "Limit", 
+                            "minNum": 1, 
+                            "type": "integer"
+                        }
+                    }, 
+                    "type": "object"
+                }, 
+                "response": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "description": "Response to method shops.getAll", 
+                    "properties": {
+                        "error": {
+                            "description": "Error code", 
+                            "type": "number"
+                        }, 
+                        "error_text": {
+                            "description": "Error text", 
+                            "type": "string"
+                        }, 
+                        "error_url": {
+                            "description": "Link to error page", 
+                            "type": "string"
+                        }, 
+                        "response": {
+                            "properties": {
+                                "count": {
+                                    "description": "Count responses", 
+                                    "type": "number"
+                                }, 
+                                "items": {
+                                    "description": "List of responses", 
+                                    "items": {
+                                        "$ref": "objects.json#/definitions/shops/shop", 
+                                        "type": "object"
+                                    }, 
+                                    "minItems": 0, 
+                                    "type": "array"
+                                }, 
+                                "last_id": {
+                                    "description": "Last ID", 
+                                    "type": "string"
+                                }
+                            }, 
+                            "required": [
+                                "last_id", 
+                                "count", 
+                                "items"
+                            ], 
+                            "type": "object"
+                        }, 
+                        "run_time": {
+                            "description": "Run time", 
+                            "type": "number"
+                        }, 
+                        "server_time": {
+                            "description": "Server time (unix)", 
+                            "type": "number"
+                        }
+                    }, 
+                    "required": [
+                        "response", 
+                        "run_time", 
+                        "server_time", 
+                        "error", 
+                        "error_text", 
+                        "error_url"
+                    ], 
+                    "type": "object"
+                }
+            }, 
+            "getProducts": {
+                "request": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "description": "Method to get shop products", 
+                    "properties": {
+                        "filters": {
+                            "description": "Filters", 
+                            "properties": {
+                                "latitude": {
+                                    "description": "Latitude", 
+                                    "minNum": 1, 
+                                    "type": [
+                                        "number", 
+                                        "null"
+                                    ]
+                                }, 
+                                "longitude": {
+                                    "description": "Longitude", 
+                                    "minNum": 1, 
+                                    "type": [
+                                        "number", 
+                                        "null"
+                                    ]
+                                }
+                            }, 
+                            "type": "object"
+                        }, 
+                        "id": {
+                            "description": "Shop ID", 
+                            "minNum": 1, 
+                            "type": "integer"
+                        }, 
+                        "last_id": {
+                            "description": "Last ID", 
+                            "type": "string"
+                        }, 
+                        "limit": {
+                            "default": 20, 
+                            "description": "Limit", 
+                            "minNum": 1, 
+                            "type": "integer"
+                        }
+                    }, 
+                    "required": [
+                        "id"
+                    ], 
+                    "type": "object"
+                }, 
+                "response": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "description": "Response to method shops.getProducts", 
+                    "properties": {
+                        "error": {
+                            "description": "Error code", 
+                            "type": "number"
+                        }, 
+                        "error_text": {
+                            "description": "Error text", 
+                            "type": "string"
+                        }, 
+                        "error_url": {
+                            "description": "Link to error page", 
+                            "type": "string"
+                        }, 
+                        "response": {
+                            "properties": {
+                                "count": {
+                                    "description": "Count responses", 
+                                    "type": "number"
+                                }, 
+                                "items": {
+                                    "description": "List of responses", 
+                                    "items": {
+                                        "$ref": "objects.json#/definitions/products/product", 
+                                        "type": "object"
+                                    }, 
+                                    "type": "array"
+                                }, 
+                                "last_id": {
+                                    "description": "Last ID", 
+                                    "type": "string"
+                                }
+                            }, 
+                            "required": [
+                                "last_id", 
+                                "count", 
+                                "items"
+                            ], 
+                            "type": "object"
+                        }, 
+                        "run_time": {
+                            "description": "Run time", 
+                            "type": "number"
+                        }, 
+                        "server_time": {
+                            "description": "Server time (unix)", 
+                            "type": "number"
+                        }
+                    }, 
+                    "required": [
+                        "response", 
+                        "run_time", 
+                        "server_time", 
+                        "error", 
+                        "error_text", 
+                        "error_url"
+                    ], 
+                    "type": "object"
+                }
+            }
+        }, 
+        "users": {
+            "get": {
+                "request": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "description": "Method to get users data", 
+                    "properties": {
+                        "id": {
+                            "description": "User ID or IDs, comma separated", 
+                            "type": [
+                                "integer", 
+                                "string"
+                            ]
+                        }
+                    }, 
+                    "required": [
+                        "id"
+                    ], 
+                    "type": "object"
+                }, 
+                "response": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "additionalProperties": false, 
+                    "description": "Response to method users.get", 
+                    "properties": {
+                        "error": {
+                            "description": "Error code", 
+                            "type": "number"
+                        }, 
+                        "error_text": {
+                            "description": "Error text", 
+                            "type": "string"
+                        }, 
+                        "error_url": {
+                            "description": "Link to error page", 
+                            "type": "string"
+                        }, 
+                        "response": {
+                            "additionalProperties": false, 
+                            "properties": {
+                                "count": {
+                                    "description": "Count responses", 
+                                    "type": "number"
+                                }, 
+                                "items": {
+                                    "description": "List of responses", 
+                                    "items": {
+                                        "$ref": "objects.json#/definitions/users/user_full", 
+                                        "type": "object"
+                                    }, 
+                                    "minItems": 1, 
+                                    "type": "array"
+                                }
+                            }, 
+                            "required": [
+                                "count", 
+                                "items"
+                            ], 
+                            "type": "object"
+                        }, 
+                        "run_time": {
+                            "description": "Run time", 
+                            "type": "number"
+                        }, 
+                        "server_time": {
+                            "description": "Server time (unix)", 
+                            "type": "number"
+                        }
+                    }, 
+                    "required": [
+                        "response", 
+                        "run_time", 
+                        "server_time", 
+                        "error", 
+                        "error_text", 
+                        "error_url"
+                    ], 
+                    "type": "object"
+                }
+            }, 
+            "getMyCart": {
+                "request": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "description": "Method to get my cart"
+                }, 
+                "response": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "description": "Response to method users.getMyCart", 
+                    "properties": {
+                        "error": {
+                            "description": "Error code", 
+                            "type": "number"
+                        }, 
+                        "error_text": {
+                            "description": "Error text", 
+                            "type": "string"
+                        }, 
+                        "error_url": {
+                            "description": "Link to error page", 
+                            "type": "string"
+                        }, 
+                        "response": {
+                            "properties": {
+                                "count": {
+                                    "description": "Count responses", 
+                                    "type": "number"
+                                }, 
+                                "items": {
+                                    "description": "List of responses", 
+                                    "items": {
+                                        "properties": {
+                                            "count": {
+                                                "type": "integer"
+                                            }, 
+                                            "product": {
+                                                "$ref": "objects.json#/definitions/products/product", 
+                                                "type": "object"
+                                            }
+                                        }, 
+                                        "required": [
+                                            "product", 
+                                            "count"
+                                        ], 
+                                        "type": "object"
+                                    }, 
+                                    "minItems": 1, 
+                                    "type": "array", 
+                                    "uniqueItems": true
+                                }
+                            }, 
+                            "required": [
+                                "count", 
+                                "items"
+                            ], 
+                            "type": "object"
+                        }, 
+                        "run_time": {
+                            "description": "Run time", 
+                            "type": "number"
+                        }, 
+                        "server_time": {
+                            "description": "Server time (unix)", 
+                            "type": "number"
+                        }
+                    }, 
+                    "required": [
+                        "response", 
+                        "run_time", 
+                        "server_time", 
+                        "error", 
+                        "error_text", 
+                        "error_url"
+                    ], 
+                    "type": "object"
+                }
+            }, 
+            "me": {
+                "request": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "description": "Method to get my data"
+                }, 
+                "response": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "additionalProperties": false, 
+                    "description": "Response to method users.me", 
+                    "properties": {
+                        "error": {
+                            "description": "Error code", 
+                            "type": "number"
+                        }, 
+                        "error_text": {
+                            "description": "Error text", 
+                            "type": "string"
+                        }, 
+                        "error_url": {
+                            "description": "Link to error page", 
+                            "type": "string"
+                        }, 
+                        "response": {
+                            "additionalProperties": false, 
+                            "properties": {
+                                "count": {
+                                    "description": "Count responses", 
+                                    "type": "number"
+                                }, 
+                                "items": {
+                                    "description": "List of responses", 
+                                    "items": {
+                                        "$ref": "objects.json#/definitions/users/user_me", 
+                                        "type": "object"
+                                    }, 
+                                    "minItems": 1, 
+                                    "type": "array"
+                                }
+                            }, 
+                            "required": [
+                                "count", 
+                                "items"
+                            ], 
+                            "type": "object"
+                        }, 
+                        "run_time": {
+                            "description": "Run time", 
+                            "type": "number"
+                        }, 
+                        "server_time": {
+                            "description": "Server time (unix)", 
+                            "type": "number"
+                        }
+                    }, 
+                    "required": [
+                        "response", 
+                        "run_time", 
+                        "server_time", 
+                        "error", 
+                        "error_text", 
+                        "error_url"
+                    ], 
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

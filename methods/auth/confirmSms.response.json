@@ -1,0 +1,35 @@
+{
+    "description": "Response to auth.confirmSms method", 
+    "required": [
+        "access_token", 
+        "expire", 
+        "error", 
+        "error_text", 
+        "error_url"
+    ], 
+    "additionalProperties": false, 
+    "$schema": "http://json-schema.org/draft-04/schema#", 
+    "type": "object", 
+    "properties": {
+        "access_token": {
+            "type": "string", 
+            "description": "Token for other requests"
+        }, 
+        "expire": {
+            "type": "number", 
+            "description": "Token expire"
+        }, 
+        "error_url": {
+            "type": "string", 
+            "description": "Link to error page"
+        }, 
+        "error_text": {
+            "type": "string", 
+            "description": "Error text"
+        }, 
+        "error": {
+            "type": "number", 
+            "description": "Error code"
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#", 
+    "required": [
+        "id"
+    ], 
+    "type": "object", 
+    "description": "Method to get shop data", 
+    "properties": {
+        "id": {
+            "minNum": 1, 
+            "type": "integer", 
+            "description": "Shop ID"
+        }
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "description": "Response to method auth.sendSms", 
+    "required": [
+        "error"
+    ], 
+    "additionalProperties": false, 
+    "$schema": "http://json-schema.org/draft-04/schema#", 
+    "type": "object", 
+    "properties": {
+        "error_url": {
+            "type": "string", 
+            "description": "Link to error page"
+        }, 
+        "error_text": {
+            "type": "string", 
+            "description": "Error text"
+        }, 
+        "error": {
+            "type": "number", 
+            "description": "Error code"
+        }
+    }
+}

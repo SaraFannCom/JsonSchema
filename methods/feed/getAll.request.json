@@ -1,0 +1,71 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#", 
+    "required": [], 
+    "type": "object", 
+    "description": "Method to get all feed", 
+    "properties": {
+        "limit": {
+            "default": 20, 
+            "minNum": 1, 
+            "type": "integer", 
+            "description": "Limit"
+        }, 
+        "filters": {
+            "type": "object", 
+            "description": "Filters", 
+            "properties": {
+                "latitude": {
+                    "minNum": 1, 
+                    "type": [
+                        "number", 
+                        "null"
+                    ], 
+                    "description": "Latitude"
+                }, 
+                "distance": {
+                    "minNum": 1, 
+                    "type": "integer", 
+                    "description": "Distance to find"
+                }, 
+                "product_type": {
+                    "minNum": 1, 
+                    "enum": [
+                        "buynow", 
+                        "advert", 
+                        "classic", 
+                        "quick", 
+                        "penny", 
+                        "tender", 
+                        "all", 
+                        "null"
+                    ], 
+                    "type": "string", 
+                    "description": "Product types"
+                }, 
+                "longitude": {
+                    "minNum": 1, 
+                    "type": [
+                        "number", 
+                        "null"
+                    ], 
+                    "description": "Longitude"
+                }, 
+                "item_type": {
+                    "minNum": 1, 
+                    "enum": [
+                        "product", 
+                        "blog_post", 
+                        "wall_post", 
+                        "all"
+                    ], 
+                    "type": "string", 
+                    "description": "Item types"
+                }
+            }
+        }, 
+        "last_id": {
+            "type": "string", 
+            "description": "Last ID"
+        }
+    }
+}

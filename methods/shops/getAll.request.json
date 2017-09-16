@@ -1,0 +1,48 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#", 
+    "type": "object", 
+    "description": "Method to get shops list", 
+    "properties": {
+        "limit": {
+            "minNum": 1, 
+            "type": "integer", 
+            "description": "Limit"
+        }, 
+        "filters": {
+            "type": "object", 
+            "description": "Filters", 
+            "properties": {
+                "latitude": {
+                    "minNum": 1, 
+                    "type": [
+                        "number", 
+                        "null"
+                    ], 
+                    "description": "Latitude"
+                }, 
+                "is_subscribed": {
+                    "minNum": 1, 
+                    "type": "integer", 
+                    "description": "Show only my subscribes"
+                }, 
+                "is_mine": {
+                    "minNum": 1, 
+                    "type": "integer", 
+                    "description": "Show only my shops"
+                }, 
+                "longitude": {
+                    "minNum": 1, 
+                    "type": [
+                        "number", 
+                        "null"
+                    ], 
+                    "description": "lLongitude"
+                }
+            }
+        }, 
+        "last_id": {
+            "type": "string", 
+            "description": "Last ID"
+        }
+    }
+}

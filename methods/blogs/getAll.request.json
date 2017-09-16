@@ -1,0 +1,18 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#", 
+    "required": [], 
+    "type": "object", 
+    "description": "Method to get all blogs posts", 
+    "properties": {
+        "limit": {
+            "default": 20, 
+            "minNum": 1, 
+            "type": "integer", 
+            "description": "Limit"
+        }, 
+        "last_id": {
+            "type": "string", 
+            "description": "Last ID"
+        }
+    }
+}

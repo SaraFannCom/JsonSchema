@@ -1,0 +1,25 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#", 
+    "required": [
+        "id"
+    ], 
+    "type": "object", 
+    "description": "Method to get one blog", 
+    "properties": {
+        "limit": {
+            "default": 20, 
+            "minNum": 1, 
+            "type": "integer", 
+            "description": "Limit"
+        }, 
+        "id": {
+            "minNum": 1, 
+            "type": "integer", 
+            "description": "Blog ID "
+        }, 
+        "last_id": {
+            "type": "string", 
+            "description": "Last blog ID"
+        }
+    }
+}

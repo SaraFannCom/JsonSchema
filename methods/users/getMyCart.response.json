@@ -1,0 +1,70 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#", 
+    "required": [
+        "response", 
+        "run_time", 
+        "server_time", 
+        "error", 
+        "error_text", 
+        "error_url"
+    ], 
+    "type": "object", 
+    "description": "Response to method users.getMyCart", 
+    "properties": {
+        "server_time": {
+            "type": "number", 
+            "description": "Server time (unix)"
+        }, 
+        "error_url": {
+            "type": "string", 
+            "description": "Link to error page"
+        }, 
+        "run_time": {
+            "type": "number", 
+            "description": "Run time"
+        }, 
+        "error": {
+            "type": "number", 
+            "description": "Error code"
+        }, 
+        "response": {
+            "required": [
+                "count", 
+                "items"
+            ], 
+            "type": "object", 
+            "properties": {
+                "count": {
+                    "type": "number", 
+                    "description": "Count responses"
+                }, 
+                "items": {
+                    "uniqueItems": true, 
+                    "minItems": 1, 
+                    "type": "array", 
+                    "description": "List of responses", 
+                    "items": {
+                        "required": [
+                            "product", 
+                            "count"
+                        ], 
+                        "type": "object", 
+                        "properties": {
+                            "count": {
+                                "type": "integer"
+                            }, 
+                            "product": {
+                                "type": "object", 
+                                "$ref": "objects.json#/definitions/products/product"
+                            }
+                        }
+                    }
+                }
+            }
+        }, 
+        "error_text": {
+            "type": "string", 
+            "description": "Error text"
+        }
+    }
+}

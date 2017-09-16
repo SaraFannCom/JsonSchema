@@ -1,0 +1,56 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#", 
+    "required": [
+        "response", 
+        "run_time", 
+        "server_time", 
+        "error", 
+        "error_text", 
+        "error_url"
+    ], 
+    "type": "object", 
+    "description": "Response to method shops.getAll", 
+    "properties": {
+        "server_time": {
+            "type": "number", 
+            "description": "Server time (unix)"
+        }, 
+        "error_url": {
+            "type": "string", 
+            "description": "Link to error page"
+        }, 
+        "run_time": {
+            "type": "number", 
+            "description": "Run time"
+        }, 
+        "error": {
+            "type": "number", 
+            "description": "Error code"
+        }, 
+        "response": {
+            "required": [
+                "count", 
+                "items"
+            ], 
+            "type": "object", 
+            "properties": {
+                "count": {
+                    "type": "number", 
+                    "description": "Count responses"
+                }, 
+                "items": {
+                    "items": {
+                        "type": "object", 
+                        "$ref": "objects.json#/definitions/shops/shop"
+                    }, 
+                    "type": "array", 
+                    "description": "List of responses"
+                }
+            }
+        }, 
+        "error_text": {
+            "type": "string", 
+            "description": "Error text"
+        }
+    }
+}
