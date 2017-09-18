@@ -1,5 +1,49 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#", 
+    "description": "Response to method products.get", 
+    "properties": {
+        "error": {
+            "description": "Error code", 
+            "type": "number"
+        }, 
+        "error_text": {
+            "description": "Error text", 
+            "type": "string"
+        }, 
+        "error_url": {
+            "description": "Link to error page", 
+            "type": "string"
+        }, 
+        "response": {
+            "properties": {
+                "count": {
+                    "description": "Count responses", 
+                    "type": "number"
+                }, 
+                "items": {
+                    "description": "List of responses", 
+                    "items": {
+                        "$ref": "objects.json#/definitions/products/product", 
+                        "type": "object"
+                    }, 
+                    "type": "array"
+                }
+            }, 
+            "required": [
+                "count", 
+                "items"
+            ], 
+            "type": "object"
+        }, 
+        "run_time": {
+            "description": "Run time", 
+            "type": "number"
+        }, 
+        "server_time": {
+            "description": "Server time (unix)", 
+            "type": "number"
+        }
+    }, 
     "required": [
         "response", 
         "run_time", 
@@ -8,49 +52,5 @@
         "error_text", 
         "error_url"
     ], 
-    "type": "object", 
-    "description": "Response to method products.get", 
-    "properties": {
-        "server_time": {
-            "type": "number", 
-            "description": "Server time (unix)"
-        }, 
-        "error_url": {
-            "type": "string", 
-            "description": "Link to error page"
-        }, 
-        "run_time": {
-            "type": "number", 
-            "description": "Run time"
-        }, 
-        "error": {
-            "type": "number", 
-            "description": "Error code"
-        }, 
-        "response": {
-            "required": [
-                "count", 
-                "items"
-            ], 
-            "type": "object", 
-            "properties": {
-                "count": {
-                    "type": "number", 
-                    "description": "Count responses"
-                }, 
-                "items": {
-                    "items": {
-                        "type": "object", 
-                        "$ref": "objects.json#/definitions/products/product"
-                    }, 
-                    "type": "array", 
-                    "description": "List of responses"
-                }
-            }
-        }, 
-        "error_text": {
-            "type": "string", 
-            "description": "Error text"
-        }
-    }
+    "type": "object"
 }

@@ -1,5 +1,29 @@
 {
+    "$schema": "http://json-schema.org/draft-04/schema#", 
+    "additionalProperties": false, 
     "description": "Response to auth.confirmSms method", 
+    "properties": {
+        "access_token": {
+            "description": "Token for other requests", 
+            "type": "string"
+        }, 
+        "error": {
+            "description": "Error code", 
+            "type": "number"
+        }, 
+        "error_text": {
+            "description": "Error text", 
+            "type": "string"
+        }, 
+        "error_url": {
+            "description": "Link to error page", 
+            "type": "string"
+        }, 
+        "expire": {
+            "description": "Token expire", 
+            "type": "number"
+        }
+    }, 
     "required": [
         "access_token", 
         "expire", 
@@ -7,29 +31,5 @@
         "error_text", 
         "error_url"
     ], 
-    "additionalProperties": false, 
-    "$schema": "http://json-schema.org/draft-04/schema#", 
-    "type": "object", 
-    "properties": {
-        "access_token": {
-            "type": "string", 
-            "description": "Token for other requests"
-        }, 
-        "expire": {
-            "type": "number", 
-            "description": "Token expire"
-        }, 
-        "error_url": {
-            "type": "string", 
-            "description": "Link to error page"
-        }, 
-        "error_text": {
-            "type": "string", 
-            "description": "Error text"
-        }, 
-        "error": {
-            "type": "number", 
-            "description": "Error code"
-        }
-    }
+    "type": "object"
 }

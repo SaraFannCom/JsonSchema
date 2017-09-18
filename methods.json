@@ -1013,15 +1013,9 @@
                         "filters": {
                             "description": "Filters", 
                             "properties": {
-                                "is_mine": {
-                                    "description": "Show only my shops", 
-                                    "minNum": 1, 
-                                    "type": "integer"
-                                }, 
-                                "is_subscribed": {
-                                    "description": "Show only my subscribes", 
-                                    "minNum": 1, 
-                                    "type": "integer"
+                                "geo": {
+                                    "description": "Geolocation filter as GeoType_GeoId", 
+                                    "type": "string"
                                 }, 
                                 "latitude": {
                                     "description": "Latitude", 
@@ -1038,6 +1032,28 @@
                                         "number", 
                                         "null"
                                     ]
+                                }, 
+                                "q": {
+                                    "description": "Search query", 
+                                    "type": "string"
+                                }, 
+                                "rating": {
+                                    "description": "Rating filter >=", 
+                                    "minNum": 1, 
+                                    "type": [
+                                        "number", 
+                                        "null"
+                                    ]
+                                }, 
+                                "tab": {
+                                    "description": "Selected tab", 
+                                    "enum": [
+                                        "my", 
+                                        "subscribe", 
+                                        "interest", 
+                                        ""
+                                    ], 
+                                    "type": "string"
                                 }
                             }, 
                             "type": "object"

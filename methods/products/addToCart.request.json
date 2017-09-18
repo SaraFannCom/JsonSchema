@@ -1,20 +1,20 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#", 
-    "required": [
-        "id"
-    ], 
-    "type": "object", 
     "description": "Method to add products to cart", 
     "properties": {
         "count": {
             "default": 1, 
-            "type": "integer", 
-            "description": "Count products to add to cart"
+            "description": "Count products to add to cart", 
+            "type": "integer"
         }, 
         "id": {
+            "description": "Product ID", 
             "minNum": 1, 
-            "type": "integer", 
-            "description": "Product ID"
+            "type": "integer"
         }
-    }
+    }, 
+    "required": [
+        "id"
+    ], 
+    "type": "object"
 }

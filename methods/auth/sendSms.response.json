@@ -1,23 +1,23 @@
 {
+    "$schema": "http://json-schema.org/draft-04/schema#", 
+    "additionalProperties": false, 
     "description": "Response to method auth.sendSms", 
+    "properties": {
+        "error": {
+            "description": "Error code", 
+            "type": "number"
+        }, 
+        "error_text": {
+            "description": "Error text", 
+            "type": "string"
+        }, 
+        "error_url": {
+            "description": "Link to error page", 
+            "type": "string"
+        }
+    }, 
     "required": [
         "error"
     ], 
-    "additionalProperties": false, 
-    "$schema": "http://json-schema.org/draft-04/schema#", 
-    "type": "object", 
-    "properties": {
-        "error_url": {
-            "type": "string", 
-            "description": "Link to error page"
-        }, 
-        "error_text": {
-            "type": "string", 
-            "description": "Error text"
-        }, 
-        "error": {
-            "type": "number", 
-            "description": "Error code"
-        }
-    }
+    "type": "object"
 }

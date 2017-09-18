@@ -1,20 +1,20 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#", 
-    "required": [
-        "id"
-    ], 
-    "type": "object", 
     "description": "Method to direct buy product", 
     "properties": {
         "count": {
             "default": 1, 
-            "type": "integer", 
-            "description": "Count products to buy"
+            "description": "Count products to buy", 
+            "type": "integer"
         }, 
         "id": {
+            "description": "Product ID", 
             "minNum": 1, 
-            "type": "integer", 
-            "description": "Product ID"
+            "type": "integer"
         }
-    }
+    }, 
+    "required": [
+        "id"
+    ], 
+    "type": "object"
 }

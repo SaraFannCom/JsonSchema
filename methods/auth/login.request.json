@@ -1,21 +1,21 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#", 
+    "description": "Method touser login", 
+    "properties": {
+        "login": {
+            "description": "User login, phone or email", 
+            "minLength": 1, 
+            "type": "string"
+        }, 
+        "password": {
+            "description": "User password", 
+            "minLength": 5, 
+            "type": "string"
+        }
+    }, 
     "required": [
         "login", 
         "password"
     ], 
-    "type": "object", 
-    "description": "Method touser login", 
-    "properties": {
-        "login": {
-            "minLength": 1, 
-            "type": "string", 
-            "description": "User login, phone or email"
-        }, 
-        "password": {
-            "minLength": 5, 
-            "type": "string", 
-            "description": "User password"
-        }
-    }
+    "type": "object"
 }

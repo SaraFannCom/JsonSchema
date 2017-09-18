@@ -1,34 +1,44 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#", 
-    "required": [], 
-    "type": "object", 
     "description": "Method to get all feed", 
     "properties": {
-        "limit": {
-            "default": 20, 
-            "minNum": 1, 
-            "type": "integer", 
-            "description": "Limit"
-        }, 
         "filters": {
-            "type": "object", 
             "description": "Filters", 
             "properties": {
+                "distance": {
+                    "description": "Distance to find", 
+                    "minNum": 1, 
+                    "type": "integer"
+                }, 
+                "item_type": {
+                    "description": "Item types", 
+                    "enum": [
+                        "product", 
+                        "blog_post", 
+                        "wall_post", 
+                        "all"
+                    ], 
+                    "minNum": 1, 
+                    "type": "string"
+                }, 
                 "latitude": {
+                    "description": "Latitude", 
                     "minNum": 1, 
                     "type": [
                         "number", 
                         "null"
-                    ], 
-                    "description": "Latitude"
+                    ]
                 }, 
-                "distance": {
+                "longitude": {
+                    "description": "Longitude", 
                     "minNum": 1, 
-                    "type": "integer", 
-                    "description": "Distance to find"
+                    "type": [
+                        "number", 
+                        "null"
+                    ]
                 }, 
                 "product_type": {
-                    "minNum": 1, 
+                    "description": "Product types", 
                     "enum": [
                         "buynow", 
                         "advert", 
@@ -39,33 +49,23 @@
                         "all", 
                         "null"
                     ], 
-                    "type": "string", 
-                    "description": "Product types"
-                }, 
-                "longitude": {
                     "minNum": 1, 
-                    "type": [
-                        "number", 
-                        "null"
-                    ], 
-                    "description": "Longitude"
-                }, 
-                "item_type": {
-                    "minNum": 1, 
-                    "enum": [
-                        "product", 
-                        "blog_post", 
-                        "wall_post", 
-                        "all"
-                    ], 
-                    "type": "string", 
-                    "description": "Item types"
+                    "type": "string"
                 }
-            }
+            }, 
+            "type": "object"
         }, 
         "last_id": {
-            "type": "string", 
-            "description": "Last ID"
+            "description": "Last ID", 
+            "type": "string"
+        }, 
+        "limit": {
+            "default": 20, 
+            "description": "Limit", 
+            "minNum": 1, 
+            "type": "integer"
         }
-    }
+    }, 
+    "required": [], 
+    "type": "object"
 }

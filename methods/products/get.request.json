@@ -1,15 +1,15 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#", 
-    "required": [
-        "id"
-    ], 
-    "type": "object", 
     "description": "Method to get product or products data", 
     "properties": {
         "id": {
+            "description": "Product ID or IDs, comma separated", 
             "minNum": 1, 
-            "type": "integer", 
-            "description": "Product ID or IDs, comma separated"
+            "type": "integer"
         }
-    }
+    }, 
+    "required": [
+        "id"
+    ], 
+    "type": "object"
 }

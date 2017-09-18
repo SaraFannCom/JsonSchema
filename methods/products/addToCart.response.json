@@ -1,32 +1,32 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#", 
+    "description": "Response to method products.addToCart", 
+    "properties": {
+        "error": {
+            "description": "Error code", 
+            "type": "number"
+        }, 
+        "error_text": {
+            "description": "Error text", 
+            "type": "string"
+        }, 
+        "error_url": {
+            "description": "Link to error page", 
+            "type": "string"
+        }, 
+        "run_time": {
+            "description": "Run time", 
+            "type": "number"
+        }, 
+        "server_time": {
+            "description": "Server time (unix)", 
+            "type": "number"
+        }
+    }, 
     "required": [
         "error", 
         "server_time", 
         "run_time"
     ], 
-    "type": "object", 
-    "description": "Response to method products.addToCart", 
-    "properties": {
-        "error": {
-            "type": "number", 
-            "description": "Error code"
-        }, 
-        "server_time": {
-            "type": "number", 
-            "description": "Server time (unix)"
-        }, 
-        "run_time": {
-            "type": "number", 
-            "description": "Run time"
-        }, 
-        "error_text": {
-            "type": "string", 
-            "description": "Error text"
-        }, 
-        "error_url": {
-            "type": "string", 
-            "description": "Link to error page"
-        }
-    }
+    "type": "object"
 }

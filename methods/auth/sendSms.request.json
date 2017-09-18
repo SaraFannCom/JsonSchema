@@ -1,15 +1,15 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#", 
-    "required": [
-        "phone"
-    ], 
-    "type": "object", 
     "description": "Method to send registration sms", 
     "properties": {
         "phone": {
+            "description": "Phone", 
             "minLength": 11, 
-            "type": "string", 
-            "description": "Phone"
+            "type": "string"
         }
-    }
+    }, 
+    "required": [
+        "phone"
+    ], 
+    "type": "object"
 }
