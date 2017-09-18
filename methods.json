@@ -401,6 +401,192 @@
                 }
             }
         }, 
+        "cart": {
+            "addProduct": {
+                "request": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "description": "Method to add products to cart", 
+                    "properties": {
+                        "count": {
+                            "default": 1, 
+                            "description": "Count products to add to cart", 
+                            "type": "integer"
+                        }, 
+                        "id": {
+                            "description": "Product ID", 
+                            "minNum": 1, 
+                            "type": "integer"
+                        }
+                    }, 
+                    "required": [
+                        "id"
+                    ], 
+                    "type": "object"
+                }, 
+                "response": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "description": "Response to method products.addToCart", 
+                    "properties": {
+                        "error": {
+                            "description": "Error code", 
+                            "type": "number"
+                        }, 
+                        "error_text": {
+                            "description": "Error text", 
+                            "type": "string"
+                        }, 
+                        "error_url": {
+                            "description": "Link to error page", 
+                            "type": "string"
+                        }, 
+                        "run_time": {
+                            "description": "Run time", 
+                            "type": "number"
+                        }, 
+                        "server_time": {
+                            "description": "Server time (unix)", 
+                            "type": "number"
+                        }
+                    }, 
+                    "required": [
+                        "error", 
+                        "server_time", 
+                        "run_time"
+                    ], 
+                    "type": "object"
+                }
+            }, 
+            "getMyCart": {
+                "request": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "description": "Method to get my cart"
+                }, 
+                "response": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "description": "Response to method users.getMyCart", 
+                    "properties": {
+                        "error": {
+                            "description": "Error code", 
+                            "type": "number"
+                        }, 
+                        "error_text": {
+                            "description": "Error text", 
+                            "type": "string"
+                        }, 
+                        "error_url": {
+                            "description": "Link to error page", 
+                            "type": "string"
+                        }, 
+                        "response": {
+                            "properties": {
+                                "count": {
+                                    "description": "Count responses", 
+                                    "type": "number"
+                                }, 
+                                "items": {
+                                    "description": "List of responses", 
+                                    "items": {
+                                        "properties": {
+                                            "count": {
+                                                "type": "integer"
+                                            }, 
+                                            "product": {
+                                                "$ref": "objects.json#/definitions/products/product", 
+                                                "type": "object"
+                                            }
+                                        }, 
+                                        "required": [
+                                            "product", 
+                                            "count"
+                                        ], 
+                                        "type": "object"
+                                    }, 
+                                    "minItems": 1, 
+                                    "type": "array", 
+                                    "uniqueItems": true
+                                }
+                            }, 
+                            "required": [
+                                "count", 
+                                "items"
+                            ], 
+                            "type": "object"
+                        }, 
+                        "run_time": {
+                            "description": "Run time", 
+                            "type": "number"
+                        }, 
+                        "server_time": {
+                            "description": "Server time (unix)", 
+                            "type": "number"
+                        }
+                    }, 
+                    "required": [
+                        "response", 
+                        "run_time", 
+                        "server_time", 
+                        "error", 
+                        "error_text", 
+                        "error_url"
+                    ], 
+                    "type": "object"
+                }
+            }, 
+            "removeProduct": {
+                "request": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "description": "Method to remove products from cart", 
+                    "properties": {
+                        "count": {
+                            "default": 1, 
+                            "description": "Count products to remove from cart", 
+                            "type": "integer"
+                        }, 
+                        "id": {
+                            "description": "Product ID", 
+                            "minNum": 1, 
+                            "type": "integer"
+                        }
+                    }, 
+                    "required": [
+                        "id"
+                    ], 
+                    "type": "object"
+                }, 
+                "response": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "description": "Response to method products.removeFromCart", 
+                    "properties": {
+                        "error": {
+                            "description": "Error code", 
+                            "type": "number"
+                        }, 
+                        "error_text": {
+                            "description": "Error text", 
+                            "type": "string"
+                        }, 
+                        "error_url": {
+                            "description": "Link to error page", 
+                            "type": "string"
+                        }, 
+                        "run_time": {
+                            "description": "Run time", 
+                            "type": "number"
+                        }, 
+                        "server_time": {
+                            "description": "Server time (unix)", 
+                            "type": "number"
+                        }
+                    }, 
+                    "required": [
+                        "error", 
+                        "server_time", 
+                        "run_time"
+                    ], 
+                    "type": "object"
+                }
+            }
+        }, 
         "feed": {
             "getAll": {
                 "request": {
@@ -748,31 +934,47 @@
                 }
             }
         }, 
-        "products": {
-            "addToCart": {
+        "global": {
+            "search": {
                 "request": {
                     "$schema": "http://json-schema.org/draft-04/schema#", 
-                    "description": "Method to add products to cart", 
+                    "description": "Method to global search", 
                     "properties": {
-                        "count": {
-                            "default": 1, 
-                            "description": "Count products to add to cart", 
-                            "type": "integer"
+                        "filters": {
+                            "description": "Filters", 
+                            "properties": {
+                                "latitude": {
+                                    "description": "Latitude", 
+                                    "minNum": 1, 
+                                    "type": [
+                                        "number", 
+                                        "null"
+                                    ]
+                                }, 
+                                "longitude": {
+                                    "description": "lLongitude", 
+                                    "minNum": 1, 
+                                    "type": [
+                                        "number", 
+                                        "null"
+                                    ]
+                                }
+                            }, 
+                            "type": "object"
                         }, 
-                        "id": {
-                            "description": "Product ID", 
-                            "minNum": 1, 
-                            "type": "integer"
+                        "q": {
+                            "description": "Search query", 
+                            "type": "string"
                         }
                     }, 
                     "required": [
-                        "id"
+                        "q"
                     ], 
                     "type": "object"
                 }, 
                 "response": {
                     "$schema": "http://json-schema.org/draft-04/schema#", 
-                    "description": "Response to method products.addToCart", 
+                    "description": "Response to method global.Search", 
                     "properties": {
                         "error": {
                             "description": "Error code", 
@@ -786,6 +988,85 @@
                             "description": "Link to error page", 
                             "type": "string"
                         }, 
+                        "response": {
+                            "properties": {
+                                "count": {
+                                    "description": "Count responses", 
+                                    "type": "number"
+                                }, 
+                                "items": {
+                                    "description": "List of responses", 
+                                    "properties": {
+                                        "products": {
+                                            "properties": {
+                                                "data": {
+                                                    "api_url": {
+                                                        "type": "string"
+                                                    }, 
+                                                    "description": "First resultes from search", 
+                                                    "items": {
+                                                        "$ref": "objects.json#/definitions/products/product_light", 
+                                                        "maxItems": 5, 
+                                                        "type": "object"
+                                                    }, 
+                                                    "type": "array", 
+                                                    "web_url": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }, 
+                                            "type": "object"
+                                        }, 
+                                        "shops": {
+                                            "description": "First resultes from search", 
+                                            "properties": {
+                                                "api_url": {
+                                                    "type": "string"
+                                                }, 
+                                                "data": {
+                                                    "items": {
+                                                        "$ref": "objects.json#/definitions/shops/shop_light", 
+                                                        "maxItems": 5, 
+                                                        "type": "object"
+                                                    }, 
+                                                    "type": "array"
+                                                }, 
+                                                "web_url": {
+                                                    "type": "string"
+                                                }
+                                            }, 
+                                            "type": "object"
+                                        }, 
+                                        "users": {
+                                            "properties": {
+                                                "data": {
+                                                    "api_url": {
+                                                        "type": "string"
+                                                    }, 
+                                                    "description": "First resultes from search", 
+                                                    "items": {
+                                                        "$ref": "objects.json#/definitions/users/user_light", 
+                                                        "maxItems": 5, 
+                                                        "type": "object"
+                                                    }, 
+                                                    "type": "array", 
+                                                    "web_url": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            }, 
+                                            "type": "object"
+                                        }
+                                    }, 
+                                    "type": "object"
+                                }
+                            }, 
+                            "required": [
+                                "count", 
+                                "items"
+                            ], 
+                            "type": "object"
+                        }, 
                         "run_time": {
                             "description": "Run time", 
                             "type": "number"
@@ -796,14 +1077,19 @@
                         }
                     }, 
                     "required": [
-                        "error", 
+                        "response", 
+                        "run_time", 
                         "server_time", 
-                        "run_time"
+                        "error", 
+                        "error_text", 
+                        "error_url"
                     ], 
                     "type": "object"
                 }
-            }, 
-            "directBuy": {
+            }
+        }, 
+        "products": {
+            "createOrder": {
                 "request": {
                     "$schema": "http://json-schema.org/draft-04/schema#", 
                     "description": "Method to direct buy product", 
@@ -826,7 +1112,7 @@
                 }, 
                 "response": {
                     "$schema": "http://json-schema.org/draft-04/schema#", 
-                    "description": "Response to method products.directBuy", 
+                    "description": "Response to method products.createOrder", 
                     "properties": {
                         "error": {
                             "description": "Error code", 
@@ -1295,82 +1581,6 @@
                                     }, 
                                     "minItems": 1, 
                                     "type": "array"
-                                }
-                            }, 
-                            "required": [
-                                "count", 
-                                "items"
-                            ], 
-                            "type": "object"
-                        }, 
-                        "run_time": {
-                            "description": "Run time", 
-                            "type": "number"
-                        }, 
-                        "server_time": {
-                            "description": "Server time (unix)", 
-                            "type": "number"
-                        }
-                    }, 
-                    "required": [
-                        "response", 
-                        "run_time", 
-                        "server_time", 
-                        "error", 
-                        "error_text", 
-                        "error_url"
-                    ], 
-                    "type": "object"
-                }
-            }, 
-            "getMyCart": {
-                "request": {
-                    "$schema": "http://json-schema.org/draft-04/schema#", 
-                    "description": "Method to get my cart"
-                }, 
-                "response": {
-                    "$schema": "http://json-schema.org/draft-04/schema#", 
-                    "description": "Response to method users.getMyCart", 
-                    "properties": {
-                        "error": {
-                            "description": "Error code", 
-                            "type": "number"
-                        }, 
-                        "error_text": {
-                            "description": "Error text", 
-                            "type": "string"
-                        }, 
-                        "error_url": {
-                            "description": "Link to error page", 
-                            "type": "string"
-                        }, 
-                        "response": {
-                            "properties": {
-                                "count": {
-                                    "description": "Count responses", 
-                                    "type": "number"
-                                }, 
-                                "items": {
-                                    "description": "List of responses", 
-                                    "items": {
-                                        "properties": {
-                                            "count": {
-                                                "type": "integer"
-                                            }, 
-                                            "product": {
-                                                "$ref": "objects.json#/definitions/products/product", 
-                                                "type": "object"
-                                            }
-                                        }, 
-                                        "required": [
-                                            "product", 
-                                            "count"
-                                        ], 
-                                        "type": "object"
-                                    }, 
-                                    "minItems": 1, 
-                                    "type": "array", 
-                                    "uniqueItems": true
                                 }
                             }, 
                             "required": [

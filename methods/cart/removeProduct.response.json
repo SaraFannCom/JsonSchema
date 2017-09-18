@@ -1,0 +1,32 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#", 
+    "description": "Response to method products.removeFromCart",
+    "properties": {
+        "error": {
+            "description": "Error code", 
+            "type": "number"
+        }, 
+        "error_text": {
+            "description": "Error text", 
+            "type": "string"
+        }, 
+        "error_url": {
+            "description": "Link to error page", 
+            "type": "string"
+        }, 
+        "run_time": {
+            "description": "Run time", 
+            "type": "number"
+        }, 
+        "server_time": {
+            "description": "Server time (unix)", 
+            "type": "number"
+        }
+    }, 
+    "required": [
+        "error", 
+        "server_time", 
+        "run_time"
+    ], 
+    "type": "object"
+}
