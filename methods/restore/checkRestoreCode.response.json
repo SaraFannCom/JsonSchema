@@ -1,0 +1,56 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#", 
+    "additionalProperties": false, 
+    "description": "Response to restore.getUsersForRestorePassword method",
+    "properties": {
+        "error": {
+            "description": "Error code",
+            "type": "number"
+        },
+        "error_text": {
+            "description": "Error text",
+            "type": "string"
+        },
+        "error_url": {
+            "description": "Link to error page",
+            "type": "string"
+        },
+        "response": {
+            "type": "object",
+            "properties": {
+			  "count": {
+				"description": "Count responses",
+				"type": "number"
+			  },
+			  "items": {
+				"description": "List of responses",
+				"items": {
+				  "type": "object",
+				  "properties": {
+					"token": {
+					  "type": "string"
+					}
+				  }
+				},
+				"type": "array"
+			  }
+            }
+        },
+        "run_time": {
+            "description": "Run time",
+            "type": "number"
+        },
+        "server_time": {
+            "description": "Server time (unix)",
+            "type": "number"
+        }
+    },
+    "required": [
+        "response",
+        "run_time",
+        "server_time",
+        "error",
+        "error_text",
+        "error_url"
+    ]
+}

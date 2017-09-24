@@ -8,7 +8,7 @@
             "type": "integer"
         }, 
         "last_id": {
-            "description": "Last blog ID", 
+            "description": "Last blog ID",
             "type": "string"
         }, 
         "limit": {

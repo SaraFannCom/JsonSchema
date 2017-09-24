@@ -1,0 +1,19 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#", 
+    "description": "Method to request restore password and send restore sms",
+    "properties": {
+        "code": {
+            "description": "SMS code",
+            "type": "string"
+        },
+        "token": {
+            "description": "Token",
+            "type": "string"
+        }
+    }, 
+    "required": [
+        "code",
+        "token"
+    ],
+    "type": "object"
+}

@@ -241,7 +241,7 @@
                 }, 
                 "last_id": {
                     "description": "Last ID", 
-                    "type": "string"
+                    "type": ["string", "integer", "null"]
                 }
             }, 
             "required": [

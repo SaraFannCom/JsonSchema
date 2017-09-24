@@ -29,8 +29,8 @@
                     "type": "array"
                 }, 
                 "last_id": {
-                    "description": "Last ID", 
-                    "type": "string"
+                    "description": "Last ID",
+                    "type": ["string", "integer", "null"]
                 }
             }, 
             "required": [

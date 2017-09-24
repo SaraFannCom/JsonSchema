@@ -56,7 +56,7 @@
             "type": "object"
         }, 
         "last_id": {
-            "description": "Last ID", 
+            "description": "Last ID",
             "type": "string"
         }, 
         "limit": {

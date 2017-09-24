@@ -3,7 +3,7 @@
     "description": "Method to get all blogs posts", 
     "properties": {
         "last_id": {
-            "description": "Last ID", 
+            "description": "Last ID",
             "type": "string"
         }, 
         "limit": {

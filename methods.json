@@ -2,59 +2,6 @@
     "errors": {}, 
     "methods": {
         "auth": {
-            "confirmSms": {
-                "request": {
-                    "$schema": "http://json-schema.org/draft-04/schema#", 
-                    "description": "Method to confirm registration sms", 
-                    "properties": {
-                        "code": {
-                            "description": "Code from sms", 
-                            "maxLength": 4, 
-                            "minLength": 4, 
-                            "type": "integer"
-                        }
-                    }, 
-                    "required": [
-                        "code"
-                    ], 
-                    "type": "object"
-                }, 
-                "response": {
-                    "$schema": "http://json-schema.org/draft-04/schema#", 
-                    "additionalProperties": false, 
-                    "description": "Response to auth.confirmSms method", 
-                    "properties": {
-                        "access_token": {
-                            "description": "Token for other requests", 
-                            "type": "string"
-                        }, 
-                        "error": {
-                            "description": "Error code", 
-                            "type": "number"
-                        }, 
-                        "error_text": {
-                            "description": "Error text", 
-                            "type": "string"
-                        }, 
-                        "error_url": {
-                            "description": "Link to error page", 
-                            "type": "string"
-                        }, 
-                        "expire": {
-                            "description": "Token expire", 
-                            "type": "number"
-                        }
-                    }, 
-                    "required": [
-                        "access_token", 
-                        "expire", 
-                        "error", 
-                        "error_text", 
-                        "error_url"
-                    ], 
-                    "type": "object"
-                }
-            }, 
             "login": {
                 "request": {
                     "$schema": "http://json-schema.org/draft-04/schema#", 
@@ -109,46 +56,6 @@
                         "error", 
                         "error_text", 
                         "error_url"
-                    ], 
-                    "type": "object"
-                }
-            }, 
-            "sendSms": {
-                "request": {
-                    "$schema": "http://json-schema.org/draft-04/schema#", 
-                    "description": "Method to send registration sms", 
-                    "properties": {
-                        "phone": {
-                            "description": "Phone", 
-                            "minLength": 11, 
-                            "type": "string"
-                        }
-                    }, 
-                    "required": [
-                        "phone"
-                    ], 
-                    "type": "object"
-                }, 
-                "response": {
-                    "$schema": "http://json-schema.org/draft-04/schema#", 
-                    "additionalProperties": false, 
-                    "description": "Response to method auth.sendSms", 
-                    "properties": {
-                        "error": {
-                            "description": "Error code", 
-                            "type": "number"
-                        }, 
-                        "error_text": {
-                            "description": "Error text", 
-                            "type": "string"
-                        }, 
-                        "error_url": {
-                            "description": "Link to error page", 
-                            "type": "string"
-                        }
-                    }, 
-                    "required": [
-                        "error"
                     ], 
                     "type": "object"
                 }
@@ -215,7 +122,8 @@
                                     "description": "Last ID", 
                                     "type": [
                                         "string", 
-                                        "integer"
+                                        "integer", 
+                                        "null"
                                     ]
                                 }
                             }, 
@@ -297,7 +205,11 @@
                                 }, 
                                 "last_id": {
                                     "description": "Last ID", 
-                                    "type": "string"
+                                    "type": [
+                                        "string", 
+                                        "integer", 
+                                        "null"
+                                    ]
                                 }
                             }, 
                             "required": [
@@ -903,7 +815,11 @@
                                 }, 
                                 "last_id": {
                                     "description": "Last ID", 
-                                    "type": "string"
+                                    "type": [
+                                        "string", 
+                                        "integer", 
+                                        "null"
+                                    ]
                                 }
                             }, 
                             "required": [
@@ -1217,6 +1133,424 @@
                 }
             }
         }, 
+        "registration": {
+            "confirmSms": {
+                "request": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "description": "Method to confirm registration sms", 
+                    "properties": {
+                        "code": {
+                            "description": "Code from sms", 
+                            "maxLength": 4, 
+                            "minLength": 4, 
+                            "type": "integer"
+                        }
+                    }, 
+                    "required": [
+                        "code"
+                    ], 
+                    "type": "object"
+                }, 
+                "response": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "additionalProperties": false, 
+                    "description": "Response to auth.confirmSms method", 
+                    "properties": {
+                        "access_token": {
+                            "description": "Token for other requests", 
+                            "type": "string"
+                        }, 
+                        "error": {
+                            "description": "Error code", 
+                            "type": "number"
+                        }, 
+                        "error_text": {
+                            "description": "Error text", 
+                            "type": "string"
+                        }, 
+                        "error_url": {
+                            "description": "Link to error page", 
+                            "type": "string"
+                        }, 
+                        "expire": {
+                            "description": "Token expire", 
+                            "type": "number"
+                        }
+                    }, 
+                    "required": [
+                        "access_token", 
+                        "expire", 
+                        "error", 
+                        "error_text", 
+                        "error_url"
+                    ], 
+                    "type": "object"
+                }
+            }, 
+            "sendSms": {
+                "request": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "description": "Method to send registration sms", 
+                    "properties": {
+                        "phone": {
+                            "description": "Phone", 
+                            "minLength": 11, 
+                            "type": "string"
+                        }
+                    }, 
+                    "required": [
+                        "phone"
+                    ], 
+                    "type": "object"
+                }, 
+                "response": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "additionalProperties": false, 
+                    "description": "Response to method auth.sendSms", 
+                    "properties": {
+                        "error": {
+                            "description": "Error code", 
+                            "type": "number"
+                        }, 
+                        "error_text": {
+                            "description": "Error text", 
+                            "type": "string"
+                        }, 
+                        "error_url": {
+                            "description": "Link to error page", 
+                            "type": "string"
+                        }
+                    }, 
+                    "required": [
+                        "error"
+                    ], 
+                    "type": "object"
+                }
+            }
+        }, 
+        "restore": {
+            "checkRestoreCode": {
+                "request": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "description": "Method to request restore password and send restore sms", 
+                    "properties": {
+                        "code": {
+                            "description": "SMS code", 
+                            "type": "string"
+                        }, 
+                        "token": {
+                            "description": "Token", 
+                            "type": "string"
+                        }
+                    }, 
+                    "required": [
+                        "code", 
+                        "token"
+                    ], 
+                    "type": "object"
+                }, 
+                "response": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "additionalProperties": false, 
+                    "description": "Response to restore.getUsersForRestorePassword method", 
+                    "properties": {
+                        "error": {
+                            "description": "Error code", 
+                            "type": "number"
+                        }, 
+                        "error_text": {
+                            "description": "Error text", 
+                            "type": "string"
+                        }, 
+                        "error_url": {
+                            "description": "Link to error page", 
+                            "type": "string"
+                        }, 
+                        "response": {
+                            "properties": {
+                                "count": {
+                                    "description": "Count responses", 
+                                    "type": "number"
+                                }, 
+                                "items": {
+                                    "description": "List of responses", 
+                                    "items": {
+                                        "properties": {
+                                            "token": {
+                                                "type": "string"
+                                            }
+                                        }, 
+                                        "type": "object"
+                                    }, 
+                                    "type": "array"
+                                }
+                            }, 
+                            "type": "object"
+                        }, 
+                        "run_time": {
+                            "description": "Run time", 
+                            "type": "number"
+                        }, 
+                        "server_time": {
+                            "description": "Server time (unix)", 
+                            "type": "number"
+                        }
+                    }, 
+                    "required": [
+                        "response", 
+                        "run_time", 
+                        "server_time", 
+                        "error", 
+                        "error_text", 
+                        "error_url"
+                    ]
+                }
+            }, 
+            "getUsersForRestorePassword": {
+                "request": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "description": "Method to get users for restore password", 
+                    "properties": {
+                        "data": {
+                            "description": "Phone or email", 
+                            "type": "string"
+                        }
+                    }, 
+                    "required": [
+                        "data"
+                    ], 
+                    "type": "object"
+                }, 
+                "response": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "additionalProperties": false, 
+                    "description": "Response to restore.getUsersForRestorePassword method", 
+                    "properties": {
+                        "error": {
+                            "description": "Error code", 
+                            "type": "number"
+                        }, 
+                        "error_text": {
+                            "description": "Error text", 
+                            "type": "string"
+                        }, 
+                        "error_url": {
+                            "description": "Link to error page", 
+                            "type": "string"
+                        }, 
+                        "response": {
+                            "additionalProperties": false, 
+                            "properties": {
+                                "count": {
+                                    "description": "Count responses", 
+                                    "type": "number"
+                                }, 
+                                "items": {
+                                    "description": "List of responses", 
+                                    "items": {
+                                        "$ref": "objects.json#definitions/users/user_light", 
+                                        "type": "object"
+                                    }, 
+                                    "type": "array"
+                                }
+                            }, 
+                            "required": [
+                                "last_id", 
+                                "count", 
+                                "items"
+                            ], 
+                            "type": "object"
+                        }, 
+                        "run_time": {
+                            "description": "Run time", 
+                            "type": "number"
+                        }, 
+                        "server_time": {
+                            "description": "Server time (unix)", 
+                            "type": "number"
+                        }
+                    }, 
+                    "required": [
+                        "response", 
+                        "run_time", 
+                        "server_time", 
+                        "error", 
+                        "error_text", 
+                        "error_url"
+                    ]
+                }
+            }, 
+            "requestRestorePassword": {
+                "request": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "description": "Method to request restore password and send restore sms", 
+                    "properties": {
+                        "data": {
+                            "description": "Phone or email", 
+                            "type": "string"
+                        }, 
+                        "user_id": {
+                            "description": "ID of the selected user", 
+                            "type": "integer"
+                        }
+                    }, 
+                    "required": [
+                        "data"
+                    ], 
+                    "type": "object"
+                }, 
+                "response": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "additionalProperties": false, 
+                    "description": "Response to restore.getUsersForRestorePassword method", 
+                    "properties": {
+                        "error": {
+                            "description": "Error code", 
+                            "type": "number"
+                        }, 
+                        "error_text": {
+                            "description": "Error text", 
+                            "type": "string"
+                        }, 
+                        "error_url": {
+                            "description": "Link to error page", 
+                            "type": "string"
+                        }, 
+                        "response": {
+                            "properties": {
+                                "count": {
+                                    "description": "Count responses", 
+                                    "type": "number"
+                                }, 
+                                "items": {
+                                    "description": "List of responses", 
+                                    "items": {
+                                        "properties": {
+                                            "sended": {
+                                                "properties": {
+                                                    "data": {
+                                                        "type": "string"
+                                                    }, 
+                                                    "type": {
+                                                        "type": "string"
+                                                    }
+                                                }, 
+                                                "type": "object"
+                                            }, 
+                                            "token": {
+                                                "type": "string"
+                                            }
+                                        }, 
+                                        "type": "object"
+                                    }, 
+                                    "type": "array"
+                                }
+                            }, 
+                            "type": "object"
+                        }, 
+                        "run_time": {
+                            "description": "Run time", 
+                            "type": "number"
+                        }, 
+                        "server_time": {
+                            "description": "Server time (unix)", 
+                            "type": "number"
+                        }
+                    }, 
+                    "required": [
+                        "response", 
+                        "run_time", 
+                        "server_time", 
+                        "error", 
+                        "error_text", 
+                        "error_url"
+                    ]
+                }
+            }, 
+            "setNewPassword": {
+                "request": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "description": "Method to request restore password and send restore sms", 
+                    "properties": {
+                        "password": {
+                            "description": "Password", 
+                            "type": "string"
+                        }, 
+                        "password_confirm": {
+                            "description": "Password confirm", 
+                            "type": "string"
+                        }, 
+                        "token": {
+                            "description": "Token", 
+                            "type": "string"
+                        }, 
+                        "user_id": {
+                            "description": "User ID", 
+                            "type": "string"
+                        }
+                    }, 
+                    "required": [
+                        "password", 
+                        "password_confirm", 
+                        "user_id", 
+                        "token"
+                    ], 
+                    "type": "object"
+                }, 
+                "response": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "additionalProperties": false, 
+                    "description": "Response to restore.getUsersForRestorePassword method", 
+                    "properties": {
+                        "error": {
+                            "description": "Error code", 
+                            "type": "number"
+                        }, 
+                        "error_text": {
+                            "description": "Error text", 
+                            "type": "string"
+                        }, 
+                        "error_url": {
+                            "description": "Link to error page", 
+                            "type": "string"
+                        }, 
+                        "response": {
+                            "properties": {
+                                "count": {
+                                    "description": "Count responses", 
+                                    "type": "number"
+                                }, 
+                                "items": {
+                                    "description": "List of responses", 
+                                    "items": {
+                                        "$ref": "objects.json#/definitions/users/user_light", 
+                                        "type": "object"
+                                    }, 
+                                    "type": "array"
+                                }
+                            }, 
+                            "type": "object"
+                        }, 
+                        "run_time": {
+                            "description": "Run time", 
+                            "type": "number"
+                        }, 
+                        "server_time": {
+                            "description": "Server time (unix)", 
+                            "type": "number"
+                        }
+                    }, 
+                    "required": [
+                        "response", 
+                        "run_time", 
+                        "server_time", 
+                        "error", 
+                        "error_text", 
+                        "error_url"
+                    ]
+                }
+            }
+        }, 
         "shops": {
             "get": {
                 "request": {
@@ -1389,7 +1723,11 @@
                                 }, 
                                 "last_id": {
                                     "description": "Last ID", 
-                                    "type": "string"
+                                    "type": [
+                                        "string", 
+                                        "integer", 
+                                        "null"
+                                    ]
                                 }
                             }, 
                             "required": [
@@ -1499,7 +1837,11 @@
                                 }, 
                                 "last_id": {
                                     "description": "Last ID", 
-                                    "type": "string"
+                                    "type": [
+                                        "string", 
+                                        "integer", 
+                                        "null"
+                                    ]
                                 }
                             }, 
                             "required": [
@@ -1672,6 +2014,78 @@
                         "error_url"
                     ], 
                     "type": "object"
+                }
+            }, 
+            "\u0441hangePassword": {
+                "request": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "description": "Method to change password for current user", 
+                    "properties": {
+                        "password": {
+                            "description": "Password", 
+                            "type": "string"
+                        }, 
+                        "password_confirm": {
+                            "description": "Password confirm", 
+                            "type": "string"
+                        }
+                    }, 
+                    "required": [
+                        "password", 
+                        "password_confirm"
+                    ], 
+                    "type": "object"
+                }, 
+                "response": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "additionalProperties": false, 
+                    "description": "Response to users.\u0441hangePassword method", 
+                    "properties": {
+                        "error": {
+                            "description": "Error code", 
+                            "type": "number"
+                        }, 
+                        "error_text": {
+                            "description": "Error text", 
+                            "type": "string"
+                        }, 
+                        "error_url": {
+                            "description": "Link to error page", 
+                            "type": "string"
+                        }, 
+                        "response": {
+                            "properties": {
+                                "count": {
+                                    "description": "Count responses", 
+                                    "type": "number"
+                                }, 
+                                "items": {
+                                    "description": "List of responses", 
+                                    "items": {
+                                        "type": "object"
+                                    }, 
+                                    "type": "array"
+                                }
+                            }, 
+                            "type": "object"
+                        }, 
+                        "run_time": {
+                            "description": "Run time", 
+                            "type": "number"
+                        }, 
+                        "server_time": {
+                            "description": "Server time (unix)", 
+                            "type": "number"
+                        }
+                    }, 
+                    "required": [
+                        "response", 
+                        "run_time", 
+                        "server_time", 
+                        "error", 
+                        "error_text", 
+                        "error_url"
+                    ]
                 }
             }
         }
