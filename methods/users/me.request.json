@@ -1,4 +1,4 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#", 
-    "description": "Method to get my data"
+    "description": "Метод для получения моих данных (текущего пользователя)"
 }

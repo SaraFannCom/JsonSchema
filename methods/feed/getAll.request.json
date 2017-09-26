@@ -1,17 +1,17 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#", 
-    "description": "Method to get all feed", 
+    "description": "Метод для получения ленты новостей",
     "properties": {
         "filters": {
-            "description": "Filters", 
+            "description": "Фильтры",
             "properties": {
                 "distance": {
-                    "description": "Distance to find", 
+                    "description": "Радиус поиска",
                     "minNum": 1, 
                     "type": "integer"
                 }, 
                 "item_type": {
-                    "description": "Item types", 
+                    "description": "Типы записей",
                     "enum": [
                         "product", 
                         "blog_post", 
@@ -22,7 +22,7 @@
                     "type": "string"
                 }, 
                 "latitude": {
-                    "description": "Latitude", 
+                    "description": "Широта",
                     "minNum": 1, 
                     "type": [
                         "number", 
@@ -30,7 +30,7 @@
                     ]
                 }, 
                 "longitude": {
-                    "description": "Longitude", 
+                    "description": "Долгота",
                     "minNum": 1, 
                     "type": [
                         "number", 
@@ -38,7 +38,7 @@
                     ]
                 }, 
                 "product_type": {
-                    "description": "Product types", 
+                    "description": "Типы товаров",
                     "enum": [
                         "buynow", 
                         "advert", 
@@ -56,12 +56,12 @@
             "type": "object"
         }, 
         "last_id": {
-            "description": "Last ID",
+            "description": "Последний идентификатор",
             "type": "string"
         }, 
         "limit": {
             "default": 20, 
-            "description": "Limit", 
+            "description": "Лимит",
             "minNum": 1, 
             "type": "integer"
         }

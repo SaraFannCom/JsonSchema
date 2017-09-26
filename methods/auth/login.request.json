@@ -1,14 +1,14 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#", 
-    "description": "Method touser login", 
+    "description": "Метод для авторизации пользователя",
     "properties": {
         "login": {
-            "description": "User login, phone or email", 
+            "description": "Логин, телефон либо email",
             "minLength": 1, 
             "type": "string"
         }, 
         "password": {
-            "description": "User password", 
+            "description": "Пароль",
             "minLength": 5, 
             "type": "string"
         }

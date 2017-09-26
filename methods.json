@@ -1,2091 +1,2500 @@
 {
-    "errors": {}, 
+    "errors": {},
     "methods": {
         "auth": {
             "login": {
                 "request": {
-                    "$schema": "http://json-schema.org/draft-04/schema#", 
-                    "description": "Method touser login", 
+                    "$schema": "http://json-schema.org/draft-04/schema#",
+                    "description": "Метод для авторизации пользователя",
                     "properties": {
                         "login": {
-                            "description": "User login, phone or email", 
-                            "minLength": 1, 
+                            "description": "Логин, телефон либо email",
+                            "minLength": 1,
                             "type": "string"
-                        }, 
+                        },
                         "password": {
-                            "description": "User password", 
-                            "minLength": 5, 
+                            "description": "Пароль",
+                            "minLength": 5,
                             "type": "string"
                         }
-                    }, 
+                    },
                     "required": [
-                        "login", 
+                        "login",
                         "password"
-                    ], 
+                    ],
                     "type": "object"
-                }, 
+                },
                 "response": {
-                    "$schema": "http://json-schema.org/draft-04/schema#", 
-                    "additionalProperties": false, 
-                    "description": "Response to auth.login", 
+                    "$schema": "http://json-schema.org/draft-04/schema#",
+                    "additionalProperties": false,
+                    "description": "Ответ на метод auth.login",
                     "properties": {
                         "access_token": {
-                            "description": "Token for other requests", 
+                            "description": "Токен для дальнейших запросов",
                             "type": "string"
-                        }, 
+                        },
                         "error": {
-                            "description": "Error code", 
+                            "description": "Код ошибки",
                             "type": "number"
-                        }, 
+                        },
                         "error_text": {
-                            "description": "Error text", 
+                            "description": "Текст ошибки",
                             "type": "string"
-                        }, 
+                        },
                         "error_url": {
-                            "description": "Link to error page", 
+                            "description": "Ссылка на страницу ошибки",
                             "type": "string"
-                        }, 
+                        },
                         "expire": {
-                            "description": "Token expire", 
+                            "description": "Время жизни токена",
                             "type": "number"
                         }
-                    }, 
+                    },
                     "required": [
-                        "access_token", 
-                        "expire", 
-                        "error", 
-                        "error_text", 
+                        "access_token",
+                        "expire",
+                        "error",
+                        "error_text",
                         "error_url"
-                    ], 
+                    ],
+                    "type": "object"
+                }
+            },
+            "socialCallback": {
+                "request": {
+                    "$schema": "http://json-schema.org/draft-04/schema#",
+                    "description": "Метод для авторизации через соцсети",
+                    "properties": {
+                        "avatar_url": {
+                            "type": "string"
+                        },
+                        "birthday": {
+                            "type": "string"
+                        },
+                        "email": {
+                            "type": "string"
+                        },
+                        "first_name": {
+                            "type": "string"
+                        },
+                        "last_name": {
+                            "type": "string"
+                        },
+                        "social_id": {
+                            "type": "string"
+                        },
+                        "social_type": {
+                            "enum": [
+                                "vkontakte",
+                                "odnoklassniki",
+                                "facebook"
+                            ],
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "login",
+                        "password"
+                    ],
+                    "type": "object"
+                },
+                "response": {
+                    "$schema": "http://json-schema.org/draft-04/schema#",
+                    "additionalProperties": false,
+                    "description": "Ответ на метод auth.socialCallback",
+                    "properties": {
+                        "access_token": {
+                            "description": "Токен для дальнейших запросов",
+                            "type": "string"
+                        },
+                        "error": {
+                            "description": "Код ошибки",
+                            "type": "number"
+                        },
+                        "error_text": {
+                            "description": "Текст ошибки",
+                            "type": "string"
+                        },
+                        "error_url": {
+                            "description": "Ссылка на страницу ошибки",
+                            "type": "string"
+                        },
+                        "expire": {
+                            "description": "Время жизни токена",
+                            "type": "number"
+                        }
+                    },
+                    "required": [
+                        "access_token",
+                        "expire",
+                        "error",
+                        "error_text",
+                        "error_url"
+                    ],
                     "type": "object"
                 }
             }
-        }, 
+        },
         "blogs": {
             "get": {
                 "request": {
-                    "$schema": "http://json-schema.org/draft-04/schema#", 
-                    "description": "Method to get one blog", 
+                    "$schema": "http://json-schema.org/draft-04/schema#",
+                    "description": "метод для получения статей одного блога",
                     "properties": {
                         "id": {
-                            "description": "Blog ID ", 
-                            "minNum": 1, 
+                            "description": "Идентификатор блога",
+                            "minNum": 1,
                             "type": "integer"
-                        }, 
+                        },
                         "last_id": {
-                            "description": "Last blog ID", 
+                            "description": "Идентификатор последнего загруженого поста",
                             "type": "string"
-                        }, 
+                        },
                         "limit": {
-                            "default": 20, 
-                            "description": "Limit", 
-                            "minNum": 1, 
+                            "default": 20,
+                            "description": "Лимит",
+                            "minNum": 1,
                             "type": "integer"
                         }
-                    }, 
+                    },
                     "required": [
                         "id"
-                    ], 
+                    ],
                     "type": "object"
-                }, 
+                },
                 "response": {
-                    "$schema": "http://json-schema.org/draft-04/schema#", 
-                    "description": "Response to blogs.get", 
+                    "$schema": "http://json-schema.org/draft-04/schema#",
+                    "description": "ОТвет на метод blogs.get",
                     "properties": {
                         "error": {
-                            "description": "Error code", 
+                            "description": "Код ошибки",
                             "type": "number"
-                        }, 
+                        },
                         "error_text": {
-                            "description": "Error text", 
+                            "description": "Текст ошибки",
                             "type": "string"
-                        }, 
+                        },
                         "error_url": {
-                            "description": "Link to error page", 
+                            "description": "Ссылка на страницу ошибки",
                             "type": "string"
-                        }, 
+                        },
                         "response": {
                             "properties": {
                                 "count": {
-                                    "description": "Count responses", 
+                                    "description": "Количество ответов",
                                     "type": "number"
-                                }, 
+                                },
                                 "items": {
-                                    "description": "List of responses", 
+                                    "description": "Список ответов",
                                     "items": {
-                                        "$ref": "objects.json#/definitions/blogs/blog_post", 
+                                        "$ref": "objects.json#/definitions/blogs/blog_post",
                                         "type": "object"
-                                    }, 
+                                    },
                                     "type": "array"
-                                }, 
+                                },
                                 "last_id": {
-                                    "description": "Last ID", 
+                                    "description": "Последний идентификатор",
                                     "type": [
-                                        "string", 
-                                        "integer", 
+                                        "string",
+                                        "integer",
                                         "null"
                                     ]
                                 }
-                            }, 
+                            },
                             "required": [
-                                "last_id", 
-                                "count", 
+                                "last_id",
+                                "count",
                                 "items"
-                            ], 
+                            ],
                             "type": "object"
-                        }, 
+                        },
                         "run_time": {
-                            "description": "Run time", 
+                            "description": "Время выполнения",
                             "type": "number"
-                        }, 
+                        },
                         "server_time": {
-                            "description": "Server time (unix)", 
+                            "description": "Время на сервере (UNIXTIME)",
                             "type": "number"
                         }
-                    }, 
+                    },
                     "required": [
-                        "response", 
-                        "run_time", 
-                        "server_time", 
-                        "error", 
-                        "error_text", 
+                        "response",
+                        "run_time",
+                        "server_time",
+                        "error",
+                        "error_text",
                         "error_url"
-                    ], 
+                    ],
                     "type": "object"
                 }
-            }, 
+            },
             "getAll": {
                 "request": {
-                    "$schema": "http://json-schema.org/draft-04/schema#", 
-                    "description": "Method to get all blogs posts", 
+                    "$schema": "http://json-schema.org/draft-04/schema#",
+                    "description": "Метод для получения списка статей всех блогов",
                     "properties": {
                         "last_id": {
-                            "description": "Last ID", 
+                            "description": "Последний идентификатор",
                             "type": "string"
-                        }, 
+                        },
                         "limit": {
-                            "default": 20, 
-                            "description": "Limit", 
-                            "minNum": 1, 
+                            "default": 20,
+                            "description": "Лимит",
+                            "minNum": 1,
                             "type": "integer"
                         }
-                    }, 
-                    "required": [], 
+                    },
+                    "required": [],
                     "type": "object"
-                }, 
+                },
                 "response": {
-                    "$schema": "http://json-schema.org/draft-04/schema#", 
-                    "description": "Response to method blogs.getAll", 
+                    "$schema": "http://json-schema.org/draft-04/schema#",
+                    "description": "Ответ на метод blogs.getAll",
                     "properties": {
                         "error": {
-                            "description": "Error code", 
+                            "description": "Код ошибки",
                             "type": "number"
-                        }, 
+                        },
                         "error_text": {
-                            "description": "Error text", 
+                            "description": "Текст ошибки",
                             "type": "string"
-                        }, 
+                        },
                         "error_url": {
-                            "description": "Link to error page", 
+                            "description": "Ссылка на страницу ошибки",
                             "type": "string"
-                        }, 
+                        },
                         "response": {
                             "properties": {
                                 "count": {
-                                    "description": "Count responses", 
+                                    "description": "Количество ответов",
                                     "type": "number"
-                                }, 
+                                },
                                 "items": {
-                                    "description": "List of responses", 
+                                    "description": "Список ответов",
                                     "items": {
-                                        "$ref": "objects.json#/definitions/blogs/blog_post", 
+                                        "$ref": "objects.json#/definitions/blogs/blog_post",
                                         "type": "object"
-                                    }, 
+                                    },
                                     "type": "array"
-                                }, 
+                                },
                                 "last_id": {
-                                    "description": "Last ID", 
+                                    "description": "Последний идентификатор",
                                     "type": [
-                                        "string", 
-                                        "integer", 
+                                        "string",
+                                        "integer",
                                         "null"
                                     ]
                                 }
-                            }, 
+                            },
                             "required": [
-                                "last_id", 
-                                "count", 
+                                "last_id",
+                                "count",
                                 "items"
-                            ], 
+                            ],
                             "type": "object"
-                        }, 
+                        },
                         "run_time": {
-                            "description": "Run time", 
+                            "description": "Время выполнения",
                             "type": "number"
-                        }, 
+                        },
                         "server_time": {
-                            "description": "Server time (unix)", 
+                            "description": "Время на сервере (UNIXTIME)",
                             "type": "number"
                         }
-                    }, 
+                    },
                     "required": [
-                        "response", 
-                        "run_time", 
-                        "server_time", 
-                        "error", 
-                        "error_text", 
+                        "response",
+                        "run_time",
+                        "server_time",
+                        "error",
+                        "error_text",
                         "error_url"
-                    ], 
+                    ],
                     "type": "object"
                 }
-            }, 
+            },
             "getPost": {
                 "request": {
-                    "$schema": "http://json-schema.org/draft-04/schema#", 
-                    "description": "Method to get one blog post", 
+                    "$schema": "http://json-schema.org/draft-04/schema#",
+                    "description": "Метод для получения статьи блога",
                     "properties": {
                         "id": {
-                            "description": "Blog post ID", 
-                            "minNum": 1, 
+                            "description": "Идентификатор поста",
+                            "minNum": 1,
                             "type": "integer"
                         }
-                    }, 
+                    },
                     "required": [
                         "id"
-                    ], 
+                    ],
                     "type": "object"
-                }, 
+                },
                 "response": {
-                    "$schema": "http://json-schema.org/draft-04/schema#", 
-                    "description": "Response to method blogs.getPost", 
+                    "$schema": "http://json-schema.org/draft-04/schema#",
+                    "description": "Ответ на метод blogs.getPost",
                     "properties": {
                         "error": {
-                            "description": "Error code", 
+                            "description": "Код ошибки",
                             "type": "number"
-                        }, 
+                        },
                         "error_text": {
-                            "description": "Error text", 
+                            "description": "Текст ошибки",
                             "type": "string"
-                        }, 
+                        },
                         "error_url": {
-                            "description": "Link to error page", 
+                            "description": "Ссылка на страницу ошибки",
                             "type": "string"
-                        }, 
+                        },
                         "response": {
                             "properties": {
                                 "count": {
-                                    "description": "Count responses", 
+                                    "description": "Количество ответов",
                                     "type": "number"
-                                }, 
+                                },
                                 "items": {
-                                    "description": "List of responses", 
+                                    "description": "Список ответов",
                                     "items": {
-                                        "$ref": "objects.json#/definitions/blogs/blog_post", 
+                                        "$ref": "objects.json#/definitions/blogs/blog_post",
                                         "type": "object"
-                                    }, 
+                                    },
                                     "type": "array"
                                 }
-                            }, 
+                            },
                             "required": [
-                                "count", 
+                                "count",
                                 "items"
-                            ], 
+                            ],
                             "type": "object"
-                        }, 
+                        },
                         "run_time": {
-                            "description": "Run time", 
+                            "description": "Время выполнения",
                             "type": "number"
-                        }, 
+                        },
                         "server_time": {
-                            "description": "Server time (unix)", 
+                            "description": "Время на сервере (UNIXTIME)",
                             "type": "number"
                         }
-                    }, 
+                    },
                     "required": [
-                        "response", 
-                        "run_time", 
-                        "server_time", 
-                        "error", 
-                        "error_text", 
+                        "response",
+                        "run_time",
+                        "server_time",
+                        "error",
+                        "error_text",
                         "error_url"
-                    ], 
+                    ],
                     "type": "object"
                 }
             }
-        }, 
+        },
         "cart": {
             "addProduct": {
                 "request": {
-                    "$schema": "http://json-schema.org/draft-04/schema#", 
-                    "description": "Method to add products to cart", 
+                    "$schema": "http://json-schema.org/draft-04/schema#",
+                    "description": "Метод для добавления товаров в корзину",
                     "properties": {
                         "count": {
-                            "default": 1, 
-                            "description": "Count products to add to cart", 
+                            "default": 1,
+                            "description": "Количество",
                             "type": "integer"
-                        }, 
+                        },
                         "id": {
-                            "description": "Product ID", 
-                            "minNum": 1, 
+                            "description": "Идентификатор товара",
+                            "minNum": 1,
                             "type": "integer"
                         }
-                    }, 
+                    },
                     "required": [
                         "id"
-                    ], 
+                    ],
                     "type": "object"
-                }, 
+                },
                 "response": {
-                    "$schema": "http://json-schema.org/draft-04/schema#", 
-                    "description": "Response to method products.addToCart", 
+                    "$schema": "http://json-schema.org/draft-04/schema#",
+                    "description": "Ответ на метод products.addToCart",
                     "properties": {
                         "error": {
-                            "description": "Error code", 
+                            "description": "Код ошибки",
                             "type": "number"
-                        }, 
+                        },
                         "error_text": {
-                            "description": "Error text", 
+                            "description": "Текст ошибки",
                             "type": "string"
-                        }, 
+                        },
                         "error_url": {
-                            "description": "Link to error page", 
+                            "description": "Ссылка на страницу ошибки",
                             "type": "string"
-                        }, 
+                        },
                         "run_time": {
-                            "description": "Run time", 
+                            "description": "Время выполнения",
                             "type": "number"
-                        }, 
+                        },
                         "server_time": {
-                            "description": "Server time (unix)", 
+                            "description": "Время на сервере (UNIXTIME)",
                             "type": "number"
                         }
-                    }, 
+                    },
                     "required": [
-                        "error", 
-                        "server_time", 
+                        "error",
+                        "server_time",
                         "run_time"
-                    ], 
+                    ],
                     "type": "object"
                 }
-            }, 
+            },
             "getMyCart": {
                 "request": {
-                    "$schema": "http://json-schema.org/draft-04/schema#", 
-                    "description": "Method to get my cart"
-                }, 
+                    "$schema": "http://json-schema.org/draft-04/schema#",
+                    "description": "Метод для получения моей корзины"
+                },
                 "response": {
-                    "$schema": "http://json-schema.org/draft-04/schema#", 
-                    "description": "Response to method users.getMyCart", 
+                    "$schema": "http://json-schema.org/draft-04/schema#",
+                    "description": "Ответ на метод users.getMyCart",
                     "properties": {
                         "error": {
-                            "description": "Error code", 
+                            "description": "Код ошибки",
                             "type": "number"
-                        }, 
+                        },
                         "error_text": {
-                            "description": "Error text", 
+                            "description": "Текст ошибки",
                             "type": "string"
-                        }, 
+                        },
                         "error_url": {
-                            "description": "Link to error page", 
+                            "description": "Ссылка на страницу ошибки",
                             "type": "string"
-                        }, 
+                        },
                         "response": {
                             "properties": {
                                 "count": {
-                                    "description": "Count responses", 
+                                    "description": "Количество ответов",
                                     "type": "number"
-                                }, 
+                                },
                                 "items": {
-                                    "description": "List of responses", 
+                                    "description": "Список ответов",
                                     "items": {
                                         "properties": {
                                             "count": {
                                                 "type": "integer"
-                                            }, 
+                                            },
                                             "product": {
-                                                "$ref": "objects.json#/definitions/products/product", 
+                                                "$ref": "objects.json#/definitions/products/product",
                                                 "type": "object"
                                             }
-                                        }, 
+                                        },
                                         "required": [
-                                            "product", 
+                                            "product",
                                             "count"
-                                        ], 
+                                        ],
                                         "type": "object"
-                                    }, 
-                                    "minItems": 1, 
-                                    "type": "array", 
+                                    },
+                                    "minItems": 1,
+                                    "type": "array",
                                     "uniqueItems": true
                                 }
-                            }, 
+                            },
                             "required": [
-                                "count", 
+                                "count",
                                 "items"
-                            ], 
+                            ],
                             "type": "object"
-                        }, 
+                        },
                         "run_time": {
-                            "description": "Run time", 
+                            "description": "Время выполнения",
                             "type": "number"
-                        }, 
+                        },
                         "server_time": {
-                            "description": "Server time (unix)", 
+                            "description": "Время на сервере (UNIXTIME)",
                             "type": "number"
                         }
-                    }, 
+                    },
                     "required": [
-                        "response", 
-                        "run_time", 
-                        "server_time", 
-                        "error", 
-                        "error_text", 
+                        "response",
+                        "run_time",
+                        "server_time",
+                        "error",
+                        "error_text",
                         "error_url"
-                    ], 
+                    ],
                     "type": "object"
                 }
-            }, 
+            },
             "removeProduct": {
                 "request": {
-                    "$schema": "http://json-schema.org/draft-04/schema#", 
-                    "description": "Method to remove products from cart", 
+                    "$schema": "http://json-schema.org/draft-04/schema#",
+                    "description": "Метод для удаления товаров из корзины",
                     "properties": {
                         "count": {
-                            "default": 1, 
-                            "description": "Count products to remove from cart", 
+                            "default": 1,
+                            "description": "Количество",
                             "type": "integer"
-                        }, 
+                        },
                         "id": {
-                            "description": "Product ID", 
-                            "minNum": 1, 
+                            "description": "Идентификатор товара",
+                            "minNum": 1,
                             "type": "integer"
                         }
-                    }, 
+                    },
                     "required": [
                         "id"
-                    ], 
+                    ],
                     "type": "object"
-                }, 
+                },
                 "response": {
-                    "$schema": "http://json-schema.org/draft-04/schema#", 
-                    "description": "Response to method products.removeFromCart", 
+                    "$schema": "http://json-schema.org/draft-04/schema#",
+                    "description": "Ответ на метод products.removeFromCart",
                     "properties": {
                         "error": {
-                            "description": "Error code", 
+                            "description": "Код ошибки",
                             "type": "number"
-                        }, 
+                        },
                         "error_text": {
-                            "description": "Error text", 
+                            "description": "Текст ошибки",
                             "type": "string"
-                        }, 
+                        },
                         "error_url": {
-                            "description": "Link to error page", 
+                            "description": "Ссылка на страницу ошибки",
                             "type": "string"
-                        }, 
+                        },
                         "run_time": {
-                            "description": "Run time", 
+                            "description": "Время выполнения",
                             "type": "number"
-                        }, 
+                        },
                         "server_time": {
-                            "description": "Server time (unix)", 
+                            "description": "Время на сервере (UNIXTIME)",
                             "type": "number"
                         }
-                    }, 
+                    },
                     "required": [
-                        "error", 
-                        "server_time", 
+                        "error",
+                        "server_time",
                         "run_time"
-                    ], 
+                    ],
                     "type": "object"
                 }
             }
-        }, 
+        },
         "feed": {
             "getAll": {
                 "request": {
-                    "$schema": "http://json-schema.org/draft-04/schema#", 
-                    "description": "Method to get all feed", 
+                    "$schema": "http://json-schema.org/draft-04/schema#",
+                    "description": "Метод для получения ленты новостей",
                     "properties": {
                         "filters": {
-                            "description": "Filters", 
+                            "description": "Фильтры",
                             "properties": {
                                 "distance": {
-                                    "description": "Distance to find", 
-                                    "minNum": 1, 
+                                    "description": "Радиус поиска",
+                                    "minNum": 1,
                                     "type": "integer"
-                                }, 
+                                },
                                 "item_type": {
-                                    "description": "Item types", 
+                                    "description": "Типы записей",
                                     "enum": [
-                                        "product", 
-                                        "blog_post", 
-                                        "wall_post", 
+                                        "product",
+                                        "blog_post",
+                                        "wall_post",
                                         "all"
-                                    ], 
-                                    "minNum": 1, 
+                                    ],
+                                    "minNum": 1,
                                     "type": "string"
-                                }, 
+                                },
                                 "latitude": {
-                                    "description": "Latitude", 
-                                    "minNum": 1, 
+                                    "description": "Широта",
+                                    "minNum": 1,
                                     "type": [
-                                        "number", 
+                                        "number",
                                         "null"
                                     ]
-                                }, 
+                                },
                                 "longitude": {
-                                    "description": "Longitude", 
-                                    "minNum": 1, 
+                                    "description": "Долгота",
+                                    "minNum": 1,
                                     "type": [
-                                        "number", 
+                                        "number",
                                         "null"
                                     ]
-                                }, 
+                                },
                                 "product_type": {
-                                    "description": "Product types", 
+                                    "description": "Типы товаров",
                                     "enum": [
-                                        "buynow", 
-                                        "advert", 
-                                        "classic", 
-                                        "quick", 
-                                        "penny", 
-                                        "tender", 
-                                        "all", 
+                                        "buynow",
+                                        "advert",
+                                        "classic",
+                                        "quick",
+                                        "penny",
+                                        "tender",
+                                        "all",
                                         "null"
-                                    ], 
-                                    "minNum": 1, 
+                                    ],
+                                    "minNum": 1,
                                     "type": "string"
                                 }
-                            }, 
+                            },
                             "type": "object"
-                        }, 
+                        },
                         "last_id": {
-                            "description": "Last ID", 
+                            "description": "Последний идентификатор",
                             "type": "string"
-                        }, 
+                        },
                         "limit": {
-                            "default": 20, 
-                            "description": "Limit", 
-                            "minNum": 1, 
+                            "default": 20,
+                            "description": "Лимит",
+                            "minNum": 1,
                             "type": "integer"
                         }
-                    }, 
-                    "required": [], 
+                    },
+                    "required": [],
                     "type": "object"
-                }, 
+                },
                 "response": {
-                    "$schema": "http://json-schema.org/draft-04/schema#", 
-                    "additionalProperties": false, 
-                    "description": "Response to method feed.getAll", 
+                    "$schema": "http://json-schema.org/draft-04/schema#",
+                    "additionalProperties": false,
+                    "description": "Ответ на метод feed.getAll",
                     "properties": {
                         "error": {
-                            "description": "Error code", 
+                            "description": "Код ошибки",
                             "type": "number"
-                        }, 
+                        },
                         "error_text": {
-                            "description": "Error text", 
+                            "description": "Текст ошибки",
                             "type": "string"
-                        }, 
+                        },
                         "error_url": {
-                            "description": "Link to error page", 
+                            "description": "Ссылка на страницу ошибки",
                             "type": "string"
-                        }, 
+                        },
                         "response": {
-                            "additionalProperties": false, 
+                            "additionalProperties": false,
                             "properties": {
                                 "count": {
-                                    "description": "Count responses", 
+                                    "description": "Количество ответов",
                                     "type": "number"
-                                }, 
+                                },
                                 "items": {
-                                    "description": "List of responses", 
+                                    "description": "Список ответов",
                                     "items": {
                                         "properties": {
                                             "action_type": {
-                                                "minLength": 1, 
+                                                "minLength": 1,
                                                 "type": "string"
-                                            }, 
+                                            },
                                             "address": {
                                                 "type": [
-                                                    "string", 
+                                                    "string",
                                                     "null"
                                                 ]
-                                            }, 
+                                            },
                                             "api_url": {
-                                                "minLength": 1, 
+                                                "minLength": 1,
                                                 "type": "string"
-                                            }, 
+                                            },
                                             "category": {
-                                                "$ref": "objects.json#/definitions/products/category", 
+                                                "$ref": "objects.json#/definitions/products/category",
                                                 "type": [
-                                                    "array", 
-                                                    "object", 
+                                                    "array",
+                                                    "object",
                                                     "null"
                                                 ]
-                                            }, 
+                                            },
                                             "city": {
-                                                "$ref": "objects.json#/definitions/geo/city", 
+                                                "$ref": "objects.json#/definitions/geo/city",
                                                 "type": [
-                                                    "object", 
+                                                    "object",
                                                     "null"
                                                 ]
-                                            }, 
+                                            },
                                             "comments_count": {
                                                 "type": "number"
-                                            }, 
+                                            },
                                             "count": {
                                                 "type": "number"
-                                            }, 
+                                            },
                                             "country": {
-                                                "$ref": "objects.json#/definitions/geo/country", 
+                                                "$ref": "objects.json#/definitions/geo/country",
                                                 "type": [
-                                                    "object", 
+                                                    "object",
                                                     "null"
                                                 ]
-                                            }, 
+                                            },
                                             "created_at": {
-                                                "minLength": 1, 
+                                                "minLength": 1,
                                                 "type": "string"
-                                            }, 
+                                            },
                                             "created_at_formated": {
-                                                "minLength": 1, 
+                                                "minLength": 1,
                                                 "type": "string"
-                                            }, 
+                                            },
                                             "deposit": {
                                                 "type": [
-                                                    "number", 
+                                                    "number",
                                                     "null"
                                                 ]
-                                            }, 
+                                            },
                                             "description": {
                                                 "type": "string"
-                                            }, 
+                                            },
                                             "distance": {
                                                 "type": [
-                                                    "string", 
-                                                    "number", 
+                                                    "string",
+                                                    "number",
                                                     "null"
                                                 ]
-                                            }, 
+                                            },
                                             "has_partner": {
                                                 "type": "number"
-                                            }, 
+                                            },
                                             "id": {
                                                 "type": "number"
-                                            }, 
+                                            },
                                             "image": {
-                                                "$ref": "objects.json#/definitions/images/image", 
+                                                "$ref": "objects.json#/definitions/images/image",
                                                 "type": [
-                                                    "object", 
+                                                    "object",
                                                     "null"
                                                 ]
-                                            }, 
+                                            },
                                             "images": {
                                                 "items": {
-                                                    "$ref": "objects.json#/definitions/images/image", 
+                                                    "$ref": "objects.json#/definitions/images/image",
                                                     "type": [
-                                                        "object", 
+                                                        "object",
                                                         "null"
                                                     ]
-                                                }, 
-                                                "minItems": 0, 
+                                                },
+                                                "minItems": 0,
                                                 "type": "array"
-                                            }, 
+                                            },
                                             "is_mine": {
                                                 "type": "boolean"
-                                            }, 
+                                            },
                                             "item_id": {
                                                 "type": "number"
-                                            }, 
+                                            },
                                             "item_type": {
-                                                "minLength": 1, 
+                                                "minLength": 1,
                                                 "type": "string"
-                                            }, 
+                                            },
                                             "latitude": {
                                                 "type": "number"
-                                            }, 
+                                            },
                                             "likes_count": {
                                                 "type": "number"
-                                            }, 
+                                            },
                                             "longitude": {
                                                 "type": "number"
-                                            }, 
+                                            },
                                             "name": {
-                                                "minLength": 1, 
+                                                "minLength": 1,
                                                 "type": "string"
-                                            }, 
+                                            },
                                             "owner": {
-                                                "$ref": "objects.json#/definitions/additional/owner", 
+                                                "$ref": "objects.json#/definitions/additional/owner",
                                                 "type": "object"
-                                            }, 
+                                            },
                                             "partner_komission": {
                                                 "type": [
-                                                    "number", 
+                                                    "number",
                                                     "null"
                                                 ]
-                                            }, 
+                                            },
                                             "pay_type": {
                                                 "type": [
-                                                    "number", 
+                                                    "number",
                                                     "null"
                                                 ]
-                                            }, 
+                                            },
                                             "prepayment_data": {
                                                 "type": [
-                                                    "object", 
-                                                    "null", 
-                                                    "array", 
+                                                    "object",
+                                                    "null",
+                                                    "array",
                                                     "boolean"
                                                 ]
-                                            }, 
+                                            },
                                             "price": {
                                                 "type": [
-                                                    "string", 
+                                                    "string",
                                                     "null"
                                                 ]
-                                            }, 
+                                            },
                                             "product_type": {
                                                 "enum": [
-                                                    "buynow", 
-                                                    "advert", 
-                                                    "classic", 
-                                                    "quick", 
-                                                    "penny", 
-                                                    "tender", 
+                                                    "buynow",
+                                                    "advert",
+                                                    "classic",
+                                                    "quick",
+                                                    "penny",
+                                                    "tender",
                                                     "null"
-                                                ], 
-                                                "minLength": 1, 
+                                                ],
+                                                "minLength": 1,
                                                 "type": "string"
-                                            }, 
+                                            },
                                             "properties": {
-                                                "$ref": "objects.json#/definitions/products/p_properties", 
+                                                "$ref": "objects.json#/definitions/products/p_properties",
                                                 "type": "object"
-                                            }, 
+                                            },
                                             "region": {
-                                                "$ref": "objects.json#/definitions/geo/region", 
+                                                "$ref": "objects.json#/definitions/geo/region",
                                                 "type": [
-                                                    "object", 
+                                                    "object",
                                                     "null"
                                                 ]
-                                            }, 
+                                            },
                                             "sell_count": {
                                                 "type": [
-                                                    "number", 
+                                                    "number",
                                                     "null"
                                                 ]
-                                            }, 
+                                            },
                                             "status": {
                                                 "type": "number"
-                                            }, 
+                                            },
                                             "updated_at": {
-                                                "minLength": 1, 
+                                                "minLength": 1,
                                                 "type": "string"
-                                            }, 
+                                            },
                                             "updated_at_formated": {
-                                                "minLength": 1, 
+                                                "minLength": 1,
                                                 "type": "string"
-                                            }, 
+                                            },
                                             "web_url": {
-                                                "minLength": 1, 
+                                                "minLength": 1,
                                                 "type": "string"
-                                            }, 
+                                            },
                                             "zip": {
                                                 "type": [
-                                                    "string", 
+                                                    "string",
                                                     "null"
                                                 ]
                                             }
-                                        }, 
+                                        },
                                         "required": [
-                                            "id", 
-                                            "product_type", 
-                                            "status", 
-                                            "created_at", 
-                                            "updated_at", 
-                                            "is_mine", 
-                                            "created_at_formated", 
-                                            "updated_at_formated", 
-                                            "likes_count", 
-                                            "comments_count", 
-                                            "api_url", 
+                                            "id",
+                                            "product_type",
+                                            "status",
+                                            "created_at",
+                                            "updated_at",
+                                            "is_mine",
+                                            "created_at_formated",
+                                            "updated_at_formated",
+                                            "likes_count",
+                                            "comments_count",
+                                            "api_url",
                                             "web_url"
-                                        ], 
+                                        ],
                                         "type": "object"
-                                    }, 
+                                    },
                                     "type": "array"
-                                }, 
+                                },
                                 "last_id": {
-                                    "description": "Last ID", 
+                                    "description": "Последний идентификатор",
                                     "type": [
-                                        "string", 
-                                        "integer", 
+                                        "string",
+                                        "integer",
                                         "null"
                                     ]
                                 }
-                            }, 
+                            },
                             "required": [
-                                "last_id", 
-                                "count", 
+                                "last_id",
+                                "count",
                                 "items"
-                            ], 
+                            ],
                             "type": "object"
-                        }, 
+                        },
                         "run_time": {
-                            "description": "Run time", 
+                            "description": "Время выполнения",
                             "type": "number"
-                        }, 
+                        },
                         "server_time": {
-                            "description": "Server time (unix)", 
+                            "description": "Время на сервере (UNIXTIME)",
                             "type": "number"
                         }
-                    }, 
+                    },
                     "required": [
-                        "response", 
-                        "run_time", 
-                        "server_time", 
-                        "error", 
-                        "error_text", 
+                        "response",
+                        "run_time",
+                        "server_time",
+                        "error",
+                        "error_text",
                         "error_url"
-                    ], 
+                    ],
                     "type": "object"
                 }
             }
-        }, 
+        },
         "global": {
             "search": {
                 "request": {
-                    "$schema": "http://json-schema.org/draft-04/schema#", 
-                    "description": "Method to global search", 
+                    "$schema": "http://json-schema.org/draft-04/schema#",
+                    "description": "Метод для глобального поиска",
                     "properties": {
                         "filters": {
-                            "description": "Filters", 
+                            "description": "Фильтры",
                             "properties": {
                                 "latitude": {
-                                    "description": "Latitude", 
-                                    "minNum": 1, 
+                                    "description": "Широта",
+                                    "minNum": 1,
                                     "type": [
-                                        "number", 
+                                        "number",
                                         "null"
                                     ]
-                                }, 
+                                },
                                 "longitude": {
-                                    "description": "lLongitude", 
-                                    "minNum": 1, 
+                                    "description": "Долгота",
+                                    "minNum": 1,
                                     "type": [
-                                        "number", 
+                                        "number",
                                         "null"
                                     ]
                                 }
-                            }, 
+                            },
                             "type": "object"
-                        }, 
+                        },
                         "q": {
-                            "description": "Search query", 
+                            "description": "Поисковый запрос",
                             "type": "string"
                         }
-                    }, 
+                    },
                     "required": [
                         "q"
-                    ], 
+                    ],
                     "type": "object"
-                }, 
+                },
                 "response": {
-                    "$schema": "http://json-schema.org/draft-04/schema#", 
-                    "description": "Response to method global.Search", 
+                    "$schema": "http://json-schema.org/draft-04/schema#",
+                    "description": "Ответ на метод global.Search",
                     "properties": {
                         "error": {
-                            "description": "Error code", 
+                            "description": "Код ошибки",
                             "type": "number"
-                        }, 
+                        },
                         "error_text": {
-                            "description": "Error text", 
+                            "description": "Текст ошибки",
                             "type": "string"
-                        }, 
+                        },
                         "error_url": {
-                            "description": "Link to error page", 
+                            "description": "Ссылка на страницу ошибки",
                             "type": "string"
-                        }, 
+                        },
                         "response": {
                             "properties": {
                                 "count": {
-                                    "description": "Count responses", 
+                                    "description": "Количество ответов",
                                     "type": "number"
-                                }, 
+                                },
                                 "items": {
-                                    "description": "List of responses", 
+                                    "description": "Список ответов",
                                     "properties": {
                                         "products": {
                                             "properties": {
                                                 "data": {
                                                     "api_url": {
                                                         "type": "string"
-                                                    }, 
-                                                    "description": "First resultes from search", 
+                                                    },
+                                                    "description": "First resultes from search",
                                                     "items": {
-                                                        "$ref": "objects.json#/definitions/products/product_light", 
-                                                        "maxItems": 5, 
+                                                        "$ref": "objects.json#/definitions/products/product_light",
+                                                        "maxItems": 5,
                                                         "type": "object"
-                                                    }, 
-                                                    "type": "array", 
+                                                    },
+                                                    "type": "array",
                                                     "web_url": {
                                                         "type": "string"
                                                     }
                                                 }
-                                            }, 
+                                            },
                                             "type": "object"
-                                        }, 
+                                        },
                                         "shops": {
-                                            "description": "First resultes from search", 
+                                            "description": "First resultes from search",
                                             "properties": {
                                                 "api_url": {
                                                     "type": "string"
-                                                }, 
+                                                },
                                                 "data": {
                                                     "items": {
-                                                        "$ref": "objects.json#/definitions/shops/shop_light", 
-                                                        "maxItems": 5, 
+                                                        "$ref": "objects.json#/definitions/shops/shop_light",
+                                                        "maxItems": 5,
                                                         "type": "object"
-                                                    }, 
+                                                    },
                                                     "type": "array"
-                                                }, 
+                                                },
                                                 "web_url": {
                                                     "type": "string"
                                                 }
-                                            }, 
+                                            },
                                             "type": "object"
-                                        }, 
+                                        },
                                         "users": {
                                             "properties": {
                                                 "data": {
                                                     "api_url": {
                                                         "type": "string"
-                                                    }, 
-                                                    "description": "First resultes from search", 
+                                                    },
+                                                    "description": "First resultes from search",
                                                     "items": {
-                                                        "$ref": "objects.json#/definitions/users/user_light", 
-                                                        "maxItems": 5, 
+                                                        "$ref": "objects.json#/definitions/users/user_light",
+                                                        "maxItems": 5,
                                                         "type": "object"
-                                                    }, 
-                                                    "type": "array", 
+                                                    },
+                                                    "type": "array",
                                                     "web_url": {
                                                         "type": "string"
                                                     }
                                                 }
-                                            }, 
+                                            },
                                             "type": "object"
                                         }
-                                    }, 
+                                    },
                                     "type": "object"
                                 }
-                            }, 
+                            },
                             "required": [
-                                "count", 
+                                "count",
                                 "items"
-                            ], 
+                            ],
                             "type": "object"
-                        }, 
+                        },
                         "run_time": {
-                            "description": "Run time", 
+                            "description": "Время выполнения",
                             "type": "number"
-                        }, 
+                        },
                         "server_time": {
-                            "description": "Server time (unix)", 
+                            "description": "Время на сервере (UNIXTIME)",
                             "type": "number"
                         }
-                    }, 
+                    },
                     "required": [
-                        "response", 
-                        "run_time", 
-                        "server_time", 
-                        "error", 
-                        "error_text", 
+                        "response",
+                        "run_time",
+                        "server_time",
+                        "error",
+                        "error_text",
                         "error_url"
-                    ], 
+                    ],
                     "type": "object"
                 }
             }
-        }, 
+        },
+        "messages": {
+            "deleteMessage": {
+                "request": {
+                    "$schema": "http://json-schema.org/draft-04/schema#",
+                    "description": "Метод для удаления сообщения",
+                    "properties": {
+                        "message_id": {
+                            "description": "Идентификатоо сообщения",
+                            "type": "integer"
+                        },
+                        "shop_id": {
+                            "description": "Идентификатор магазина, если отправитель - мой магазин",
+                            "type": "integer"
+                        }
+                    },
+                    "required": [
+                        "owner_type"
+                    ],
+                    "type": "object"
+                },
+                "response": {
+                    "$schema": "http://json-schema.org/draft-04/schema#",
+                    "description": "Ответ на метод messages.deleteMessage",
+                    "properties": {
+                        "error": {
+                            "description": "Код ошибки",
+                            "type": "number"
+                        },
+                        "error_text": {
+                            "description": "Текст ошибки",
+                            "type": "string"
+                        },
+                        "error_url": {
+                            "description": "Ссылка на страницу ошибки",
+                            "type": "string"
+                        },
+                        "response": {
+                            "properties": {
+                                "count": {
+                                    "description": "Количество ответов",
+                                    "type": "number"
+                                },
+                                "items": {
+                                    "description": "Список ответов",
+                                    "items": {
+                                        "type": "object"
+                                    },
+                                    "type": "array"
+                                }
+                            },
+                            "required": [
+                                "count",
+                                "items"
+                            ],
+                            "type": "object"
+                        },
+                        "run_time": {
+                            "description": "Время выполнения",
+                            "type": "number"
+                        },
+                        "server_time": {
+                            "description": "Время на сервере (UNIXTIME)",
+                            "type": "number"
+                        }
+                    },
+                    "required": [
+                        "response",
+                        "run_time",
+                        "server_time",
+                        "error",
+                        "error_text",
+                        "error_url"
+                    ],
+                    "type": "object"
+                }
+            },
+            "getDialogMessages": {
+                "request": {
+                    "$schema": "http://json-schema.org/draft-04/schema#",
+                    "description": "Метод для получения сообщений диалога",
+                    "properties": {
+                        "dialog_id": {
+                            "description": "Идентификатор диалога",
+                            "type": "integer"
+                        },
+                        "limit": {
+                            "default": 20,
+                            "description": "Лимит",
+                            "type": "integer"
+                        },
+                        "offset": {
+                            "default": 0,
+                            "description": "Отступ",
+                            "type": "integer"
+                        },
+                        "shop_id": {
+                            "description": "Идентификатор магазина, если диалог в моём магазине",
+                            "type": "integer"
+                        }
+                    },
+                    "required": [
+                        "dialog_id"
+                    ],
+                    "type": "object"
+                },
+                "response": {
+                    "$schema": "http://json-schema.org/draft-04/schema#",
+                    "description": "Ответ на метод messages.getDialogMessages",
+                    "properties": {
+                        "error": {
+                            "description": "Код ошибки",
+                            "type": "number"
+                        },
+                        "error_text": {
+                            "description": "Текст ошибки",
+                            "type": "string"
+                        },
+                        "error_url": {
+                            "description": "Ссылка на страницу ошибки",
+                            "type": "string"
+                        },
+                        "response": {
+                            "properties": {
+                                "count": {
+                                    "description": "Количество ответов",
+                                    "type": "number"
+                                },
+                                "items": {
+                                    "description": "Список ответов",
+                                    "items": {
+                                        "$ref": "objects.json#/definitions/messages/message",
+                                        "type": "object"
+                                    },
+                                    "type": "array"
+                                }
+                            },
+                            "required": [
+                                "count",
+                                "items"
+                            ],
+                            "type": "object"
+                        },
+                        "run_time": {
+                            "description": "Время выполнения",
+                            "type": "number"
+                        },
+                        "server_time": {
+                            "description": "Время на сервере (UNIXTIME)",
+                            "type": "number"
+                        }
+                    },
+                    "required": [
+                        "response",
+                        "run_time",
+                        "server_time",
+                        "error",
+                        "error_text",
+                        "error_url"
+                    ],
+                    "type": "object"
+                }
+            },
+            "getDialogs": {
+                "request": {
+                    "$schema": "http://json-schema.org/draft-04/schema#",
+                    "description": "Метод для получения списка диалогов",
+                    "properties": {
+                        "limit": {
+                            "default": 20,
+                            "description": "Лимит",
+                            "type": "integer"
+                        },
+                        "offset": {
+                            "default": 0,
+                            "description": "Отступ",
+                            "type": "integer"
+                        },
+                        "shop_id": {
+                            "description": "Идентификатор магазина, если диалог в моём магазине",
+                            "type": "integer"
+                        }
+                    },
+                    "required": [
+                        "owner_type"
+                    ],
+                    "type": "object"
+                },
+                "response": {
+                    "$schema": "http://json-schema.org/draft-04/schema#",
+                    "description": "Ответ на метод messages.getDialogs",
+                    "properties": {
+                        "error": {
+                            "description": "Код ошибки",
+                            "type": "number"
+                        },
+                        "error_text": {
+                            "description": "Текст ошибки",
+                            "type": "string"
+                        },
+                        "error_url": {
+                            "description": "Ссылка на страницу ошибки",
+                            "type": "string"
+                        },
+                        "response": {
+                            "properties": {
+                                "count": {
+                                    "description": "Количество ответов",
+                                    "type": "number"
+                                },
+                                "items": {
+                                    "description": "Список ответов",
+                                    "items": {
+                                        "properties": {
+                                            "dialog": {
+                                                "$ref": "objects.json#/definitions/messages/message",
+                                                "type": "object"
+                                            },
+                                            "opponent": {
+                                                "$ref": "objects.json#/definitions/users/user_light",
+                                                "type": "object"
+                                            }
+                                        },
+                                        "type": "object"
+                                    },
+                                    "type": "array"
+                                }
+                            },
+                            "required": [
+                                "count",
+                                "items"
+                            ],
+                            "type": "object"
+                        },
+                        "run_time": {
+                            "description": "Время выполнения",
+                            "type": "number"
+                        },
+                        "server_time": {
+                            "description": "Время на сервере (UNIXTIME)",
+                            "type": "number"
+                        }
+                    },
+                    "required": [
+                        "response",
+                        "run_time",
+                        "server_time",
+                        "error",
+                        "error_text",
+                        "error_url"
+                    ],
+                    "type": "object"
+                }
+            },
+            "sendMessage": {
+                "request": {
+                    "$schema": "http://json-schema.org/draft-04/schema#",
+                    "description": "Метод для отправки сообщения",
+                    "properties": {
+                        "message": {
+                            "description": "Текст сообщения",
+                            "type": "string"
+                        },
+                        "reciever_id": {
+                            "description": "Идентификатор получателя",
+                            "type": "integer"
+                        },
+                        "reciever_type": {
+                            "description": "Тип получателя - магазин либо пользователь",
+                            "enum": [
+                                "user",
+                                "shop"
+                            ],
+                            "type": "string"
+                        },
+                        "shop_id": {
+                            "description": "Идентификатор магазина, если диалог в моём магазине",
+                            "type": "integer"
+                        }
+                    },
+                    "required": [
+                        "owner_type"
+                    ],
+                    "type": "object"
+                },
+                "response": {
+                    "$schema": "http://json-schema.org/draft-04/schema#",
+                    "description": "Ответ на метод messages.sendMessage",
+                    "properties": {
+                        "error": {
+                            "description": "Код ошибки",
+                            "type": "number"
+                        },
+                        "error_text": {
+                            "description": "Текст ошибки",
+                            "type": "string"
+                        },
+                        "error_url": {
+                            "description": "Ссылка на страницу ошибки",
+                            "type": "string"
+                        },
+                        "response": {
+                            "properties": {
+                                "count": {
+                                    "description": "Количество ответов",
+                                    "type": "number"
+                                },
+                                "items": {
+                                    "description": "Список ответов",
+                                    "items": {
+                                        "type": "object"
+                                    },
+                                    "type": "array"
+                                }
+                            },
+                            "required": [
+                                "count",
+                                "items"
+                            ],
+                            "type": "object"
+                        },
+                        "run_time": {
+                            "description": "Время выполнения",
+                            "type": "number"
+                        },
+                        "server_time": {
+                            "description": "Время на сервере (UNIXTIME)",
+                            "type": "number"
+                        }
+                    },
+                    "required": [
+                        "response",
+                        "run_time",
+                        "server_time",
+                        "error",
+                        "error_text",
+                        "error_url"
+                    ],
+                    "type": "object"
+                }
+            }
+        },
         "products": {
             "createOrder": {
                 "request": {
-                    "$schema": "http://json-schema.org/draft-04/schema#", 
-                    "description": "Method to direct buy product", 
+                    "$schema": "http://json-schema.org/draft-04/schema#",
+                    "description": "Метод для создания заказа",
                     "properties": {
                         "count": {
-                            "default": 1, 
-                            "description": "Count products to buy", 
+                            "default": 1,
+                            "description": "Количество",
                             "type": "integer"
-                        }, 
+                        },
                         "id": {
-                            "description": "Product ID", 
-                            "minNum": 1, 
+                            "description": "Идентификатор товара",
+                            "minNum": 1,
                             "type": "integer"
                         }
-                    }, 
+                    },
                     "required": [
                         "id"
-                    ], 
+                    ],
                     "type": "object"
-                }, 
+                },
                 "response": {
-                    "$schema": "http://json-schema.org/draft-04/schema#", 
-                    "description": "Response to method products.createOrder", 
+                    "$schema": "http://json-schema.org/draft-04/schema#",
+                    "description": "Ответ на метод products.createOrder",
                     "properties": {
                         "error": {
-                            "description": "Error code", 
+                            "description": "Код ошибки",
                             "type": "number"
-                        }, 
+                        },
                         "error_text": {
-                            "description": "Error text", 
+                            "description": "Текст ошибки",
                             "type": "string"
-                        }, 
+                        },
                         "error_url": {
-                            "description": "Link to error page", 
+                            "description": "Ссылка на страницу ошибки",
                             "type": "string"
-                        }, 
+                        },
                         "run_time": {
-                            "description": "Run time", 
+                            "description": "Время выполнения",
                             "type": "number"
-                        }, 
+                        },
                         "server_time": {
-                            "description": "Server time (unix)", 
+                            "description": "Время на сервере (UNIXTIME)",
                             "type": "number"
                         }
-                    }, 
+                    },
                     "required": [
-                        "error", 
-                        "server_time", 
+                        "error",
+                        "server_time",
                         "run_time"
-                    ], 
+                    ],
                     "type": "object"
                 }
-            }, 
+            },
             "get": {
                 "request": {
-                    "$schema": "http://json-schema.org/draft-04/schema#", 
-                    "description": "Method to get product or products data", 
+                    "$schema": "http://json-schema.org/draft-04/schema#",
+                    "description": "Метод для получения данных о товаре",
                     "properties": {
                         "id": {
-                            "description": "Product ID or IDs, comma separated", 
-                            "minNum": 1, 
+                            "description": "Идентификатор товара",
+                            "minNum": 1,
                             "type": "integer"
                         }
-                    }, 
+                    },
                     "required": [
                         "id"
-                    ], 
+                    ],
                     "type": "object"
-                }, 
+                },
                 "response": {
-                    "$schema": "http://json-schema.org/draft-04/schema#", 
-                    "description": "Response to method products.get", 
+                    "$schema": "http://json-schema.org/draft-04/schema#",
+                    "description": "Ответ на метод products.get",
                     "properties": {
                         "error": {
-                            "description": "Error code", 
+                            "description": "Код ошибки",
                             "type": "number"
-                        }, 
+                        },
                         "error_text": {
-                            "description": "Error text", 
+                            "description": "Текст ошибки",
                             "type": "string"
-                        }, 
+                        },
                         "error_url": {
-                            "description": "Link to error page", 
+                            "description": "Ссылка на страницу ошибки",
                             "type": "string"
-                        }, 
+                        },
                         "response": {
                             "properties": {
                                 "count": {
-                                    "description": "Count responses", 
+                                    "description": "Количество ответов",
                                     "type": "number"
-                                }, 
+                                },
                                 "items": {
-                                    "description": "List of responses", 
+                                    "description": "Список ответов",
                                     "items": {
-                                        "$ref": "objects.json#/definitions/products/product", 
+                                        "$ref": "objects.json#/definitions/products/product",
                                         "type": "object"
-                                    }, 
+                                    },
                                     "type": "array"
                                 }
-                            }, 
+                            },
                             "required": [
-                                "count", 
+                                "count",
                                 "items"
-                            ], 
+                            ],
                             "type": "object"
-                        }, 
+                        },
                         "run_time": {
-                            "description": "Run time", 
+                            "description": "Время выполнения",
                             "type": "number"
-                        }, 
+                        },
                         "server_time": {
-                            "description": "Server time (unix)", 
+                            "description": "Время на сервере (UNIXTIME)",
                             "type": "number"
                         }
-                    }, 
+                    },
                     "required": [
-                        "response", 
-                        "run_time", 
-                        "server_time", 
-                        "error", 
-                        "error_text", 
+                        "response",
+                        "run_time",
+                        "server_time",
+                        "error",
+                        "error_text",
                         "error_url"
-                    ], 
+                    ],
                     "type": "object"
                 }
             }
-        }, 
+        },
         "registration": {
             "confirmSms": {
                 "request": {
-                    "$schema": "http://json-schema.org/draft-04/schema#", 
-                    "description": "Method to confirm registration sms", 
+                    "$schema": "http://json-schema.org/draft-04/schema#",
+                    "description": "Метод для подтверждения СМС",
                     "properties": {
                         "code": {
-                            "description": "Code from sms", 
-                            "maxLength": 4, 
-                            "minLength": 4, 
-                            "type": "integer"
+                            "description": "Код из СМС",
+                            "type": [
+                                "integer",
+                                "string"
+                            ]
                         }
-                    }, 
+                    },
                     "required": [
                         "code"
-                    ], 
+                    ],
                     "type": "object"
-                }, 
+                },
                 "response": {
-                    "$schema": "http://json-schema.org/draft-04/schema#", 
-                    "additionalProperties": false, 
-                    "description": "Response to auth.confirmSms method", 
+                    "$schema": "http://json-schema.org/draft-04/schema#",
+                    "additionalProperties": false,
+                    "description": "Ответ на метод auth.confirmSms",
                     "properties": {
                         "access_token": {
-                            "description": "Token for other requests", 
+                            "description": "Токен для дальнейших запросов",
                             "type": "string"
-                        }, 
+                        },
                         "error": {
-                            "description": "Error code", 
+                            "description": "Код ошибки",
                             "type": "number"
-                        }, 
+                        },
                         "error_text": {
-                            "description": "Error text", 
+                            "description": "Текст ошибки",
                             "type": "string"
-                        }, 
+                        },
                         "error_url": {
-                            "description": "Link to error page", 
+                            "description": "Ссылка на страницу ошибки",
                             "type": "string"
-                        }, 
+                        },
                         "expire": {
-                            "description": "Token expire", 
+                            "description": "Время жизни токена",
                             "type": "number"
                         }
-                    }, 
+                    },
                     "required": [
-                        "access_token", 
-                        "expire", 
-                        "error", 
-                        "error_text", 
+                        "access_token",
+                        "expire",
+                        "error",
+                        "error_text",
                         "error_url"
-                    ], 
+                    ],
                     "type": "object"
                 }
-            }, 
+            },
             "sendSms": {
                 "request": {
-                    "$schema": "http://json-schema.org/draft-04/schema#", 
-                    "description": "Method to send registration sms", 
+                    "$schema": "http://json-schema.org/draft-04/schema#",
+                    "description": "Метод для отправки регистрационного СМС",
                     "properties": {
                         "phone": {
-                            "description": "Phone", 
-                            "minLength": 11, 
+                            "description": "Телефон",
+                            "minLength": 11,
                             "type": "string"
                         }
-                    }, 
+                    },
                     "required": [
                         "phone"
-                    ], 
+                    ],
                     "type": "object"
-                }, 
+                },
                 "response": {
-                    "$schema": "http://json-schema.org/draft-04/schema#", 
-                    "additionalProperties": false, 
-                    "description": "Response to method auth.sendSms", 
+                    "$schema": "http://json-schema.org/draft-04/schema#",
+                    "additionalProperties": false,
+                    "description": "Ответ на метод auth.sendSms",
                     "properties": {
                         "error": {
-                            "description": "Error code", 
+                            "description": "Код ошибки",
                             "type": "number"
-                        }, 
+                        },
                         "error_text": {
-                            "description": "Error text", 
+                            "description": "Текст ошибки",
                             "type": "string"
-                        }, 
+                        },
                         "error_url": {
-                            "description": "Link to error page", 
+                            "description": "Ссылка на страницу ошибки",
                             "type": "string"
                         }
-                    }, 
+                    },
                     "required": [
                         "error"
-                    ], 
+                    ],
                     "type": "object"
                 }
             }
-        }, 
+        },
         "restore": {
             "checkRestoreCode": {
                 "request": {
-                    "$schema": "http://json-schema.org/draft-04/schema#", 
-                    "description": "Method to request restore password and send restore sms", 
+                    "$schema": "http://json-schema.org/draft-04/schema#",
+                    "description": "Метод для подтверждения СМС для восстановления пароля",
                     "properties": {
                         "code": {
-                            "description": "SMS code", 
+                            "description": "Код из СМС",
                             "type": "string"
-                        }, 
+                        },
                         "token": {
-                            "description": "Token", 
+                            "description": "Токен",
                             "type": "string"
                         }
-                    }, 
+                    },
                     "required": [
-                        "code", 
+                        "code",
                         "token"
-                    ], 
+                    ],
                     "type": "object"
-                }, 
+                },
                 "response": {
-                    "$schema": "http://json-schema.org/draft-04/schema#", 
-                    "additionalProperties": false, 
-                    "description": "Response to restore.getUsersForRestorePassword method", 
+                    "$schema": "http://json-schema.org/draft-04/schema#",
+                    "additionalProperties": false,
+                    "description": "Ответ на метод restore.getUsersForRestorePassword",
                     "properties": {
                         "error": {
-                            "description": "Error code", 
+                            "description": "Код ошибки",
                             "type": "number"
-                        }, 
+                        },
                         "error_text": {
-                            "description": "Error text", 
+                            "description": "Текст ошибки",
                             "type": "string"
-                        }, 
+                        },
                         "error_url": {
-                            "description": "Link to error page", 
+                            "description": "Ссылка на страницу ошибки",
                             "type": "string"
-                        }, 
+                        },
                         "response": {
                             "properties": {
                                 "count": {
-                                    "description": "Count responses", 
+                                    "description": "Количество ответов",
                                     "type": "number"
-                                }, 
+                                },
                                 "items": {
-                                    "description": "List of responses", 
+                                    "description": "Список ответов",
                                     "items": {
                                         "properties": {
                                             "token": {
                                                 "type": "string"
                                             }
-                                        }, 
+                                        },
                                         "type": "object"
-                                    }, 
+                                    },
                                     "type": "array"
                                 }
-                            }, 
+                            },
                             "type": "object"
-                        }, 
+                        },
                         "run_time": {
-                            "description": "Run time", 
+                            "description": "Время выполнения",
                             "type": "number"
-                        }, 
+                        },
                         "server_time": {
-                            "description": "Server time (unix)", 
+                            "description": "Время на сервере (UNIXTIME)",
                             "type": "number"
                         }
-                    }, 
+                    },
                     "required": [
-                        "response", 
-                        "run_time", 
-                        "server_time", 
-                        "error", 
-                        "error_text", 
+                        "response",
+                        "run_time",
+                        "server_time",
+                        "error",
+                        "error_text",
                         "error_url"
                     ]
                 }
-            }, 
+            },
             "getUsersForRestorePassword": {
                 "request": {
-                    "$schema": "http://json-schema.org/draft-04/schema#", 
-                    "description": "Method to get users for restore password", 
+                    "$schema": "http://json-schema.org/draft-04/schema#",
+                    "description": "Метод для получения списка пользователей для восстановления",
                     "properties": {
                         "data": {
-                            "description": "Phone or email", 
+                            "description": "Телефон или email",
                             "type": "string"
                         }
-                    }, 
+                    },
                     "required": [
                         "data"
-                    ], 
+                    ],
                     "type": "object"
-                }, 
+                },
                 "response": {
-                    "$schema": "http://json-schema.org/draft-04/schema#", 
-                    "additionalProperties": false, 
-                    "description": "Response to restore.getUsersForRestorePassword method", 
+                    "$schema": "http://json-schema.org/draft-04/schema#",
+                    "additionalProperties": false,
+                    "description": "Ответ на метод restore.getUsersForRestorePassword",
                     "properties": {
                         "error": {
-                            "description": "Error code", 
+                            "description": "Код ошибки",
                             "type": "number"
-                        }, 
+                        },
                         "error_text": {
-                            "description": "Error text", 
+                            "description": "Текст ошибки",
                             "type": "string"
-                        }, 
+                        },
                         "error_url": {
-                            "description": "Link to error page", 
+                            "description": "Ссылка на страницу ошибки",
                             "type": "string"
-                        }, 
+                        },
                         "response": {
-                            "additionalProperties": false, 
+                            "additionalProperties": false,
                             "properties": {
                                 "count": {
-                                    "description": "Count responses", 
+                                    "description": "Количество ответов",
                                     "type": "number"
-                                }, 
+                                },
                                 "items": {
-                                    "description": "List of responses", 
+                                    "description": "Список ответов",
                                     "items": {
-                                        "$ref": "objects.json#definitions/users/user_light", 
+                                        "$ref": "objects.json#definitions/users/user_light",
                                         "type": "object"
-                                    }, 
+                                    },
                                     "type": "array"
                                 }
-                            }, 
+                            },
                             "required": [
-                                "last_id", 
-                                "count", 
+                                "last_id",
+                                "count",
                                 "items"
-                            ], 
+                            ],
                             "type": "object"
-                        }, 
+                        },
                         "run_time": {
-                            "description": "Run time", 
+                            "description": "Время выполнения",
                             "type": "number"
-                        }, 
+                        },
                         "server_time": {
-                            "description": "Server time (unix)", 
+                            "description": "Время на сервере (UNIXTIME)",
                             "type": "number"
                         }
-                    }, 
+                    },
                     "required": [
-                        "response", 
-                        "run_time", 
-                        "server_time", 
-                        "error", 
-                        "error_text", 
+                        "response",
+                        "run_time",
+                        "server_time",
+                        "error",
+                        "error_text",
                         "error_url"
                     ]
                 }
-            }, 
+            },
             "requestRestorePassword": {
                 "request": {
-                    "$schema": "http://json-schema.org/draft-04/schema#", 
-                    "description": "Method to request restore password and send restore sms", 
+                    "$schema": "http://json-schema.org/draft-04/schema#",
+                    "description": "Метод для отправки СМС для восстановления пароля",
                     "properties": {
                         "data": {
-                            "description": "Phone or email", 
+                            "description": "Телефон или email",
                             "type": "string"
-                        }, 
+                        },
                         "user_id": {
-                            "description": "ID of the selected user", 
+                            "description": "Идентификатор выбранного пользователя",
                             "type": "integer"
                         }
-                    }, 
+                    },
                     "required": [
-                        "data"
-                    ], 
+                        "data",
+                        "user_id"
+                    ],
                     "type": "object"
-                }, 
+                },
                 "response": {
-                    "$schema": "http://json-schema.org/draft-04/schema#", 
-                    "additionalProperties": false, 
-                    "description": "Response to restore.getUsersForRestorePassword method", 
+                    "$schema": "http://json-schema.org/draft-04/schema#",
+                    "additionalProperties": false,
+                    "description": "Ответ на метод restore.getUsersForRestorePassword",
                     "properties": {
                         "error": {
-                            "description": "Error code", 
+                            "description": "Код ошибки",
                             "type": "number"
-                        }, 
+                        },
                         "error_text": {
-                            "description": "Error text", 
+                            "description": "Текст ошибки",
                             "type": "string"
-                        }, 
+                        },
                         "error_url": {
-                            "description": "Link to error page", 
+                            "description": "Ссылка на страницу ошибки",
                             "type": "string"
-                        }, 
+                        },
                         "response": {
                             "properties": {
                                 "count": {
-                                    "description": "Count responses", 
+                                    "description": "Количество ответов",
                                     "type": "number"
-                                }, 
+                                },
                                 "items": {
-                                    "description": "List of responses", 
+                                    "description": "Список ответов",
                                     "items": {
                                         "properties": {
                                             "sended": {
                                                 "properties": {
                                                     "data": {
                                                         "type": "string"
-                                                    }, 
+                                                    },
                                                     "type": {
                                                         "type": "string"
                                                     }
-                                                }, 
+                                                },
                                                 "type": "object"
-                                            }, 
+                                            },
                                             "token": {
                                                 "type": "string"
                                             }
-                                        }, 
+                                        },
                                         "type": "object"
-                                    }, 
+                                    },
                                     "type": "array"
                                 }
-                            }, 
+                            },
                             "type": "object"
-                        }, 
+                        },
                         "run_time": {
-                            "description": "Run time", 
+                            "description": "Время выполнения",
                             "type": "number"
-                        }, 
+                        },
                         "server_time": {
-                            "description": "Server time (unix)", 
+                            "description": "Время на сервере (UNIXTIME)",
                             "type": "number"
                         }
-                    }, 
+                    },
                     "required": [
-                        "response", 
-                        "run_time", 
-                        "server_time", 
-                        "error", 
-                        "error_text", 
+                        "response",
+                        "run_time",
+                        "server_time",
+                        "error",
+                        "error_text",
                         "error_url"
                     ]
                 }
-            }, 
+            },
             "setNewPassword": {
                 "request": {
-                    "$schema": "http://json-schema.org/draft-04/schema#", 
-                    "description": "Method to request restore password and send restore sms", 
+                    "$schema": "http://json-schema.org/draft-04/schema#",
+                    "description": "Метод для установки нового пароля после восстановления",
                     "properties": {
                         "password": {
-                            "description": "Password", 
+                            "description": "Пароль",
                             "type": "string"
-                        }, 
+                        },
                         "password_confirm": {
-                            "description": "Password confirm", 
+                            "description": "Подтверждение пароля",
                             "type": "string"
-                        }, 
+                        },
                         "token": {
-                            "description": "Token", 
+                            "description": "Токен",
                             "type": "string"
-                        }, 
+                        },
                         "user_id": {
-                            "description": "User ID", 
+                            "description": "Идентификатор пользователя",
                             "type": "string"
                         }
-                    }, 
+                    },
                     "required": [
-                        "password", 
-                        "password_confirm", 
-                        "user_id", 
+                        "password",
+                        "password_confirm",
+                        "user_id",
                         "token"
-                    ], 
+                    ],
                     "type": "object"
-                }, 
+                },
                 "response": {
-                    "$schema": "http://json-schema.org/draft-04/schema#", 
-                    "additionalProperties": false, 
-                    "description": "Response to restore.getUsersForRestorePassword method", 
+                    "$schema": "http://json-schema.org/draft-04/schema#",
+                    "additionalProperties": false,
+                    "description": "Ответ на метод restore.getUsersForRestorePassword",
                     "properties": {
                         "error": {
-                            "description": "Error code", 
+                            "description": "Код ошибки",
                             "type": "number"
-                        }, 
+                        },
                         "error_text": {
-                            "description": "Error text", 
+                            "description": "Текст ошибки",
                             "type": "string"
-                        }, 
+                        },
                         "error_url": {
-                            "description": "Link to error page", 
+                            "description": "Ссылка на страницу ошибки",
                             "type": "string"
-                        }, 
+                        },
                         "response": {
                             "properties": {
                                 "count": {
-                                    "description": "Count responses", 
+                                    "description": "Количество ответов",
                                     "type": "number"
-                                }, 
+                                },
                                 "items": {
-                                    "description": "List of responses", 
+                                    "description": "Список ответов",
                                     "items": {
-                                        "$ref": "objects.json#/definitions/users/user_light", 
+                                        "$ref": "objects.json#/definitions/users/user_light",
                                         "type": "object"
-                                    }, 
+                                    },
                                     "type": "array"
                                 }
-                            }, 
+                            },
                             "type": "object"
-                        }, 
+                        },
                         "run_time": {
-                            "description": "Run time", 
+                            "description": "Время выполнения",
                             "type": "number"
-                        }, 
+                        },
                         "server_time": {
-                            "description": "Server time (unix)", 
+                            "description": "Время на сервере (UNIXTIME)",
                             "type": "number"
                         }
-                    }, 
+                    },
                     "required": [
-                        "response", 
-                        "run_time", 
-                        "server_time", 
-                        "error", 
-                        "error_text", 
+                        "response",
+                        "run_time",
+                        "server_time",
+                        "error",
+                        "error_text",
                         "error_url"
                     ]
                 }
             }
-        }, 
+        },
         "shops": {
             "get": {
                 "request": {
-                    "$schema": "http://json-schema.org/draft-04/schema#", 
-                    "description": "Method to get shop data", 
+                    "$schema": "http://json-schema.org/draft-04/schema#",
+                    "description": "Метод для получения данных магазина",
                     "properties": {
                         "id": {
-                            "description": "Shop ID", 
-                            "minNum": 1, 
+                            "description": "Идентификатор магазина",
+                            "minNum": 1,
                             "type": "integer"
                         }
-                    }, 
+                    },
                     "required": [
                         "id"
-                    ], 
+                    ],
                     "type": "object"
-                }, 
+                },
                 "response": {
-                    "$schema": "http://json-schema.org/draft-04/schema#", 
-                    "description": "Response to method shops.getAll", 
+                    "$schema": "http://json-schema.org/draft-04/schema#",
+                    "description": "Ответ на метод shops.getAll",
                     "properties": {
                         "error": {
-                            "description": "Error code", 
+                            "description": "Код ошибки",
                             "type": "number"
-                        }, 
+                        },
                         "error_text": {
-                            "description": "Error text", 
+                            "description": "Текст ошибки",
                             "type": "string"
-                        }, 
+                        },
                         "error_url": {
-                            "description": "Link to error page", 
+                            "description": "Ссылка на страницу ошибки",
                             "type": "string"
-                        }, 
+                        },
                         "response": {
                             "properties": {
                                 "count": {
-                                    "description": "Count responses", 
+                                    "description": "Количество ответов",
                                     "type": "number"
-                                }, 
+                                },
                                 "items": {
-                                    "description": "List of responses", 
+                                    "description": "Список ответов",
                                     "items": {
-                                        "$ref": "objects.json#/definitions/shops/shop", 
+                                        "$ref": "objects.json#/definitions/shops/shop",
                                         "type": "object"
-                                    }, 
+                                    },
                                     "type": "array"
                                 }
-                            }, 
+                            },
                             "required": [
-                                "count", 
+                                "count",
                                 "items"
-                            ], 
+                            ],
                             "type": "object"
-                        }, 
+                        },
                         "run_time": {
-                            "description": "Run time", 
+                            "description": "Время выполнения",
                             "type": "number"
-                        }, 
+                        },
                         "server_time": {
-                            "description": "Server time (unix)", 
+                            "description": "Время на сервере (UNIXTIME)",
                             "type": "number"
                         }
-                    }, 
+                    },
                     "required": [
-                        "response", 
-                        "run_time", 
-                        "server_time", 
-                        "error", 
-                        "error_text", 
+                        "response",
+                        "run_time",
+                        "server_time",
+                        "error",
+                        "error_text",
                         "error_url"
-                    ], 
+                    ],
                     "type": "object"
                 }
-            }, 
+            },
             "getAll": {
                 "request": {
-                    "$schema": "http://json-schema.org/draft-04/schema#", 
-                    "description": "Method to get shops list", 
+                    "$schema": "http://json-schema.org/draft-04/schema#",
+                    "description": "Метод для получения списка магазинов",
                     "properties": {
                         "filters": {
-                            "description": "Filters", 
+                            "description": "Фильтры",
                             "properties": {
                                 "geo": {
-                                    "description": "Geolocation filter as GeoType_GeoId", 
+                                    "description": "Фильтр по геолокации: GeoType_GeoId",
                                     "type": "string"
-                                }, 
+                                },
                                 "latitude": {
-                                    "description": "Latitude", 
-                                    "minNum": 1, 
+                                    "description": "Широта",
+                                    "minNum": 1,
                                     "type": [
-                                        "number", 
+                                        "number",
                                         "null"
                                     ]
-                                }, 
+                                },
                                 "longitude": {
-                                    "description": "lLongitude", 
-                                    "minNum": 1, 
+                                    "description": "Долгота",
+                                    "minNum": 1,
                                     "type": [
-                                        "number", 
+                                        "number",
                                         "null"
                                     ]
-                                }, 
+                                },
                                 "q": {
-                                    "description": "Search query", 
+                                    "description": "Поисковый запрос",
                                     "type": "string"
-                                }, 
-                                "rating": {
-                                    "description": "Rating filter >=", 
-                                    "minNum": 1, 
-                                    "type": [
-                                        "number", 
-                                        "null"
-                                    ]
-                                }, 
+                                },
                                 "tab": {
-                                    "description": "Selected tab", 
+                                    "description": "Активная вкладка",
                                     "enum": [
-                                        "my", 
-                                        "subscribe", 
-                                        "interest", 
+                                        "my",
+                                        "subscribe",
+                                        "interest",
                                         ""
-                                    ], 
+                                    ],
                                     "type": "string"
                                 }
-                            }, 
+                            },
                             "type": "object"
-                        }, 
+                        },
                         "last_id": {
-                            "description": "Last ID", 
+                            "description": "Последний идентификатор",
                             "type": "string"
-                        }, 
+                        },
                         "limit": {
-                            "description": "Limit", 
-                            "minNum": 1, 
+                            "description": "Limit",
+                            "minNum": 1,
                             "type": "integer"
                         }
-                    }, 
+                    },
                     "type": "object"
-                }, 
+                },
                 "response": {
-                    "$schema": "http://json-schema.org/draft-04/schema#", 
-                    "description": "Response to method shops.getAll", 
+                    "$schema": "http://json-schema.org/draft-04/schema#",
+                    "description": "Ответ на метод shops.getAll",
                     "properties": {
                         "error": {
-                            "description": "Error code", 
+                            "description": "Код ошибки",
                             "type": "number"
-                        }, 
+                        },
                         "error_text": {
-                            "description": "Error text", 
+                            "description": "Текст ошибки",
                             "type": "string"
-                        }, 
+                        },
                         "error_url": {
-                            "description": "Link to error page", 
+                            "description": "Ссылка на страницу ошибки",
                             "type": "string"
-                        }, 
+                        },
                         "response": {
                             "properties": {
                                 "count": {
-                                    "description": "Count responses", 
+                                    "description": "Количество ответов",
                                     "type": "number"
-                                }, 
+                                },
                                 "items": {
-                                    "description": "List of responses", 
+                                    "description": "Список ответов",
                                     "items": {
-                                        "$ref": "objects.json#/definitions/shops/shop", 
+                                        "$ref": "objects.json#/definitions/shops/shop",
                                         "type": "object"
-                                    }, 
-                                    "minItems": 0, 
+                                    },
+                                    "minItems": 0,
                                     "type": "array"
-                                }, 
+                                },
                                 "last_id": {
-                                    "description": "Last ID", 
+                                    "description": "Последний идентификатор",
                                     "type": [
-                                        "string", 
-                                        "integer", 
+                                        "string",
+                                        "integer",
                                         "null"
                                     ]
                                 }
-                            }, 
+                            },
                             "required": [
-                                "last_id", 
-                                "count", 
+                                "last_id",
+                                "count",
                                 "items"
-                            ], 
+                            ],
                             "type": "object"
-                        }, 
+                        },
                         "run_time": {
-                            "description": "Run time", 
+                            "description": "Время выполнения",
                             "type": "number"
-                        }, 
+                        },
                         "server_time": {
-                            "description": "Server time (unix)", 
+                            "description": "Время на сервере (UNIXTIME)",
                             "type": "number"
                         }
-                    }, 
+                    },
                     "required": [
-                        "response", 
-                        "run_time", 
-                        "server_time", 
-                        "error", 
-                        "error_text", 
+                        "response",
+                        "run_time",
+                        "server_time",
+                        "error",
+                        "error_text",
                         "error_url"
-                    ], 
+                    ],
                     "type": "object"
                 }
-            }, 
+            },
             "getProducts": {
                 "request": {
-                    "$schema": "http://json-schema.org/draft-04/schema#", 
-                    "description": "Method to get shop products", 
+                    "$schema": "http://json-schema.org/draft-04/schema#",
+                    "description": "Метод для получения товаров определённого магазина",
                     "properties": {
                         "filters": {
-                            "description": "Filters", 
+                            "description": "Фильтры",
                             "properties": {
                                 "latitude": {
-                                    "description": "Latitude", 
-                                    "minNum": 1, 
+                                    "description": "Широта",
+                                    "minNum": 1,
                                     "type": [
-                                        "number", 
+                                        "number",
                                         "null"
                                     ]
-                                }, 
+                                },
                                 "longitude": {
-                                    "description": "Longitude", 
-                                    "minNum": 1, 
+                                    "description": "Долгота",
+                                    "minNum": 1,
                                     "type": [
-                                        "number", 
+                                        "number",
                                         "null"
                                     ]
                                 }
-                            }, 
+                            },
                             "type": "object"
-                        }, 
+                        },
                         "id": {
-                            "description": "Shop ID", 
-                            "minNum": 1, 
+                            "description": "Идентификатор магазина",
+                            "minNum": 1,
                             "type": "integer"
-                        }, 
+                        },
                         "last_id": {
-                            "description": "Last ID", 
+                            "description": "Последний идентификатор",
                             "type": "string"
-                        }, 
+                        },
                         "limit": {
-                            "default": 20, 
-                            "description": "Limit", 
-                            "minNum": 1, 
+                            "default": 20,
+                            "description": "Лимит",
+                            "minNum": 1,
                             "type": "integer"
                         }
-                    }, 
+                    },
                     "required": [
                         "id"
-                    ], 
+                    ],
                     "type": "object"
-                }, 
+                },
                 "response": {
-                    "$schema": "http://json-schema.org/draft-04/schema#", 
-                    "description": "Response to method shops.getProducts", 
+                    "$schema": "http://json-schema.org/draft-04/schema#",
+                    "description": "Ответ на метод shops.getProducts",
                     "properties": {
                         "error": {
-                            "description": "Error code", 
+                            "description": "Код ошибки",
                             "type": "number"
-                        }, 
+                        },
                         "error_text": {
-                            "description": "Error text", 
+                            "description": "Текст ошибки",
                             "type": "string"
-                        }, 
+                        },
                         "error_url": {
-                            "description": "Link to error page", 
+                            "description": "Ссылка на страницу ошибки",
                             "type": "string"
-                        }, 
+                        },
                         "response": {
                             "properties": {
                                 "count": {
-                                    "description": "Count responses", 
+                                    "description": "Количество ответов",
                                     "type": "number"
-                                }, 
+                                },
                                 "items": {
-                                    "description": "List of responses", 
+                                    "description": "Список ответов",
                                     "items": {
-                                        "$ref": "objects.json#/definitions/products/product", 
+                                        "$ref": "objects.json#/definitions/products/product",
                                         "type": "object"
-                                    }, 
+                                    },
                                     "type": "array"
-                                }, 
+                                },
                                 "last_id": {
-                                    "description": "Last ID", 
+                                    "description": "Последний идентификатор",
                                     "type": [
-                                        "string", 
-                                        "integer", 
+                                        "string",
+                                        "integer",
                                         "null"
                                     ]
                                 }
-                            }, 
+                            },
                             "required": [
-                                "last_id", 
-                                "count", 
+                                "last_id",
+                                "count",
                                 "items"
-                            ], 
+                            ],
                             "type": "object"
-                        }, 
+                        },
                         "run_time": {
-                            "description": "Run time", 
+                            "description": "Время выполнения",
                             "type": "number"
-                        }, 
+                        },
                         "server_time": {
-                            "description": "Server time (unix)", 
+                            "description": "Время на сервере (UNIXTIME)",
                             "type": "number"
                         }
-                    }, 
+                    },
                     "required": [
-                        "response", 
-                        "run_time", 
-                        "server_time", 
-                        "error", 
-                        "error_text", 
+                        "response",
+                        "run_time",
+                        "server_time",
+                        "error",
+                        "error_text",
                         "error_url"
-                    ], 
+                    ],
                     "type": "object"
                 }
             }
-        }, 
+        },
         "users": {
+            "changePassword": {
+                "request": {
+                    "$schema": "http://json-schema.org/draft-04/schema#",
+                    "description": "Метод для смены пароля текущего пользователя",
+                    "properties": {
+                        "password": {
+                            "description": "Пароль",
+                            "type": "string"
+                        },
+                        "password_confirm": {
+                            "description": "Подтверждение пароля",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "password",
+                        "password_confirm"
+                    ],
+                    "type": "object"
+                },
+                "response": {
+                    "$schema": "http://json-schema.org/draft-04/schema#",
+                    "additionalProperties": false,
+                    "description": "Response to users.changePassword method",
+                    "properties": {
+                        "error": {
+                            "description": "Код ошибки",
+                            "type": "number"
+                        },
+                        "error_text": {
+                            "description": "Текст ошибки",
+                            "type": "string"
+                        },
+                        "error_url": {
+                            "description": "Ссылка на страницу ошибки",
+                            "type": "string"
+                        },
+                        "response": {
+                            "properties": {
+                                "count": {
+                                    "description": "Количество ответов",
+                                    "type": "number"
+                                },
+                                "items": {
+                                    "description": "Список ответов",
+                                    "items": {
+                                        "type": "object"
+                                    },
+                                    "type": "array"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "run_time": {
+                            "description": "Время выполнения",
+                            "type": "number"
+                        },
+                        "server_time": {
+                            "description": "Время на сервере (UNIXTIME)",
+                            "type": "number"
+                        }
+                    },
+                    "required": [
+                        "response",
+                        "run_time",
+                        "server_time",
+                        "error",
+                        "error_text",
+                        "error_url"
+                    ]
+                }
+            },
             "get": {
                 "request": {
-                    "$schema": "http://json-schema.org/draft-04/schema#", 
-                    "description": "Method to get users data", 
+                    "$schema": "http://json-schema.org/draft-04/schema#",
+                    "description": "Метод для получения данных пользователя",
                     "properties": {
                         "id": {
-                            "description": "User ID or IDs, comma separated", 
+                            "description": "Идентификатор пользователя",
                             "type": [
-                                "integer", 
+                                "integer",
                                 "string"
                             ]
                         }
-                    }, 
+                    },
                     "required": [
                         "id"
-                    ], 
+                    ],
                     "type": "object"
-                }, 
+                },
                 "response": {
-                    "$schema": "http://json-schema.org/draft-04/schema#", 
-                    "additionalProperties": false, 
-                    "description": "Response to method users.get", 
+                    "$schema": "http://json-schema.org/draft-04/schema#",
+                    "additionalProperties": false,
+                    "description": "Ответ на метод users.get",
                     "properties": {
                         "error": {
-                            "description": "Error code", 
+                            "description": "Код ошибки",
                             "type": "number"
-                        }, 
+                        },
                         "error_text": {
-                            "description": "Error text", 
+                            "description": "Текст ошибки",
                             "type": "string"
-                        }, 
+                        },
                         "error_url": {
-                            "description": "Link to error page", 
+                            "description": "Ссылка на страницу ошибки",
                             "type": "string"
-                        }, 
+                        },
                         "response": {
-                            "additionalProperties": false, 
+                            "additionalProperties": false,
                             "properties": {
                                 "count": {
-                                    "description": "Count responses", 
+                                    "description": "Количество ответов",
                                     "type": "number"
-                                }, 
+                                },
                                 "items": {
-                                    "description": "List of responses", 
+                                    "description": "Список ответов",
                                     "items": {
-                                        "$ref": "objects.json#/definitions/users/user_full", 
+                                        "$ref": "objects.json#/definitions/users/user_full",
                                         "type": "object"
-                                    }, 
-                                    "minItems": 1, 
+                                    },
+                                    "minItems": 1,
                                     "type": "array"
                                 }
-                            }, 
+                            },
                             "required": [
-                                "count", 
+                                "count",
                                 "items"
-                            ], 
+                            ],
                             "type": "object"
-                        }, 
+                        },
                         "run_time": {
-                            "description": "Run time", 
+                            "description": "Время выполнения",
                             "type": "number"
-                        }, 
+                        },
                         "server_time": {
-                            "description": "Server time (unix)", 
+                            "description": "Время на сервере (UNIXTIME)",
                             "type": "number"
                         }
-                    }, 
+                    },
                     "required": [
-                        "response", 
-                        "run_time", 
-                        "server_time", 
-                        "error", 
-                        "error_text", 
+                        "response",
+                        "run_time",
+                        "server_time",
+                        "error",
+                        "error_text",
                         "error_url"
-                    ], 
+                    ],
                     "type": "object"
                 }
-            }, 
+            },
             "me": {
                 "request": {
-                    "$schema": "http://json-schema.org/draft-04/schema#", 
-                    "description": "Method to get my data"
-                }, 
+                    "$schema": "http://json-schema.org/draft-04/schema#",
+                    "description": "Метод для получения моих данных (текущего пользователя)"
+                },
                 "response": {
-                    "$schema": "http://json-schema.org/draft-04/schema#", 
-                    "additionalProperties": false, 
-                    "description": "Response to method users.me", 
+                    "$schema": "http://json-schema.org/draft-04/schema#",
+                    "additionalProperties": false,
+                    "description": "Ответ на метод users.me",
                     "properties": {
                         "error": {
-                            "description": "Error code", 
+                            "description": "Код ошибки",
                             "type": "number"
-                        }, 
+                        },
                         "error_text": {
-                            "description": "Error text", 
+                            "description": "Текст ошибки",
                             "type": "string"
-                        }, 
+                        },
                         "error_url": {
-                            "description": "Link to error page", 
+                            "description": "Ссылка на страницу ошибки",
                             "type": "string"
-                        }, 
+                        },
                         "response": {
-                            "additionalProperties": false, 
+                            "additionalProperties": false,
                             "properties": {
                                 "count": {
-                                    "description": "Count responses", 
+                                    "description": "Количество ответов",
                                     "type": "number"
-                                }, 
+                                },
                                 "items": {
-                                    "description": "List of responses", 
+                                    "description": "Список ответов",
                                     "items": {
-                                        "$ref": "objects.json#/definitions/users/user_me", 
+                                        "$ref": "objects.json#/definitions/users/user_me",
                                         "type": "object"
-                                    }, 
-                                    "minItems": 1, 
+                                    },
+                                    "minItems": 1,
                                     "type": "array"
                                 }
-                            }, 
+                            },
                             "required": [
-                                "count", 
+                                "count",
                                 "items"
-                            ], 
+                            ],
                             "type": "object"
-                        }, 
+                        },
                         "run_time": {
-                            "description": "Run time", 
+                            "description": "Время выполнения",
                             "type": "number"
-                        }, 
+                        },
                         "server_time": {
-                            "description": "Server time (unix)", 
+                            "description": "Время на сервере (UNIXTIME)",
                             "type": "number"
                         }
-                    }, 
+                    },
                     "required": [
-                        "response", 
-                        "run_time", 
-                        "server_time", 
-                        "error", 
-                        "error_text", 
+                        "response",
+                        "run_time",
+                        "server_time",
+                        "error",
+                        "error_text",
                         "error_url"
-                    ], 
+                    ],
                     "type": "object"
-                }
-            }, 
-            "\u0441hangePassword": {
-                "request": {
-                    "$schema": "http://json-schema.org/draft-04/schema#", 
-                    "description": "Method to change password for current user", 
-                    "properties": {
-                        "password": {
-                            "description": "Password", 
-                            "type": "string"
-                        }, 
-                        "password_confirm": {
-                            "description": "Password confirm", 
-                            "type": "string"
-                        }
-                    }, 
-                    "required": [
-                        "password", 
-                        "password_confirm"
-                    ], 
-                    "type": "object"
-                }, 
-                "response": {
-                    "$schema": "http://json-schema.org/draft-04/schema#", 
-                    "additionalProperties": false, 
-                    "description": "Response to users.\u0441hangePassword method", 
-                    "properties": {
-                        "error": {
-                            "description": "Error code", 
-                            "type": "number"
-                        }, 
-                        "error_text": {
-                            "description": "Error text", 
-                            "type": "string"
-                        }, 
-                        "error_url": {
-                            "description": "Link to error page", 
-                            "type": "string"
-                        }, 
-                        "response": {
-                            "properties": {
-                                "count": {
-                                    "description": "Count responses", 
-                                    "type": "number"
-                                }, 
-                                "items": {
-                                    "description": "List of responses", 
-                                    "items": {
-                                        "type": "object"
-                                    }, 
-                                    "type": "array"
-                                }
-                            }, 
-                            "type": "object"
-                        }, 
-                        "run_time": {
-                            "description": "Run time", 
-                            "type": "number"
-                        }, 
-                        "server_time": {
-                            "description": "Server time (unix)", 
-                            "type": "number"
-                        }
-                    }, 
-                    "required": [
-                        "response", 
-                        "run_time", 
-                        "server_time", 
-                        "error", 
-                        "error_text", 
-                        "error_url"
-                    ]
                 }
             }
         }

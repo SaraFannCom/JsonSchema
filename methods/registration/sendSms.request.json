@@ -1,9 +1,9 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#", 
-    "description": "Method to send registration sms", 
+    "description": "Метод для отправки регистрационного СМС",
     "properties": {
         "phone": {
-            "description": "Phone", 
+            "description": "Телефон",
             "minLength": 11, 
             "type": "string"
         }

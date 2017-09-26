@@ -1,21 +1,16 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#", 
-    "description": "Method to get shops list", 
+    "description": "Метод для получения списка магазинов",
     "properties": {
         "filters": {
-            "description": "Filters", 
+            "description": "Фильтры",
             "properties": {
-                "tab": {
-                    "description": "Selected tab",
-                    "type": "string",
-                    "enum": ["my", "subscribe", "interest", ""]
-                }, 
                 "geo": {
-                    "description": "Geolocation filter as GeoType_GeoId",
+                    "description": "Фильтр по геолокации: GeoType_GeoId",
                     "type": "string"
                 }, 
                 "latitude": {
-                    "description": "Latitude", 
+                    "description": "Широта",
                     "minNum": 1, 
                     "type": [
                         "number", 
@@ -23,30 +18,32 @@
                     ]
                 }, 
                 "longitude": {
-                    "description": "lLongitude", 
+                    "description": "Долгота",
                     "minNum": 1, 
                     "type": [
                         "number", 
                         "null"
                     ]
-                },
-                "rating": {
-                    "description": "Rating filter >=",
-                    "minNum": 1,
-                    "type": [
-                        "number",
-                        "null"
-                    ]
-                },
+                }, 
                 "q": {
-                    "description": "Search query",
+                    "description": "Поисковый запрос",
+                    "type": "string"
+                },
+                "tab": {
+                    "description": "Активная вкладка",
+                    "enum": [
+                        "my", 
+                        "subscribe", 
+                        "interest", 
+                        ""
+                    ], 
                     "type": "string"
                 }
             }, 
             "type": "object"
         }, 
         "last_id": {
-            "description": "Last ID",
+            "description": "Последний идентификатор",
             "type": "string"
         }, 
         "limit": {

@@ -1,0 +1,28 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#", 
+    "description": "Метод для получения сообщений диалога",
+    "properties": {
+        "dialog_id": {
+            "description":"Идентификатор диалога",
+            "type": "integer"
+        }, 
+        "limit": {
+            "description":"Лимит",
+            "default": 20, 
+            "type": "integer"
+        }, 
+        "offset": {
+            "description":"Отступ",
+            "default": 0, 
+            "type": "integer"
+        }, 
+        "shop_id": {
+            "description":"Идентификатор магазина, если диалог в моём магазине",
+            "type": "integer"
+        }
+    }, 
+    "required": [
+        "dialog_id"
+    ], 
+    "type": "object"
+}

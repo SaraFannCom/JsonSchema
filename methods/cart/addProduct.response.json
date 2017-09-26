@@ -1,32 +1,32 @@
 {
-    "$schema": "http://json-schema.org/draft-04/schema#", 
-    "description": "Response to method products.addToCart", 
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "Ответ на метод products.addToCart",
     "properties": {
         "error": {
-            "description": "Error code", 
+            "description": "Код ошибки",
             "type": "number"
-        }, 
+        },
         "error_text": {
-            "description": "Error text", 
+            "description": "Текст ошибки",
             "type": "string"
-        }, 
+        },
         "error_url": {
-            "description": "Link to error page", 
+            "description": "Ссылка на страницу ошибки",
             "type": "string"
-        }, 
+        },
         "run_time": {
-            "description": "Run time", 
+            "description": "Время выполнения",
             "type": "number"
-        }, 
+        },
         "server_time": {
-            "description": "Server time (unix)", 
+            "description": "Время на сервере (UNIXTIME)",
             "type": "number"
         }
-    }, 
+    },
     "required": [
-        "error", 
-        "server_time", 
+        "error",
+        "server_time",
         "run_time"
-    ], 
+    ],
     "type": "object"
 }

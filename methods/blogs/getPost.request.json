@@ -1,9 +1,9 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#", 
-    "description": "Method to get one blog post", 
+    "description": "Метод для получения статьи блога",
     "properties": {
         "id": {
-            "description": "Blog post ID", 
+            "description": "Идентификатор поста",
             "minNum": 1, 
             "type": "integer"
         }

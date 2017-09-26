@@ -1,19 +1,19 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#", 
-    "description": "Method to request restore password and send restore sms",
+    "description": "Метод для подтверждения СМС для восстановления пароля",
     "properties": {
         "code": {
-            "description": "SMS code",
+            "description": "Код из СМС",
             "type": "string"
-        },
+        }, 
         "token": {
-            "description": "Token",
+            "description": "Токен",
             "type": "string"
         }
     }, 
     "required": [
-        "code",
+        "code", 
         "token"
-    ],
+    ], 
     "type": "object"
 }

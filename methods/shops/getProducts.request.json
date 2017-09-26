@@ -1,12 +1,12 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#", 
-    "description": "Method to get shop products", 
+    "description": "Метод для получения товаров определённого магазина",
     "properties": {
         "filters": {
-            "description": "Filters", 
+            "description": "Фильтры",
             "properties": {
                 "latitude": {
-                    "description": "Latitude", 
+                    "description": "Широта",
                     "minNum": 1, 
                     "type": [
                         "number", 
@@ -14,7 +14,7 @@
                     ]
                 }, 
                 "longitude": {
-                    "description": "Longitude", 
+                    "description": "Долгота",
                     "minNum": 1, 
                     "type": [
                         "number", 
@@ -25,17 +25,17 @@
             "type": "object"
         }, 
         "id": {
-            "description": "Shop ID", 
+            "description": "Идентификатор магазина",
             "minNum": 1, 
             "type": "integer"
         }, 
         "last_id": {
-            "description": "Last ID",
+            "description": "Последний идентификатор",
             "type": "string"
         }, 
         "limit": {
             "default": 20, 
-            "description": "Limit", 
+            "description": "Лимит",
             "minNum": 1, 
             "type": "integer"
         }

@@ -1,14 +1,14 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#", 
-    "description": "Method to get all blogs posts", 
+    "description": "Метод для получения списка статей всех блогов",
     "properties": {
         "last_id": {
-            "description": "Last ID",
+            "description": "Последний идентификатор",
             "type": "string"
         }, 
         "limit": {
             "default": 20, 
-            "description": "Limit", 
+            "description": "Лимит",
             "minNum": 1, 
             "type": "integer"
         }

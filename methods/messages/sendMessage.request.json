@@ -1,0 +1,30 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#", 
+    "description": "Метод для отправки сообщения",
+    "properties": {
+        "message": {
+            "description":"Текст сообщения",
+            "type": "string"
+        }, 
+        "reciever_id": {
+            "description":"Идентификатор получателя",
+            "type": "integer"
+        }, 
+        "reciever_type": {
+            "description":"Тип получателя - магазин либо пользователь",
+            "enum": [
+                "user", 
+                "shop"
+            ], 
+            "type": "string"
+        }, 
+        "shop_id": {
+            "description":"Идентификатор магазина, если диалог в моём магазине",
+            "type": "integer"
+        }
+    }, 
+    "required": [
+        "owner_type"
+    ], 
+    "type": "object"
+}

@@ -1,56 +1,56 @@
 {
-    "$schema": "http://json-schema.org/draft-04/schema#", 
-    "description": "Response to method blogs.getPost", 
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "Ответ на метод blogs.getPost",
     "properties": {
         "error": {
-            "description": "Error code", 
+            "description": "Код ошибки",
             "type": "number"
-        }, 
+        },
         "error_text": {
-            "description": "Error text", 
+            "description": "Текст ошибки",
             "type": "string"
-        }, 
+        },
         "error_url": {
-            "description": "Link to error page", 
+            "description": "Ссылка на страницу ошибки",
             "type": "string"
-        }, 
+        },
         "response": {
             "properties": {
                 "count": {
-                    "description": "Count responses", 
+                    "description": "Количество ответов",
                     "type": "number"
-                }, 
+                },
                 "items": {
-                    "description": "List of responses", 
+                    "description": "Список ответов",
                     "items": {
-                        "$ref": "objects.json#/definitions/blogs/blog_post", 
+                        "$ref": "objects.json#/definitions/blogs/blog_post",
                         "type": "object"
-                    }, 
+                    },
                     "type": "array"
                 }
-            }, 
+            },
             "required": [
-                "count", 
+                "count",
                 "items"
-            ], 
+            ],
             "type": "object"
-        }, 
+        },
         "run_time": {
-            "description": "Run time", 
+            "description": "Время выполнения",
             "type": "number"
-        }, 
+        },
         "server_time": {
-            "description": "Server time (unix)", 
+            "description": "Время на сервере (UNIXTIME)",
             "type": "number"
         }
-    }, 
+    },
     "required": [
-        "response", 
-        "run_time", 
-        "server_time", 
-        "error", 
-        "error_text", 
+        "response",
+        "run_time",
+        "server_time",
+        "error",
+        "error_text",
         "error_url"
-    ], 
+    ],
     "type": "object"
 }

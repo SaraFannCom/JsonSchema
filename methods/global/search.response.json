@@ -1,114 +1,114 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "description": "Response to method global.Search",
-  "properties": {
-	"error": {
-	  "description": "Error code",
-	  "type": "number"
-	},
-	"error_text": {
-	  "description": "Error text",
-	  "type": "string"
-	},
-	"error_url": {
-	  "description": "Link to error page",
-	  "type": "string"
-	},
-	"response": {
-	  "properties": {
-		"count": {
-		  "description": "Count responses",
-		  "type": "number"
-		},
-		"items": {
-		  "description": "List of responses",
-		  "properties": {
-			"shops": {
-			  "description": "First resultes from search",
-			  "type": "object",
-			  "properties": {
-				"data": {
-				  "type": "array",
-				  "items": {
-					"maxItems": 5,
-					"$ref": "objects.json#/definitions/shops/shop_light",
-					"type": "object"
-				  }
-				},
-				"web_url": {
-				  "type": "string"
-				},
-				"api_url": {
-				  "type": "string"
-				}
-			  }
-			},
-			"products": {
-			  "type": "object",
-			  "properties": {
-				"data": {
-				  "type": "array",
-				  "description": "First resultes from search",
-				  "items": {
-					"maxItems": 5,
-					"$ref": "objects.json#/definitions/products/product_light",
-					"type": "object"
-				  },
-				  "web_url": {
-					"type": "string"
-				  },
-				  "api_url": {
-					"type": "string"
-				  }
-				}
-			  }
-			},
-			"users": {
-			  "type": "object",
-			  "properties": {
-				"data": {
-				  "type": "array",
-				  "description": "First resultes from search",
-				  "items": {
-					"maxItems": 5,
-					"$ref": "objects.json#/definitions/users/user_light",
-					"type": "object"
-				  },
-				  "web_url": {
-					"type": "string"
-				  },
-				  "api_url": {
-					"type": "string"
-				  }
-				}
-			  }
-			}
-		  },
-		  "type": "object"
-		}
-	  },
-	  "required": [
-		"count",
-		"items"
-	  ],
-	  "type": "object"
-	},
-	"run_time": {
-	  "description": "Run time",
-	  "type": "number"
-	},
-	"server_time": {
-	  "description": "Server time (unix)",
-	  "type": "number"
-	}
-  },
-  "required": [
-	"response",
-	"run_time",
-	"server_time",
-	"error",
-	"error_text",
-	"error_url"
-  ],
-  "type": "object"
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "Ответ на метод global.Search",
+    "properties": {
+        "error": {
+            "description": "Код ошибки",
+            "type": "number"
+        },
+        "error_text": {
+            "description": "Текст ошибки",
+            "type": "string"
+        },
+        "error_url": {
+            "description": "Ссылка на страницу ошибки",
+            "type": "string"
+        },
+        "response": {
+            "properties": {
+                "count": {
+                    "description": "Количество ответов",
+                    "type": "number"
+                },
+                "items": {
+                    "description": "Список ответов",
+                    "properties": {
+                        "products": {
+                            "properties": {
+                                "data": {
+                                    "api_url": {
+                                        "type": "string"
+                                    },
+                                    "description": "First resultes from search",
+                                    "items": {
+                                        "$ref": "objects.json#/definitions/products/product_light",
+                                        "maxItems": 5,
+                                        "type": "object"
+                                    },
+                                    "type": "array",
+                                    "web_url": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "shops": {
+                            "description": "First resultes from search",
+                            "properties": {
+                                "api_url": {
+                                    "type": "string"
+                                },
+                                "data": {
+                                    "items": {
+                                        "$ref": "objects.json#/definitions/shops/shop_light",
+                                        "maxItems": 5,
+                                        "type": "object"
+                                    },
+                                    "type": "array"
+                                },
+                                "web_url": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "users": {
+                            "properties": {
+                                "data": {
+                                    "api_url": {
+                                        "type": "string"
+                                    },
+                                    "description": "First resultes from search",
+                                    "items": {
+                                        "$ref": "objects.json#/definitions/users/user_light",
+                                        "maxItems": 5,
+                                        "type": "object"
+                                    },
+                                    "type": "array",
+                                    "web_url": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "type": "object"
+                        }
+                    },
+                    "type": "object"
+                }
+            },
+            "required": [
+                "count",
+                "items"
+            ],
+            "type": "object"
+        },
+        "run_time": {
+            "description": "Время выполнения",
+            "type": "number"
+        },
+        "server_time": {
+            "description": "Время на сервере (UNIXTIME)",
+            "type": "number"
+        }
+    },
+    "required": [
+        "response",
+        "run_time",
+        "server_time",
+        "error",
+        "error_text",
+        "error_url"
+    ],
+    "type": "object"
 }

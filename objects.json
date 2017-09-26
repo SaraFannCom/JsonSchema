@@ -546,7 +546,10 @@
 			"minLength": 1
 		  },
 		  "address": {
-			"type": ["string", "null"]
+			"type": [
+			  "string",
+			  "null"
+			]
 		  },
 		  "distance": {
 			"type": [
@@ -556,7 +559,10 @@
 			]
 		  },
 		  "zip": {
-			"type": ["string", "null"]
+			"type": [
+			  "string",
+			  "null"
+			]
 		  },
 		  "longitude": {
 			"type": "number"
@@ -1088,29 +1094,37 @@
 		],
 		"properties": {
 		  "id": {
+			"description": "",
 			"type": "number"
 		  },
 		  "type": {
+			"description": "",
 			"type": "string"
 		  },
 		  "name": {
+			"description": "",
 			"type": "string",
 			"minLength": 1
 		  },
 		  "description": {
+			"description": "",
 			"type": "string"
 		  },
 		  "product_type": {
+			"description": "",
 			"type": "string",
 			"minLength": 1
 		  },
 		  "pay_type": {
+			"description": "",
 			"type": "number"
 		  },
 		  "deposit": {
+			"description": "",
 			"type": "number"
 		  },
 		  "prepayment_data": {
+			"description": "",
 			"type": [
 			  "number",
 			  "boolean",
@@ -1120,88 +1134,121 @@
 			]
 		  },
 		  "latitude": {
+			"description": "",
 			"type": [
 			  "number",
 			  "null"
 			]
 		  },
 		  "longitude": {
+			"description": "",
 			"type": [
 			  "number",
 			  "null"
 			]
 		  },
 		  "address": {
-			"type": ["string", "null"]
+			"description": "",
+			"type": [
+			  "string",
+			  "null"
+			]
 		  },
 		  "zip": {
-			"type": ["string", "null"]
+			"description": "",
+			"type": [
+			  "string",
+			  "null"
+			]
 		  },
 		  "price": {
+			"description": "",
 			"type": "string"
 		  },
 		  "status": {
+			"description": "",
 			"type": "number"
 		  },
 		  "created_at": {
+			"description": "",
 			"type": "string",
 			"minLength": 1
 		  },
 		  "updated_at": {
+			"description": "",
 			"type": "string",
 			"minLength": 1
 		  },
 		  "action_type": {
+			"description": "",
 			"type": "string",
 			"minLength": 1
 		  },
 		  "has_partner": {
+			"description": "",
 			"type": "number"
 		  },
 		  "partner_komission": {
+			"description": "",
 			"type": "number"
 		  },
 		  "count": {
+			"description": "",
 			"type": "number"
 		  },
 		  "distance": {
+			"description": "",
 			"type": "number"
 		  },
 		  "sell_count": {
+			"description": "",
 			"type": [
 			  "number",
 			  "null"
 			]
 		  },
 		  "owner": {
+			"description": "",
 			"type": "object",
 			"$ref": "#/definitions/additional/owner"
 		  },
 		  "is_mine": {
+			"description": "",
 			"type": "boolean"
 		  },
 		  "created_at_formated": {
+			"description": "",
 			"type": "string",
 			"minLength": 1
 		  },
 		  "updated_at_formated": {
+			"description": "",
 			"type": "string",
 			"minLength": 1
 		  },
 		  "likes_count": {
+			"description": "",
 			"type": "number"
 		  },
 		  "comments_count": {
+			"description": "",
 			"type": "number"
 		  },
 		  "image": {
-			"type": ["object", "null"],
+			"type": [
+			  "object",
+			  "null"
+			],
 			"$ref": "#/definitions/images/image"
 		  },
 		  "images": {
+			"description": "",
 			"type": "array",
 			"items": {
-			  "type": ["object", "null"],
+			  "type": [
+				"object",
+				"null"
+			  ],
 			  "$ref": "#/definitions/images/image"
 			}
 		  },
@@ -1210,12 +1257,15 @@
 			"$ref": "#/definitions/products/p_properties"
 		  },
 		  "category": {
+			"description": "",
 			"type": "object",
 			"properties": {
 			  "id": {
+				"description": "",
 				"type": "number"
 			  },
 			  "name": {
+				"description": "",
 				"type": "string",
 				"minLength": 1
 			  }
@@ -1226,22 +1276,33 @@
 			]
 		  },
 		  "city": {
-			"type": ["object", "null"],
+			"type": [
+			  "object",
+			  "null"
+			],
 			"$ref": "#/definitions/geo/city"
 		  },
 		  "region": {
-			"type": ["object", "null"],
+			"type": [
+			  "object",
+			  "null"
+			],
 			"$ref": "#/definitions/geo/region"
 		  },
 		  "country": {
-			"type": ["object", "null"],
+			"type": [
+			  "object",
+			  "null"
+			],
 			"$ref": "#/definitions/geo/country"
 		  },
 		  "api_url": {
+			"description": "",
 			"type": "string",
 			"minLength": 1
 		  },
 		  "web_url": {
+			"description": "",
 			"type": "string",
 			"minLength": 1
 		  }
@@ -1324,19 +1385,31 @@
 			"type": "number"
 		  },
 		  "image": {
-			"type": ["object", "null"],
+			"type": [
+			  "object",
+			  "null"
+			],
 			"$ref": "#/definitions/images/image"
 		  },
 		  "city": {
-			"type": ["object", "null"],
+			"type": [
+			  "object",
+			  "null"
+			],
 			"$ref": "#/definitions/geo/city"
 		  },
 		  "region": {
-			"type": ["object", "null"],
+			"type": [
+			  "object",
+			  "null"
+			],
 			"$ref": "#/definitions/geo/region"
 		  },
 		  "country": {
-			"type": ["object", "null"],
+			"type": [
+			  "object",
+			  "null"
+			],
 			"$ref": "#/definitions/geo/country"
 		  },
 		  "api_url": {
@@ -1408,6 +1481,55 @@
 		  "id",
 		  "name"
 		]
+	  }
+	},
+	"messages": {
+	  "message": {
+		"type": "object",
+		"required": [
+		  "id",
+		  "message",
+		  "is_seen",
+		  "dialog_id",
+		  "created_at_formated",
+		  "created_at",
+		  "sended_from"
+		],
+		"properties": {
+		  "id": {
+			"description": "Идентификатор сообщения",
+			"type": "integer"
+		  },
+		  "message": {
+			"description": "Текст сообщения",
+			"type": "string"
+		  },
+		  "is_seen": {
+			"description": "Порчитано или нет",
+			"type": "integer"
+		  },
+		  "dialog_id": {
+			"description": "Идентификатор диалога",
+			"type": "integer"
+		  },
+		  "created_at_formated": {
+			"description": "Время отправки сообщения (фотрматированное)",
+			"type": "string"
+		  },
+		  "created_at": {
+			"description": "Время отправки сообщения",
+			"type": "string"
+		  },
+		  "attachments": {
+			"description": "Вложения",
+			"type": "any"
+		  },
+		  "sended_from": {
+			"description": "Отправитель",
+			"type": "object",
+			"$ref": "objects.json#/definitions/users/user_light"
+		  }
+		}
 	  }
 	}
   }

@@ -1,0 +1,18 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#", 
+    "description": "Метод для удаления сообщения",
+    "properties": {
+        "message_id": {
+            "type": "integer",
+            "description": "Идентификатоо сообщения"
+        }, 
+        "shop_id": {
+            "type": "integer",
+            "description": "Идентификатор магазина, если отправитель - мой магазин"
+        }
+    }, 
+    "required": [
+        "owner_type"
+    ], 
+    "type": "object"
+}

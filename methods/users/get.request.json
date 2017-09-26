@@ -1,9 +1,9 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#", 
-    "description": "Method to get users data", 
+    "description": "Метод для получения данных пользователя",
     "properties": {
         "id": {
-            "description": "User ID or IDs, comma separated", 
+            "description": "Идентификатор пользователя",
             "type": [
                 "integer", 
                 "string"

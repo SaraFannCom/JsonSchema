@@ -1,36 +1,36 @@
 {
-  "$schema": "http://json-schema.org/draft-04/schema#",
-  "description": "Method to global search",
-  "properties": {
-	"q": {
-	  "description": "Search query",
-	  "type": "string"
-	},
-	"filters": {
-	  "description": "Filters",
-	  "properties": {
-		"latitude": {
-		  "description": "Latitude",
-		  "minNum": 1,
-		  "type": [
-			"number",
-			"null"
-		  ]
-		},
-		"longitude": {
-		  "description": "lLongitude",
-		  "minNum": 1,
-		  "type": [
-			"number",
-			"null"
-		  ]
-		}
-	  },
-	  "type": "object"
-	}
-  },
-  "required": [
-	"q"
-  ],
-  "type": "object"
+    "$schema": "http://json-schema.org/draft-04/schema#", 
+    "description": "Метод для глобального поиска",
+    "properties": {
+        "filters": {
+            "description": "Фильтры",
+            "properties": {
+                "latitude": {
+                    "description": "Широта",
+                    "minNum": 1, 
+                    "type": [
+                        "number", 
+                        "null"
+                    ]
+                }, 
+                "longitude": {
+                    "description": "Долгота",
+                    "minNum": 1, 
+                    "type": [
+                        "number", 
+                        "null"
+                    ]
+                }
+            }, 
+            "type": "object"
+        }, 
+        "q": {
+            "description": "Поисковый запрос",
+            "type": "string"
+        }
+    }, 
+    "required": [
+        "q"
+    ], 
+    "type": "object"
 }

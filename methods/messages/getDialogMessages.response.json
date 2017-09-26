@@ -1,7 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "additionalProperties": false,
-    "description": "Response to users.changePassword method",
+    "description": "Ответ на метод messages.getDialogMessages",
     "properties": {
         "error": {
             "description": "Код ошибки",
@@ -24,11 +23,16 @@
                 "items": {
                     "description": "Список ответов",
                     "items": {
+                        "$ref": "objects.json#/definitions/messages/message",
                         "type": "object"
                     },
                     "type": "array"
                 }
             },
+            "required": [
+                "count",
+                "items"
+            ],
             "type": "object"
         },
         "run_time": {
@@ -47,5 +51,6 @@
         "error",
         "error_text",
         "error_url"
-    ]
+    ],
+    "type": "object"
 }

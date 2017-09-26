@@ -1,19 +1,19 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#", 
-    "description": "Method to get one blog", 
+    "description": "метод для получения статей одного блога",
     "properties": {
         "id": {
-            "description": "Blog ID ", 
+            "description": "Идентификатор блога",
             "minNum": 1, 
             "type": "integer"
         }, 
         "last_id": {
-            "description": "Last blog ID",
+            "description": "Идентификатор последнего загруженого поста",
             "type": "string"
         }, 
         "limit": {
             "default": 20, 
-            "description": "Limit", 
+            "description": "Лимит",
             "minNum": 1, 
             "type": "integer"
         }

@@ -1,9 +1,9 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#", 
-    "description": "Method to get shop data", 
+    "description": "Метод для получения данных магазина",
     "properties": {
         "id": {
-            "description": "Shop ID", 
+            "description": "Идентификатор магазина",
             "minNum": 1, 
             "type": "integer"
         }

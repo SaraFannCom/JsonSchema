@@ -1,14 +1,14 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#", 
-    "description": "Method to direct buy product", 
+    "description": "Метод для создания заказа",
     "properties": {
         "count": {
             "default": 1, 
-            "description": "Count products to buy", 
+            "description": "Количество",
             "type": "integer"
         }, 
         "id": {
-            "description": "Product ID", 
+            "description": "Идентификатор товара",
             "minNum": 1, 
             "type": "integer"
         }

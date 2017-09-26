@@ -1,0 +1,37 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#", 
+    "description": "Метод для авторизации через соцсети",
+    "properties": {
+        "social_id": {
+            "type": "string"
+        },
+        "social_type": {
+            "type": "string",
+            "enum": [
+                "vkontakte",
+                "odnoklassniki",
+                "facebook"
+            ]
+        },
+        "first_name": {
+            "type": "string"
+        },
+        "last_name": {
+            "type": "string"
+        },
+        "email": {
+            "type": "string"
+        },
+        "birthday": {
+            "type": "string"
+        },
+        "avatar_url": {
+            "type": "string"
+        }
+    }, 
+    "required": [
+        "login", 
+        "password"
+    ], 
+    "type": "object"
+}

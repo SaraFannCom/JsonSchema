@@ -1,35 +1,35 @@
 {
-    "$schema": "http://json-schema.org/draft-04/schema#", 
-    "additionalProperties": false, 
-    "description": "Response to auth.login", 
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "additionalProperties": false,
+    "description": "Ответ на метод auth.login",
     "properties": {
         "access_token": {
-            "description": "Token for other requests", 
+            "description": "Токен для дальнейших запросов",
             "type": "string"
-        }, 
+        },
         "error": {
-            "description": "Error code", 
+            "description": "Код ошибки",
             "type": "number"
-        }, 
+        },
         "error_text": {
-            "description": "Error text", 
+            "description": "Текст ошибки",
             "type": "string"
-        }, 
+        },
         "error_url": {
-            "description": "Link to error page", 
+            "description": "Ссылка на страницу ошибки",
             "type": "string"
-        }, 
+        },
         "expire": {
-            "description": "Token expire", 
+            "description": "Время жизни токена",
             "type": "number"
         }
-    }, 
+    },
     "required": [
-        "access_token", 
-        "expire", 
-        "error", 
-        "error_text", 
+        "access_token",
+        "expire",
+        "error",
+        "error_text",
         "error_url"
-    ], 
+    ],
     "type": "object"
 }

@@ -1,12 +1,13 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#", 
-    "description": "Method to confirm registration sms", 
+    "description": "Метод для подтверждения СМС",
     "properties": {
         "code": {
-            "description": "Code from sms", 
-            "maxLength": 4, 
-            "minLength": 4, 
-            "type": "integer"
+            "description": "Код из СМС",
+            "type": [
+                "integer",
+                "string"
+            ]
         }
     }, 
     "required": [
