@@ -1,0 +1,48 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#", 
+    "description": "Метод для добавления статьи в блог",
+    "properties": {
+        "blog_id": {
+            "description": "Идентификатор блога, в который публиповать",
+            "type": "integer"
+        },
+        "title": {
+            "description": "Заголовок",
+            "type": "string"
+        }, 
+        "preview_text": {
+            "description": "Превью статьи",
+            "type": "string"
+        }, 
+        "text": {
+            "description": "Текст статьи 'под катом'",
+            "type": "string"
+        },
+        "is_draft": {
+            "description": "Статья - черновик",
+            "type": "integer",
+            "enum": [
+                1, 0
+            ]
+        },
+        "is_timer": {
+            "description": "Статья - отложенная, по таймеру",
+            "type": "integer",
+            "enum": [
+                1, 0
+            ]
+        },
+        "timer": {
+            "description": "Время публикации статьи, если она отложенная (по UTC а не по текущему часовому поясу), UNIXTIME",
+            "type": "integer"
+        },
+        "image_id": {
+            "description": "Идентификатор картинки, загруженной через метод images.upload",
+            "type": "integer"
+        }
+    }, 
+    "required": [
+        "id"
+    ], 
+    "type": "object"
+}

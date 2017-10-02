@@ -373,8 +373,7 @@
 			],
 			"$ref": "#/definitions/additional/contacts"
 		  }
-		},
-		"additionalProperties": false
+		}
 	  },
 	  "user_light": {
 		"type": "object",
@@ -960,7 +959,9 @@
 		  "web_url",
 		  "blog_api_url",
 		  "blog_web_url",
-		  "type"
+		  "type",
+		  "like_list",
+		  "repost_list"
 		],
 		"type": "object",
 		"properties": {
@@ -1046,6 +1047,20 @@
 		  },
 		  "type": {
 			"type": "string"
+		  },
+		  "like_list": {
+			"type": "array",
+			"items": {
+			  "type": "object",
+			  "$ref": "#definitions/users/user_light"
+			}
+		  },
+		  "repost_list": {
+			"type": "array",
+			"items": {
+			  "type": "object",
+			  "$ref": "#definitions/users/user_light"
+			}
 		  }
 		},
 		"additionalProperties": false
@@ -1061,7 +1076,6 @@
 		  "product_type",
 		  "pay_type",
 		  "deposit",
-		  "prepayment_data",
 		  "latitude",
 		  "longitude",
 		  "address",
@@ -1090,7 +1104,8 @@
 		  "country",
 		  "web_url",
 		  "api_url",
-		  "type"
+		  "type",
+		  "rating"
 		],
 		"properties": {
 		  "id": {
@@ -1122,16 +1137,6 @@
 		  "deposit": {
 			"description": "",
 			"type": "number"
-		  },
-		  "prepayment_data": {
-			"description": "",
-			"type": [
-			  "number",
-			  "boolean",
-			  "null",
-			  "array",
-			  "object"
-			]
 		  },
 		  "latitude": {
 			"description": "",
@@ -1305,6 +1310,10 @@
 			"description": "",
 			"type": "string",
 			"minLength": 1
+		  },
+		  "rating": {
+			"description": "",
+			"type": "string"
 		  }
 		}
 	  },

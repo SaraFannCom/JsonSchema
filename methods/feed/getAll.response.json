@@ -95,7 +95,7 @@
                             "has_partner": {
                                 "type": "number"
                             },
-                            "id": {
+                            "feed_id": {
                                 "type": "number"
                             },
                             "image": {
@@ -119,10 +119,10 @@
                             "is_mine": {
                                 "type": "boolean"
                             },
-                            "item_id": {
+                            "id": {
                                 "type": "number"
                             },
-                            "item_type": {
+                            "type": {
                                 "minLength": 1,
                                 "type": "string"
                             },

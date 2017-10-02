@@ -3,9 +3,11 @@
     "description": "Метод для авторизации через соцсети",
     "properties": {
         "social_id": {
+            "description": "Идентификатор пользователя в социальной сети",
             "type": "string"
         },
         "social_type": {
+            "description": "Тип социальной сети",
             "type": "string",
             "enum": [
                 "vkontakte",
@@ -14,24 +16,29 @@
             ]
         },
         "first_name": {
+            "description": "Имя",
             "type": "string"
         },
         "last_name": {
+            "description": "Фамилия",
             "type": "string"
         },
         "email": {
+            "description": "Email",
             "type": "string"
         },
         "birthday": {
+            "description": "Дата рождения в формате Y-m-d",
             "type": "string"
         },
         "avatar_url": {
+            "description": "Ссылка на аватар",
             "type": "string"
         }
     }, 
     "required": [
-        "login", 
-        "password"
+        "social_id",
+        "social_type"
     ], 
     "type": "object"
 }

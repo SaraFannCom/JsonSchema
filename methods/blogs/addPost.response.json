@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "description": "Ответ на метод users.getMyCart",
+    "description": "Ответ на метод blogs.addPost",
     "properties": {
         "error": {
             "description": "Код ошибки",
@@ -23,24 +23,10 @@
                 "items": {
                     "description": "Список ответов",
                     "items": {
-                        "properties": {
-                            "count": {
-                                "type": "integer"
-                            },
-                            "product": {
-                                "type": "object",
-                                "$ref": "objects.json#/definitions/products/product"
-                            }
-                        },
-                        "required": [
-                            "product",
-                            "count"
-                        ],
+                        "$ref": "objects.json#/definitions/blogs/blog_post",
                         "type": "object"
                     },
-                    "minItems": 1,
-                    "type": "array",
-                    "uniqueItems": true
+                    "type": "array"
                 }
             },
             "required": [

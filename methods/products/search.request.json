@@ -1,71 +1,70 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#", 
-    "description": "Метод для получения ленты новостей",
+    "description": "Метод для поиска по каталогу",
     "properties": {
         "filters": {
             "description": "Фильтры",
             "properties": {
                 "distance": {
                     "description": "Радиус поиска",
-                    "minNum": 1, 
+                    "minNum": 1,
                     "type": "integer"
-                }, 
-                "item_type": {
-                    "description": "Типы записей",
-                    "enum": [
-                        "product", 
-                        "blog_post", 
-                        "wall_post", 
-                        "all"
-                    ], 
-                    "minNum": 1, 
+                },
+                "q": {
+                    "description": "Строка поиска",
                     "type": "string"
-                }, 
+                },
                 "latitude": {
                     "description": "Широта",
-                    "minNum": 1, 
+                    "minNum": 1,
                     "type": [
-                        "number", 
+                        "number",
                         "null"
                     ]
-                }, 
+                },
                 "longitude": {
                     "description": "Долгота",
-                    "minNum": 1, 
+                    "minNum": 1,
                     "type": [
-                        "number", 
+                        "number",
                         "null"
                     ]
                 },
                 "product_type": {
                     "description": "Типы товаров",
                     "enum": [
-                        "buynow", 
-                        "advert", 
-                        "classic", 
-                        "quick", 
-                        "penny", 
-                        "tender", 
-                        "all", 
+                        "buynow",
+                        "advert",
+                        "classic",
+                        "quick",
+                        "penny",
+                        "tender",
+                        "all",
                         "null"
-                    ], 
-                    "minNum": 1, 
+                    ],
+                    "minNum": 1,
                     "type": "string"
                 }
-            }, 
+            },
             "type": "object"
-        }, 
+        },
         "last_id": {
             "description": "Последний идентификатор",
-            "type": "string"
-        }, 
+            "type": [
+                "string",
+                "integer",
+                "null"
+            ]
+        },
         "limit": {
-            "default": 20, 
+            "default": 20,
             "description": "Лимит",
-            "minNum": 1, 
+            "minNum": 1,
             "type": "integer"
         }
     }, 
-    "required": [], 
+    "required": [
+        "id"
+    ], 
     "type": "object"
 }

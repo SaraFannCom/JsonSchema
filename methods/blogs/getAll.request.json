@@ -11,6 +11,22 @@
             "description": "Лимит",
             "minNum": 1, 
             "type": "integer"
+        },
+        "filters": {
+            "description": "Фильтры",
+            "properties": {
+                "tab": {
+                    "description": "Активная вкладка",
+                    "enum": [
+                        "my",
+                        "subscribe",
+                        "interest",
+                        ""
+                    ],
+                    "type": "string"
+                }
+            },
+            "type": "object"
         }
     }, 
     "required": [], 

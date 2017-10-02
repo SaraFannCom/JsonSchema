@@ -1,0 +1,16 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "Метод для закгрузки картинки на сервер",
+  "method": "post",
+  "properties": {
+	"image": {
+	  "description": "Картинка в base64",
+	  "type": "string"
+	},
+	"image_url": {
+	  "description": "Ссылка на картинку",
+	  "type": "string"
+	}
+  },
+  "type": "object"
+}
