@@ -637,6 +637,9 @@
 			  "null"
 			],
 			"$ref": "#/definitions/images/image"
+		  },
+		  "views_count": {
+			"type": "number"
 		  }
 		},
 		"additionalProperties": false
@@ -703,6 +706,9 @@
 		  "web_url": {
 			"type": "string",
 			"minLength": 1
+		  },
+		  "views_count": {
+			"type": "number"
 		  }
 		},
 		"additionalProperties": false
@@ -1061,6 +1067,9 @@
 			  "type": "object",
 			  "$ref": "#definitions/users/user_light"
 			}
+		  },
+		  "views_count": {
+			"type": "number"
 		  }
 		},
 		"additionalProperties": false
@@ -1314,6 +1323,9 @@
 		  "rating": {
 			"description": "",
 			"type": "string"
+		  },
+		  "views_count": {
+			"type": "number"
 		  }
 		}
 	  },
@@ -1428,6 +1440,9 @@
 		  "web_url": {
 			"type": "string",
 			"minLength": 1
+		  },
+		  "views_count": {
+			"type": "number"
 		  }
 		}
 	  },
