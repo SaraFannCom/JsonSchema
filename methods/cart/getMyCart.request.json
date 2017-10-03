@@ -1,4 +1,4 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#", 
-    "description": "Метод для получения моей корзины"
+    "description": "\u041c\u0435\u0442\u043e\u0434 \u0434\u043b\u044f \u043f\u043e\u043b\u0443\u0447\u0435\u043d\u0438\u044f \u043c\u043e\u0435\u0439 \u043a\u043e\u0440\u0437\u0438\u043d\u044b"
 }

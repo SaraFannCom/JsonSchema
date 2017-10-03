@@ -1,60 +1,60 @@
 {
-    "$schema": "http://json-schema.org/draft-04/schema#",
-    "description": "ОТвет на метод blogs.get",
+    "$schema": "http://json-schema.org/draft-04/schema#", 
+    "description": "\u041e\u0422\u0432\u0435\u0442 \u043d\u0430 \u043c\u0435\u0442\u043e\u0434 blogs.get", 
     "properties": {
         "error": {
-            "description": "Код ошибки",
+            "description": "\u041a\u043e\u0434 \u043e\u0448\u0438\u0431\u043a\u0438", 
             "type": "number"
-        },
+        }, 
         "error_text": {
-            "description": "Текст ошибки",
+            "description": "\u0422\u0435\u043a\u0441\u0442 \u043e\u0448\u0438\u0431\u043a\u0438", 
             "type": "string"
-        },
+        }, 
         "error_url": {
-            "description": "Ссылка на страницу ошибки",
+            "description": "\u0421\u0441\u044b\u043b\u043a\u0430 \u043d\u0430 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0443 \u043e\u0448\u0438\u0431\u043a\u0438", 
             "type": "string"
-        },
+        }, 
         "response": {
             "properties": {
                 "count": {
-                    "description": "Количество ответов",
+                    "description": "\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u043e\u0442\u0432\u0435\u0442\u043e\u0432", 
                     "type": "number"
-                },
+                }, 
                 "items": {
-                    "description": "Список ответов",
+                    "description": "\u0421\u043f\u0438\u0441\u043e\u043a \u043e\u0442\u0432\u0435\u0442\u043e\u0432", 
                     "items": {
-                        "type": "object",
                         "properties": {
                             "id": {
                                 "type": "integer"
                             }
-                        }
-                    },
+                        }, 
+                        "type": "object"
+                    }, 
                     "type": "array"
                 }
-            },
+            }, 
             "required": [
-                "count",
+                "count", 
                 "items"
-            ],
+            ], 
             "type": "object"
-        },
+        }, 
         "run_time": {
-            "description": "Время выполнения",
+            "description": "\u0412\u0440\u0435\u043c\u044f \u0432\u044b\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u044f", 
             "type": "number"
-        },
+        }, 
         "server_time": {
-            "description": "Время на сервере (UNIXTIME)",
+            "description": "\u0412\u0440\u0435\u043c\u044f \u043d\u0430 \u0441\u0435\u0440\u0432\u0435\u0440\u0435 (UNIXTIME)", 
             "type": "number"
         }
-    },
+    }, 
     "required": [
-        "response",
-        "run_time",
-        "server_time",
-        "error",
-        "error_text",
+        "response", 
+        "run_time", 
+        "server_time", 
+        "error", 
+        "error_text", 
         "error_url"
-    ],
+    ], 
     "type": "object"
 }

@@ -1,9 +1,9 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#", 
-    "description": "Метод для получения данных о товаре",
+    "description": "\u041c\u0435\u0442\u043e\u0434 \u0434\u043b\u044f \u043f\u043e\u043b\u0443\u0447\u0435\u043d\u0438\u044f \u0434\u0430\u043d\u043d\u044b\u0445 \u043e \u0442\u043e\u0432\u0430\u0440\u0435", 
     "properties": {
         "id": {
-            "description": "Идентификатор товара",
+            "description": "\u0418\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 \u0442\u043e\u0432\u0430\u0440\u0430", 
             "minNum": 1, 
             "type": "integer"
         }

@@ -28,6 +28,9 @@
 		  "type"
 		],
 		"properties": {
+		  "wall_id": {
+			"type": "integer"
+		  },
 		  "contacts": {
 			"type": [
 			  "object",
@@ -484,6 +487,12 @@
 		  "api_url": {
 			"type": "string",
 			"minLength": 1
+		  },
+		  "product_count": {
+			"type": "number"
+		  },
+		  "wall_id": {
+			"type": "integer"
 		  },
 		  "type": {
 			"type": "string"
@@ -1554,6 +1563,177 @@
 			"$ref": "objects.json#/definitions/users/user_light"
 		  }
 		}
+	  }
+	},
+	"walls": {
+	  "wall_post": {
+		"type": "object",
+		"properties": {
+		  "id": {
+			"type": "number"
+		  },
+		  "wall_id": {
+			"type": "number"
+		  },
+		  "text": {
+			"type": "string"
+		  },
+		  "preview_text": {
+			"type": "string"
+		  },
+		  "web_url": {
+			"type": "string",
+			"minLength": 1
+		  },
+		  "api_url": {
+			"type": "string",
+			"minLength": 1
+		  },
+		  "is_full_text": {
+			"type": "boolean",
+			"minLength": 1
+		  },
+		  "like_list": {
+			"type": "array",
+			"items": {
+			  "type": "object",
+			  "$ref": "#definitions/users/user_light"
+			}
+		  },
+		  "repost_list": {
+			"type": "array",
+			"items": {
+			  "type": "object",
+			  "$ref": "#definitions/users/user_light"
+			}
+		  },
+		  "likes_count": {
+			"type": "number"
+		  },
+		  "views_count": {
+			"type": "number"
+		  },
+		  "created_at_formated": {
+			"type": "string"
+		  },
+		  "created_at": {
+			"type": "string"
+		  },
+		  "attachments": {
+			"type": [
+			  "array",
+			  "null"
+			],
+			"items": {
+			  "type": "object",
+			  "$ref": "objects.json#/definitions/walls/wall_post_light"
+			}
+			
+		  },
+		  "updated_at_formated": {
+			"type": "string"
+		  },
+		  "updated_at": {
+			"type": "string"
+		  },
+		  "comments_count": {
+			"type": "number"
+		  },
+		  "reposts_count": {
+			"type": "number"
+		  },
+		  "image": {
+			"type": [
+			  "object",
+			  "null"
+			],
+			"$ref": "#/definitions/images/image"
+		  }
+		},
+		"additionalProperties": false,
+		"required": [
+		  "id",
+		  "text",
+		  "preview_text",
+		  "web_url",
+		  "api_url",
+		  "is_full_text",
+		  "like_list",
+		  "repost_list",
+		  "likes_count",
+		  "views_count",
+		  "created_at_formated",
+		  "updated_at_formated",
+		  "comments_count",
+		  "reposts_count",
+		  "image"
+		]
+	  },
+	  "wall_post_light": {
+		"type": [
+		  "object",
+		  "null"
+		],
+		"properties": {
+		  "id": {
+			"type": "number"
+		  },
+		  "wall_id": {
+			"type": "number"
+		  },
+		  "text": {
+			"type": "string"
+		  },
+		  "preview_text": {
+			"type": "string"
+		  },
+		  "web_url": {
+			"type": "string",
+			"minLength": 1
+		  },
+		  "api_url": {
+			"type": "string",
+			"minLength": 1
+		  },
+		  "is_full_text": {
+			"type": "boolean",
+			"minLength": 1
+		  },
+		  "created_at_formated": {
+			"type": "string"
+		  },
+		  "created_at": {
+			"type": "string"
+		  },
+		  "updated_at_formated": {
+			"type": "string"
+		  },
+		  "updated_at": {
+			"type": "string"
+		  },
+		  "image": {
+			"type": [
+			  "object",
+			  "null"
+			],
+			"$ref": "#/definitions/images/image"
+		  },
+		  "type": {
+			"type": "string"
+		  }
+		},
+		"additionalProperties": false,
+		"required": [
+		  "id",
+		  "text",
+		  "preview_text",
+		  "web_url",
+		  "api_url",
+		  "is_full_text",
+		  "created_at_formated",
+		  "updated_at_formated",
+		  "image"
+		]
 	  }
 	}
   }
