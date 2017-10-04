@@ -1082,7 +1082,6 @@
                                         }, 
                                         "required": [
                                             "id", 
-                                            "status", 
                                             "created_at", 
                                             "updated_at", 
                                             "is_mine", 

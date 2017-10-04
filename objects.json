@@ -1575,11 +1575,21 @@
 		  "wall_id": {
 			"type": "number"
 		  },
+		  "post_id": {
+			"type": "number"
+		  },
 		  "text": {
 			"type": "string"
 		  },
 		  "preview_text": {
 			"type": "string"
+		  },
+		  "is_mine": {
+			"type": "boolean"
+		  },
+		  "owner": {
+			"type": "object",
+			"$ref": "#definitions/additional/owner"
 		  },
 		  "web_url": {
 			"type": "string",
@@ -1626,7 +1636,20 @@
 			],
 			"items": {
 			  "type": "object",
-			  "$ref": "objects.json#/definitions/walls/wall_post_light"
+			  "properties": {
+				"type": {
+				  "type": "string"
+				},
+				"data": {
+				  "anyOf": [
+					{
+					  "type": "object",
+					  "$ref": "objects.json#/definitions/walls/wall_post_light"
+					}
+				  ]
+				  
+				}
+			  }
 			}
 			
 		  },
@@ -1677,6 +1700,16 @@
 		"properties": {
 		  "id": {
 			"type": "number"
+		  },
+		  "post_id": {
+			"type": "number"
+		  },
+		  "is_mine": {
+			"type": "boolean"
+		  },
+		  "owner": {
+			"type": "object",
+			"$ref": "#definitions/additional/owner"
 		  },
 		  "wall_id": {
 			"type": "number"
