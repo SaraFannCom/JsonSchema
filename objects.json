@@ -25,11 +25,42 @@
 		  "city",
 		  "region",
 		  "country",
-		  "type"
+		  "type",
+		  "full_info"
 		],
 		"properties": {
 		  "wall_id": {
 			"type": "integer"
+		  },
+		  "rating": {
+			"type": ["integer", "null"]
+		  },
+		  "profile_percent": {
+			"type": "integer"
+		  },
+		  "profile_percent_bonuses": {
+			"type": "array",
+			"items": {
+			  "type": "integer"
+			}
+		  },
+		  "subscribes": {
+			"type": "any"
+		  },
+		  "images": {
+			"type": "array",
+			"items": {
+			  "type": "object",
+			  "properties": {
+				"image": {
+				  "type": "object",
+				  "$ref": "#/definitions/images/image"
+				},
+				"api_url": {
+				  "type": "string"
+				}
+			  }
+			}
 		  },
 		  "contacts": {
 			"type": [
@@ -53,6 +84,9 @@
 			"type": "number"
 		  },
 		  "current_social": {
+			"type": "number"
+		  },
+		  "friends_count": {
 			"type": "number"
 		  },
 		  "name": {
@@ -144,15 +178,27 @@
 			],
 			"$ref": "#/definitions/geo/region"
 		  },
+		  "mentors": {
+			"type": "array",
+			"items": {
+			  "type": [
+				"object",
+				"null"
+			  ],
+			  "$ref": "#/definitions/users/mentor"
+			}
+		  },
 		  "country": {
 			"type": [
 			  "object",
 			  "null"
 			],
 			"$ref": "#/definitions/geo/country"
+		  },
+		  "full_info": {
+			"type": "boolean"
 		  }
-		},
-		"additionalProperties": false
+		}
 	  },
 	  "user_me": {
 		"type": "object",
@@ -184,9 +230,57 @@
 		  "last_name",
 		  "middle_name",
 		  "is_phone_confirmed",
-		  "type"
+		  "type",
+		  "full_info"
 		],
 		"properties": {
+		  "profile_percent": {
+			"type": ["integer", "null"]
+		  },
+		  "images": {
+			"type": "array",
+			"items": {
+			  "type": "object",
+			  "properties": {
+				"image": {
+				  "type": "object",
+				  "$ref": "#/definitions/images/image"
+				},
+				"api_url": {
+				  "type": "string"
+				}
+			  }
+			}
+		  },
+		  "notify": {
+			"type": "object",
+			"properties": {
+			  "messages": {
+				"type": "number"
+			  },
+			  "subscribes": {
+				"type": "number"
+			  }
+			}
+		  },
+		  "rating": {
+			"type": ["number", "null"]
+		  },
+		  "profile_percent_bonuses": {
+			"type": "array",
+			"items": {
+			  "type": "integer"
+			}
+		  },
+		  "full_info": {
+			"type": "boolean"
+		  },
+		  "friends_count": {
+			"type": "number"
+		  },
+		  "subscribes": {
+			"type": "any"
+		  },
 		  "money": {
 			"type": "object",
 			"properties": {
@@ -220,6 +314,16 @@
 			"items": {
 			  "type": "object",
 			  "$ref": "#/definitions/users/user_light"
+			}
+		  },
+		  "mentors": {
+			"type": "array",
+			"items": {
+			  "type": [
+				"object",
+				"null"
+			  ],
+			  "$ref": "#/definitions/users/mentor"
 			}
 		  },
 		  "id": {
@@ -390,11 +494,99 @@
 		  "last_online_time_formated",
 		  "api_url",
 		  "web_url",
+		  "avatar"
+		],
+		"properties": {
+		  "id": {
+			"type": "number"
+		  },
+		  "wall_id": {
+			"type": "number"
+		  },
+		  "type": {
+			"type": "string"
+		  },
+		  "current_social": {
+			"type": [
+			  "number",
+			  "null"
+			]
+		  },
+		  "name": {
+			"type": "string"
+		  },
+		  "api_url": {
+			"type": "string",
+			"minLength": 1
+		  },
+		  "web_url": {
+			"type": "string",
+			"minLength": 1
+		  },
+		  "is_online": {
+			"type": "boolean",
+			"description": "Онлайн или нет"
+		  },
+		  "is_friend": {
+			"type": "integer",
+			"description": "Является ли другом текущему пользователю"
+		  },
+		  "last_online_time": {
+			"type": [
+			  "string",
+			  "null"
+			],
+			"description": "Время последнего появления в сети"
+		  },
+		  "last_online_time_formated": {
+			"type": [
+			  "string",
+			  "null"
+			],
+			"description": "Время последнего появления в сети (отформатированное)"
+		  },
+		  "avatar": {
+			"type": [
+			  "object",
+			  "null"
+			],
+			"$ref": "#/definitions/images/image"
+		  }
+		},
+		"additionalProperties": false
+	  },
+	  "mentor": {
+		"type": "object",
+		"required": [
+		  "id",
+		  "current_social",
+		  "name",
+		  "is_online",
+		  "is_friend",
+		  "last_online_time",
+		  "last_online_time_formated",
+		  "api_url",
+		  "web_url",
 		  "avatar",
+		  "phone",
+		  "email",
+		  "rating",
 		  "type"
 		],
 		"properties": {
 		  "id": {
+			"type": "number"
+		  },
+		  "phone": {
+			"type": "string"
+		  },
+		  "email": {
+			"type": "string"
+		  },
+		  "rating": {
+			"type": "number"
+		  },
+		  "wall_id": {
 			"type": "number"
 		  },
 		  "type": {
@@ -488,7 +680,7 @@
 			"type": "string",
 			"minLength": 1
 		  },
-		  "product_count": {
+		  "products_count": {
 			"type": "number"
 		  },
 		  "wall_id": {
@@ -525,6 +717,9 @@
 		  "id": {
 			"type": "number"
 		  },
+		  "full_info": {
+			"type": "boolean"
+		  },
 		  "name": {
 			"type": "string",
 			"minLength": 1
@@ -536,6 +731,12 @@
 			"type": "string"
 		  },
 		  "status": {
+			"type": "number"
+		  },
+		  "seller_product_count": {
+			"type": "number"
+		  },
+		  "buyer_product_count": {
 			"type": "number"
 		  },
 		  "count_visits": {
@@ -550,8 +751,7 @@
 			"minLength": 1
 		  },
 		  "deliveries": {
-			"type": "string",
-			"minLength": 1
+			"type": "array"
 		  },
 		  "address": {
 			"type": [
@@ -625,13 +825,18 @@
 			"type": "boolean"
 		  },
 		  "rating": {
-			"type": "string",
-			"minLength": 1
+			"type": "string"
 		  },
 		  "reviews_count": {
 			"type": "number"
 		  },
-		  "products_count": {
+		  "adverts_count": {
+			"type": "number"
+		  },
+		  "comissions_count": {
+			"type": "number"
+		  },
+		  "auctions_count": {
 			"type": "number"
 		  },
 		  "sell_count": {
@@ -658,14 +863,15 @@
 		"required": [
 		  "id",
 		  "name",
-		  "description",
 		  "distance",
 		  "avatar",
 		  "background_image",
-		  "qr",
 		  "api_url",
 		  "web_url",
-		  "type"
+		  "type",
+		  "city",
+		  "region",
+		  "country"
 		],
 		"properties": {
 		  "id": {
@@ -674,11 +880,16 @@
 		  "type": {
 			"type": "string"
 		  },
-		  "name": {
-			"type": "string",
-			"minLength": 1
+		  "adverts_count": {
+			"type": "number"
 		  },
-		  "description": {
+		  "comissions_count": {
+			"type": "number"
+		  },
+		  "auctions_count": {
+			"type": "number"
+		  },
+		  "name": {
 			"type": "string"
 		  },
 		  "distance": {
@@ -701,13 +912,6 @@
 			],
 			"$ref": "#/definitions/images/image"
 		  },
-		  "qr": {
-			"type": [
-			  "object",
-			  "null"
-			],
-			"$ref": "#/definitions/images/image"
-		  },
 		  "api_url": {
 			"type": "string",
 			"minLength": 1
@@ -716,8 +920,41 @@
 			"type": "string",
 			"minLength": 1
 		  },
+		  "address": {
+			"type": "string"
+		  },
 		  "views_count": {
 			"type": "number"
+		  },
+		  "city": {
+			"type": [
+			  "object",
+			  "null"
+			],
+			"$ref": "#/definitions/geo/city"
+		  },
+		  "region": {
+			"type": [
+			  "object",
+			  "null"
+			],
+			"$ref": "#/definitions/geo/region"
+		  },
+		  "country": {
+			"type": [
+			  "object",
+			  "null"
+			],
+			"$ref": "#/definitions/geo/country"
+		  },
+		  "is_mine": {
+			"type": "boolean"
+		  },
+		  "is_subscribed": {
+			"type": "boolean"
+		  },
+		  "rating": {
+			"type": "string"
 		  }
 		},
 		"additionalProperties": false
@@ -804,6 +1041,91 @@
 	  }
 	},
 	"images": {
+	  "album":{
+		"type": "object",
+		"prperties": {
+		  "id": {
+			"type": "integer"
+		  },
+		  "owner": {
+			"type": "object",
+			"$ref": "#definitions/additional/owner"
+		  },
+		  "name": {
+			"type": "string"
+		  },
+		  "type": {
+			"type": "string"
+		  },
+		  "count": {
+			"type": "number"
+		  },
+		  "images": {
+			"type": "array",
+			"items": {
+			  "type": "object",
+			  "properties": {
+				"id": {
+				  "type": "integer"
+				},
+				"image": {
+				  "type": "object",
+				  "$ref": "#/definitions/images/image"
+				}
+			  }
+			  
+			}
+		  }
+		}
+	  },
+	  "album_light":{
+		"type": "object",
+		"prperties": {
+		  "id": {
+			"type": "integer"
+		  },
+		  "owner": {
+			"type": "object",
+			"$ref": "#definitions/additional/owner"
+		  },
+		  "name": {
+			"type": "string"
+		  },
+		  "type": {
+			"type": "string"
+		  },
+		  "count": {
+			"type": "number"
+		  },
+		  "image": {
+			"type": "object",
+			"properties": {
+			  "id": {
+				"type": "integer"
+			  },
+			  "image": {
+				"type": "object",
+				"$ref": "#/definitions/images/image"
+			  }
+			}
+		  },
+		  "images": {
+			"type": "array",
+			"items": {
+			  "type": "object",
+			  "properties": {
+				"id": {
+				  "type": "integer"
+				},
+				"image": {
+				  "type": "object",
+				  "$ref": "#/definitions/images/image"
+				}
+			  }
+			}
+		  }
+		}
+	  },
 	  "image": {
 		"type": [
 		  "object",
@@ -983,6 +1305,10 @@
 		  "id": {
 			"type": "number"
 		  },
+		  "is_mine": {
+			"description": "",
+			"type": "boolean"
+		  },
 		  "blog_id": {
 			"type": "number"
 		  },
@@ -1012,6 +1338,140 @@
 		  "text": {
 			"type": "string",
 			"minLength": 1
+		  },
+		  "created_at": {
+			"type": "string",
+			"minLength": 1
+		  },
+		  "updated_at": {
+			"type": "string",
+			"minLength": 1
+		  },
+		  "published_at": {
+			"type": "string",
+			"minLength": 1
+		  },
+		  "status": {
+			"type": "number"
+		  },
+		  "created_at_formated": {
+			"type": "string",
+			"minLength": 1
+		  },
+		  "updated_at_formated": {
+			"type": "string",
+			"minLength": 1
+		  },
+		  "published_at_formated": {
+			"type": "string",
+			"minLength": 1
+		  },
+		  "likes_count": {
+			"type": "number"
+		  },
+		  "comments_count": {
+			"type": "number"
+		  },
+		  "reposts_count": {
+			"type": "number"
+		  },
+		  "image": {
+			"type": [
+			  "object",
+			  "null"
+			],
+			"$ref": "#/definitions/images/image"
+		  },
+		  "owner": {
+			"type": "object",
+			"$ref": "#definitions/additional/owner"
+		  },
+		  "type": {
+			"type": "string"
+		  },
+		  "like_list": {
+			"type": "array",
+			"items": {
+			  "type": "object",
+			  "$ref": "#definitions/users/user_light"
+			}
+		  },
+		  "repost_list": {
+			"type": "array",
+			"items": {
+			  "type": "object",
+			  "$ref": "#definitions/users/user_light"
+			}
+		  },
+		  "views_count": {
+			"type": "number"
+		  }
+		},
+		"additionalProperties": false
+	  },
+	  "blog_post_light": {
+		"required": [
+		  "id",
+		  "blog_id",
+		  "title",
+		  "owner",
+		  "text_preview",
+		  "created_at",
+		  "updated_at",
+		  "published_at",
+		  "status",
+		  "created_at_formated",
+		  "updated_at_formated",
+		  "published_at_formated",
+		  "likes_count",
+		  "comments_count",
+		  "reposts_count",
+		  "api_url",
+		  "web_url",
+		  "blog_api_url",
+		  "blog_web_url",
+		  "type",
+		  "like_list",
+		  "repost_list"
+		],
+		"type": "object",
+		"properties": {
+		  "id": {
+			"type": "number"
+		  },
+		  "is_mine": {
+			"description": "",
+			"type": "boolean"
+		  },
+		  "full_info": {
+			"description": "",
+			"type": "boolean"
+		  },
+		  "blog_id": {
+			"type": "number"
+		  },
+		  "api_url": {
+			"type": "string",
+			"minLength": 1
+		  },
+		  "web_url": {
+			"type": "string",
+			"minLength": 1
+		  },
+		  "blog_api_url": {
+			"type": "string",
+			"minLength": 1
+		  },
+		  "blog_web_url": {
+			"type": "string",
+			"minLength": 1
+		  },
+		  "title": {
+			"type": "string",
+			"minLength": 1
+		  },
+		  "text_preview": {
+			"type": "string"
 		  },
 		  "created_at": {
 			"type": "string",
@@ -1130,9 +1590,25 @@
 			"description": "",
 			"type": "number"
 		  },
+		  "deliveries": {
+			"type": "any"
+		  },
+		  "has_delivery_to_me": {
+			"type": "boolean"
+		  },
 		  "type": {
 			"description": "",
 			"type": "string"
+		  },
+		  "like_list": {
+			"type": "array",
+			"items": {
+			  "type": "object",
+			  "$ref": "#definitions/users/user_light"
+			}
+		  },
+		  "comment_list": {
+			"type": "array"
 		  },
 		  "name": {
 			"description": "",
@@ -1185,6 +1661,10 @@
 			]
 		  },
 		  "price": {
+			"description": "",
+			"type": "string"
+		  },
+		  "price_iso": {
 			"description": "",
 			"type": "string"
 		  },
@@ -1366,6 +1846,10 @@
 		  "id": {
 			"type": "number"
 		  },
+		  "is_mine": {
+			"description": "",
+			"type": "boolean"
+		  },
 		  "type": {
 			"type": "string"
 		  },
@@ -1395,12 +1879,14 @@
 		  "price": {
 			"type": "string"
 		  },
+		  "price_iso": {
+			"type": "string"
+		  },
 		  "status": {
 			"type": "number"
 		  },
 		  "action_type": {
-			"type": "string",
-			"minLength": 1
+			"type": "string"
 		  },
 		  "count": {
 			"type": "number"
@@ -1491,9 +1977,6 @@
 		  "is_compensation_bids": {
 			"type": "string"
 		  },
-		  "is_compensation_bids_direct_buy": {
-			"type": "string"
-		  },
 		  "is_hide_bids": {
 			"type": "string"
 		  }
@@ -1508,11 +1991,38 @@
 		  "name": {
 			"type": "string",
 			"minLength": 1
+		  },
+		  "parent_id": {
+			"type": "number"
 		  }
 		},
 		"required": [
 		  "id",
 		  "name"
+		]
+	  },
+	  "category_full": {
+		"type": "object",
+		"properties": {
+		  "id": {
+			"type": "number"
+		  },
+		  "name": {
+			"type": "string",
+			"minLength": 1
+		  },
+		  "image": {
+			"type": "object",
+			"$ref": "#/definitions/images/image"
+		  },
+		  "parent_id": {
+			"type": "number"
+		  }
+		},
+		"required": [
+		  "id",
+		  "name",
+		  "image"
 		]
 	  }
 	},
@@ -1671,6 +2181,9 @@
 			  "null"
 			],
 			"$ref": "#/definitions/images/image"
+		  },
+		  "type": {
+			"type": "string"
 		  }
 		},
 		"additionalProperties": false,

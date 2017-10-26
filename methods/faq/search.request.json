@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "Метод для лайка в FAQ",
+  "properties": {
+	"q": {
+	  "type": "string",
+	  "description": "Строка для поиска"
+	}
+  },
+  "required": [
+	"q"
+  ],
+  "type": "object"
+}

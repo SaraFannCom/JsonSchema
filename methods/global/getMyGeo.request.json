@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "Метод для получения списка способов продаж",
+  "properties": {
+	"geo_id": {
+	  "type": "number",
+	  "description": "Идентификатор ГЕО"
+	},
+	"geo_type": {
+	  "type": "number",
+	  "description": "Тип ГЕО",
+	  "enum": [
+		-1,1,2,3
+	  ]
+	}
+  },
+  "required": [
+  ],
+  "type": "object"
+}

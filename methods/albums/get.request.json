@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "Метод для получения фотографий альбома",
+  "properties": {
+    "id": {
+      "type": "integer",
+      "description": "Идентификатор альбома"
+    },
+    "owner_id": {
+      "type": "integer",
+      "description": "Идентификатор владельца альбома"
+    },
+    "owner_type": {
+      "type": "string",
+      "description": "Тип владельца альбома",
+      "enum": [
+        "user",
+        "shop"
+      ]
+    },
+    "limit": {
+      "type": "number"
+    },
+    "last_id": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "id"
+  ],
+  "type": "object"
+}

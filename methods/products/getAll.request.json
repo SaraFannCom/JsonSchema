@@ -1,0 +1,81 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "Метод для получения товаров пользователя",
+    "properties": {
+        "filters": {
+            "description": "Фильтры",
+            "properties": {
+                "latitude": {
+                    "description": "Широта",
+                    "minNum": 1,
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "longitude": {
+                    "description": "Долгота",
+                    "minNum": 1,
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "q": {
+                    "description": "Поисковый запрос",
+                    "type": "string"
+                },
+                "product_type": {
+                    "description": "Типы товаров",
+                    "enum": [
+                        "all",
+                        "buynow",
+                        "advert",
+                        "classic",
+                        "quick",
+                        "penny",
+                        "tender"
+                    ],
+                    "minNum": 1,
+                    "type": "string"
+                },
+                "action_type": {
+                    "description": "Типы продаж",
+                    "enum": [
+                        "sell",
+                        "buy"
+                    ],
+                    "minNum": 1,
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "owner_id": {
+            "description": "Идентификатор владельца",
+            "minNum": 1,
+            "type": "integer"
+        },
+        "owner_type": {
+            "description": "Тип владельца",
+            "type": "string",
+            "enum": [
+                "user",
+                "shop"
+            ]
+        },
+        "last_id": {
+            "description": "Последний идентификатор",
+            "type": "string"
+        },
+        "limit": {
+            "default": 20,
+            "description": "Лимит",
+            "minNum": 1,
+            "type": "integer"
+        }
+    },
+    "required": [
+    ],
+    "type": "object"
+}

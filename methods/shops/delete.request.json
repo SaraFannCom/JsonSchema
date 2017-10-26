@@ -1,0 +1,15 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "Метод для удаления магазина",
+    "method": "post",
+    "properties": {
+        "id": {
+            "description": "Идентификатор магазина",
+            "type": "integer"
+        }
+    },
+    "required": [
+        "id"
+    ],
+    "type": "object"
+}

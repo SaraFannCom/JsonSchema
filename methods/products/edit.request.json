@@ -1,0 +1,158 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "Метод для редактирования товара",
+    "method": "post",
+    "properties": {
+        "id": {
+            "description": "Идентификатор товара",
+            "type": "integer"
+        },
+        "shop_id": {
+            "description": "Идентификатор магазина, в который будет загружен товар. Если пусто - товар загружается к текущему пользователю",
+            "type": "integer"
+        },
+        "name": {
+            "type": "string",
+            "description": "Название товара",
+            "minLength": 1
+        },
+        "description": {
+            "type": "string",
+            "description": "Описание товара",
+            "minLength": 1
+        },
+        "category_id": {
+            "type": "integer",
+            "description": "Идентификатор категории"
+        },
+        "price": {
+            "type": "number",
+            "description": "Цена товара"
+        },
+        "action_type": {
+            "type": "integer",
+            "description": "Способ продажи. Из ответа на global.getActionTypes"
+        },
+        "product_type": {
+            "type": "integer",
+            "description": "Тип товара. Из ответа на global.getProductTypes"
+        },
+        "city_id": {
+            "type": "number",
+            "decription": "Идентификатор города"
+        },
+        "region_id": {
+            "type": "number",
+            "decription": "Идентификатор региона"
+        },
+        "country_id": {
+            "type": "number",
+            "decription": "Идентификатор страны"
+        },
+        "latitude": {
+            "type": "number",
+            "decription": "Широта"
+        },
+        "longitude": {
+            "type": "number",
+            "decription": "Долгота"
+        },
+        "address": {
+            "type": "string",
+            "description": "Адрес товара"
+        },
+        "zip": {
+            "type": "string",
+            "description": "Индекс товара"
+        },
+        "has_partner": {
+            "type": "boolean",
+            "description": "Включить ли партнёрскую прошрамму"
+        },
+        "partner_komission": {
+            "type": "number",
+            "description": "Комиссия для партнёров"
+        },
+        "secret_field": {
+            "type": "string",
+            "description": "Секретный код (если это купон)"
+        },
+        "secret_field_expire": {
+            "type": "integer",
+            "description": "Время жизникупона (в секундах)"
+        },
+        "count": {
+            "type": "integer",
+            "description": "Количество товара 'на складе'"
+        },
+        "pay_type": {
+            "type": "string",
+            "description": "Тип сделки",
+            "enum": [
+                "prepay",
+                "postpay",
+                "safepay"
+            ]
+        },
+        "deposit": {
+            "type": "number",
+            "description": "Сумма предоплаты"
+        },
+        "price_start": {
+            "type": "number"
+        },
+        "insurance": {
+            "type": "boolean"
+        },
+        "price_rate_bids": {
+            "type": "string"
+        },
+        "period": {
+            "type": "string"
+        },
+        "time_start": {
+            "type": "number"
+        },
+        "time_step": {
+            "type": "number"
+        },
+        "time_end": {
+            "type": "number"
+        },
+        "is_for_newcomers": {
+            "type": "boolean"
+        },
+        "is_training": {
+            "type": "boolean"
+        },
+        "is_compensation_price": {
+            "type": "boolean"
+        },
+        "is_compensation_bids": {
+            "type": "boolean"
+        },
+        "is_hide_bids": {
+            "type": "boolean"
+        },
+        "properties": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "value": {
+                    "type": [
+                        "string",
+                        "integer",
+                        "boolean"
+                    ]
+                }
+            }
+        }
+        
+    },
+    "required": [
+        "id"
+    ],
+    "type": "object"
+}

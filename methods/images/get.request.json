@@ -1,0 +1,12 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "Метод для закгрузки картинки на сервер",
+    "method": "post",
+    "properties": {
+        "id": {
+            "description": "Идентификатор фотографии",
+            "type": "integer"
+        }
+    },
+    "type": "object"
+}

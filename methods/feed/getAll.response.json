@@ -1,274 +1,94 @@
 {
-    "$schema": "http://json-schema.org/draft-04/schema#", 
-    "additionalProperties": false, 
-    "description": "\u041e\u0442\u0432\u0435\u0442 \u043d\u0430 \u043c\u0435\u0442\u043e\u0434 feed.getAll", 
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "additionalProperties": false,
+    "description": "Ответ на метод feed.getAll",
     "properties": {
         "error": {
-            "description": "\u041a\u043e\u0434 \u043e\u0448\u0438\u0431\u043a\u0438", 
+            "description": "Код ошибки",
             "type": "number"
-        }, 
+        },
         "error_text": {
-            "description": "\u0422\u0435\u043a\u0441\u0442 \u043e\u0448\u0438\u0431\u043a\u0438", 
+            "description": "Текст ошибки",
             "type": "string"
-        }, 
+        },
         "error_url": {
-            "description": "\u0421\u0441\u044b\u043b\u043a\u0430 \u043d\u0430 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0443 \u043e\u0448\u0438\u0431\u043a\u0438", 
+            "description": "Ссылка на страницу ошибки",
             "type": "string"
-        }, 
+        },
         "response": {
-            "additionalProperties": false, 
+            "additionalProperties": false,
             "properties": {
                 "count": {
-                    "description": "\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u043e\u0442\u0432\u0435\u0442\u043e\u0432", 
+                    "description": "Количество ответов",
                     "type": "number"
-                }, 
+                },
                 "items": {
-                    "description": "\u0421\u043f\u0438\u0441\u043e\u043a \u043e\u0442\u0432\u0435\u0442\u043e\u0432", 
+                    "description": "Список ответов",
                     "items": {
-                        "properties": {
-                            "action_type": {
-                                "minLength": 1, 
-                                "type": "string"
-                            }, 
-                            "address": {
-                                "type": [
-                                    "string", 
-                                    "null"
-                                ]
-                            }, 
-                            "api_url": {
-                                "minLength": 1, 
-                                "type": "string"
-                            }, 
-                            "category": {
-                                "$ref": "objects.json#/definitions/products/category", 
-                                "type": [
-                                    "array", 
-                                    "object", 
-                                    "null"
-                                ]
-                            }, 
-                            "city": {
-                                "$ref": "objects.json#/definitions/geo/city", 
-                                "type": [
-                                    "object", 
-                                    "null"
-                                ]
-                            }, 
-                            "comments_count": {
-                                "type": "number"
-                            }, 
-                            "count": {
-                                "type": "number"
-                            }, 
-                            "country": {
-                                "$ref": "objects.json#/definitions/geo/country", 
-                                "type": [
-                                    "object", 
-                                    "null"
-                                ]
-                            }, 
-                            "created_at": {
-                                "minLength": 1, 
-                                "type": "string"
-                            }, 
-                            "created_at_formated": {
-                                "minLength": 1, 
-                                "type": "string"
-                            }, 
-                            "deposit": {
-                                "type": [
-                                    "number", 
-                                    "null"
-                                ]
-                            }, 
-                            "description": {
-                                "type": "string"
-                            }, 
-                            "distance": {
-                                "type": [
-                                    "string", 
-                                    "number", 
-                                    "null"
-                                ]
-                            }, 
-                            "feed_id": {
-                                "type": "number"
-                            }, 
-                            "has_partner": {
-                                "type": "number"
-                            }, 
-                            "id": {
-                                "type": "number"
-                            }, 
-                            "image": {
-                                "$ref": "objects.json#/definitions/images/image", 
-                                "type": [
-                                    "object", 
-                                    "null"
-                                ]
-                            }, 
-                            "images": {
-                                "items": {
-                                    "$ref": "objects.json#/definitions/images/image", 
-                                    "type": [
-                                        "object", 
-                                        "null"
-                                    ]
-                                }, 
-                                "minItems": 0, 
-                                "type": "array"
-                            }, 
-                            "is_mine": {
-                                "type": "boolean"
-                            }, 
-                            "latitude": {
-                                "type": "number"
-                            }, 
-                            "likes_count": {
-                                "type": "number"
-                            }, 
-                            "longitude": {
-                                "type": "number"
-                            }, 
-                            "name": {
-                                "minLength": 1, 
-                                "type": "string"
-                            }, 
-                            "owner": {
-                                "$ref": "objects.json#/definitions/additional/owner", 
-                                "type": "object"
-                            }, 
-                            "partner_komission": {
-                                "type": [
-                                    "number", 
-                                    "null"
-                                ]
-                            }, 
-                            "pay_type": {
-                                "type": [
-                                    "number", 
-                                    "null"
-                                ]
-                            }, 
-                            "prepayment_data": {
-                                "type": [
-                                    "object", 
-                                    "null", 
-                                    "array", 
-                                    "boolean"
-                                ]
-                            }, 
-                            "price": {
-                                "type": [
-                                    "string", 
-                                    "null"
-                                ]
-                            }, 
-                            "product_type": {
-                                "enum": [
-                                    "buynow", 
-                                    "advert", 
-                                    "classic", 
-                                    "quick", 
-                                    "penny", 
-                                    "tender", 
-                                    "null"
-                                ], 
-                                "minLength": 1, 
-                                "type": "string"
-                            }, 
-                            "properties": {
-                                "$ref": "objects.json#/definitions/products/p_properties", 
-                                "type": "object"
-                            }, 
-                            "region": {
-                                "$ref": "objects.json#/definitions/geo/region", 
-                                "type": [
-                                    "object", 
-                                    "null"
-                                ]
-                            }, 
-                            "sell_count": {
-                                "type": [
-                                    "number", 
-                                    "null"
-                                ]
-                            }, 
-                            "status": {
-                                "type": "number"
-                            }, 
-                            "type": {
-                                "minLength": 1, 
-                                "type": "string"
-                            }, 
-                            "updated_at": {
-                                "minLength": 1, 
-                                "type": "string"
-                            }, 
-                            "updated_at_formated": {
-                                "minLength": 1, 
-                                "type": "string"
-                            }, 
-                            "web_url": {
-                                "minLength": 1, 
-                                "type": "string"
-                            }, 
-                            "zip": {
-                                "type": [
-                                    "string", 
-                                    "null"
-                                ]
+                        "oneOf": [
+                            {
+                                "$ref": "objects.json#/definitions/products/product_light",
+                                "additionalProperties": {
+                                    "feed_id": {
+                                        "type": "integer",
+                                        "description": "Идентификатор записи в новостях"
+                                    }
+                                }
+                            },
+                            {
+                                "$ref": "objects.json#/definitions/blogs/blog_post_light",
+                                "additionalProperties": {
+                                    "feed_id": {
+                                        "type": "integer",
+                                        "description": "Идентификатор записи в новостях"
+                                    }
+                                }
+                            },
+                            {
+                                "$ref": "objects.json#/definitions/walls/wall_post",
+                                "additionalProperties": {
+                                    "feed_id": {
+                                        "type": "integer",
+                                        "description": "Идентификатор записи в новостях"
+                                    }
+                                }
                             }
-                        }, 
-                        "required": [
-                            "id",
-                            "created_at", 
-                            "updated_at", 
-                            "is_mine", 
-                            "created_at_formated", 
-                            "updated_at_formated", 
-                            "likes_count", 
-                            "comments_count", 
-                            "api_url", 
-                            "web_url"
-                        ], 
-                        "type": "object"
-                    }, 
+                        ]
+                    },
                     "type": "array"
-                }, 
+                },
                 "last_id": {
-                    "description": "\u041f\u043e\u0441\u043b\u0435\u0434\u043d\u0438\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440", 
+                    "description": "Последний идентификатор",
                     "type": [
-                        "string", 
-                        "integer", 
+                        "string",
+                        "integer",
                         "null"
                     ]
                 }
-            }, 
+            },
             "required": [
-                "last_id", 
-                "count", 
+                "last_id",
+                "count",
                 "items"
-            ], 
+            ],
             "type": "object"
-        }, 
+        },
         "run_time": {
-            "description": "\u0412\u0440\u0435\u043c\u044f \u0432\u044b\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u044f", 
+            "description": "Время выполнения",
             "type": "number"
-        }, 
+        },
         "server_time": {
-            "description": "\u0412\u0440\u0435\u043c\u044f \u043d\u0430 \u0441\u0435\u0440\u0432\u0435\u0440\u0435 (UNIXTIME)", 
+            "description": "Время на сервере (UNIXTIME)",
             "type": "number"
         }
-    }, 
+    },
     "required": [
-        "response", 
-        "run_time", 
-        "server_time", 
-        "error", 
-        "error_text", 
+        "response",
+        "run_time",
+        "server_time",
+        "error",
+        "error_text",
         "error_url"
-    ], 
+    ],
     "type": "object"
 }

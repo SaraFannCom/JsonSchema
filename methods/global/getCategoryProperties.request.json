@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "Метод для получения списка категорий",
+  "properties": {
+    "category_id": {
+      "type": "number",
+      "description": "Идентификатор родительской категории"
+    },
+    "property_id": {
+      "type": "number",
+      "description": "Идентификатор свойства для получения детей"
+    },
+    "property_value": {
+      "type": "number",
+      "description": "Идентификатор значения свойства для получения детей"
+    }
+  },
+  "required": [
+  ],
+  "type": "object"
+}

@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "Метод для дизлайка в FAQ",
+  "properties": {
+	"page_id": {
+	  "type": "integer",
+	  "description": "Идентификатор статьи"
+	},
+	"text": {
+	  "type": "string",
+	  "description": "Текст сообщения"
+	},
+	"email": {
+	  "type": "string",
+	  "description": "Email пользователя"
+	}
+  },
+  "required": [
+	"page_id"
+  ],
+  "type": "object"
+}

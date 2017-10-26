@@ -1,0 +1,32 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "Ответ на метод products.createOrderAfterWin",
+    "properties": {
+        "error": {
+            "description": "Код ошибки",
+            "type": "number"
+        },
+        "error_text": {
+            "description": "Текст ошибки",
+            "type": "string"
+        },
+        "error_url": {
+            "description": "Ссылка на страницу ошибки",
+            "type": "string"
+        },
+        "run_time": {
+            "description": "Время выполнения",
+            "type": "number"
+        },
+        "server_time": {
+            "description": "Время на сервере (UNIXTIME)",
+            "type": "number"
+        }
+    },
+    "required": [
+        "error",
+        "server_time",
+        "run_time"
+    ],
+    "type": "object"
+}

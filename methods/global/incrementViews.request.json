@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "Метод для увеличения счётчика просмотров",
+  "method": "post",
+  "properties": {
+	"subject_type": {
+	  "type": "string",
+	  "enum": [
+		"shop",
+		"product",
+		"wall_post",
+		"blog_post",
+		"image"
+	  ]
+	},
+	"subject_id": {
+	  "type": "integer"
+	}
+  },
+  "required": [
+	"subject_type",
+	"subject_id"
+  ],
+  "type": "object"
+}

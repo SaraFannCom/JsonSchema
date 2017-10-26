@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "Метод для удаления альбома",
+  "method": "post",
+  "properties": {
+    "id": {
+      "type": "integer",
+      "description": "Идентификатор альбома"
+    },
+    "shop_id": {
+      "type": "integer",
+      "description": "Идентификатор магазина. Если пусто - будет удалён альбом текущего пользователя"
+    }
+  },
+  "required": [
+    "id"
+  ],
+  "type": "object"
+}

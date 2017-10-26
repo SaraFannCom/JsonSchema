@@ -1,47 +1,74 @@
 {
-    "$schema": "http://json-schema.org/draft-04/schema#", 
-    "description": "\u041c\u0435\u0442\u043e\u0434 \u0434\u043b\u044f \u043f\u043e\u043b\u0443\u0447\u0435\u043d\u0438\u044f \u0442\u043e\u0432\u0430\u0440\u043e\u0432 \u043e\u043f\u0440\u0435\u0434\u0435\u043b\u0451\u043d\u043d\u043e\u0433\u043e \u043c\u0430\u0433\u0430\u0437\u0438\u043d\u0430", 
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "Метод для получения товаров определённого магазина",
     "properties": {
         "filters": {
-            "description": "\u0424\u0438\u043b\u044c\u0442\u0440\u044b", 
+            "description": "Фильтры",
             "properties": {
                 "latitude": {
-                    "description": "\u0428\u0438\u0440\u043e\u0442\u0430", 
-                    "minNum": 1, 
+                    "description": "Широта",
+                    "minNum": 1,
                     "type": [
-                        "number", 
+                        "number",
                         "null"
                     ]
-                }, 
+                },
                 "longitude": {
-                    "description": "\u0414\u043e\u043b\u0433\u043e\u0442\u0430", 
-                    "minNum": 1, 
+                    "description": "Долгота",
+                    "minNum": 1,
                     "type": [
-                        "number", 
+                        "number",
                         "null"
                     ]
+                },
+                "q": {
+                    "description": "Поисковый запрос",
+                    "type": "string"
+                },
+                "product_type": {
+                    "description": "Типы товаров",
+                    "enum": [
+                        "all",
+                        "buynow",
+                        "advert",
+                        "classic",
+                        "quick",
+                        "penny",
+                        "tender"
+                    ],
+                    "minNum": 1,
+                    "type": "string"
+                },
+                "action_type": {
+                    "description": "Типы продаж",
+                    "enum": [
+                        "sell",
+                        "buy"
+                    ],
+                    "minNum": 1,
+                    "type": "string"
                 }
-            }, 
+            },
             "type": "object"
-        }, 
+        },
         "id": {
-            "description": "\u0418\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 \u043c\u0430\u0433\u0430\u0437\u0438\u043d\u0430", 
-            "minNum": 1, 
+            "description": "Идентификатор магазина",
+            "minNum": 1,
             "type": "integer"
-        }, 
+        },
         "last_id": {
-            "description": "\u041f\u043e\u0441\u043b\u0435\u0434\u043d\u0438\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440", 
+            "description": "Последний идентификатор",
             "type": "string"
-        }, 
+        },
         "limit": {
-            "default": 20, 
-            "description": "\u041b\u0438\u043c\u0438\u0442", 
-            "minNum": 1, 
+            "default": 20,
+            "description": "Лимит",
+            "minNum": 1,
             "type": "integer"
         }
-    }, 
+    },
     "required": [
         "id"
-    ], 
+    ],
     "type": "object"
 }

@@ -1,70 +1,108 @@
 {
-    "$schema": "http://json-schema.org/draft-04/schema#", 
-    "description": "\u041c\u0435\u0442\u043e\u0434 \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430 \u043f\u043e \u043a\u0430\u0442\u0430\u043b\u043e\u0433\u0443", 
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "Метод для поиска по каталогу",
     "properties": {
         "filters": {
-            "description": "\u0424\u0438\u043b\u044c\u0442\u0440\u044b", 
+            "description": "Фильтры",
             "properties": {
-                "distance": {
-                    "description": "\u0420\u0430\u0434\u0438\u0443\u0441 \u043f\u043e\u0438\u0441\u043a\u0430", 
-                    "minNum": 1, 
+                "owner_id": {
+                    "description": "Идентификатор владельца",
                     "type": "integer"
-                }, 
-                "latitude": {
-                    "description": "\u0428\u0438\u0440\u043e\u0442\u0430", 
-                    "minNum": 1, 
-                    "type": [
-                        "number", 
-                        "null"
-                    ]
-                }, 
-                "longitude": {
-                    "description": "\u0414\u043e\u043b\u0433\u043e\u0442\u0430", 
-                    "minNum": 1, 
-                    "type": [
-                        "number", 
-                        "null"
-                    ]
-                }, 
-                "product_type": {
-                    "description": "\u0422\u0438\u043f\u044b \u0442\u043e\u0432\u0430\u0440\u043e\u0432", 
+                },
+                "owner_type": {
+                    "description": "Тип владельца",
+                    "type": "string",
                     "enum": [
-                        "buynow", 
-                        "advert", 
-                        "classic", 
-                        "quick", 
-                        "penny", 
-                        "tender", 
-                        "all", 
+                        "shop",
+                        "user"
+                    ]
+                },
+                "distance": {
+                    "description": "Радиус поиска",
+                    "minNum": 1,
+                    "type": "integer"
+                },
+                "latitude": {
+                    "description": "Широта",
+                    "minNum": 1,
+                    "type": [
+                        "number",
                         "null"
-                    ], 
-                    "minNum": 1, 
+                    ]
+                },
+                "longitude": {
+                    "description": "Долгота",
+                    "minNum": 1,
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "category_id": {
+                    "description": "Категория",
+                    "minNum": 1,
+                    "type": "number"
+                },
+                "product_type": {
+                    "description": "Типы товаров",
+                    "enum": [
+                        "all",
+                        "buynow",
+                        "advert",
+                        "classic",
+                        "quick",
+                        "penny",
+                        "tender"
+                    ],
                     "type": "string"
-                }, 
+                },
                 "q": {
-                    "description": "\u0421\u0442\u0440\u043e\u043a\u0430 \u043f\u043e\u0438\u0441\u043a\u0430", 
+                    "description": "Строка поиска",
                     "type": "string"
+                },
+                "action_type": {
+                    "description": "Тип сделки",
+                    "type": "integer"
+                },
+                "price_min": {
+                    "description": "Минимальная цена",
+                    "type": "integer"
+                },
+                "price_max": {
+                    "description": "Максимальная цена",
+                    "type": "integer"
+                },
+                "free_delivery": {
+                    "description": "Есть бесплатная доставка",
+                    "type": "boolean"
+                },
+                "rating": {
+                    "description": "Рейтинг >= 4",
+                    "type": "boolean"
                 }
-            }, 
+            },
             "type": "object"
-        }, 
+        },
+        "properties": {
+            "type": "object"
+        },
         "last_id": {
-            "description": "\u041f\u043e\u0441\u043b\u0435\u0434\u043d\u0438\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440", 
+            "description": "Последний идентификатор",
             "type": [
-                "string", 
-                "integer", 
+                "string",
+                "integer",
                 "null"
             ]
-        }, 
+        },
         "limit": {
-            "default": 20, 
-            "description": "\u041b\u0438\u043c\u0438\u0442", 
-            "minNum": 1, 
+            "default": 20,
+            "description": "Лимит",
+            "minNum": 1,
             "type": "integer"
         }
-    }, 
+    },
     "required": [
         "id"
-    ], 
+    ],
     "type": "object"
 }

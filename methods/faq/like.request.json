@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "Метод для лайка в FAQ",
+  "properties": {
+	"page_id": {
+	  "type": "integer"
+	}
+  },
+  "required": [
+	"page_id"
+  ],
+  "type": "object"
+}

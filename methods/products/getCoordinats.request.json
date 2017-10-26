@@ -1,0 +1,89 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "Метод для поиска по каталогу",
+    "properties": {
+        "filters": {
+            "description": "Фильтры",
+            "properties": {
+                "owner_id": {
+                    "description": "Идентификатор владельца",
+                    "type": "integer"
+                },
+                "owner_type": {
+                    "description": "Тип владельца",
+                    "type": "string",
+                    "enum": [
+                        "shop",
+                        "user"
+                    ]
+                },
+                "distance": {
+                    "description": "Радиус поиска",
+                    "minNum": 1,
+                    "type": "integer"
+                },
+                "latitude": {
+                    "description": "Широта",
+                    "minNum": 1,
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "longitude": {
+                    "description": "Долгота",
+                    "minNum": 1,
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "category_id": {
+                    "description": "Категория",
+                    "minNum": 1,
+                    "type": "number"
+                },
+                "product_type": {
+                    "description": "Типы товаров",
+                    "enum": [
+                        "all",
+                        "buynow",
+                        "advert",
+                        "classic",
+                        "quick",
+                        "penny",
+                        "tender"
+                    ],
+                    "type": "string"
+                },
+                "q": {
+                    "description": "Строка поиска",
+                    "type": "string"
+                },
+                "action_type": {
+                    "description": "Тип сделки",
+                    "type": "integer"
+                }
+            },
+            "type": "object"
+        },
+        "last_id": {
+            "description": "Последний идентификатор",
+            "type": [
+                "string",
+                "integer",
+                "null"
+            ]
+        },
+        "limit": {
+            "default": 20,
+            "description": "Лимит",
+            "minNum": 1,
+            "type": "integer"
+        }
+    },
+    "required": [
+        "id"
+    ],
+    "type": "object"
+}

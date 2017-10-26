@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "Метод для поиска по геолокаци",
+  "properties": {
+	"q": {
+	  "description": "Поисковый запрос",
+	  "type": "string"
+	}
+  },
+  "required": [
+	"q"
+  ],
+  "type": "object"
+}

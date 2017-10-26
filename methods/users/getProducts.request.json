@@ -1,0 +1,73 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "Метод для получения товаров пользователя",
+    "properties": {
+        "filters": {
+            "description": "Фильтры",
+            "properties": {
+                "latitude": {
+                    "description": "Широта",
+                    "minNum": 1,
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "longitude": {
+                    "description": "Долгота",
+                    "minNum": 1,
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "q": {
+                    "description": "Поисковый запрос",
+                    "type": "string"
+                },
+                "product_type": {
+                    "description": "Типы товаров",
+                    "enum": [
+                        "buynow",
+                        "advert",
+                        "classic",
+                        "quick",
+                        "penny",
+                        "tender",
+                        "all"
+                    ],
+                    "minNum": 1,
+                    "type": "string"
+                },
+                "action_type": {
+                    "description": "Типы продаж",
+                    "enum": [
+                        "sell",
+                        "buy"
+                    ],
+                    "minNum": 1,
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "id": {
+            "description": "Идентификатор пользователя",
+            "minNum": 1,
+            "type": "integer"
+        },
+        "last_id": {
+            "description": "Последний идентификатор",
+            "type": "string"
+        },
+        "limit": {
+            "default": 20,
+            "description": "Лимит",
+            "minNum": 1,
+            "type": "integer"
+        }
+    },
+    "required": [
+    ],
+    "type": "object"
+}

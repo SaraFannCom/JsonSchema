@@ -1,0 +1,36 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "Метод для создания магазина",
+    "method": "post",
+    "properties": {
+        "name": {
+            "description": "Название магазина",
+            "type": "string",
+            "minLength": 1
+        },
+        "filters": {
+            "description": "Фильтры",
+            "properties": {
+                "latitude": {
+                    "description": "Широта",
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                },
+                "longitude": {
+                    "description": "Долгота",
+                    "type": [
+                        "number",
+                        "null"
+                    ]
+                }
+            },
+            "type": "object"
+        }
+    },
+    "required": [
+        "name"
+    ],
+    "type": "object"
+}
