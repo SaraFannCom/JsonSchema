@@ -206,6 +206,7 @@
 		  "id",
 		  "current_social",
 		  "name",
+		  "referal_code",
 		  "birthday",
 		  "address",
 		  "zip",
@@ -236,6 +237,12 @@
 		"properties": {
 		  "profile_percent": {
 			"type": ["integer", "null"]
+		  },
+		  "referal_code": {
+			"type": "string"
+		  },
+		  "referal_code_url": {
+			"type": "string"
 		  },
 		  "images": {
 			"type": "array",
@@ -686,6 +693,9 @@
 		  "wall_id": {
 			"type": "integer"
 		  },
+		  "blog_id": {
+			"type": "integer"
+		  },
 		  "type": {
 			"type": "string"
 		  },
@@ -699,6 +709,9 @@
 			  "null"
 			],
 			"$ref": "#/definitions/additional/contacts"
+		  },
+		  "product_comments": {
+			"type": "array"
 		  },
 		  "qr": {
 			"type": [
@@ -1298,6 +1311,7 @@
 		  "blog_web_url",
 		  "type",
 		  "like_list",
+		  "comment_list",
 		  "repost_list"
 		],
 		"type": "object",
@@ -1396,6 +1410,9 @@
 			  "$ref": "#definitions/users/user_light"
 			}
 		  },
+		  "comment_list": {
+			"type": "array"
+		  },
 		  "repost_list": {
 			"type": "array",
 			"items": {
@@ -1405,6 +1422,10 @@
 		  },
 		  "views_count": {
 			"type": "number"
+		  },
+		  "full_info": {
+			"description": "",
+			"type": "boolean"
 		  }
 		},
 		"additionalProperties": false
@@ -1593,6 +1614,9 @@
 		  "deliveries": {
 			"type": "any"
 		  },
+		  "product_type_rus": {
+			"type": "string"
+		  },
 		  "has_delivery_to_me": {
 			"type": "boolean"
 		  },
@@ -1607,8 +1631,26 @@
 			  "$ref": "#definitions/users/user_light"
 			}
 		  },
+		  "my_review": {
+			"type": ["object", "null"]
+		  },
+		  "video_id": {
+			"type": ["string", "null"]
+		  },
 		  "comment_list": {
 			"type": "array"
+		  },
+		  "recomendation_list": {
+			"type": "array"
+		  },
+		  "wish_list": {
+			"type": "array"
+		  },
+		  "recomendations_count": {
+			"type": "number"
+		  },
+		  "wish_count": {
+			"type": "number"
 		  },
 		  "name": {
 			"description": "",
@@ -1663,6 +1705,14 @@
 		  "price": {
 			"description": "",
 			"type": "string"
+		  },
+		  "price_direct": {
+			"description": "",
+			"type": "string"
+		  },
+		  "sale": {
+			"description": "",
+			"type": ["string", "integer", "number"]
 		  },
 		  "price_iso": {
 			"description": "",
@@ -1846,6 +1896,9 @@
 		  "id": {
 			"type": "number"
 		  },
+		  "product_type_rus": {
+			"type": "string"
+		  },
 		  "is_mine": {
 			"description": "",
 			"type": "boolean"
@@ -1878,6 +1931,14 @@
 		  },
 		  "price": {
 			"type": "string"
+		  },
+		  "price_direct": {
+			"description": "",
+			"type": "string"
+		  },
+		  "sale": {
+			"description": "",
+			"type": ["string", "integer", "number"]
 		  },
 		  "price_iso": {
 			"type": "string"
@@ -1957,13 +2018,13 @@
 			"type": "string"
 		  },
 		  "time_start": {
-			"type": "string"
+			"type": ["string", "integer"]
 		  },
 		  "time_step": {
 			"type": "string"
 		  },
 		  "time_end": {
-			"type": "string"
+			"type": ["string", "integer"]
 		  },
 		  "is_for_newcomers": {
 			"type": "string"
@@ -2151,13 +2212,7 @@
 				  "type": "string"
 				},
 				"data": {
-				  "anyOf": [
-					{
-					  "type": "object",
-					  "$ref": "objects.json#/definitions/walls/wall_post_light"
-					}
-				  ]
-				  
+				  "type": "object"
 				}
 			  }
 			}
@@ -2175,15 +2230,11 @@
 		  "reposts_count": {
 			"type": "number"
 		  },
-		  "image": {
-			"type": [
-			  "object",
-			  "null"
-			],
-			"$ref": "#/definitions/images/image"
-		  },
 		  "type": {
 			"type": "string"
+		  },
+		  "comment_list": {
+			"type": "array"
 		  }
 		},
 		"additionalProperties": false,
@@ -2201,8 +2252,7 @@
 		  "created_at_formated",
 		  "updated_at_formated",
 		  "comments_count",
-		  "reposts_count",
-		  "image"
+		  "reposts_count"
 		]
 	  },
 	  "wall_post_light": {

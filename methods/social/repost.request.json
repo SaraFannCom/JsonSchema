@@ -1,0 +1,36 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#", 
+    "description": "Метод для получения списка лайков",
+    "properties": {
+        "id": {
+            "type": "integer"
+        },
+        "type": {
+            "type": "string",
+            "enum": [
+                "product",
+                "wall_post",
+                "blog_post",
+                "image"
+            ]
+        },
+        "owner_id": {
+            "type": "integer"
+        },
+        "owner_type": {
+            "type": "string",
+            "enum": [
+                "user",
+                "shop"
+            ]
+        },
+        "text": {
+            "type": "string"
+        }
+    }, 
+    "required": [
+        "id",
+        "type"
+    ],
+    "type": "object"
+}

@@ -1,0 +1,22 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "Метод для отправки отзыва о товаре",
+    "properties": {
+        "id": {
+            "description": "Идентификатор товара",
+            "type": "integer"
+        },
+        "text": {
+            "description": "Текст отзыва",
+            "type": "string"
+        },
+        "rating": {
+            "description": "Рейтинг",
+            "type": "integer"
+        }
+    },
+    "required": [
+        "id"
+    ],
+    "type": "object"
+}

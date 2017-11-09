@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "description": "Ответ на метод products.get",
+    "description": "Ответ на метод products.archive",
     "properties": {
         "error": {
             "description": "Код ошибки",
@@ -22,10 +22,6 @@
                 },
                 "items": {
                     "description": "Список ответов",
-                    "items": {
-                        "$ref": "objects.json#/definitions/products/product",
-                        "type": "object"
-                    },
                     "type": "array"
                 }
             },

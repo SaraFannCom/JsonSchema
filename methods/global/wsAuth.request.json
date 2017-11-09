@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "Метод для получения списка способов продаж",
+  "properties": {
+	"client": {
+	  "type": "string"
+	},
+	"channels": {
+	  "type": "array",
+	  "items": {
+		"type": "string"
+	  }
+	}
+  },
+  "required": [
+  ],
+  "type": "object"
+}

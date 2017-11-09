@@ -1,0 +1,19 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "Метод для получения списка товаров с комментариями",
+    "method": "post",
+    "properties": {
+        "id": {
+            "description": "Идентификатор магазина",
+            "type": "integer"
+        },
+        "limit": {
+            "description": "Сколько товаров грузить. ",
+            "type": "integer"
+        }
+    },
+    "required": [
+        "id"
+    ],
+    "type": "object"
+}

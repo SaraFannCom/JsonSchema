@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "description": "Ответ на метод products.get",
+    "description": "Ответ на метод global.Search",
     "properties": {
         "error": {
             "description": "Код ошибки",
@@ -23,8 +23,29 @@
                 "items": {
                     "description": "Список ответов",
                     "items": {
-                        "$ref": "objects.json#/definitions/products/product",
-                        "type": "object"
+                        "type": "object",
+                        "properties": {
+                            "user_id": {
+                                "type": [
+                                    "string"
+                                ]
+                            },
+                            "time": {
+                                "type": [
+                                    "string"
+                                ]
+                            },
+                            "token": {
+                                "type": [
+                                    "string"
+                                ]
+                            },
+                            "url": {
+                                "type": [
+                                    "string"
+                                ]
+                            }
+                        }
                     },
                     "type": "array"
                 }

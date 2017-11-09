@@ -1,0 +1,25 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "Метод для получения списка рекомендаций",
+    "properties": {
+        "id": {
+            "description": "Идентификатор товара",
+            "type": "integer"
+        },
+        "last_id": {
+            "description": "Последний идентификатор",
+            "type": "string"
+        },
+        "limit": {
+            "default": 20,
+            "description": "Лимит",
+            "minNum": 1,
+            "type": "integer"
+        }
+    },
+    "required": [
+        "id",
+        "friends"
+    ],
+    "type": "object"
+}

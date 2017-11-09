@@ -1,0 +1,23 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "Метод для отправки рекомендации",
+    "properties": {
+        "id": {
+            "description": "Идентификатор товара",
+            "type": "integer"
+        },
+        "friends": {
+            "type": "string",
+            "description": "Список идентификаторов пользователей, для отправки рекомендации, разделённый запятыми"
+        },
+        "text": {
+            "type": "string",
+            "description":"Текст рекомендации"
+        }
+    },
+    "required": [
+        "id",
+        "friends"
+    ],
+    "type": "object"
+}

@@ -1,0 +1,37 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#", 
+    "description": "Метод для получения списка лайков",
+    "properties": {
+        "id": {
+            "type": "integer"
+        },
+        "type": {
+            "type": "string",
+            "enum": [
+                "product",
+                "wall_post",
+                "blog_post",
+                "image"
+            ]
+        },
+        "last_id": {
+            "description": "Последний идентификатор",
+            "type": [
+                "string",
+                "integer",
+                "null"
+            ]
+        },
+        "limit": {
+            "default": 20,
+            "description": "Лимит",
+            "minNum": 1,
+            "type": "integer"
+        }
+    }, 
+    "required": [
+        "id",
+        "type"
+    ],
+    "type": "object"
+}

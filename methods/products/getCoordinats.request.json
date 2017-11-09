@@ -75,6 +75,10 @@
                 "null"
             ]
         },
+        "loaded_count": {
+            "description": "Сколько уже было загружено",
+            "type": "integer"
+        },
         "limit": {
             "default": 20,
             "description": "Лимит",

@@ -1,0 +1,19 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "Метод для отправки рекомендации",
+    "properties": {
+        "id": {
+            "description": "Идентификатор товара",
+            "type": "integer"
+        },
+        "url": {
+            "type": "string",
+            "description": "Ссылка на товар"
+        }
+    },
+    "required": [
+        "id",
+        "url"
+    ],
+    "type": "object"
+}
