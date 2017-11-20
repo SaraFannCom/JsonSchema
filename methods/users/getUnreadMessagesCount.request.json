@@ -1,0 +1,13 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "Метод для получения количества непрочитанных диалогов",
+    "properties": {
+        "shop_id": {
+            "type": "integer",
+            "description": "Идентификатор магазина, для которого запрашивается количество. Если пусто - то для текущего пользователя"
+        }
+    },
+    "required": [
+    ],
+    "type": "object"
+}

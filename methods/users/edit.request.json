@@ -1,0 +1,66 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#", 
+    "description": "Метод для редактирования информации о пользователе",
+    "method": "post",
+    "properties": {
+        "first_name": {
+            "type": "string",
+            "edscription": "Имя"
+        },
+        "last_name": {
+            "type": "string",
+            "edscription": "Фамилия"
+        },
+        "middle_name": {
+            "type": "string",
+            "edscription": "Отчество"
+        },
+        "birthday": {
+            "type": "string",
+            "edscription": "Дата рождения в формате 0000-00-00"
+        },
+        "description": {
+            "type": "string",
+            "edscription": "Поле с описанием"
+        },
+        "email": {
+            "type": "string",
+            "edscription": "Почта"
+        },
+        "phone": {
+            "type": "string",
+            "edscription": "Телефон"
+        },
+        "city": {
+            "type": "string",
+            "edscription": "Название города"
+        },
+        "region": {
+            "type": "string",
+            "edscription": "Название региона"
+        },
+        "country": {
+            "type": "string",
+            "edscription": "Название страны"
+        },
+        "latitude": {
+            "type": "number",
+            "edscription": "Широта"
+        },
+        "longitude": {
+            "type": "number",
+            "edscription": "Долгота"
+        },
+        "address": {
+            "type": "string",
+            "edscription": "Адрес"
+        },
+        "zip": {
+            "type": "string",
+            "edscription": "Индекс"
+        }
+    }, 
+    "required": [
+    ],
+    "type": "object"
+}

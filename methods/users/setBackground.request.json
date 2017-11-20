@@ -1,0 +1,18 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#", 
+    "description": "Метод для редактирования информации о пользователе",
+    "method": "post",
+    "properties": {
+        "url": {
+            "type": "string",
+            "edscription": "Ссылка на файл"
+        },
+        "data": {
+            "type": "string",
+            "edscription": "Данные картинки в base64"
+        }
+    }, 
+    "required": [
+    ],
+    "type": "object"
+}

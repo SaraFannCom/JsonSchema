@@ -1203,6 +1203,7 @@
                 "request": {
                     "$schema": "http://json-schema.org/draft-04/schema#", 
                     "description": "\u041c\u0435\u0442\u043e\u0434 \u0434\u043b\u044f \u0434\u0438\u0437\u043b\u0430\u0439\u043a\u0430 \u0432 FAQ", 
+                    "method": "post", 
                     "properties": {
                         "email": {
                             "description": "Email \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f", 
@@ -1344,6 +1345,7 @@
                 "request": {
                     "$schema": "http://json-schema.org/draft-04/schema#", 
                     "description": "\u041c\u0435\u0442\u043e\u0434 \u0434\u043b\u044f \u043b\u0430\u0439\u043a\u0430 \u0432 FAQ", 
+                    "method": "post", 
                     "properties": {
                         "page_id": {
                             "type": "integer"
@@ -1714,6 +1716,7 @@
                 "request": {
                     "$schema": "http://json-schema.org/draft-04/schema#", 
                     "description": "\u041c\u0435\u0442\u043e\u0434 \u0434\u043b\u044f \u043f\u043e\u043b\u0443\u0447\u0435\u043d\u0438\u044f \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u044b FAQ", 
+                    "method": "post", 
                     "properties": {
                         "id": {
                             "description": "\u0418\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f", 
@@ -1782,6 +1785,7 @@
                 "request": {
                     "$schema": "http://json-schema.org/draft-04/schema#", 
                     "description": "\u041c\u0435\u0442\u043e\u0434 \u0434\u043b\u044f \u043f\u043e\u043b\u0443\u0447\u0435\u043d\u0438\u044f \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u044b FAQ", 
+                    "method": "post", 
                     "properties": {
                         "id": {
                             "description": "\u0418\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f", 
@@ -1850,6 +1854,7 @@
                 "request": {
                     "$schema": "http://json-schema.org/draft-04/schema#", 
                     "description": "\u041c\u0435\u0442\u043e\u0434 \u0434\u043b\u044f \u043f\u043e\u043b\u0443\u0447\u0435\u043d\u0438\u044f \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u044b FAQ", 
+                    "method": "post", 
                     "properties": {
                         "id": {
                             "description": "\u0418\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f", 
@@ -2949,7 +2954,8 @@
             "wsAuth": {
                 "request": {
                     "$schema": "http://json-schema.org/draft-04/schema#", 
-                    "description": "\u041c\u0435\u0442\u043e\u0434 \u0434\u043b\u044f \u043f\u043e\u043b\u0443\u0447\u0435\u043d\u0438\u044f \u0441\u043f\u0438\u0441\u043a\u0430 \u0441\u043f\u043e\u0441\u043e\u0431\u043e\u0432 \u043f\u0440\u043e\u0434\u0430\u0436", 
+                    "description": "\u041c\u0435\u0442\u043e\u0434 \u0434\u043b\u044f \u043f\u043e\u043b\u0443\u0447\u0435\u043d\u0438\u044f \u0430\u0432\u0442\u043e\u0440\u0438\u0437\u0430\u0446\u0438\u0438 \u0432 \u0446\u0435\u043d\u0442\u0440\u0438\u0444\u0443\u0433\u0435", 
+                    "method": "post", 
                     "properties": {
                         "channels": {
                             "items": {
@@ -3324,6 +3330,80 @@
                     "type": "object"
                 }
             }, 
+            "edit": {
+                "request": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "description": "\u041c\u0435\u0442\u043e\u0434 \u0434\u043b\u044f \u0440\u0435\u0434\u0430\u043a\u0442\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u044f \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u044f", 
+                    "method": "post", 
+                    "properties": {
+                        "id": {
+                            "description": "\u0418\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u044f", 
+                            "type": "integer"
+                        }, 
+                        "text": {
+                            "description": "\u041d\u043e\u0432\u044b\u0439 \u0442\u0435\u043a\u0441\u0442", 
+                            "type": "string"
+                        }
+                    }, 
+                    "required": [
+                        "id", 
+                        "text"
+                    ], 
+                    "type": "object"
+                }, 
+                "response": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "description": "\u041e\u0442\u0432\u0435\u0442 \u043d\u0430 \u043c\u0435\u0442\u043e\u0434 messages.edit", 
+                    "properties": {
+                        "error": {
+                            "description": "\u041a\u043e\u0434 \u043e\u0448\u0438\u0431\u043a\u0438", 
+                            "type": "number"
+                        }, 
+                        "error_text": {
+                            "description": "\u0422\u0435\u043a\u0441\u0442 \u043e\u0448\u0438\u0431\u043a\u0438", 
+                            "type": "string"
+                        }, 
+                        "error_url": {
+                            "description": "\u0421\u0441\u044b\u043b\u043a\u0430 \u043d\u0430 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0443 \u043e\u0448\u0438\u0431\u043a\u0438", 
+                            "type": "string"
+                        }, 
+                        "response": {
+                            "properties": {
+                                "count": {
+                                    "description": "\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u043e\u0442\u0432\u0435\u0442\u043e\u0432", 
+                                    "type": "number"
+                                }, 
+                                "items": {
+                                    "description": "\u0421\u043f\u0438\u0441\u043e\u043a \u043e\u0442\u0432\u0435\u0442\u043e\u0432", 
+                                    "type": "array"
+                                }
+                            }, 
+                            "required": [
+                                "count", 
+                                "items"
+                            ], 
+                            "type": "object"
+                        }, 
+                        "run_time": {
+                            "description": "\u0412\u0440\u0435\u043c\u044f \u0432\u044b\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u044f", 
+                            "type": "number"
+                        }, 
+                        "server_time": {
+                            "description": "\u0412\u0440\u0435\u043c\u044f \u043d\u0430 \u0441\u0435\u0440\u0432\u0435\u0440\u0435 (UNIXTIME)", 
+                            "type": "number"
+                        }
+                    }, 
+                    "required": [
+                        "response", 
+                        "run_time", 
+                        "server_time", 
+                        "error", 
+                        "error_text", 
+                        "error_url"
+                    ], 
+                    "type": "object"
+                }
+            }, 
             "getDialogMessages": {
                 "request": {
                     "$schema": "http://json-schema.org/draft-04/schema#", 
@@ -3375,12 +3455,13 @@
                                     "description": "\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u043e\u0442\u0432\u0435\u0442\u043e\u0432", 
                                     "type": "number"
                                 }, 
+                                "has_unread": {
+                                    "description": "\u0415\u0441\u0442\u044c \u043b\u0438 \u0435\u0449\u0451 \u043d\u0435\u043f\u0440\u043e\u0447\u0438\u0442\u0430\u043d\u043d\u044b\u0435 \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u044f \u0432\u044b\u0448\u0435", 
+                                    "type": "boolean"
+                                }, 
                                 "items": {
+                                    "$ref": "objects.json#/definitions/messages/message", 
                                     "description": "\u0421\u043f\u0438\u0441\u043e\u043a \u043e\u0442\u0432\u0435\u0442\u043e\u0432", 
-                                    "items": {
-                                        "$ref": "objects.json#/definitions/messages/message", 
-                                        "type": "object"
-                                    }, 
                                     "type": "array"
                                 }
                             }, 
@@ -3462,17 +3543,175 @@
                                     "items": {
                                         "properties": {
                                             "dialog": {
-                                                "$ref": "objects.json#/definitions/messages/message", 
                                                 "type": "object"
                                             }, 
                                             "opponent": {
                                                 "$ref": "objects.json#/definitions/users/user_light", 
                                                 "type": "object"
+                                            }, 
+                                            "unread_count": {
+                                                "type": "number"
                                             }
                                         }, 
                                         "type": "object"
                                     }, 
                                     "type": "array"
+                                }
+                            }, 
+                            "required": [
+                                "count", 
+                                "items"
+                            ], 
+                            "type": "object"
+                        }, 
+                        "run_time": {
+                            "description": "\u0412\u0440\u0435\u043c\u044f \u0432\u044b\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u044f", 
+                            "type": "number"
+                        }, 
+                        "server_time": {
+                            "description": "\u0412\u0440\u0435\u043c\u044f \u043d\u0430 \u0441\u0435\u0440\u0432\u0435\u0440\u0435 (UNIXTIME)", 
+                            "type": "number"
+                        }
+                    }, 
+                    "required": [
+                        "response", 
+                        "run_time", 
+                        "server_time", 
+                        "error", 
+                        "error_text", 
+                        "error_url"
+                    ], 
+                    "type": "object"
+                }
+            }, 
+            "markSeen": {
+                "request": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "description": "\u041c\u0435\u0442\u043e\u0434 \u0434\u043b\u044f \u043e\u0442\u043c\u0435\u0442\u043a\u0438 \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u044f \u043f\u0440\u043e\u0447\u0438\u0442\u0430\u043d\u043d\u044b\u043c", 
+                    "method": "post", 
+                    "properties": {
+                        "id": {
+                            "description": "\u0418\u0414 \u043f\u043e\u0441\u043b\u0435\u0434\u043d\u0435\u0433\u043e \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u044f \u0434\u043b\u044f \u043f\u0440\u043e\u0447\u0442\u0435\u043d\u0438\u044f", 
+                            "type": "integer"
+                        }
+                    }, 
+                    "required": [
+                        "id"
+                    ], 
+                    "type": "object"
+                }, 
+                "response": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "description": "\u041e\u0442\u0432\u0435\u0442 \u043d\u0430 \u043c\u0435\u0442\u043e\u0434 messages.markSeen", 
+                    "properties": {
+                        "error": {
+                            "description": "\u041a\u043e\u0434 \u043e\u0448\u0438\u0431\u043a\u0438", 
+                            "type": "number"
+                        }, 
+                        "error_text": {
+                            "description": "\u0422\u0435\u043a\u0441\u0442 \u043e\u0448\u0438\u0431\u043a\u0438", 
+                            "type": "string"
+                        }, 
+                        "error_url": {
+                            "description": "\u0421\u0441\u044b\u043b\u043a\u0430 \u043d\u0430 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0443 \u043e\u0448\u0438\u0431\u043a\u0438", 
+                            "type": "string"
+                        }, 
+                        "response": {
+                            "properties": {
+                                "count": {
+                                    "description": "\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u043e\u0442\u0432\u0435\u0442\u043e\u0432", 
+                                    "type": "number"
+                                }, 
+                                "items": {
+                                    "description": "\u0421\u043f\u0438\u0441\u043e\u043a \u043e\u0442\u0432\u0435\u0442\u043e\u0432", 
+                                    "type": "array"
+                                }
+                            }, 
+                            "required": [
+                                "count", 
+                                "items"
+                            ], 
+                            "type": "object"
+                        }, 
+                        "run_time": {
+                            "description": "\u0412\u0440\u0435\u043c\u044f \u0432\u044b\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u044f", 
+                            "type": "number"
+                        }, 
+                        "server_time": {
+                            "description": "\u0412\u0440\u0435\u043c\u044f \u043d\u0430 \u0441\u0435\u0440\u0432\u0435\u0440\u0435 (UNIXTIME)", 
+                            "type": "number"
+                        }
+                    }, 
+                    "required": [
+                        "response", 
+                        "run_time", 
+                        "server_time", 
+                        "error", 
+                        "error_text", 
+                        "error_url"
+                    ], 
+                    "type": "object"
+                }
+            }, 
+            "search": {
+                "request": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "description": "\u041c\u0435\u0442\u043e\u0434 \u0434\u043b\u044f \u0443\u0434\u0430\u043b\u0435\u043d\u0438\u044f \u0441\u043e\u043e\u0431\u0449\u0435\u043d\u0438\u044f", 
+                    "method": "post", 
+                    "properties": {
+                        "last_id": {
+                            "description": "\u0418\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 \u043f\u043e\u0441\u043b\u0435\u0434\u043d\u0435\u0433\u043e \u0437\u0430\u0433\u0440\u0443\u0436\u0435\u043d\u043e\u0433\u043e \u043f\u043e\u0441\u0442\u0430", 
+                            "type": "string"
+                        }, 
+                        "limit": {
+                            "default": 20, 
+                            "description": "\u041b\u0438\u043c\u0438\u0442", 
+                            "minNum": 1, 
+                            "type": "integer"
+                        }, 
+                        "q": {
+                            "description": "\u0421\u0442\u0440\u043e\u043a\u0430 \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", 
+                            "type": "string"
+                        }, 
+                        "shop_id": {
+                            "description": "\u0418\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 \u043c\u0430\u0433\u0430\u0437\u0438\u043d\u0430, \u0435\u0441\u043b\u0438 \u043e\u0442\u043f\u0440\u0430\u0432\u0438\u0442\u0435\u043b\u044c - \u043c\u043e\u0439 \u043c\u0430\u0433\u0430\u0437\u0438\u043d", 
+                            "type": "integer"
+                        }
+                    }, 
+                    "required": [
+                        "q"
+                    ], 
+                    "type": "object"
+                }, 
+                "response": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "description": "\u041e\u0442\u0432\u0435\u0442 \u043d\u0430 \u043c\u0435\u0442\u043e\u0434 messages.search", 
+                    "properties": {
+                        "error": {
+                            "description": "\u041a\u043e\u0434 \u043e\u0448\u0438\u0431\u043a\u0438", 
+                            "type": "number"
+                        }, 
+                        "error_text": {
+                            "description": "\u0422\u0435\u043a\u0441\u0442 \u043e\u0448\u0438\u0431\u043a\u0438", 
+                            "type": "string"
+                        }, 
+                        "error_url": {
+                            "description": "\u0421\u0441\u044b\u043b\u043a\u0430 \u043d\u0430 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0443 \u043e\u0448\u0438\u0431\u043a\u0438", 
+                            "type": "string"
+                        }, 
+                        "response": {
+                            "properties": {
+                                "count": {
+                                    "description": "\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u043e\u0442\u0432\u0435\u0442\u043e\u0432", 
+                                    "type": "number"
+                                }, 
+                                "items": {
+                                    "description": "\u0421\u043f\u0438\u0441\u043e\u043a \u043e\u0442\u0432\u0435\u0442\u043e\u0432", 
+                                    "type": "array"
+                                }, 
+                                "last_id": {
+                                    "description": "\u041f\u043e\u0441\u043b\u0435\u0434\u043d\u0438\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440", 
+                                    "type": "integer"
                                 }
                             }, 
                             "required": [
@@ -3595,6 +3834,7 @@
                 "request": {
                     "$schema": "http://json-schema.org/draft-04/schema#", 
                     "description": "\u041c\u0435\u0442\u043e\u0434 \u0434\u043b\u044f \u043e\u0442\u043f\u0440\u0430\u0432\u043a\u0438 \u0440\u0435\u043a\u043e\u043c\u0435\u043d\u0434\u0430\u0446\u0438\u0438", 
+                    "method": "post", 
                     "properties": {
                         "id": {
                             "description": "\u0418\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 \u0442\u043e\u0432\u0430\u0440\u0430", 
@@ -3668,6 +3908,7 @@
                 "request": {
                     "$schema": "http://json-schema.org/draft-04/schema#", 
                     "description": "\u041c\u0435\u0442\u043e\u0434 \u0434\u043b\u044f \u043e\u0442\u043f\u0440\u0430\u0432\u043a\u0438 \u0440\u0435\u043a\u043e\u043c\u0435\u043d\u0434\u0430\u0446\u0438\u0438", 
+                    "method": "post", 
                     "properties": {
                         "id": {
                             "description": "\u0418\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 \u0442\u043e\u0432\u0430\u0440\u0430", 
@@ -3737,6 +3978,7 @@
                 "request": {
                     "$schema": "http://json-schema.org/draft-04/schema#", 
                     "description": "\u041c\u0435\u0442\u043e\u0434 \u0434\u043b\u044f \u043e\u0442\u043f\u0440\u0430\u0432\u043a\u0438 \u0440\u0435\u043a\u043e\u043c\u0435\u043d\u0434\u0430\u0446\u0438\u0438", 
+                    "method": "post", 
                     "properties": {
                         "id": {
                             "description": "\u0418\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 \u0442\u043e\u0432\u0430\u0440\u0430", 
@@ -3810,6 +4052,7 @@
                 "request": {
                     "$schema": "http://json-schema.org/draft-04/schema#", 
                     "description": "\u041c\u0435\u0442\u043e\u0434 \u0434\u043b\u044f \u043f\u043e\u043b\u0443\u0447\u0435\u043d\u0438\u044f \u0434\u0430\u043d\u043d\u044b\u0445 \u043e \u0442\u043e\u0432\u0430\u0440\u0435", 
+                    "method": "post", 
                     "properties": {
                         "id": {
                             "description": "\u0418\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 \u0442\u043e\u0432\u0430\u0440\u0430, \u0438\u043b\u0438 \u0441\u043f\u0438\u043e\u0441\u043a, \u0440\u0430\u0437\u0434\u0435\u043b\u0451\u043d\u043d\u044b\u0439 \u0437\u0430\u043f\u044f\u0442\u044b\u043c\u0438", 
@@ -3888,6 +4131,7 @@
                 "request": {
                     "$schema": "http://json-schema.org/draft-04/schema#", 
                     "description": "\u041c\u0435\u0442\u043e\u0434 \u0434\u043b\u044f \u043e\u0441\u0442\u0430\u0432\u043b\u0435\u043d\u0438\u044f \u0437\u0430\u044f\u0432\u043a\u0438", 
+                    "method": "post", 
                     "properties": {
                         "amount": {
                             "description": "\u0421\u0443\u043c\u043c\u0430 \u0437\u0430\u044f\u0432\u043a\u0438", 
@@ -4317,6 +4561,7 @@
                 "request": {
                     "$schema": "http://json-schema.org/draft-04/schema#", 
                     "description": "\u041c\u0435\u0442\u043e\u0434 \u0434\u043b\u044f \u043e\u0442\u043f\u0440\u0430\u0432\u043a\u0438 \u043e\u0442\u0437\u044b\u0432\u0430 \u043e \u0442\u043e\u0432\u0430\u0440\u0435", 
+                    "method": "post", 
                     "properties": {
                         "id": {
                             "description": "\u0418\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 \u0442\u043e\u0432\u0430\u0440\u0430", 
@@ -4393,6 +4638,7 @@
                 "request": {
                     "$schema": "http://json-schema.org/draft-04/schema#", 
                     "description": "\u041c\u0435\u0442\u043e\u0434 \u0434\u043b\u044f \u043f\u043e\u043b\u0443\u0447\u0435\u043d\u0438\u044f \u0434\u0430\u043d\u043d\u044b\u0445 \u043e \u0442\u043e\u0432\u0430\u0440\u0435", 
+                    "method": "post", 
                     "properties": {
                         "id": {
                             "description": "\u0418\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 \u0442\u043e\u0432\u0430\u0440\u0430", 
@@ -4466,6 +4712,7 @@
                 "request": {
                     "$schema": "http://json-schema.org/draft-04/schema#", 
                     "description": "\u041c\u0435\u0442\u043e\u0434 \u0434\u043b\u044f \u043e\u0442\u043f\u0440\u0430\u0432\u043a\u0438 \u0440\u0435\u043a\u043e\u043c\u0435\u043d\u0434\u0430\u0446\u0438\u0438", 
+                    "method": "post", 
                     "properties": {
                         "id": {
                             "description": "\u0418\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 \u0442\u043e\u0432\u0430\u0440\u0430", 
@@ -4534,6 +4781,7 @@
                 "request": {
                     "$schema": "http://json-schema.org/draft-04/schema#", 
                     "description": "\u041c\u0435\u0442\u043e\u0434 \u0434\u043b\u044f \u043f\u043e\u043b\u0443\u0447\u0435\u043d\u0438\u044f \u0434\u0430\u043d\u043d\u044b\u0445 \u043e \u0442\u043e\u0432\u0430\u0440\u0435", 
+                    "method": "post", 
                     "properties": {
                         "id": {
                             "description": "\u0418\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 \u0442\u043e\u0432\u0430\u0440\u0430", 
@@ -5671,6 +5919,7 @@
                 "request": {
                     "$schema": "http://json-schema.org/draft-04/schema#", 
                     "description": "\u041c\u0435\u0442\u043e\u0434 \u0434\u043b\u044f \u043e\u0442\u043f\u0440\u0430\u0432\u043a\u0438 \u0440\u0435\u043a\u043e\u043c\u0435\u043d\u0434\u0430\u0446\u0438\u0438", 
+                    "method": "post", 
                     "properties": {
                         "friends": {
                             "description": "\u0421\u043f\u0438\u0441\u043e\u043a \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440\u043e\u0432 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u0435\u0439, \u0434\u043b\u044f \u043e\u0442\u043f\u0440\u0430\u0432\u043a\u0438 \u0440\u0435\u043a\u043e\u043c\u0435\u043d\u0434\u0430\u0446\u0438\u0438, \u0440\u0430\u0437\u0434\u0435\u043b\u0451\u043d\u043d\u044b\u0439 \u0437\u0430\u043f\u044f\u0442\u044b\u043c\u0438", 
@@ -6347,6 +6596,117 @@
                     "type": "object"
                 }
             }, 
+            "edit": {
+                "request": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "description": "\u041c\u0435\u0442\u043e\u0434 \u0434\u043b\u044f \u0440\u0435\u0434\u0430\u043a\u0442\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u044f \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u0438 \u043e \u043c\u0430\u0433\u0430\u0437\u0438\u043d\u0435", 
+                    "method": "post", 
+                    "properties": {
+                        "address": {
+                            "edscription": "\u0410\u0434\u0440\u0435\u0441", 
+                            "type": "string"
+                        }, 
+                        "city": {
+                            "edscription": "\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435 \u0433\u043e\u0440\u043e\u0434\u0430", 
+                            "type": "string"
+                        }, 
+                        "country": {
+                            "edscription": "\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435 \u0441\u0442\u0440\u0430\u043d\u044b", 
+                            "type": "string"
+                        }, 
+                        "description": {
+                            "edscription": "\u041f\u043e\u043b\u0435 \u0441 \u043e\u043f\u0438\u0441\u0430\u043d\u0438\u0435\u043c", 
+                            "type": "string"
+                        }, 
+                        "id": {
+                            "edscription": "\u0418\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 \u043c\u0430\u0433\u0430\u0437\u0438\u043d\u0430", 
+                            "type": "integer"
+                        }, 
+                        "latitude": {
+                            "edscription": "\u0428\u0438\u0440\u043e\u0442\u0430", 
+                            "type": "number"
+                        }, 
+                        "longitude": {
+                            "edscription": "\u0414\u043e\u043b\u0433\u043e\u0442\u0430", 
+                            "type": "number"
+                        }, 
+                        "name": {
+                            "edscription": "\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435", 
+                            "type": "string"
+                        }, 
+                        "region": {
+                            "edscription": "\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435 \u0440\u0435\u0433\u0438\u043e\u043d\u0430", 
+                            "type": "string"
+                        }, 
+                        "zip": {
+                            "edscription": "\u0418\u043d\u0434\u0435\u043a\u0441", 
+                            "type": "string"
+                        }
+                    }, 
+                    "required": [
+                        "id"
+                    ], 
+                    "type": "object"
+                }, 
+                "response": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "additionalProperties": false, 
+                    "description": "\u041e\u0442\u0432\u0435\u0442 \u043d\u0430 \u043c\u0435\u0442\u043e\u0434 users.edit", 
+                    "properties": {
+                        "error": {
+                            "description": "\u041a\u043e\u0434 \u043e\u0448\u0438\u0431\u043a\u0438", 
+                            "type": "number"
+                        }, 
+                        "error_text": {
+                            "description": "\u0422\u0435\u043a\u0441\u0442 \u043e\u0448\u0438\u0431\u043a\u0438", 
+                            "type": "string"
+                        }, 
+                        "error_url": {
+                            "description": "\u0421\u0441\u044b\u043b\u043a\u0430 \u043d\u0430 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0443 \u043e\u0448\u0438\u0431\u043a\u0438", 
+                            "type": "string"
+                        }, 
+                        "response": {
+                            "additionalProperties": false, 
+                            "properties": {
+                                "count": {
+                                    "description": "\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u043e\u0442\u0432\u0435\u0442\u043e\u0432", 
+                                    "type": "number"
+                                }, 
+                                "items": {
+                                    "description": "\u0421\u043f\u0438\u0441\u043e\u043a \u043e\u0442\u0432\u0435\u0442\u043e\u0432", 
+                                    "items": {
+                                        "$ref": "objects.json#/definitions/shops/shop", 
+                                        "type": "object"
+                                    }, 
+                                    "type": "array"
+                                }
+                            }, 
+                            "required": [
+                                "count", 
+                                "items"
+                            ], 
+                            "type": "object"
+                        }, 
+                        "run_time": {
+                            "description": "\u0412\u0440\u0435\u043c\u044f \u0432\u044b\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u044f", 
+                            "type": "number"
+                        }, 
+                        "server_time": {
+                            "description": "\u0412\u0440\u0435\u043c\u044f \u043d\u0430 \u0441\u0435\u0440\u0432\u0435\u0440\u0435 (UNIXTIME)", 
+                            "type": "number"
+                        }
+                    }, 
+                    "required": [
+                        "response", 
+                        "run_time", 
+                        "server_time", 
+                        "error", 
+                        "error_text", 
+                        "error_url"
+                    ], 
+                    "type": "object"
+                }
+            }, 
             "get": {
                 "request": {
                     "$schema": "http://json-schema.org/draft-04/schema#", 
@@ -6354,8 +6714,10 @@
                     "properties": {
                         "id": {
                             "description": "\u0418\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 \u043c\u0430\u0433\u0430\u0437\u0438\u043d\u0430", 
-                            "minNum": 1, 
-                            "type": "integer"
+                            "type": [
+                                "string", 
+                                "integer"
+                            ]
                         }
                     }, 
                     "required": [
@@ -6528,6 +6890,81 @@
                             }, 
                             "required": [
                                 "last_id", 
+                                "count", 
+                                "items"
+                            ], 
+                            "type": "object"
+                        }, 
+                        "run_time": {
+                            "description": "\u0412\u0440\u0435\u043c\u044f \u0432\u044b\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u044f", 
+                            "type": "number"
+                        }, 
+                        "server_time": {
+                            "description": "\u0412\u0440\u0435\u043c\u044f \u043d\u0430 \u0441\u0435\u0440\u0432\u0435\u0440\u0435 (UNIXTIME)", 
+                            "type": "number"
+                        }
+                    }, 
+                    "required": [
+                        "response", 
+                        "run_time", 
+                        "server_time", 
+                        "error", 
+                        "error_text", 
+                        "error_url"
+                    ], 
+                    "type": "object"
+                }
+            }, 
+            "getLightInfo": {
+                "request": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "description": "\u041c\u0435\u0442\u043e\u0434 \u0434\u043b\u044f \u043f\u043e\u043b\u0443\u0447\u0435\u043d\u0438\u044f \u0434\u0430\u043d\u043d\u044b\u0445 \u043c\u0430\u0433\u0430\u0437\u0438\u043d\u0430", 
+                    "properties": {
+                        "id": {
+                            "description": "\u0418\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 \u043c\u0430\u0433\u0430\u0437\u0438\u043d\u0430", 
+                            "type": [
+                                "string", 
+                                "integer"
+                            ]
+                        }
+                    }, 
+                    "required": [
+                        "id"
+                    ], 
+                    "type": "object"
+                }, 
+                "response": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "description": "\u041e\u0442\u0432\u0435\u0442 \u043d\u0430 \u043c\u0435\u0442\u043e\u0434 shops.getAll", 
+                    "properties": {
+                        "error": {
+                            "description": "\u041a\u043e\u0434 \u043e\u0448\u0438\u0431\u043a\u0438", 
+                            "type": "number"
+                        }, 
+                        "error_text": {
+                            "description": "\u0422\u0435\u043a\u0441\u0442 \u043e\u0448\u0438\u0431\u043a\u0438", 
+                            "type": "string"
+                        }, 
+                        "error_url": {
+                            "description": "\u0421\u0441\u044b\u043b\u043a\u0430 \u043d\u0430 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0443 \u043e\u0448\u0438\u0431\u043a\u0438", 
+                            "type": "string"
+                        }, 
+                        "response": {
+                            "properties": {
+                                "count": {
+                                    "description": "\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u043e\u0442\u0432\u0435\u0442\u043e\u0432", 
+                                    "type": "number"
+                                }, 
+                                "items": {
+                                    "description": "\u0421\u043f\u0438\u0441\u043e\u043a \u043e\u0442\u0432\u0435\u0442\u043e\u0432", 
+                                    "items": {
+                                        "$ref": "objects.json#/definitions/shops/shop_light", 
+                                        "type": "object"
+                                    }, 
+                                    "type": "array"
+                                }
+                            }, 
+                            "required": [
                                 "count", 
                                 "items"
                             ], 
@@ -6767,10 +7204,244 @@
                     "type": "object"
                 }
             }, 
+            "getReviews": {
+                "request": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "description": "\u041c\u0435\u0442\u043e\u0434 \u0434\u043b\u044f \u043f\u043e\u043b\u0443\u0447\u0435\u043d\u0438\u044f \u0434\u0430\u043d\u043d\u044b\u0445 \u043c\u0430\u0433\u0430\u0437\u0438\u043d\u0430", 
+                    "properties": {
+                        "id": {
+                            "description": "\u0418\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 \u043c\u0430\u0433\u0430\u0437\u0438\u043d\u0430", 
+                            "minNum": 1, 
+                            "type": "integer"
+                        }, 
+                        "last_id": {
+                            "description": "\u041f\u043e\u0441\u043b\u0435\u0434\u043d\u0438\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440", 
+                            "type": "string"
+                        }, 
+                        "limit": {
+                            "default": 20, 
+                            "description": "\u041b\u0438\u043c\u0438\u0442", 
+                            "minNum": 1, 
+                            "type": "integer"
+                        }
+                    }, 
+                    "required": [
+                        "id"
+                    ], 
+                    "type": "object"
+                }, 
+                "response": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "description": "\u041e\u0442\u0432\u0435\u0442 \u043d\u0430 \u043c\u0435\u0442\u043e\u0434 shops.getAll", 
+                    "properties": {
+                        "error": {
+                            "description": "\u041a\u043e\u0434 \u043e\u0448\u0438\u0431\u043a\u0438", 
+                            "type": "number"
+                        }, 
+                        "error_text": {
+                            "description": "\u0422\u0435\u043a\u0441\u0442 \u043e\u0448\u0438\u0431\u043a\u0438", 
+                            "type": "string"
+                        }, 
+                        "error_url": {
+                            "description": "\u0421\u0441\u044b\u043b\u043a\u0430 \u043d\u0430 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0443 \u043e\u0448\u0438\u0431\u043a\u0438", 
+                            "type": "string"
+                        }, 
+                        "response": {
+                            "properties": {
+                                "count": {
+                                    "description": "\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u043e\u0442\u0432\u0435\u0442\u043e\u0432", 
+                                    "type": "number"
+                                }, 
+                                "items": {
+                                    "description": "\u0421\u043f\u0438\u0441\u043e\u043a \u043e\u0442\u0432\u0435\u0442\u043e\u0432", 
+                                    "type": "array"
+                                }
+                            }, 
+                            "required": [
+                                "count", 
+                                "items"
+                            ], 
+                            "type": "object"
+                        }, 
+                        "run_time": {
+                            "description": "\u0412\u0440\u0435\u043c\u044f \u0432\u044b\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u044f", 
+                            "type": "number"
+                        }, 
+                        "server_time": {
+                            "description": "\u0412\u0440\u0435\u043c\u044f \u043d\u0430 \u0441\u0435\u0440\u0432\u0435\u0440\u0435 (UNIXTIME)", 
+                            "type": "number"
+                        }
+                    }, 
+                    "required": [
+                        "response", 
+                        "run_time", 
+                        "server_time", 
+                        "error", 
+                        "error_text", 
+                        "error_url"
+                    ], 
+                    "type": "object"
+                }
+            }, 
+            "setAvatar": {
+                "request": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "description": "\u041c\u0435\u0442\u043e\u0434 \u0434\u043b\u044f \u0440\u0435\u0434\u0430\u043a\u0442\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u044f \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u0438 \u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u0435", 
+                    "method": "post", 
+                    "properties": {
+                        "data": {
+                            "edscription": "\u0414\u0430\u043d\u043d\u044b\u0435 \u043a\u0430\u0440\u0442\u0438\u043d\u043a\u0438 \u0432 base64", 
+                            "type": "string"
+                        }, 
+                        "id": {
+                            "description": "\u0418\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 \u043c\u0430\u0433\u0430\u0437\u0438\u043d\u0430", 
+                            "type": "integer"
+                        }, 
+                        "url": {
+                            "edscription": "\u0421\u0441\u044b\u043b\u043a\u0430 \u043d\u0430 \u0444\u0430\u0439\u043b", 
+                            "type": "string"
+                        }
+                    }, 
+                    "required": [], 
+                    "type": "object"
+                }, 
+                "response": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "additionalProperties": false, 
+                    "description": "\u041e\u0442\u0432\u0435\u0442 \u043d\u0430 \u043c\u0435\u0442\u043e\u0434 users.setAvatar", 
+                    "properties": {
+                        "error": {
+                            "description": "\u041a\u043e\u0434 \u043e\u0448\u0438\u0431\u043a\u0438", 
+                            "type": "number"
+                        }, 
+                        "error_text": {
+                            "description": "\u0422\u0435\u043a\u0441\u0442 \u043e\u0448\u0438\u0431\u043a\u0438", 
+                            "type": "string"
+                        }, 
+                        "error_url": {
+                            "description": "\u0421\u0441\u044b\u043b\u043a\u0430 \u043d\u0430 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0443 \u043e\u0448\u0438\u0431\u043a\u0438", 
+                            "type": "string"
+                        }, 
+                        "response": {
+                            "additionalProperties": false, 
+                            "properties": {
+                                "count": {
+                                    "description": "\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u043e\u0442\u0432\u0435\u0442\u043e\u0432", 
+                                    "type": "number"
+                                }, 
+                                "items": {
+                                    "description": "\u0421\u043f\u0438\u0441\u043e\u043a \u043e\u0442\u0432\u0435\u0442\u043e\u0432", 
+                                    "type": "array"
+                                }
+                            }, 
+                            "required": [
+                                "count", 
+                                "items"
+                            ], 
+                            "type": "object"
+                        }, 
+                        "run_time": {
+                            "description": "\u0412\u0440\u0435\u043c\u044f \u0432\u044b\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u044f", 
+                            "type": "number"
+                        }, 
+                        "server_time": {
+                            "description": "\u0412\u0440\u0435\u043c\u044f \u043d\u0430 \u0441\u0435\u0440\u0432\u0435\u0440\u0435 (UNIXTIME)", 
+                            "type": "number"
+                        }
+                    }, 
+                    "required": [
+                        "response", 
+                        "run_time", 
+                        "server_time", 
+                        "error", 
+                        "error_text", 
+                        "error_url"
+                    ], 
+                    "type": "object"
+                }
+            }, 
+            "setBackground": {
+                "request": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "description": "\u041c\u0435\u0442\u043e\u0434 \u0434\u043b\u044f \u0440\u0435\u0434\u0430\u043a\u0442\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u044f \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u0438 \u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u0435", 
+                    "method": "post", 
+                    "properties": {
+                        "data": {
+                            "edscription": "\u0414\u0430\u043d\u043d\u044b\u0435 \u043a\u0430\u0440\u0442\u0438\u043d\u043a\u0438 \u0432 base64", 
+                            "type": "string"
+                        }, 
+                        "id": {
+                            "description": "\u0418\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 \u043c\u0430\u0433\u0430\u0437\u0438\u043d\u0430", 
+                            "type": "integer"
+                        }, 
+                        "url": {
+                            "edscription": "\u0421\u0441\u044b\u043b\u043a\u0430 \u043d\u0430 \u0444\u0430\u0439\u043b", 
+                            "type": "string"
+                        }
+                    }, 
+                    "required": [], 
+                    "type": "object"
+                }, 
+                "response": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "additionalProperties": false, 
+                    "description": "\u041e\u0442\u0432\u0435\u0442 \u043d\u0430 \u043c\u0435\u0442\u043e\u0434 users.setBackground", 
+                    "properties": {
+                        "error": {
+                            "description": "\u041a\u043e\u0434 \u043e\u0448\u0438\u0431\u043a\u0438", 
+                            "type": "number"
+                        }, 
+                        "error_text": {
+                            "description": "\u0422\u0435\u043a\u0441\u0442 \u043e\u0448\u0438\u0431\u043a\u0438", 
+                            "type": "string"
+                        }, 
+                        "error_url": {
+                            "description": "\u0421\u0441\u044b\u043b\u043a\u0430 \u043d\u0430 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0443 \u043e\u0448\u0438\u0431\u043a\u0438", 
+                            "type": "string"
+                        }, 
+                        "response": {
+                            "additionalProperties": false, 
+                            "properties": {
+                                "count": {
+                                    "description": "\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u043e\u0442\u0432\u0435\u0442\u043e\u0432", 
+                                    "type": "number"
+                                }, 
+                                "items": {
+                                    "description": "\u0421\u043f\u0438\u0441\u043e\u043a \u043e\u0442\u0432\u0435\u0442\u043e\u0432", 
+                                    "type": "array"
+                                }
+                            }, 
+                            "required": [
+                                "count", 
+                                "items"
+                            ], 
+                            "type": "object"
+                        }, 
+                        "run_time": {
+                            "description": "\u0412\u0440\u0435\u043c\u044f \u0432\u044b\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u044f", 
+                            "type": "number"
+                        }, 
+                        "server_time": {
+                            "description": "\u0412\u0440\u0435\u043c\u044f \u043d\u0430 \u0441\u0435\u0440\u0432\u0435\u0440\u0435 (UNIXTIME)", 
+                            "type": "number"
+                        }
+                    }, 
+                    "required": [
+                        "response", 
+                        "run_time", 
+                        "server_time", 
+                        "error", 
+                        "error_text", 
+                        "error_url"
+                    ], 
+                    "type": "object"
+                }
+            }, 
             "subscribe": {
                 "request": {
                     "$schema": "http://json-schema.org/draft-04/schema#", 
                     "description": "\u041c\u0435\u0442\u043e\u0434 \u0434\u043b\u044f \u043f\u043e\u043b\u0443\u0447\u0435\u043d\u0438\u044f \u0434\u0430\u043d\u043d\u044b\u0445 \u043c\u0430\u0433\u0430\u0437\u0438\u043d\u0430", 
+                    "method": "post", 
                     "properties": {
                         "id": {
                             "description": "\u0418\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 \u043c\u0430\u0433\u0430\u0437\u0438\u043d\u0430", 
@@ -6840,6 +7511,7 @@
                 "request": {
                     "$schema": "http://json-schema.org/draft-04/schema#", 
                     "description": "\u041c\u0435\u0442\u043e\u0434 \u0434\u043b\u044f \u043f\u043e\u043b\u0443\u0447\u0435\u043d\u0438\u044f \u0434\u0430\u043d\u043d\u044b\u0445 \u043c\u0430\u0433\u0430\u0437\u0438\u043d\u0430", 
+                    "method": "post", 
                     "properties": {
                         "id": {
                             "description": "\u0418\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 \u043c\u0430\u0433\u0430\u0437\u0438\u043d\u0430", 
@@ -6907,6 +7579,100 @@
             }
         }, 
         "social": {
+            "addComment": {
+                "request": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "description": "\u041c\u0435\u0442\u043e\u0434 \u0434\u043b\u044f \u043f\u043e\u043b\u0443\u0447\u0435\u043d\u0438\u044f \u0441\u043f\u0438\u0441\u043a\u0430 \u043b\u0430\u0439\u043a\u043e\u0432", 
+                    "method": "post", 
+                    "properties": {
+                        "id": {
+                            "type": "integer"
+                        }, 
+                        "shop_id": {
+                            "description": "\u0418\u0414 \u043c\u0430\u0433\u0430\u0437\u0438\u043d\u0430, \u043e\u0442 \u0438\u043c\u0435\u043d\u0438 \u043a\u043e\u0442\u043e\u0440\u043e\u0433\u043e \u043f\u043e\u0441\u0442\u0438\u0442\u0441\u044f \u043a\u043e\u043c\u043c\u0435\u043d\u0442\u0430\u0440\u0438\u0439", 
+                            "type": "integer"
+                        }, 
+                        "text": {
+                            "description": "\u0422\u0435\u043a\u0441\u0442 \u043a\u043e\u043c\u043c\u0435\u043d\u0442\u0430\u0440\u0438\u044f", 
+                            "minLength": 1, 
+                            "type": "string"
+                        }, 
+                        "to": {
+                            "description": "\u0418\u0414 \u043a\u043e\u043c\u043c\u0435\u043d\u0442\u0430\u0440\u0438\u044f, \u043a \u043a\u043e\u0442\u043e\u0440\u043e\u043c\u0443 \u043e\u0441\u0442\u0430\u0432\u043b\u0435\u043d \u043e\u0442\u0432\u0435\u0442", 
+                            "type": "integer"
+                        }, 
+                        "type": {
+                            "enum": [
+                                "product", 
+                                "wall_post", 
+                                "blog_post", 
+                                "image"
+                            ], 
+                            "type": "string"
+                        }
+                    }, 
+                    "required": [
+                        "id", 
+                        "type", 
+                        "text"
+                    ], 
+                    "type": "object"
+                }, 
+                "response": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "additionalProperties": false, 
+                    "description": "\u041e\u0442\u0432\u0435\u0442 \u043d\u0430 \u043c\u0435\u0442\u043e\u0434 users.get", 
+                    "properties": {
+                        "error": {
+                            "description": "\u041a\u043e\u0434 \u043e\u0448\u0438\u0431\u043a\u0438", 
+                            "type": "number"
+                        }, 
+                        "error_text": {
+                            "description": "\u0422\u0435\u043a\u0441\u0442 \u043e\u0448\u0438\u0431\u043a\u0438", 
+                            "type": "string"
+                        }, 
+                        "error_url": {
+                            "description": "\u0421\u0441\u044b\u043b\u043a\u0430 \u043d\u0430 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0443 \u043e\u0448\u0438\u0431\u043a\u0438", 
+                            "type": "string"
+                        }, 
+                        "response": {
+                            "additionalProperties": false, 
+                            "properties": {
+                                "count": {
+                                    "description": "\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u043e\u0442\u0432\u0435\u0442\u043e\u0432", 
+                                    "type": "number"
+                                }, 
+                                "items": {
+                                    "description": "\u0421\u043f\u0438\u0441\u043e\u043a \u043e\u0442\u0432\u0435\u0442\u043e\u0432", 
+                                    "type": "array"
+                                }
+                            }, 
+                            "required": [
+                                "count", 
+                                "items"
+                            ], 
+                            "type": "object"
+                        }, 
+                        "run_time": {
+                            "description": "\u0412\u0440\u0435\u043c\u044f \u0432\u044b\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u044f", 
+                            "type": "number"
+                        }, 
+                        "server_time": {
+                            "description": "\u0412\u0440\u0435\u043c\u044f \u043d\u0430 \u0441\u0435\u0440\u0432\u0435\u0440\u0435 (UNIXTIME)", 
+                            "type": "number"
+                        }
+                    }, 
+                    "required": [
+                        "response", 
+                        "run_time", 
+                        "server_time", 
+                        "error", 
+                        "error_text", 
+                        "error_url"
+                    ], 
+                    "type": "object"
+                }
+            }, 
             "getComments": {
                 "request": {
                     "$schema": "http://json-schema.org/draft-04/schema#", 
@@ -7214,6 +7980,7 @@
                 "request": {
                     "$schema": "http://json-schema.org/draft-04/schema#", 
                     "description": "\u041c\u0435\u0442\u043e\u0434 \u0434\u043b\u044f \u043f\u043e\u043b\u0443\u0447\u0435\u043d\u0438\u044f \u0441\u043f\u0438\u0441\u043a\u0430 \u043b\u0430\u0439\u043a\u043e\u0432", 
+                    "method": "post", 
                     "properties": {
                         "id": {
                             "type": "integer"
@@ -7223,7 +7990,8 @@
                                 "product", 
                                 "wall_post", 
                                 "blog_post", 
-                                "image"
+                                "image", 
+                                "comment"
                             ], 
                             "type": "string"
                         }
@@ -7293,6 +8061,7 @@
                 "request": {
                     "$schema": "http://json-schema.org/draft-04/schema#", 
                     "description": "\u041c\u0435\u0442\u043e\u0434 \u0434\u043b\u044f \u043f\u043e\u043b\u0443\u0447\u0435\u043d\u0438\u044f \u0441\u043f\u0438\u0441\u043a\u0430 \u043b\u0430\u0439\u043a\u043e\u0432", 
+                    "method": "post", 
                     "properties": {
                         "id": {
                             "type": "integer"
@@ -7389,6 +8158,10 @@
                     "description": "\u041c\u0435\u0442\u043e\u0434 \u0434\u043b\u044f \u0441\u043c\u0435\u043d\u044b \u043f\u0430\u0440\u043e\u043b\u044f \u0442\u0435\u043a\u0443\u0449\u0435\u0433\u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f", 
                     "method": "post", 
                     "properties": {
+                        "old_password": {
+                            "description": "\u0421\u0442\u0430\u0440\u044b\u0439 \u043f\u0430\u0440\u043e\u043b\u044c", 
+                            "type": "string"
+                        }, 
                         "password": {
                             "description": "\u041f\u0430\u0440\u043e\u043b\u044c", 
                             "type": "string"
@@ -7399,6 +8172,7 @@
                         }
                     }, 
                     "required": [
+                        "old_password", 
                         "password", 
                         "password_confirm"
                     ], 
@@ -7454,6 +8228,209 @@
                         "error_text", 
                         "error_url"
                     ]
+                }
+            }, 
+            "edit": {
+                "request": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "description": "\u041c\u0435\u0442\u043e\u0434 \u0434\u043b\u044f \u0440\u0435\u0434\u0430\u043a\u0442\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u044f \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u0438 \u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u0435", 
+                    "method": "post", 
+                    "properties": {
+                        "address": {
+                            "edscription": "\u0410\u0434\u0440\u0435\u0441", 
+                            "type": "string"
+                        }, 
+                        "birthday": {
+                            "edscription": "\u0414\u0430\u0442\u0430 \u0440\u043e\u0436\u0434\u0435\u043d\u0438\u044f \u0432 \u0444\u043e\u0440\u043c\u0430\u0442\u0435 0000-00-00", 
+                            "type": "string"
+                        }, 
+                        "city": {
+                            "edscription": "\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435 \u0433\u043e\u0440\u043e\u0434\u0430", 
+                            "type": "string"
+                        }, 
+                        "country": {
+                            "edscription": "\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435 \u0441\u0442\u0440\u0430\u043d\u044b", 
+                            "type": "string"
+                        }, 
+                        "description": {
+                            "edscription": "\u041f\u043e\u043b\u0435 \u0441 \u043e\u043f\u0438\u0441\u0430\u043d\u0438\u0435\u043c", 
+                            "type": "string"
+                        }, 
+                        "email": {
+                            "edscription": "\u041f\u043e\u0447\u0442\u0430", 
+                            "type": "string"
+                        }, 
+                        "first_name": {
+                            "edscription": "\u0418\u043c\u044f", 
+                            "type": "string"
+                        }, 
+                        "last_name": {
+                            "edscription": "\u0424\u0430\u043c\u0438\u043b\u0438\u044f", 
+                            "type": "string"
+                        }, 
+                        "latitude": {
+                            "edscription": "\u0428\u0438\u0440\u043e\u0442\u0430", 
+                            "type": "number"
+                        }, 
+                        "longitude": {
+                            "edscription": "\u0414\u043e\u043b\u0433\u043e\u0442\u0430", 
+                            "type": "number"
+                        }, 
+                        "middle_name": {
+                            "edscription": "\u041e\u0442\u0447\u0435\u0441\u0442\u0432\u043e", 
+                            "type": "string"
+                        }, 
+                        "phone": {
+                            "edscription": "\u0422\u0435\u043b\u0435\u0444\u043e\u043d", 
+                            "type": "string"
+                        }, 
+                        "region": {
+                            "edscription": "\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435 \u0440\u0435\u0433\u0438\u043e\u043d\u0430", 
+                            "type": "string"
+                        }, 
+                        "zip": {
+                            "edscription": "\u0418\u043d\u0434\u0435\u043a\u0441", 
+                            "type": "string"
+                        }
+                    }, 
+                    "required": [], 
+                    "type": "object"
+                }, 
+                "response": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "additionalProperties": false, 
+                    "description": "\u041e\u0442\u0432\u0435\u0442 \u043d\u0430 \u043c\u0435\u0442\u043e\u0434 users.edit", 
+                    "properties": {
+                        "error": {
+                            "description": "\u041a\u043e\u0434 \u043e\u0448\u0438\u0431\u043a\u0438", 
+                            "type": "number"
+                        }, 
+                        "error_text": {
+                            "description": "\u0422\u0435\u043a\u0441\u0442 \u043e\u0448\u0438\u0431\u043a\u0438", 
+                            "type": "string"
+                        }, 
+                        "error_url": {
+                            "description": "\u0421\u0441\u044b\u043b\u043a\u0430 \u043d\u0430 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0443 \u043e\u0448\u0438\u0431\u043a\u0438", 
+                            "type": "string"
+                        }, 
+                        "response": {
+                            "additionalProperties": false, 
+                            "properties": {
+                                "count": {
+                                    "description": "\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u043e\u0442\u0432\u0435\u0442\u043e\u0432", 
+                                    "type": "number"
+                                }, 
+                                "items": {
+                                    "description": "\u0421\u043f\u0438\u0441\u043e\u043a \u043e\u0442\u0432\u0435\u0442\u043e\u0432", 
+                                    "items": {
+                                        "$ref": "objects.json#/definitions/users/user_full", 
+                                        "type": "object"
+                                    }, 
+                                    "type": "array"
+                                }
+                            }, 
+                            "required": [
+                                "count", 
+                                "items"
+                            ], 
+                            "type": "object"
+                        }, 
+                        "run_time": {
+                            "description": "\u0412\u0440\u0435\u043c\u044f \u0432\u044b\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u044f", 
+                            "type": "number"
+                        }, 
+                        "server_time": {
+                            "description": "\u0412\u0440\u0435\u043c\u044f \u043d\u0430 \u0441\u0435\u0440\u0432\u0435\u0440\u0435 (UNIXTIME)", 
+                            "type": "number"
+                        }
+                    }, 
+                    "required": [
+                        "response", 
+                        "run_time", 
+                        "server_time", 
+                        "error", 
+                        "error_text", 
+                        "error_url"
+                    ], 
+                    "type": "object"
+                }
+            }, 
+            "editCommercialInterests": {
+                "request": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "description": "\u041c\u0435\u0442\u043e\u0434 \u0434\u043b\u044f \u043f\u043e\u043b\u0443\u0447\u0435\u043d\u0438\u044f \u0440\u0435\u0434\u0430\u043a\u0442\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u044f \u043a\u043e\u043c\u043c\u0435\u0440\u0447\u0435\u0441\u043a\u043e\u0433\u043e \u0438\u043d\u0442\u0435\u0440\u0435\u0441\u0430", 
+                    "method": "post", 
+                    "properties": {
+                        "id": {
+                            "description": "\u0418\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 \u043a\u0430\u0442\u0435\u0433\u043e\u0440\u0438\u0438, \u043b\u0438\u0431\u043e \u0441\u043f\u0438\u0441\u043e\u043a, \u0440\u0430\u0437\u0434\u043b\u0451\u043d\u043d\u044b\u0439 \u0437\u0430\u043f\u044f\u0442\u043e\u0439.", 
+                            "type": [
+                                "string", 
+                                "integer"
+                            ]
+                        }
+                    }, 
+                    "required": [
+                        "id"
+                    ], 
+                    "type": "object"
+                }, 
+                "response": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "additionalProperties": false, 
+                    "description": "\u041e\u0442\u0432\u0435\u0442 \u043d\u0430 \u043c\u0435\u0442\u043e\u0434 users.editCommercialInterests", 
+                    "properties": {
+                        "error": {
+                            "description": "\u041a\u043e\u0434 \u043e\u0448\u0438\u0431\u043a\u0438", 
+                            "type": "number"
+                        }, 
+                        "error_text": {
+                            "description": "\u0422\u0435\u043a\u0441\u0442 \u043e\u0448\u0438\u0431\u043a\u0438", 
+                            "type": "string"
+                        }, 
+                        "error_url": {
+                            "description": "\u0421\u0441\u044b\u043b\u043a\u0430 \u043d\u0430 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0443 \u043e\u0448\u0438\u0431\u043a\u0438", 
+                            "type": "string"
+                        }, 
+                        "response": {
+                            "additionalProperties": false, 
+                            "properties": {
+                                "count": {
+                                    "description": "\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u043e\u0442\u0432\u0435\u0442\u043e\u0432", 
+                                    "type": "number"
+                                }, 
+                                "items": {
+                                    "description": "\u0421\u043f\u0438\u0441\u043e\u043a \u043e\u0442\u0432\u0435\u0442\u043e\u0432", 
+                                    "items": {
+                                        "$ref": "objects.json#/definitions/products/category_full", 
+                                        "type": "object"
+                                    }, 
+                                    "type": "array"
+                                }
+                            }, 
+                            "required": [
+                                "count", 
+                                "items"
+                            ], 
+                            "type": "object"
+                        }, 
+                        "run_time": {
+                            "description": "\u0412\u0440\u0435\u043c\u044f \u0432\u044b\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u044f", 
+                            "type": "number"
+                        }, 
+                        "server_time": {
+                            "description": "\u0412\u0440\u0435\u043c\u044f \u043d\u0430 \u0441\u0435\u0440\u0432\u0435\u0440\u0435 (UNIXTIME)", 
+                            "type": "number"
+                        }
+                    }, 
+                    "required": [
+                        "response", 
+                        "run_time", 
+                        "server_time", 
+                        "error", 
+                        "error_text", 
+                        "error_url"
+                    ], 
+                    "type": "object"
                 }
             }, 
             "get": {
@@ -7533,11 +8510,194 @@
                     "type": "object"
                 }
             }, 
+            "getCategoriesForCommercialInterests": {
+                "request": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "description": "\u041c\u0435\u0442\u043e\u0434 \u0434\u043b\u044f \u043f\u043e\u043b\u0443\u0447\u0435\u043d\u0438\u044f \u0434\u0430\u043d\u043d\u044b\u0445 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f", 
+                    "properties": {}, 
+                    "required": [], 
+                    "type": "object"
+                }, 
+                "response": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "additionalProperties": false, 
+                    "description": "\u041e\u0442\u0432\u0435\u0442 \u043d\u0430 \u043c\u0435\u0442\u043e\u0434 users.getCategoriesForCommercialInterests", 
+                    "properties": {
+                        "error": {
+                            "description": "\u041a\u043e\u0434 \u043e\u0448\u0438\u0431\u043a\u0438", 
+                            "type": "number"
+                        }, 
+                        "error_text": {
+                            "description": "\u0422\u0435\u043a\u0441\u0442 \u043e\u0448\u0438\u0431\u043a\u0438", 
+                            "type": "string"
+                        }, 
+                        "error_url": {
+                            "description": "\u0421\u0441\u044b\u043b\u043a\u0430 \u043d\u0430 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0443 \u043e\u0448\u0438\u0431\u043a\u0438", 
+                            "type": "string"
+                        }, 
+                        "response": {
+                            "additionalProperties": false, 
+                            "properties": {
+                                "count": {
+                                    "description": "\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u043e\u0442\u0432\u0435\u0442\u043e\u0432", 
+                                    "type": "number"
+                                }, 
+                                "items": {
+                                    "description": "\u0421\u043f\u0438\u0441\u043e\u043a \u043e\u0442\u0432\u0435\u0442\u043e\u0432", 
+                                    "items": {
+                                        "$ref": "objects.json#/definitions/products/category_full", 
+                                        "type": "object"
+                                    }, 
+                                    "type": "array"
+                                }
+                            }, 
+                            "required": [
+                                "count", 
+                                "items"
+                            ], 
+                            "type": "object"
+                        }, 
+                        "run_time": {
+                            "description": "\u0412\u0440\u0435\u043c\u044f \u0432\u044b\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u044f", 
+                            "type": "number"
+                        }, 
+                        "server_time": {
+                            "description": "\u0412\u0440\u0435\u043c\u044f \u043d\u0430 \u0441\u0435\u0440\u0432\u0435\u0440\u0435 (UNIXTIME)", 
+                            "type": "number"
+                        }
+                    }, 
+                    "required": [
+                        "response", 
+                        "run_time", 
+                        "server_time", 
+                        "error", 
+                        "error_text", 
+                        "error_url"
+                    ], 
+                    "type": "object"
+                }
+            }, 
+            "getFriends": {
+                "request": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "description": "\u041c\u0435\u0442\u043e\u0434 \u0434\u043b\u044f \u043f\u043e\u043b\u0443\u0447\u0435\u043d\u0438\u044f \u0434\u0430\u043d\u043d\u044b\u0445 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f", 
+                    "properties": {
+                        "filters": {
+                            "properties": {
+                                "is_common": {
+                                    "description": "\u041f\u043e\u043a\u0430\u0437\u0430\u0442\u044c \u0442\u043e\u043b\u044c\u043a\u043e \u043e\u0431\u0449\u0438\u0445 \u0434\u0440\u0443\u0437\u0435\u0439", 
+                                    "type": "boolean"
+                                }, 
+                                "q": {
+                                    "description": "\u041f\u043e\u0438\u0441\u043a\u043e\u0432\u044b\u0439 \u0437\u0430\u043f\u0440\u043e\u0441", 
+                                    "type": "string"
+                                }
+                            }, 
+                            "type": "object"
+                        }, 
+                        "id": {
+                            "description": "\u0418\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f", 
+                            "type": "integer"
+                        }, 
+                        "last_id": {
+                            "description": "\u041f\u043e\u0441\u043b\u0435\u0434\u043d\u0438\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440", 
+                            "type": [
+                                "string", 
+                                "integer", 
+                                "null"
+                            ]
+                        }, 
+                        "limit": {
+                            "default": 20, 
+                            "description": "\u041b\u0438\u043c\u0438\u0442", 
+                            "minNum": 1, 
+                            "type": "integer"
+                        }
+                    }, 
+                    "required": [], 
+                    "type": "object"
+                }, 
+                "response": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "additionalProperties": false, 
+                    "description": "\u041e\u0442\u0432\u0435\u0442 \u043d\u0430 \u043c\u0435\u0442\u043e\u0434 users.get", 
+                    "properties": {
+                        "error": {
+                            "description": "\u041a\u043e\u0434 \u043e\u0448\u0438\u0431\u043a\u0438", 
+                            "type": "number"
+                        }, 
+                        "error_text": {
+                            "description": "\u0422\u0435\u043a\u0441\u0442 \u043e\u0448\u0438\u0431\u043a\u0438", 
+                            "type": "string"
+                        }, 
+                        "error_url": {
+                            "description": "\u0421\u0441\u044b\u043b\u043a\u0430 \u043d\u0430 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0443 \u043e\u0448\u0438\u0431\u043a\u0438", 
+                            "type": "string"
+                        }, 
+                        "response": {
+                            "additionalProperties": false, 
+                            "properties": {
+                                "count": {
+                                    "description": "\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u043e\u0442\u0432\u0435\u0442\u043e\u0432", 
+                                    "type": "number"
+                                }, 
+                                "items": {
+                                    "description": "\u0421\u043f\u0438\u0441\u043e\u043a \u043e\u0442\u0432\u0435\u0442\u043e\u0432", 
+                                    "items": {
+                                        "$ref": "objects.json#/definitions/users/user_light", 
+                                        "type": "object"
+                                    }, 
+                                    "type": "array"
+                                }, 
+                                "last_id": {
+                                    "description": "\u041f\u043e\u0441\u043b\u0435\u0434\u043d\u0438\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440", 
+                                    "type": [
+                                        "string", 
+                                        "integer", 
+                                        "null"
+                                    ]
+                                }
+                            }, 
+                            "required": [
+                                "count", 
+                                "items"
+                            ], 
+                            "type": "object"
+                        }, 
+                        "run_time": {
+                            "description": "\u0412\u0440\u0435\u043c\u044f \u0432\u044b\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u044f", 
+                            "type": "number"
+                        }, 
+                        "server_time": {
+                            "description": "\u0412\u0440\u0435\u043c\u044f \u043d\u0430 \u0441\u0435\u0440\u0432\u0435\u0440\u0435 (UNIXTIME)", 
+                            "type": "number"
+                        }
+                    }, 
+                    "required": [
+                        "response", 
+                        "run_time", 
+                        "server_time", 
+                        "error", 
+                        "error_text", 
+                        "error_url"
+                    ], 
+                    "type": "object"
+                }
+            }, 
             "getNotify": {
                 "request": {
                     "$schema": "http://json-schema.org/draft-04/schema#", 
                     "description": "\u041c\u0435\u0442\u043e\u0434 \u0434\u043b\u044f \u043f\u043e\u043b\u0443\u0447\u0435\u043d\u0438\u044f \u0442\u043e\u0432\u0430\u0440\u043e\u0432 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f", 
-                    "properties": {}, 
+                    "properties": {
+                        "last_id": {
+                            "description": "\u0418\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 \u043f\u043e\u0441\u043b\u0435\u0434\u043d\u0435\u0439 \u0437\u0430\u0433\u0440\u0443\u0436\u0435\u043d\u043d\u043e\u0439 \u0437\u0430\u043f\u0438\u0441\u0438", 
+                            "type": "integer"
+                        }, 
+                        "limit": {
+                            "description": "\u041b\u0438\u043c\u0438\u0442 \u0434\u043b\u044f \u0437\u0430\u0433\u0440\u0443\u0437\u043a\u0438", 
+                            "type": "integer"
+                        }
+                    }, 
                     "required": [], 
                     "type": "object"
                 }, 
@@ -7767,6 +8927,359 @@
                     "type": "object"
                 }
             }, 
+            "getShops": {
+                "request": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "description": "\u041f\u043e\u043b\u0443\u0447\u0438\u0442\u044c \u0441\u043f\u0438\u0441\u043e\u043a \u043c\u0430\u0433\u0430\u0437\u0438\u043d\u043e\u0432 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f", 
+                    "properties": {
+                        "filters": {
+                            "properties": {
+                                "is_full": {
+                                    "description": "\u041f\u043e\u043a\u0430\u0437\u044b\u0432\u0430\u0442\u044c \u043f\u043e\u043b\u043d\u0443\u044e \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u044e \u0438\u043b\u0438 \u043d\u0435\u0442", 
+                                    "type": "boolean"
+                                }
+                            }, 
+                            "type": "object"
+                        }, 
+                        "id": {
+                            "description": "\u0418\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f. \u0415\u0441\u043b\u0438 \u043d\u0435 \u0443\u043a\u0430\u0437\u0430\u043d - \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u0435\u0442\u0441\u044f \u0442\u0435\u043a\u0443\u0449\u0438\u0439 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c", 
+                            "type": "integer"
+                        }, 
+                        "last_id": {
+                            "description": "\u041f\u043e\u0441\u043b\u0435\u0434\u043d\u0438\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440", 
+                            "type": "integer"
+                        }, 
+                        "limit": {
+                            "default": 20, 
+                            "description": "\u041b\u0438\u043c\u0438\u0442", 
+                            "minNum": 1, 
+                            "type": "integer"
+                        }
+                    }, 
+                    "required": [], 
+                    "type": "object"
+                }, 
+                "response": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "additionalProperties": false, 
+                    "description": "\u041e\u0442\u0432\u0435\u0442 \u043d\u0430 \u043c\u0435\u0442\u043e\u0434 users.getShops", 
+                    "properties": {
+                        "error": {
+                            "description": "\u041a\u043e\u0434 \u043e\u0448\u0438\u0431\u043a\u0438", 
+                            "type": "number"
+                        }, 
+                        "error_text": {
+                            "description": "\u0422\u0435\u043a\u0441\u0442 \u043e\u0448\u0438\u0431\u043a\u0438", 
+                            "type": "string"
+                        }, 
+                        "error_url": {
+                            "description": "\u0421\u0441\u044b\u043b\u043a\u0430 \u043d\u0430 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0443 \u043e\u0448\u0438\u0431\u043a\u0438", 
+                            "type": "string"
+                        }, 
+                        "response": {
+                            "additionalProperties": false, 
+                            "properties": {
+                                "count": {
+                                    "description": "\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u043e\u0442\u0432\u0435\u0442\u043e\u0432", 
+                                    "type": "number"
+                                }, 
+                                "items": {
+                                    "description": "\u0421\u043f\u0438\u0441\u043e\u043a \u043e\u0442\u0432\u0435\u0442\u043e\u0432", 
+                                    "type": "array"
+                                }, 
+                                "last_id": {
+                                    "description": "\u041f\u043e\u0441\u043b\u0435\u0434\u043d\u0438\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440", 
+                                    "type": "integer"
+                                }
+                            }, 
+                            "required": [
+                                "count", 
+                                "items"
+                            ], 
+                            "type": "object"
+                        }, 
+                        "run_time": {
+                            "description": "\u0412\u0440\u0435\u043c\u044f \u0432\u044b\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u044f", 
+                            "type": "number"
+                        }, 
+                        "server_time": {
+                            "description": "\u0412\u0440\u0435\u043c\u044f \u043d\u0430 \u0441\u0435\u0440\u0432\u0435\u0440\u0435 (UNIXTIME)", 
+                            "type": "number"
+                        }
+                    }, 
+                    "required": [
+                        "response", 
+                        "run_time", 
+                        "server_time", 
+                        "error", 
+                        "error_text", 
+                        "error_url"
+                    ], 
+                    "type": "object"
+                }
+            }, 
+            "getUnreadMessagesCount": {
+                "request": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "description": "\u041c\u0435\u0442\u043e\u0434 \u0434\u043b\u044f \u043f\u043e\u043b\u0443\u0447\u0435\u043d\u0438\u044f \u043a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u0430 \u043d\u0435\u043f\u0440\u043e\u0447\u0438\u0442\u0430\u043d\u043d\u044b\u0445 \u0434\u0438\u0430\u043b\u043e\u0433\u043e\u0432", 
+                    "properties": {
+                        "shop_id": {
+                            "description": "\u0418\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 \u043c\u0430\u0433\u0430\u0437\u0438\u043d\u0430, \u0434\u043b\u044f \u043a\u043e\u0442\u043e\u0440\u043e\u0433\u043e \u0437\u0430\u043f\u0440\u0430\u0448\u0438\u0432\u0430\u0435\u0442\u0441\u044f \u043a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e. \u0415\u0441\u043b\u0438 \u043f\u0443\u0441\u0442\u043e - \u0442\u043e \u0434\u043b\u044f \u0442\u0435\u043a\u0443\u0449\u0435\u0433\u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f", 
+                            "type": "integer"
+                        }
+                    }, 
+                    "required": [], 
+                    "type": "object"
+                }, 
+                "response": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "additionalProperties": false, 
+                    "description": "\u041e\u0442\u0432\u0435\u0442 \u043d\u0430 \u043c\u0435\u0442\u043e\u0434 users.getUnreadNotify", 
+                    "properties": {
+                        "error": {
+                            "description": "\u041a\u043e\u0434 \u043e\u0448\u0438\u0431\u043a\u0438", 
+                            "type": "number"
+                        }, 
+                        "error_text": {
+                            "description": "\u0422\u0435\u043a\u0441\u0442 \u043e\u0448\u0438\u0431\u043a\u0438", 
+                            "type": "string"
+                        }, 
+                        "error_url": {
+                            "description": "\u0421\u0441\u044b\u043b\u043a\u0430 \u043d\u0430 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0443 \u043e\u0448\u0438\u0431\u043a\u0438", 
+                            "type": "string"
+                        }, 
+                        "response": {
+                            "additionalProperties": false, 
+                            "properties": {
+                                "count": {
+                                    "description": "\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u043e\u0442\u0432\u0435\u0442\u043e\u0432", 
+                                    "type": "number"
+                                }, 
+                                "items": {
+                                    "description": "\u0421\u043f\u0438\u0441\u043e\u043a \u043e\u0442\u0432\u0435\u0442\u043e\u0432", 
+                                    "type": "array"
+                                }
+                            }, 
+                            "required": [
+                                "count", 
+                                "items"
+                            ], 
+                            "type": "object"
+                        }, 
+                        "run_time": {
+                            "description": "\u0412\u0440\u0435\u043c\u044f \u0432\u044b\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u044f", 
+                            "type": "number"
+                        }, 
+                        "server_time": {
+                            "description": "\u0412\u0440\u0435\u043c\u044f \u043d\u0430 \u0441\u0435\u0440\u0432\u0435\u0440\u0435 (UNIXTIME)", 
+                            "type": "number"
+                        }
+                    }, 
+                    "required": [
+                        "response", 
+                        "run_time", 
+                        "server_time", 
+                        "error", 
+                        "error_text", 
+                        "error_url"
+                    ], 
+                    "type": "object"
+                }
+            }, 
+            "getUnreadNotify": {
+                "request": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "description": "\u041c\u0435\u0442\u043e\u0434 \u0434\u043b\u044f \u043f\u043e\u043b\u0443\u0447\u0435\u043d\u0438\u044f \u0442\u043e\u0432\u0430\u0440\u043e\u0432 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f", 
+                    "properties": {
+                        "last_id": {
+                            "description": "\u0418\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 \u043f\u043e\u0441\u043b\u0435\u0434\u043d\u0435\u0439 \u0437\u0430\u0433\u0440\u0443\u0436\u0435\u043d\u043d\u043e\u0439 \u0437\u0430\u043f\u0438\u0441\u0438", 
+                            "type": "integer"
+                        }, 
+                        "limit": {
+                            "description": "\u041b\u0438\u043c\u0438\u0442 \u0434\u043b\u044f \u0437\u0430\u0433\u0440\u0443\u0437\u043a\u0438", 
+                            "type": "integer"
+                        }
+                    }, 
+                    "required": [], 
+                    "type": "object"
+                }, 
+                "response": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "additionalProperties": false, 
+                    "description": "\u041e\u0442\u0432\u0435\u0442 \u043d\u0430 \u043c\u0435\u0442\u043e\u0434 users.getUnreadNotify", 
+                    "properties": {
+                        "error": {
+                            "description": "\u041a\u043e\u0434 \u043e\u0448\u0438\u0431\u043a\u0438", 
+                            "type": "number"
+                        }, 
+                        "error_text": {
+                            "description": "\u0422\u0435\u043a\u0441\u0442 \u043e\u0448\u0438\u0431\u043a\u0438", 
+                            "type": "string"
+                        }, 
+                        "error_url": {
+                            "description": "\u0421\u0441\u044b\u043b\u043a\u0430 \u043d\u0430 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0443 \u043e\u0448\u0438\u0431\u043a\u0438", 
+                            "type": "string"
+                        }, 
+                        "response": {
+                            "additionalProperties": false, 
+                            "properties": {
+                                "count": {
+                                    "description": "\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u043e\u0442\u0432\u0435\u0442\u043e\u0432", 
+                                    "type": "number"
+                                }, 
+                                "items": {
+                                    "description": "\u0421\u043f\u0438\u0441\u043e\u043a \u043e\u0442\u0432\u0435\u0442\u043e\u0432", 
+                                    "items": {
+                                        "properties": {
+                                            "type": {
+                                                "data": {
+                                                    "type": "object"
+                                                }, 
+                                                "human_time_diff": {
+                                                    "type": "string"
+                                                }, 
+                                                "time_diff": {
+                                                    "type": "string"
+                                                }, 
+                                                "timestamp": {
+                                                    "type": "integer"
+                                                }, 
+                                                "type": "string", 
+                                                "with_notify": {
+                                                    "type": "boolean"
+                                                }
+                                            }
+                                        }, 
+                                        "type": "object"
+                                    }, 
+                                    "type": "array"
+                                }, 
+                                "last_id": {
+                                    "description": "\u041f\u043e\u0441\u043b\u0435\u0434\u043d\u0438\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440", 
+                                    "type": [
+                                        "string", 
+                                        "integer", 
+                                        "null"
+                                    ]
+                                }
+                            }, 
+                            "required": [
+                                "count", 
+                                "items"
+                            ], 
+                            "type": "object"
+                        }, 
+                        "run_time": {
+                            "description": "\u0412\u0440\u0435\u043c\u044f \u0432\u044b\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u044f", 
+                            "type": "number"
+                        }, 
+                        "server_time": {
+                            "description": "\u0412\u0440\u0435\u043c\u044f \u043d\u0430 \u0441\u0435\u0440\u0432\u0435\u0440\u0435 (UNIXTIME)", 
+                            "type": "number"
+                        }
+                    }, 
+                    "required": [
+                        "response", 
+                        "run_time", 
+                        "server_time", 
+                        "error", 
+                        "error_text", 
+                        "error_url"
+                    ], 
+                    "type": "object"
+                }
+            }, 
+            "getWalletHistory": {
+                "request": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "description": "\u041c\u0435\u0442\u043e\u0434 \u0434\u043b\u044f \u043f\u043e\u043b\u0443\u0447\u0435\u043d\u0438\u044f \u0434\u0430\u043d\u043d\u044b\u0445 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f", 
+                    "properties": {
+                        "last_id": {
+                            "description": "\u041f\u043e\u0441\u043b\u0435\u0434\u043d\u0438\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440", 
+                            "type": "integer"
+                        }, 
+                        "limit": {
+                            "default": 20, 
+                            "description": "\u041b\u0438\u043c\u0438\u0442", 
+                            "type": "integer"
+                        }, 
+                        "type": {
+                            "enum": [
+                                "money", 
+                                "bids", 
+                                "bonus"
+                            ], 
+                            "type": "string"
+                        }
+                    }, 
+                    "required": [
+                        "type"
+                    ], 
+                    "type": "object"
+                }, 
+                "response": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "additionalProperties": false, 
+                    "description": "\u041e\u0442\u0432\u0435\u0442 \u043d\u0430 \u043c\u0435\u0442\u043e\u0434 users.get", 
+                    "properties": {
+                        "error": {
+                            "description": "\u041a\u043e\u0434 \u043e\u0448\u0438\u0431\u043a\u0438", 
+                            "type": "number"
+                        }, 
+                        "error_text": {
+                            "description": "\u0422\u0435\u043a\u0441\u0442 \u043e\u0448\u0438\u0431\u043a\u0438", 
+                            "type": "string"
+                        }, 
+                        "error_url": {
+                            "description": "\u0421\u0441\u044b\u043b\u043a\u0430 \u043d\u0430 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0443 \u043e\u0448\u0438\u0431\u043a\u0438", 
+                            "type": "string"
+                        }, 
+                        "response": {
+                            "additionalProperties": false, 
+                            "properties": {
+                                "count": {
+                                    "description": "\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u043e\u0442\u0432\u0435\u0442\u043e\u0432", 
+                                    "type": "number"
+                                }, 
+                                "items": {
+                                    "description": "\u0421\u043f\u0438\u0441\u043e\u043a \u043e\u0442\u0432\u0435\u0442\u043e\u0432", 
+                                    "type": "array"
+                                }, 
+                                "last_id": {
+                                    "description": "\u041f\u043e\u0441\u043b\u0435\u0434\u043d\u0438\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440", 
+                                    "type": [
+                                        "string", 
+                                        "integer", 
+                                        "null"
+                                    ]
+                                }
+                            }, 
+                            "required": [
+                                "count", 
+                                "items"
+                            ], 
+                            "type": "object"
+                        }, 
+                        "run_time": {
+                            "description": "\u0412\u0440\u0435\u043c\u044f \u0432\u044b\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u044f", 
+                            "type": "number"
+                        }, 
+                        "server_time": {
+                            "description": "\u0412\u0440\u0435\u043c\u044f \u043d\u0430 \u0441\u0435\u0440\u0432\u0435\u0440\u0435 (UNIXTIME)", 
+                            "type": "number"
+                        }
+                    }, 
+                    "required": [
+                        "response", 
+                        "run_time", 
+                        "server_time", 
+                        "error", 
+                        "error_text", 
+                        "error_url"
+                    ], 
+                    "type": "object"
+                }
+            }, 
             "me": {
                 "request": {
                     "$schema": "http://json-schema.org/draft-04/schema#", 
@@ -7836,6 +9349,7 @@
                 "request": {
                     "$schema": "http://json-schema.org/draft-04/schema#", 
                     "description": "\u041c\u0435\u0442\u043e\u0434 \u0434\u043b\u044f \u043f\u043e\u043b\u0443\u0447\u0435\u043d\u0438\u044f \u0442\u043e\u0432\u0430\u0440\u043e\u0432 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f", 
+                    "method": "post", 
                     "properties": {}, 
                     "required": [], 
                     "type": "object"
@@ -7875,6 +9389,152 @@
                                         "integer", 
                                         "null"
                                     ]
+                                }
+                            }, 
+                            "required": [
+                                "count", 
+                                "items"
+                            ], 
+                            "type": "object"
+                        }, 
+                        "run_time": {
+                            "description": "\u0412\u0440\u0435\u043c\u044f \u0432\u044b\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u044f", 
+                            "type": "number"
+                        }, 
+                        "server_time": {
+                            "description": "\u0412\u0440\u0435\u043c\u044f \u043d\u0430 \u0441\u0435\u0440\u0432\u0435\u0440\u0435 (UNIXTIME)", 
+                            "type": "number"
+                        }
+                    }, 
+                    "required": [
+                        "response", 
+                        "run_time", 
+                        "server_time", 
+                        "error", 
+                        "error_text", 
+                        "error_url"
+                    ], 
+                    "type": "object"
+                }
+            }, 
+            "setAvatar": {
+                "request": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "description": "\u041c\u0435\u0442\u043e\u0434 \u0434\u043b\u044f \u0440\u0435\u0434\u0430\u043a\u0442\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u044f \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u0438 \u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u0435", 
+                    "method": "post", 
+                    "properties": {
+                        "data": {
+                            "edscription": "\u0414\u0430\u043d\u043d\u044b\u0435 \u043a\u0430\u0440\u0442\u0438\u043d\u043a\u0438 \u0432 base64", 
+                            "type": "string"
+                        }, 
+                        "url": {
+                            "edscription": "\u0421\u0441\u044b\u043b\u043a\u0430 \u043d\u0430 \u0444\u0430\u0439\u043b", 
+                            "type": "string"
+                        }
+                    }, 
+                    "required": [], 
+                    "type": "object"
+                }, 
+                "response": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "additionalProperties": false, 
+                    "description": "\u041e\u0442\u0432\u0435\u0442 \u043d\u0430 \u043c\u0435\u0442\u043e\u0434 users.setAvatar", 
+                    "properties": {
+                        "error": {
+                            "description": "\u041a\u043e\u0434 \u043e\u0448\u0438\u0431\u043a\u0438", 
+                            "type": "number"
+                        }, 
+                        "error_text": {
+                            "description": "\u0422\u0435\u043a\u0441\u0442 \u043e\u0448\u0438\u0431\u043a\u0438", 
+                            "type": "string"
+                        }, 
+                        "error_url": {
+                            "description": "\u0421\u0441\u044b\u043b\u043a\u0430 \u043d\u0430 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0443 \u043e\u0448\u0438\u0431\u043a\u0438", 
+                            "type": "string"
+                        }, 
+                        "response": {
+                            "additionalProperties": false, 
+                            "properties": {
+                                "count": {
+                                    "description": "\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u043e\u0442\u0432\u0435\u0442\u043e\u0432", 
+                                    "type": "number"
+                                }, 
+                                "items": {
+                                    "description": "\u0421\u043f\u0438\u0441\u043e\u043a \u043e\u0442\u0432\u0435\u0442\u043e\u0432", 
+                                    "type": "array"
+                                }
+                            }, 
+                            "required": [
+                                "count", 
+                                "items"
+                            ], 
+                            "type": "object"
+                        }, 
+                        "run_time": {
+                            "description": "\u0412\u0440\u0435\u043c\u044f \u0432\u044b\u043f\u043e\u043b\u043d\u0435\u043d\u0438\u044f", 
+                            "type": "number"
+                        }, 
+                        "server_time": {
+                            "description": "\u0412\u0440\u0435\u043c\u044f \u043d\u0430 \u0441\u0435\u0440\u0432\u0435\u0440\u0435 (UNIXTIME)", 
+                            "type": "number"
+                        }
+                    }, 
+                    "required": [
+                        "response", 
+                        "run_time", 
+                        "server_time", 
+                        "error", 
+                        "error_text", 
+                        "error_url"
+                    ], 
+                    "type": "object"
+                }
+            }, 
+            "setBackground": {
+                "request": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "description": "\u041c\u0435\u0442\u043e\u0434 \u0434\u043b\u044f \u0440\u0435\u0434\u0430\u043a\u0442\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u044f \u0438\u043d\u0444\u043e\u0440\u043c\u0430\u0446\u0438\u0438 \u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u0435", 
+                    "method": "post", 
+                    "properties": {
+                        "data": {
+                            "edscription": "\u0414\u0430\u043d\u043d\u044b\u0435 \u043a\u0430\u0440\u0442\u0438\u043d\u043a\u0438 \u0432 base64", 
+                            "type": "string"
+                        }, 
+                        "url": {
+                            "edscription": "\u0421\u0441\u044b\u043b\u043a\u0430 \u043d\u0430 \u0444\u0430\u0439\u043b", 
+                            "type": "string"
+                        }
+                    }, 
+                    "required": [], 
+                    "type": "object"
+                }, 
+                "response": {
+                    "$schema": "http://json-schema.org/draft-04/schema#", 
+                    "additionalProperties": false, 
+                    "description": "\u041e\u0442\u0432\u0435\u0442 \u043d\u0430 \u043c\u0435\u0442\u043e\u0434 users.setBackground", 
+                    "properties": {
+                        "error": {
+                            "description": "\u041a\u043e\u0434 \u043e\u0448\u0438\u0431\u043a\u0438", 
+                            "type": "number"
+                        }, 
+                        "error_text": {
+                            "description": "\u0422\u0435\u043a\u0441\u0442 \u043e\u0448\u0438\u0431\u043a\u0438", 
+                            "type": "string"
+                        }, 
+                        "error_url": {
+                            "description": "\u0421\u0441\u044b\u043b\u043a\u0430 \u043d\u0430 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0443 \u043e\u0448\u0438\u0431\u043a\u0438", 
+                            "type": "string"
+                        }, 
+                        "response": {
+                            "additionalProperties": false, 
+                            "properties": {
+                                "count": {
+                                    "description": "\u041a\u043e\u043b\u0438\u0447\u0435\u0441\u0442\u0432\u043e \u043e\u0442\u0432\u0435\u0442\u043e\u0432", 
+                                    "type": "number"
+                                }, 
+                                "items": {
+                                    "description": "\u0421\u043f\u0438\u0441\u043e\u043a \u043e\u0442\u0432\u0435\u0442\u043e\u0432", 
+                                    "type": "array"
                                 }
                             }, 
                             "required": [
@@ -8063,9 +9723,19 @@
                         "id": {
                             "description": "\u0418\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 \u0441\u0442\u0435\u043d\u044b. \u0415\u0441\u043b\u0438 \u043d\u0435 \u043f\u0435\u0440\u0435\u0434\u0430\u0451\u0442\u0441\u044f - \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u0435\u0442\u0441\u044f \u0441\u0442\u0435\u043d\u0430 \u0442\u0435\u043a\u0443\u0449\u0435\u0433\u043e \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f", 
                             "type": "integer"
+                        }, 
+                        "last_id": {
+                            "description": "\u0418\u0414 \u043f\u043e\u0441\u043b\u0435\u0434\u043d\u0435\u0439 \u0437\u0430\u043f\u0438\u0441\u0438", 
+                            "type": "integer"
+                        }, 
+                        "limit": {
+                            "description": "\u041b\u0438\u043c\u0438\u0442", 
+                            "type": "integer"
                         }
                     }, 
-                    "required": [], 
+                    "required": [
+                        "id"
+                    ], 
                     "type": "object"
                 }, 
                 "response": {
@@ -8099,6 +9769,13 @@
                                         "type": "object"
                                     }, 
                                     "type": "array"
+                                }, 
+                                "last_id": {
+                                    "description": "\u041f\u043e\u0441\u043b\u0435\u0434\u043d\u0438\u0439 \u0438\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440", 
+                                    "type": [
+                                        "string", 
+                                        "integer"
+                                    ]
                                 }
                             }, 
                             "required": [

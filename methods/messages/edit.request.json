@@ -1,0 +1,20 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "Метод для редактирования сообщения",
+    "method": "post",
+    "properties": {
+        "id": {
+            "type": "integer",
+            "description": "Идентификатор сообщения"
+        },
+        "text": {
+            "type": "string",
+            "description": "Новый текст"
+        }
+    },
+    "required": [
+        "id",
+        "text"
+    ],
+    "type": "object"
+}

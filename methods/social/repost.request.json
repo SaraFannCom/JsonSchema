@@ -1,6 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#", 
     "description": "Метод для получения списка лайков",
+    "method": "post",
     "properties": {
         "id": {
             "type": "integer"

@@ -25,9 +25,11 @@
                     "items": {
                         "properties": {
                             "dialog": {
-                                "$ref": "objects.json#/definitions/messages/message", 
                                 "type": "object"
-                            }, 
+                            },
+                            "unread_count": {
+                                "type": "number"
+                            },
                             "opponent": {
                                 "$ref": "objects.json#/definitions/users/user_light", 
                                 "type": "object"

@@ -1,0 +1,18 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "Метод для получения редактирования коммерческого интереса",
+    "method": "post",
+    "properties": {
+        "id": {
+            "description": "Идентификатор категории, либо список, раздлённый запятой.",
+            "type": [
+                "string",
+                "integer"
+            ]
+        }
+    },
+    "required": [
+        "id"
+    ],
+    "type": "object"
+}

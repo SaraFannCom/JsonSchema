@@ -1,0 +1,51 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#", 
+    "description": "Метод для редактирования информации о магазине",
+    "method": "post",
+    "properties": {
+        "id": {
+            "type": "integer",
+            "edscription": "Идентификатор магазина"
+        },
+        "name": {
+            "type": "string",
+            "edscription": "Название"
+        },
+        "description": {
+            "type": "string",
+            "edscription": "Поле с описанием"
+        },
+        "city": {
+            "type": "string",
+            "edscription": "Название города"
+        },
+        "region": {
+            "type": "string",
+            "edscription": "Название региона"
+        },
+        "country": {
+            "type": "string",
+            "edscription": "Название страны"
+        },
+        "latitude": {
+            "type": "number",
+            "edscription": "Широта"
+        },
+        "longitude": {
+            "type": "number",
+            "edscription": "Долгота"
+        },
+        "address": {
+            "type": "string",
+            "edscription": "Адрес"
+        },
+        "zip": {
+            "type": "string",
+            "edscription": "Индекс"
+        }
+    }, 
+    "required": [
+        "id"
+    ],
+    "type": "object"
+}

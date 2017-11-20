@@ -1,0 +1,15 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#", 
+    "description": "Метод для отметки сообщения прочитанным",
+    "method": "post",
+    "properties": {
+        "id": {
+            "description": "ИД последнего сообщения для прочтения",
+            "type": "integer"
+        }
+    }, 
+    "required": [
+        "id"
+    ], 
+    "type": "object"
+}

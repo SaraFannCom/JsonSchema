@@ -1,0 +1,32 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#", 
+    "description": "Получить список магазинов пользователя",
+    "properties": {
+        "id": {
+            "description": "Идентификатор пользователя. Если не указан - используется текущий пользователь",
+            "type": "integer"
+        },
+        "filters": {
+            "type": "object",
+            "properties": {
+                "is_full": {
+                    "type": "boolean",
+                    "description": "Показывать полную информацию или нет"
+                }
+            }
+        },
+        "last_id": {
+            "description": "Последний идентификатор",
+            "type": "integer"
+        },
+        "limit": {
+            "default": 20,
+            "description": "Лимит",
+            "minNum": 1,
+            "type": "integer"
+        }
+    }, 
+    "required": [
+    ], 
+    "type": "object"
+}

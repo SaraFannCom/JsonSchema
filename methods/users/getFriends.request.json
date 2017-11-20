@@ -1,0 +1,40 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#", 
+    "description": "\u041c\u0435\u0442\u043e\u0434 \u0434\u043b\u044f \u043f\u043e\u043b\u0443\u0447\u0435\u043d\u0438\u044f \u0434\u0430\u043d\u043d\u044b\u0445 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f", 
+    "properties": {
+        "id": {
+            "description": "\u0418\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 \u043f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044f", 
+            "type": "integer"
+        },
+        "last_id": {
+            "description": "Последний идентификатор",
+            "type": [
+                "string",
+                "integer",
+                "null"
+            ]
+        },
+        "limit": {
+            "default": 20,
+            "description": "Лимит",
+            "minNum": 1,
+            "type": "integer"
+        },
+        "filters": {
+            "type": "object",
+            "properties": {
+                "is_common": {
+                    "description": "Показать только общих друзей",
+                    "type": "boolean"
+                },
+                "q": {
+                    "description": "Поисковый запрос",
+                    "type": "string"
+                }
+            }
+        }
+    }, 
+    "required": [
+    ], 
+    "type": "object"
+}

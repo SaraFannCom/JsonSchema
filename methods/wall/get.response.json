@@ -29,6 +29,10 @@
                         "type": "object"
                     }, 
                     "type": "array"
+                },
+                "last_id": {
+                    "description": "Последний идентификатор",
+                    "type": ["string", "integer"]
                 }
             }, 
             "required": [

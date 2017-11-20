@@ -29,8 +29,30 @@
 		  "full_info"
 		],
 		"properties": {
+		  "description": {
+			"type": "string"
+		  },
 		  "wall_id": {
 			"type": "integer"
+		  },
+		  "images_count": {
+			"type": "integer"
+		  },
+		  "blog_id": {
+			"type": ["integer", "null"]
+		  },
+		  "commercial_interest": {
+			"type": "array",
+			"items": {
+			  "type": "object",
+			  "$ref": "#/definitions/products/category_full"
+			}
+		  },
+		  "shops": {
+			"type": "array",
+			"items": {
+			  "type": "integer"
+			}
 		  },
 		  "rating": {
 			"type": ["integer", "null"]
@@ -73,6 +95,14 @@
 			"type": "string"
 		  },
 		  "friends": {
+			"type": "array",
+			"minItems": 0,
+			"items": {
+			  "type": "object",
+			  "$ref": "#/definitions/users/user_light"
+			}
+		  },
+		  "common_friends": {
 			"type": "array",
 			"minItems": 0,
 			"items": {
@@ -164,6 +194,20 @@
 			],
 			"$ref": "#/definitions/images/image"
 		  },
+		  "background_image": {
+			"type": [
+			  "object",
+			  "null"
+			],
+			"$ref": "#/definitions/images/image"
+		  },
+		  "background_image_full": {
+			"type": [
+			  "object",
+			  "null"
+			],
+			"$ref": "#/definitions/images/image"
+		  },
 		  "city": {
 			"type": [
 			  "object",
@@ -243,6 +287,22 @@
 		  },
 		  "referal_code_url": {
 			"type": "string"
+		  },
+		  "description": {
+			"type": "string"
+		  },
+		  "commercial_interest": {
+			"type": "array",
+			"items": {
+			  "type": "object",
+			  "$ref": "#/definitions/products/category_full"
+			}
+		  },
+		  "shops": {
+			"type": "array",
+			"items": {
+			  "type": "integer"
+			}
 		  },
 		  "images": {
 			"type": "array",
@@ -336,6 +396,9 @@
 		  "id": {
 			"type": "number"
 		  },
+		  "blog_id": {
+			"type": ["integer", "null"]
+		  },
 		  "current_social": {
 			"type": [
 			  "number",
@@ -411,6 +474,23 @@
 			"description": "Время последнего появления в сети (отформатированное)"
 		  },
 		  "avatar": {
+			"type": [
+			  "object",
+			  "null"
+			],
+			"$ref": "#/definitions/images/image"
+		  },
+		  "images_count": {
+			"type": "integer"
+		  },
+		  "background_image": {
+			"type": [
+			  "object",
+			  "null"
+			],
+			"$ref": "#/definitions/images/image"
+		  },
+		  "background_image_full": {
 			"type": [
 			  "object",
 			  "null"
@@ -507,6 +587,9 @@
 		  "id": {
 			"type": "number"
 		  },
+		  "description": {
+			"type": "string"
+		  },
 		  "wall_id": {
 			"type": "number"
 		  },
@@ -584,7 +667,26 @@
 		  "id": {
 			"type": "number"
 		  },
+		  "blog_id": {
+			"type": ["integer", "null"]
+		  },
+		  "commercial_interest": {
+			"type": "array",
+			"items": {
+			  "type": "object",
+			  "$ref": "#/definitions/products/category_full"
+			}
+		  },
+		  "shops": {
+			"type": "array",
+			"items": {
+			  "type": "integer"
+			}
+		  },
 		  "phone": {
+			"type": "string"
+		  },
+		  "description": {
 			"type": "string"
 		  },
 		  "email": {
@@ -657,7 +759,6 @@
 		  "id",
 		  "name",
 		  "description",
-		  "brief",
 		  "status",
 		  "count_visits",
 		  "created_at",
@@ -738,10 +839,7 @@
 			"minLength": 1
 		  },
 		  "description": {
-			"type": "string"
-		  },
-		  "brief": {
-			"type": "string"
+			"type": ["string", "null"]
 		  },
 		  "status": {
 			"type": "number"
@@ -865,11 +963,17 @@
 			],
 			"$ref": "#/definitions/images/image"
 		  },
+		  "background_image_full": {
+			"type": [
+			  "object",
+			  "null"
+			],
+			"$ref": "#/definitions/images/image"
+		  },
 		  "views_count": {
 			"type": "number"
 		  }
-		},
-		"additionalProperties": false
+		}
 	  },
 	  "shop_light": {
 		"type": "object",
@@ -925,6 +1029,13 @@
 			],
 			"$ref": "#/definitions/images/image"
 		  },
+		  "background_image_full": {
+			"type": [
+			  "object",
+			  "null"
+			],
+			"$ref": "#/definitions/images/image"
+		  },
 		  "api_url": {
 			"type": "string",
 			"minLength": 1
@@ -969,8 +1080,7 @@
 		  "rating": {
 			"type": "string"
 		  }
-		},
-		"additionalProperties": false
+		}
 	  }
 	},
 	"geo": {
@@ -1708,7 +1818,7 @@
 		  },
 		  "price_direct": {
 			"description": "",
-			"type": "string"
+			"type": ["integer","string", "number"]
 		  },
 		  "sale": {
 			"description": "",
@@ -1903,6 +2013,11 @@
 			"description": "",
 			"type": "boolean"
 		  },
+		  "owner": {
+			"description": "",
+			"type": "object",
+			"$ref": "#/definitions/additional/owner"
+		  },
 		  "type": {
 			"type": "string"
 		  },
@@ -1934,7 +2049,7 @@
 		  },
 		  "price_direct": {
 			"description": "",
-			"type": "string"
+			"type": ["integer","string", "number"]
 		  },
 		  "sale": {
 			"description": "",
@@ -2095,7 +2210,6 @@
 		  "message",
 		  "is_seen",
 		  "dialog_id",
-		  "created_at_formated",
 		  "created_at",
 		  "sended_from"
 		],
@@ -2116,8 +2230,31 @@
 			"description": "Идентификатор диалога",
 			"type": "integer"
 		  },
-		  "created_at_formated": {
-			"description": "Время отправки сообщения (фотрматированное)",
+		  "is_editable": {
+			"type": "boolean"
+		  },
+		  "is_updated": {
+			"type": "boolean"
+		  },
+		  "time": {
+			"type": "string"
+		  },
+		  "updated_time": {
+			"type": "string"
+		  },
+		  "date_time": {
+			"type": "string"
+		  },
+		  "updated_date_time": {
+			"type": "string"
+		  },
+		  "timestamp": {
+			"type": "integer"
+		  },
+		  "updated_timestamp": {
+			"type": "integer"
+		  },
+		  "updated_at": {
 			"type": "string"
 		  },
 		  "created_at": {
@@ -2133,7 +2270,8 @@
 			"type": "object",
 			"$ref": "objects.json#/definitions/users/user_light"
 		  }
-		}
+		},
+		"additionalProperties": false
 	  }
 	},
 	"walls": {
