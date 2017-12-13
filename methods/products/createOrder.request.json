@@ -11,7 +11,7 @@
         "id": {
             "description": "\u0418\u0434\u0435\u043d\u0442\u0438\u0444\u0438\u043a\u0430\u0442\u043e\u0440 \u0442\u043e\u0432\u0430\u0440\u0430", 
             "minNum": 1, 
-            "type": "integer"
+            "type": ["string", "integer"]
         }
     }, 
     "required": [

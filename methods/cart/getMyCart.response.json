@@ -24,17 +24,38 @@
                     "description": "\u0421\u043f\u0438\u0441\u043e\u043a \u043e\u0442\u0432\u0435\u0442\u043e\u0432", 
                     "items": {
                         "properties": {
-                            "count": {
-                                "type": "integer"
-                            }, 
-                            "product": {
-                                "$ref": "objects.json#/definitions/products/product", 
-                                "type": "object"
+                            "owner_id": {
+                                "type": "integer",
+                                "description": "Идентификатор владельца"
+                            },
+                            "owner_type": {
+                                "type": "string",
+                                "description": "Тип владельца",
+                                "enum": [
+                                    "user",
+                                    "shop"
+                                ]
+                            },
+                            "products": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "properties": {
+                                        "count": {
+                                            "type": "integer"
+                                        },
+                                        "product": {
+                                            "$ref": "objects.json#/definitions/products/product_light",
+                                            "type": "object"
+                                        }
+                                    }
+                                }
                             }
                         }, 
                         "required": [
-                            "product", 
-                            "count"
+                            "owner_id",
+                            "owner_type",
+                            "products"
                         ], 
                         "type": "object"
                     }, 

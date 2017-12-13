@@ -38,6 +38,9 @@
 		  "images_count": {
 			"type": "integer"
 		  },
+		  "gender": {
+			"type": "integer"
+		  },
 		  "blog_id": {
 			"type": ["integer", "null"]
 		  },
@@ -165,6 +168,10 @@
 			"type": "string",
 			"minLength": 1
 		  },
+		  "web_url_full": {
+			"type": "string",
+			"minLength": 1
+		  },
 		  "is_online": {
 			"type": "boolean",
 			"description": "Онлайн или нет"
@@ -284,6 +291,9 @@
 		  },
 		  "referal_code": {
 			"type": "string"
+		  },
+		  "gender": {
+			"type": "integer"
 		  },
 		  "referal_code_url": {
 			"type": "string"
@@ -451,6 +461,10 @@
 			"type": "string",
 			"minLength": 1
 		  },
+		  "web_url_full": {
+			"type": "string",
+			"minLength": 1
+		  },
 		  "is_online": {
 			"type": "boolean",
 			"description": "Онлайн или нет"
@@ -596,6 +610,9 @@
 		  "type": {
 			"type": "string"
 		  },
+		  "gender": {
+			"type": "integer"
+		  },
 		  "current_social": {
 			"type": [
 			  "number",
@@ -610,6 +627,10 @@
 			"minLength": 1
 		  },
 		  "web_url": {
+			"type": "string",
+			"minLength": 1
+		  },
+		  "web_url_full": {
 			"type": "string",
 			"minLength": 1
 		  },
@@ -683,6 +704,9 @@
 			  "type": "integer"
 			}
 		  },
+		  "gender": {
+			"type": "integer"
+		  },
 		  "phone": {
 			"type": "string"
 		  },
@@ -716,6 +740,10 @@
 			"minLength": 1
 		  },
 		  "web_url": {
+			"type": "string",
+			"minLength": 1
+		  },
+		  "web_url_full": {
 			"type": "string",
 			"minLength": 1
 		  },
@@ -801,6 +829,10 @@
 			"type": "string"
 		  },
 		  "web_url": {
+			"type": "string",
+			"minLength": 1
+		  },
+		  "web_url_full": {
 			"type": "string",
 			"minLength": 1
 		  },
@@ -1044,6 +1076,10 @@
 			"type": "string",
 			"minLength": 1
 		  },
+		  "web_url_full": {
+			"type": "string",
+			"minLength": 1
+		  },
 		  "address": {
 			"type": "string"
 		  },
@@ -1260,18 +1296,37 @@
 			"minLength": 1
 		  },
 		  "width": {
-			"type": "number"
+			"type": ["number", "null"]
 		  },
 		  "height": {
-			"type": "number"
+			"type": ["number", "null"]
+		  },
+		  "id": {
+			"type": "integer"
+		  },
+		  "web_url": {
+			"type": "string"
+		  },
+		  "web_url_full": {
+			"type": "string"
+		  },
+		  "api_url": {
+			"type": "string"
+		  },
+		  "original_url": {
+			"type": "string"
+		  },
+		  "owner": {
+			"description": "",
+			"type": "object",
+			"$ref": "#/definitions/additional/owner"
 		  }
 		},
 		"required": [
 		  "url",
 		  "width",
 		  "height"
-		],
-		"additionalProperties": false
+		]
 	  }
 	},
 	"additional": {
@@ -1346,6 +1401,18 @@
 			  "string",
 			  "null"
 			]
+		  },
+		  "is_phone_confirmed": {
+			"type": ["integer", "null"]
+		  },
+		  "code": {
+			"type": ["string", "null"]
+		  },
+		  "code_expire": {
+			"type": ["integer", "null"]
+		  },
+		  "code_token": {
+			"type": ["string", "null"]
 		  }
 		},
 		"required": [
@@ -1429,6 +1496,9 @@
 		  "id": {
 			"type": "number"
 		  },
+		  "can_cmment": {
+			"type": "boolean"
+		  },
 		  "is_mine": {
 			"description": "",
 			"type": "boolean"
@@ -1444,11 +1514,19 @@
 			"type": "string",
 			"minLength": 1
 		  },
+		  "web_url_full": {
+			"type": "string",
+			"minLength": 1
+		  },
 		  "blog_api_url": {
 			"type": "string",
 			"minLength": 1
 		  },
 		  "blog_web_url": {
+			"type": "string",
+			"minLength": 1
+		  },
+		  "blog_web_url_full": {
 			"type": "string",
 			"minLength": 1
 		  },
@@ -1570,6 +1648,9 @@
 		  "id": {
 			"type": "number"
 		  },
+		  "can_cmment": {
+			"type": "boolean"
+		  },
 		  "is_mine": {
 			"description": "",
 			"type": "boolean"
@@ -1589,11 +1670,19 @@
 			"type": "string",
 			"minLength": 1
 		  },
+		  "web_url_full": {
+			"type": "string",
+			"minLength": 1
+		  },
 		  "blog_api_url": {
 			"type": "string",
 			"minLength": 1
 		  },
 		  "blog_web_url": {
+			"type": "string",
+			"minLength": 1
+		  },
+		  "blog_web_url_full": {
 			"type": "string",
 			"minLength": 1
 		  },
@@ -1730,6 +1819,9 @@
 		  "has_delivery_to_me": {
 			"type": "boolean"
 		  },
+		  "can_cmment": {
+			"type": "boolean"
+		  },
 		  "type": {
 			"description": "",
 			"type": "string"
@@ -1740,6 +1832,12 @@
 			  "type": "object",
 			  "$ref": "#definitions/users/user_light"
 			}
+		  },
+		  "bidder": {
+			"type": ["object", "null"]
+		  },
+		  "time_to_end": {
+			"type": ["string", "number", "integer"]
 		  },
 		  "my_review": {
 			"type": ["object", "null"]
@@ -1813,6 +1911,10 @@
 			]
 		  },
 		  "price": {
+			"description": "",
+			"type": "string"
+		  },
+		  "current_price": {
 			"description": "",
 			"type": "string"
 		  },
@@ -1969,6 +2071,11 @@
 			"type": "string",
 			"minLength": 1
 		  },
+		  "web_url_full": {
+			"description": "",
+			"type": "string",
+			"minLength": 1
+		  },
 		  "rating": {
 			"description": "",
 			"type": "string"
@@ -2006,6 +2113,9 @@
 		  "id": {
 			"type": "number"
 		  },
+		  "can_cmment": {
+			"type": "boolean"
+		  },
 		  "product_type_rus": {
 			"type": "string"
 		  },
@@ -2017,6 +2127,16 @@
 			"description": "",
 			"type": "object",
 			"$ref": "#/definitions/additional/owner"
+		  },
+		  "properties": {
+			"type": "object",
+			"$ref": "#/definitions/products/p_properties"
+		  },
+		  "bidder": {
+			"type": ["object", "null"]
+		  },
+		  "time_to_end": {
+			"type": ["string", "number", "integer"]
 		  },
 		  "type": {
 			"type": "string"
@@ -2045,6 +2165,9 @@
 			]
 		  },
 		  "price": {
+			"type": "string"
+		  },
+		  "current_price": {
 			"type": "string"
 		  },
 		  "price_direct": {
@@ -2109,6 +2232,10 @@
 			"minLength": 1
 		  },
 		  "web_url": {
+			"type": "string",
+			"minLength": 1
+		  },
+		  "web_url_full": {
 			"type": "string",
 			"minLength": 1
 		  },
@@ -2281,6 +2408,9 @@
 		  "id": {
 			"type": "number"
 		  },
+		  "can_cmment": {
+			"type": "boolean"
+		  },
 		  "wall_id": {
 			"type": "number"
 		  },
@@ -2301,6 +2431,10 @@
 			"$ref": "#definitions/additional/owner"
 		  },
 		  "web_url": {
+			"type": "string",
+			"minLength": 1
+		  },
+		  "web_url_full": {
 			"type": "string",
 			"minLength": 1
 		  },
@@ -2402,6 +2536,9 @@
 		  "id": {
 			"type": "number"
 		  },
+		  "can_cmment": {
+			"type": "boolean"
+		  },
 		  "post_id": {
 			"type": "number"
 		  },
@@ -2422,6 +2559,10 @@
 			"type": "string"
 		  },
 		  "web_url": {
+			"type": "string",
+			"minLength": 1
+		  },
+		  "web_url_full": {
 			"type": "string",
 			"minLength": 1
 		  },

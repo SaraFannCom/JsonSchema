@@ -1,0 +1,15 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "Метод для получения заказов продавца",
+    "properties": {
+        "last_id": {
+            "description": "Последний идентификатор",
+            "type": "integer"
+        },
+        "limit": {
+            "description": "Лимит",
+            "type": "integer"
+        }
+    },
+    "type": "object"
+}

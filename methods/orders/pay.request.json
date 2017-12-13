@@ -1,0 +1,19 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "Метод для получения заказ",
+    "properties": {
+        "id": {
+            "description": "Идентификатор заказа",
+            "type": "integer"
+        },
+        "payment_id": {
+            "description": "Идентификатор платёжки",
+            "type": "integer"
+        }
+    },
+    "required": [
+        "id",
+        "payment_id"
+    ],
+    "type": "object"
+}

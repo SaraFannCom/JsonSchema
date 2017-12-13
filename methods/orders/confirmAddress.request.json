@@ -1,0 +1,31 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "Метод для получения заказ",
+    "properties": {
+        "id": {
+            "type": "integer",
+            "description": "Идентификатор заказа"
+        },
+        "city": {
+            "type": "string",
+            "description": "Название города"
+        },
+        "region": {
+            "type": "string",
+            "description": "Название города"
+        },
+        "country": {
+            "type": "string",
+            "description": "Название города"
+        },
+        "address": {
+            "type": "string",
+            "description": "Адрес"
+        },
+        "zip": {
+            "type": "string",
+            "description": "Индекс"
+        }
+    },
+    "type": "object"
+}

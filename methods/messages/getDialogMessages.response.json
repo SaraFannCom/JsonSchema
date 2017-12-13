@@ -24,10 +24,6 @@
                     "description": "\u0421\u043f\u0438\u0441\u043e\u043a \u043e\u0442\u0432\u0435\u0442\u043e\u0432",
                     "type": "array",
                     "$ref": "objects.json#/definitions/messages/message"
-                },
-                "has_unread": {
-                    "type": "boolean",
-                    "description": "Есть ли ещё непрочитанные сообщения выше"
                 }
             }, 
             "required": [

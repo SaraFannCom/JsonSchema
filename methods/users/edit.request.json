@@ -27,10 +27,6 @@
             "type": "string",
             "edscription": "Почта"
         },
-        "phone": {
-            "type": "string",
-            "edscription": "Телефон"
-        },
         "city": {
             "type": "string",
             "edscription": "Название города"
@@ -43,21 +39,61 @@
             "type": "string",
             "edscription": "Название страны"
         },
-        "latitude": {
-            "type": "number",
-            "edscription": "Широта"
-        },
-        "longitude": {
-            "type": "number",
-            "edscription": "Долгота"
-        },
         "address": {
             "type": "string",
             "edscription": "Адрес"
         },
+        "gender": {
+            "type": "integer"
+        },
         "zip": {
             "type": "string",
             "edscription": "Индекс"
+        },
+        "contacts": {
+            "type": "object",
+            "properties": {
+                "email": {
+                    "type": "string",
+                    "description": "телефон"
+                },
+                "telegram": {
+                    "type": "string",
+                    "description": "телефон"
+                },
+                "whatsapp": {
+                    "type": "string",
+                    "description": "телефон"
+                },
+                "skype": {
+                    "type": "string",
+                    "description": "телефон"
+                },
+                "facebook": {
+                    "type": "string",
+                    "description": "телефон"
+                },
+                "viber": {
+                    "type": "string",
+                    "description": "телефон"
+                },
+                "vk": {
+                    "type": "string",
+                    "description": "телефон"
+                },
+                "ok": {
+                    "type": "string",
+                    "description": "телефон"
+                },
+                "twitter": {
+                    "type": "string",
+                    "description": "телефон"
+                },
+                "instagram": {
+                    "type": "string",
+                    "description": "телефон"
+                }
+            }
         }
     }, 
     "required": [

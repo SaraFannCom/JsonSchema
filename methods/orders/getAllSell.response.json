@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "description": "Ответ на метод products.getAll",
+    "description": "Ответ на метод orders.getAllSell",
     "properties": {
         "error": {
             "description": "Код ошибки",
@@ -22,23 +22,11 @@
                 },
                 "items": {
                     "description": "Список ответов",
-                    "items": {
-                        "$ref": "objects.json#/definitions/products/product",
-                        "type": "object"
-                    },
                     "type": "array"
                 },
                 "last_id": {
                     "description": "Последний идентификатор",
-                    "type": [
-                        "string",
-                        "integer",
-                        "null"
-                    ]
-                },
-                "all_count": {
-                    "description": "Общее количество товаров",
-                    "type": "number"
+                    "type": "integer"
                 }
             },
             "required": [

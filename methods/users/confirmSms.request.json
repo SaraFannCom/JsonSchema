@@ -1,0 +1,15 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#", 
+    "description": "Метод для отправки смс для проверки номера",
+    "method": "post",
+    "properties": {
+        "code": {
+            "type": "string",
+            "edscription": "Код из СМС"
+        }
+    }, 
+    "required": [
+        "phone"
+    ],
+    "type": "object"
+}

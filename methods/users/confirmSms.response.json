@@ -1,6 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "description": "Ответ на метод products.getAll",
+    "additionalProperties": false,
+    "description": "Ответ на метод users.confirmSms",
     "properties": {
         "error": {
             "description": "Код ошибки",
@@ -15,6 +16,7 @@
             "type": "string"
         },
         "response": {
+            "additionalProperties": false,
             "properties": {
                 "count": {
                     "description": "Количество ответов",
@@ -22,23 +24,7 @@
                 },
                 "items": {
                     "description": "Список ответов",
-                    "items": {
-                        "$ref": "objects.json#/definitions/products/product",
-                        "type": "object"
-                    },
                     "type": "array"
-                },
-                "last_id": {
-                    "description": "Последний идентификатор",
-                    "type": [
-                        "string",
-                        "integer",
-                        "null"
-                    ]
-                },
-                "all_count": {
-                    "description": "Общее количество товаров",
-                    "type": "number"
                 }
             },
             "required": [

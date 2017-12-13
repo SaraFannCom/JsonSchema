@@ -1,0 +1,27 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "Метод для получения фоток",
+    "properties": {
+        "owner_id": {
+            "description": "Идентификатор владельца",
+            "type": "integer"
+        },
+        "owner_type": {
+            "description": "Тип владельца",
+            "type": "string",
+            "enum": [
+                "user",
+                "shop"
+            ]
+        },
+        "last_id": {
+            "description": "Последний идентификатор",
+            "type": "integer"
+        },
+        "limit": {
+            "description": "Лимит",
+            "type": "integer"
+        }
+    },
+    "type": "object"
+}

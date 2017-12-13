@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "Метод для получения фотографий альбома",
+  "method": "post",
+  "properties": {
+    "id": {
+      "type": "integer",
+      "description": "Идентификатор альбома"
+    },
+    "shop_id": {
+      "type": "integer",
+      "description": "Идентификатор магазина, которому принадлежит альбом. Если пусто - берётся текущий пользователь"
+    },
+    "main_image_id": {
+      "type": "integer",
+      "description": "Идентификатор картинки для аватарки альбома"
+    },
+    "name": {
+      "type": "string",
+      "description": "Название альбома"
+    },
+    "type": {
+      "type": "string",
+      "description": "Тип альбома",
+      "enum": [
+        "private",
+        "public"
+      ]
+    }
+  },
+  "required": [
+    "id",
+    "type"
+  ],
+  "type": "object"
+}

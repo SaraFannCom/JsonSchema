@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "Метод для подтверждения смс для телефона из контактов",
+  "method": "post",
+  "properties": {
+    "code": {
+      "type": "string",
+      "description": "Код из смс"
+    },
+    "shop_id": {
+      "type": "integer",
+      "description": "Идентификатор магазина, которому принадлежат контакты. Есил пусто - текущий пользователь"
+    }
+  },
+  "required": [
+    "code"
+  ],
+  "type": "object"
+}

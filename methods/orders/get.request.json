@@ -1,9 +1,9 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "description": "Метод для получения фотки",
+    "description": "Метод для получения заказ",
     "properties": {
         "id": {
-            "description": "Идентификатор фотографии",
+            "description": "Идентификатор заказа",
             "type": "integer"
         }
     },

@@ -24,26 +24,12 @@
                     "description": "Список ответов",
                     "items": {
                         "properties": {
-                            "id": {
-                                "description": "Идентификатор новой картинки",
-                                "type": "integer"
-                            },
-                            "image": {
-                                "$ref": "objects.json#/definitions/images/image",
-                                "type": [
-                                    "null",
-                                    "object"
-                                ]
-                            },
-                            "web_url": {
-                                "type": "string"
-                            }
+                            "$ref": "objects.json#/definitions/images/image",
+                            "type": [
+                                "null",
+                                "object"
+                            ]
                         },
-                        "required": [
-                            "id",
-                            "image",
-                            "web_url"
-                        ],
                         "type": "object"
                     },
                     "type": "array"

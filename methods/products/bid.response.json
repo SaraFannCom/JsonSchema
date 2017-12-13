@@ -25,10 +25,10 @@
                     "items": {
                         "type": "object",
                         "properties": {
-                            "price": {
+                            "current_price": {
                                 "type": "number"
                             },
-                            "time": {
+                            "time_end": {
                                 "type": "integer"
                             },
                             "balance": {
