@@ -11,6 +11,10 @@
         "amount": {
             "type": "number",
             "description": "Сумма заявки"
+        },
+        "comment": {
+            "type": "string",
+            "description": "Комментарий для тендера"
         }
     },
     "required": [

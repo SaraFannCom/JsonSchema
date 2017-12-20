@@ -1,0 +1,15 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#", 
+    "description": "Метод для записи токена FireBase",
+    "method": "post",
+    "properties": {
+        "token": {
+            "type": "string",
+            "edscription": "Токен"
+        }
+    },
+    "required": [
+        "token"
+    ],
+    "type": "object"
+}

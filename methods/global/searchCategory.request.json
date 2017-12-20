@@ -2,10 +2,6 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "Метод для получения списка категорий",
   "properties": {
-    "id": {
-      "type": "number",
-      "description": "Идентификатор родительской категории"
-    },
     "q": {
       "type": "string",
       "description": "Поисковая строка, используется для поиска категории, если не задан id"
@@ -20,6 +16,7 @@
     }
   },
   "required": [
+    "q"
   ],
   "type": "object"
 }
