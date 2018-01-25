@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "Метод для получения списка способов продаж",
+  "properties": {
+    "data": {
+      "type": "string",
+      "description": "Данные с карты"
+    }
+  },
+  "required": [
+    "data"
+  ],
+  "type": "object"
+}

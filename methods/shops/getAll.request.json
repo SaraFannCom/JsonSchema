@@ -13,6 +13,7 @@
                     "description": "Широта",
                     "minNum": 1,
                     "type": [
+                        "string",
                         "number",
                         "null"
                     ]
@@ -21,6 +22,7 @@
                     "description": "Долгота",
                     "minNum": 1,
                     "type": [
+                        "string",
                         "number",
                         "null"
                     ]

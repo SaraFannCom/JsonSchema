@@ -1,11 +1,10 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "description": "Метод для получения данных о товаре",
+    "description": "Метод для поднятия товара",
     "method": "post",
     "properties": {
         "id": {
             "description": "Идентификатор товара",
-            "minNum": 1,
             "type": "integer"
         }
     },

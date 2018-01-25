@@ -9,6 +9,7 @@
                     "description": "Широта",
                     "minNum": 1,
                     "type": [
+                        "string",
                         "number",
                         "null"
                     ]
@@ -17,6 +18,7 @@
                     "description": "Долгота",
                     "minNum": 1,
                     "type": [
+                        "string",
                         "number",
                         "null"
                     ]
@@ -28,7 +30,6 @@
                 "product_type": {
                     "description": "Типы товаров",
                     "enum": [
-                        "buynow",
                         "advert",
                         "classic",
                         "quick",

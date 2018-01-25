@@ -26,6 +26,7 @@
                     "description": "Широта",
                     "minNum": 1,
                     "type": [
+                        "string",
                         "number",
                         "null"
                     ]
@@ -34,6 +35,7 @@
                     "description": "Долгота",
                     "minNum": 1,
                     "type": [
+                        "string",
                         "number",
                         "null"
                     ]
@@ -47,7 +49,6 @@
                     "description": "Типы товаров",
                     "enum": [
                         "all",
-                        "buynow",
                         "advert",
                         "classic",
                         "quick",
@@ -79,6 +80,15 @@
                 "rating": {
                     "description": "Рейтинг >= 4",
                     "type": "boolean"
+                },
+                "status": {
+                    "description": "Статус товара",
+                    "type": "string",
+                    "enum": [
+                        "live",
+                        "upcoming",
+                        "archive"
+                    ]
                 }
             },
             "type": "object"

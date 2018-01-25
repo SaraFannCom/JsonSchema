@@ -1,0 +1,22 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "Метод для получения страницы FAQ",
+  "properties": {
+	"q": {
+	  "type": "string",
+	  "description": "Строка для поиска"
+	},
+	"last_id": {
+	  "type": "string",
+	  "description": "Последний идентификатор"
+	},
+	"limit": {
+	  "type": "integer",
+	  "description": "Лимит"
+	}
+  },
+  "required": [
+	"q"
+  ],
+  "type": "object"
+}

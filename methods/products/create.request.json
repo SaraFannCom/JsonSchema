@@ -17,6 +17,18 @@
         "geo_type"
     ],
     "properties": {
+        "is_preview": {
+            "description": "Указатель, что вызвается предпросмотр (товар будет со статусом 2)",
+            "type": "boolean"
+        },
+        "after_preview": {
+            "description": "Указатель, что вызвается создание после предпросмотра",
+            "type": "boolean"
+        },
+        "id": {
+            "description": "Идентификатор товара из предпросмотра",
+            "type": "integer"
+        },
         "shop_id": {
             "description": "Идентификатор магазина, в который будет загружен товар. Если пусто - товар загружается к текущему пользователю",
             "type": "integer"
@@ -60,11 +72,19 @@
             "decription": "Тип геопозиции"
         },
         "latitude": {
-            "type": "number",
+            "type": [
+                "string",
+                "number",
+                "null"
+            ],
             "decription": "Широта"
         },
         "longitude": {
-            "type": "number",
+            "type": [
+                "string",
+                "number",
+                "null"
+            ],
             "decription": "Долгота"
         },
         "address": {

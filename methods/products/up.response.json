@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "description": "Ответ на метод products.search",
+    "description": "Ответ на метод products.up",
     "properties": {
         "error": {
             "description": "Код ошибки",
@@ -23,40 +23,9 @@
                 "items": {
                     "description": "Список ответов",
                     "items": {
-                        "type": "object",
-                        "properties": {
-                            "id": {
-                                "type": "number"
-                            },
-                            "latitude": {
-                                "description": "Широта",
-                                "type": [
-                                    "string",
-                                    "number",
-                                    "null"
-                                ],
-                                "minNum": 1
-                            },
-                            "longitude": {
-                                "description": "Долгота",
-                                "type": [
-                                    "string",
-                                    "number",
-                                    "null"
-                                ],
-                                "minNum": 1
-                            }
-                        }
+                        "type": "number"
                     },
                     "type": "array"
-                },
-                "last_id": {
-                    "description": "Последний идентификатор",
-                    "type": [
-                        "string",
-                        "integer",
-                        "null"
-                    ]
                 }
             },
             "required": [

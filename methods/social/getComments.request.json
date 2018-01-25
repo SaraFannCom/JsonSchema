@@ -11,7 +11,9 @@
                 "product",
                 "wall_post",
                 "blog_post",
-                "image"
+                "image",
+                "comment",
+                "shop"
             ]
         },
         "last_id": {

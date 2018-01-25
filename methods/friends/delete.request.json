@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "Метод для получения страницы FAQ",
+  "method": "post",
+  "properties": {
+	"id": {
+	  "type": "integer",
+	  "description": "Идентификатор пользователя"
+	}
+  },
+  "required": [
+	"id"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "Метод для получения отзывов о сайте",
+  "properties": {
+    "product_type": {
+      "type": "string",
+      "description": "тип товара",
+      "enum": [
+        "advert",
+        "classic",
+        "quick",
+        "penny",
+        "tender"
+      ]
+    },
+    "limit": {
+      "type": "number",
+      "description": "Лимит"
+    },
+    "last_id": {
+      "type": "number",
+      "description": "Последний идентификатор"
+    }
+  },
+  "required": [
+    "product_type"
+  ],
+  "type": "object"
+}

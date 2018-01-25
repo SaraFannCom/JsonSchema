@@ -28,11 +28,19 @@
             "edscription": "Название страны"
         },
         "latitude": {
-            "type": "number",
+            "type": [
+                "string",
+                "number",
+                "null"
+            ],
             "edscription": "Широта"
         },
         "longitude": {
-            "type": "number",
+            "type": [
+                "string",
+                "number",
+                "null"
+            ],
             "edscription": "Долгота"
         },
         "address": {

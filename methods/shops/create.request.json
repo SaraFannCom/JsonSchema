@@ -14,6 +14,7 @@
                 "latitude": {
                     "description": "Широта",
                     "type": [
+                        "string",
                         "number",
                         "null"
                     ]
@@ -21,6 +22,7 @@
                 "longitude": {
                     "description": "Долгота",
                     "type": [
+                        "string",
                         "number",
                         "null"
                     ]

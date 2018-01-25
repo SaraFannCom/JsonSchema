@@ -32,6 +32,9 @@
 		  "description": {
 			"type": "string"
 		  },
+		  "registration_date": {
+			"type": "string"
+		  },
 		  "wall_id": {
 			"type": "integer"
 		  },
@@ -290,6 +293,9 @@
 			"type": ["integer", "null"]
 		  },
 		  "referal_code": {
+			"type": "string"
+		  },
+		  "registration_date": {
 			"type": "string"
 		  },
 		  "gender": {
@@ -604,6 +610,9 @@
 		  "description": {
 			"type": "string"
 		  },
+		  "registration_date": {
+			"type": "string"
+		  },
 		  "wall_id": {
 			"type": "number"
 		  },
@@ -708,6 +717,9 @@
 			"type": "integer"
 		  },
 		  "phone": {
+			"type": "string"
+		  },
+		  "registration_date": {
 			"type": "string"
 		  },
 		  "description": {
@@ -1495,7 +1507,7 @@
 		  "id": {
 			"type": "number"
 		  },
-		  "can_cmment": {
+		  "can_comment": {
 			"type": "boolean"
 		  },
 		  "is_mine": {
@@ -1647,7 +1659,7 @@
 		  "id": {
 			"type": "number"
 		  },
-		  "can_cmment": {
+		  "can_comment": {
 			"type": "boolean"
 		  },
 		  "is_mine": {
@@ -1818,7 +1830,7 @@
 		  "has_delivery_to_me": {
 			"type": "boolean"
 		  },
-		  "can_cmment": {
+		  "can_comment": {
 			"type": "boolean"
 		  },
 		  "type": {
@@ -2112,7 +2124,7 @@
 		  "id": {
 			"type": "number"
 		  },
-		  "can_cmment": {
+		  "can_comment": {
 			"type": "boolean"
 		  },
 		  "product_type_rus": {
@@ -2407,7 +2419,7 @@
 		  "id": {
 			"type": "number"
 		  },
-		  "can_cmment": {
+		  "can_comment": {
 			"type": "boolean"
 		  },
 		  "wall_id": {
@@ -2535,7 +2547,7 @@
 		  "id": {
 			"type": "number"
 		  },
-		  "can_cmment": {
+		  "can_comment": {
 			"type": "boolean"
 		  },
 		  "post_id": {

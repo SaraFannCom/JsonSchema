@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "Метод для получения списка способов продаж",
+  "properties": {
+    "latitude": {
+      "type": [
+        "string",
+        "number",
+        "null"
+      ],
+      "description": "Широта"
+    },
+    "longitude": {
+      "type": [
+        "string",
+        "number",
+        "null"
+      ],
+      "description": "Долгота"
+    }
+  },
+  "required": [
+    "latitude",
+    "longitude"
+  ],
+  "type": "object"
+}

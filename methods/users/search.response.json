@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "description": "Ответ на метод global.getProductTypes; \nis_free - чекбокс\nis_old_price - чекбокс\nis_torg - чекбокс\nis_barter - чекбоксis_hide_bids - чекбокс\nold_price - число с разделителем\nprice_minimal_real - число с разделителем\nprice_step - число с разделителем\nprice_start - число с разделителем\nprice_rate_bids - число (целое)\ntime_step - число (целое) в секундах [Время в секундах между ставками]\ntime_start - число (целое) в секундах [Время через которое начнётся аукцион]\ntime_end - число (целое) в секундах [Время через которое закончится аукцион, после старта]",
+  "description": "Ответ на метод users.search",
   "properties": {
 	"error": {
 	  "description": "Код ошибки",

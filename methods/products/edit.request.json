@@ -50,11 +50,19 @@
             "decription": "Идентификатор страны"
         },
         "latitude": {
-            "type": "number",
+            "type": [
+                "string",
+                "number",
+                "null"
+            ],
             "decription": "Широта"
         },
         "longitude": {
-            "type": "number",
+            "type": [
+                "string",
+                "number",
+                "null"
+            ],
             "decription": "Долгота"
         },
         "address": {

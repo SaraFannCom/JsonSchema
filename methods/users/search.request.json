@@ -1,0 +1,37 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "Метод для получения страницы FAQ",
+  "properties": {
+	"q": {
+	  "type": "string",
+	  "description": "Строка для поиска"
+	},
+	"city_id": {
+	  "type": ["integer", "null"],
+	  "description": "Город"
+	},
+	"region_id": {
+	  "type": ["integer", "null"],
+	  "description": "Регион"
+	},
+	"country_id": {
+	  "type": ["integer", "null"],
+	  "description": "Страна"
+	},
+	"is_online": {
+	  "type": "boolean",
+	  "description": "Онлайн"
+	},
+	"last_id": {
+	  "type": "string",
+	  "description": "Последний идентификатор"
+	},
+	"limit": {
+	  "type": "integer",
+	  "description": "Лимит"
+	}
+  },
+  "required": [
+  ],
+  "type": "object"
+}
