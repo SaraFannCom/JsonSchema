@@ -1,6 +1,6 @@
 ## Документация по API
 
-Документацию можно почитать [тут](https://myburse.github.io/api_json_schema/)
+Документацию можно почитать [тут](https://sarafanncom.github.io/JsonSchema/)
 
 ## Методы
 
