@@ -1,0 +1,14 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "method": "post",
+    "properties": {
+        "token": {
+            "description": "Токен приложения",
+            "minLength": 1, 
+            "type": "string"
+        }
+    }, 
+    "required": [
+    ],
+    "type": "object"
+}

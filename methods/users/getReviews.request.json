@@ -1,0 +1,22 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "Метод для редактирования информации о пользователе",
+    "method": "post",
+    "properties": {
+        "is_new": {
+            "type": "boolean",
+            "description": "Показывать только новые отзывы"
+        },
+        "last_id": {
+            "type": "string",
+            "description": "Последний идентификатор"
+        },
+        "limit": {
+            "type": "integer",
+            "description": "Лимит"
+        }
+    },
+    "required": [
+    ],
+    "type": "object"
+}

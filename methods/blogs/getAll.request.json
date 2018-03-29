@@ -22,6 +22,10 @@
             "description": "Последний идентификатор",
             "type": "string"
         },
+        "shop_id": {
+            "description": "Идентификатор магазина",
+            "type": "integer"
+        },
         "limit": {
             "default": 20,
             "description": "Лимит",

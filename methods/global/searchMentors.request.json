@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "properties": {
+	"q": {
+	  "description": "Поисковый запрос",
+	  "type": "string"
+	},
+    "limit": {
+      "default": 20,
+      "description": "Лимит",
+      "type": "integer"
+    },
+    "last_id": {
+      "description": "Последний идентификатор",
+      "type": "integer"
+    }
+  },
+  "required": [
+  ],
+  "type": "object"
+}

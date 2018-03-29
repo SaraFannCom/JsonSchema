@@ -54,45 +54,49 @@
         "contacts": {
             "type": "object",
             "properties": {
-                "email": {
+                "phone": {
                     "type": "string",
                     "description": "телефон"
+                },
+                "email": {
+                    "type": "string",
+                    "description": "email"
                 },
                 "telegram": {
                     "type": "string",
-                    "description": "телефон"
+                    "description": "Telegram"
                 },
                 "whatsapp": {
                     "type": "string",
-                    "description": "телефон"
+                    "description": "WhatsApp"
                 },
                 "skype": {
                     "type": "string",
-                    "description": "телефон"
+                    "description": "Skype"
                 },
                 "facebook": {
                     "type": "string",
-                    "description": "телефон"
+                    "description": "Facebook"
                 },
                 "viber": {
                     "type": "string",
-                    "description": "телефон"
+                    "description": "Viber"
                 },
                 "vk": {
                     "type": "string",
-                    "description": "телефон"
+                    "description": "Vkontakte"
                 },
                 "ok": {
                     "type": "string",
-                    "description": "телефон"
+                    "description": "Одноклассники"
                 },
                 "twitter": {
                     "type": "string",
-                    "description": "телефон"
+                    "description": "Twitter"
                 },
                 "instagram": {
                     "type": "string",
-                    "description": "телефон"
+                    "description": "Instagramm"
                 }
             }
         }

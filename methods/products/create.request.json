@@ -8,8 +8,6 @@
         "price",
         "action_type",
         "product_type",
-        "geo_id",
-        "geo_type",
         "latitude",
         "longitude",
         "address",
@@ -182,8 +180,19 @@
         },
         "is_free": {
             "type": "boolean"
+        },
+        "city": {
+            "type": "string",
+            "description": "Название города"
+        },
+        "region": {
+            "type": "string",
+            "description": "Название города"
+        },
+        "country": {
+            "type": "string",
+            "description": "Название города"
         }
-        
     },
     "type": "object"
 }

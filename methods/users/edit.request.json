@@ -3,6 +3,14 @@
     "description": "Метод для редактирования информации о пользователе",
     "method": "post",
     "properties": {
+        "latitude": {
+            "type": "string",
+            "edscription": "Широта"
+        },
+        "longitude": {
+            "type": "string",
+            "edscription": "Долгота"
+        },
         "first_name": {
             "type": "string",
             "edscription": "Имя"
@@ -53,45 +61,49 @@
         "contacts": {
             "type": "object",
             "properties": {
+                "phone": {
+                    "type": "string",
+                    "description": "Телефон"
+                },
                 "email": {
                     "type": "string",
-                    "description": "телефон"
+                    "description": "Email"
                 },
                 "telegram": {
                     "type": "string",
-                    "description": "телефон"
+                    "description": "Telegram"
                 },
                 "whatsapp": {
                     "type": "string",
-                    "description": "телефон"
+                    "description": "WhatsApp"
                 },
                 "skype": {
                     "type": "string",
-                    "description": "телефон"
+                    "description": "Skype"
                 },
                 "facebook": {
                     "type": "string",
-                    "description": "телефон"
+                    "description": "Facebook"
                 },
                 "viber": {
                     "type": "string",
-                    "description": "телефон"
+                    "description": "Viber"
                 },
                 "vk": {
                     "type": "string",
-                    "description": "телефон"
+                    "description": "Vkontakte"
                 },
                 "ok": {
                     "type": "string",
-                    "description": "телефон"
+                    "description": "Одноклассники"
                 },
                 "twitter": {
                     "type": "string",
-                    "description": "телефон"
+                    "description": "Twitter"
                 },
                 "instagram": {
                     "type": "string",
-                    "description": "телефон"
+                    "description": "Instagram"
                 }
             }
         }

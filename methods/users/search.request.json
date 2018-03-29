@@ -22,6 +22,10 @@
 	  "type": "boolean",
 	  "description": "Онлайн"
 	},
+	"commercial_interests": {
+	  "type": "string",
+	  "description": "Коммерчесий интерес"
+	},
 	"last_id": {
 	  "type": "string",
 	  "description": "Последний идентификатор"

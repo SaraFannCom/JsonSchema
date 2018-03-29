@@ -10,6 +10,10 @@
         "data": {
             "type": "string",
             "edscription": "Данные картинки в base64"
+        },
+        "image_id": {
+            "type": "integer",
+            "edscription": "Идентификатор ранее загруженной картинки"
         }
     }, 
     "required": [

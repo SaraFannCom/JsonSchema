@@ -3,6 +3,14 @@
     "description": "Метод для редактирования товара",
     "method": "post",
     "properties": {
+        "is_preview": {
+            "description": "Указатель, что вызвается предпросмотр (товар будет со статусом 2)",
+            "type": "boolean"
+        },
+        "after_preview": {
+            "description": "Указатель, что вызвается создание после предпросмотра",
+            "type": "boolean"
+        },
         "id": {
             "description": "Идентификатор товара",
             "type": "integer"

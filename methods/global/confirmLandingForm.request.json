@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "method": "post",
+  "properties": {
+    "landing_type": {
+      "type": "string",
+      "description": "Тип лендинга",
+      "enum": [
+        "advert",
+        "penny",
+        "tender",
+        "quick",
+        "classic"
+      ]
+    },
+    "name": {
+      "type": "string",
+      "description": "ФИО"
+    },
+    "phone": {
+      "type": "string",
+      "description": "Телефон"
+    },
+    "email": {
+      "type": "string",
+      "description": "email"
+    },
+    "type": {
+      "type": "string",
+      "description": "Тип сделки",
+      "enum": [
+        "work",
+        "product"
+      ]
+    }
+  },
+  "required": [
+    "landing_type",
+    "name",
+    "phone",
+    "email",
+    "type"
+  ],
+  "type": "object"
+}

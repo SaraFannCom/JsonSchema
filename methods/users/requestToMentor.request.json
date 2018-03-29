@@ -1,0 +1,20 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "Метод для получения товаров пользователя",
+    "method": "post",
+    "properties": {
+        "id": {
+            "description": "Идентификатор пользователя",
+            "type": "integer"
+        },
+        "text": {
+            "description": "Сообщение",
+            "type": "string"
+        }
+    },
+    "required": [
+        "id",
+        "text"
+    ],
+    "type": "object"
+}

@@ -7,6 +7,10 @@
             "description": "Идентификатор товара",
             "type": "integer"
         },
+        "order_id": {
+            "description": "Идентификатор заказа",
+            "type": "integer"
+        },
         "text": {
             "description": "Текст отзыва",
             "type": "string"
@@ -17,7 +21,7 @@
         }
     },
     "required": [
-        "id"
+        "order_id"
     ],
     "type": "object"
 }

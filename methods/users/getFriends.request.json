@@ -30,6 +30,10 @@
                 "q": {
                     "description": "Поисковый запрос",
                     "type": "string"
+                },
+                "commercial_interests": {
+                    "type": "string",
+                    "description": "Коммерчесий интерес"
                 }
             }
         }

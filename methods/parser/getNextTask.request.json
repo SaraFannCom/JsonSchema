@@ -1,0 +1,19 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "Метод для получения данных о товаре",
+    "method": "post",
+    "properties": {
+        "limit": {
+            "description": "Количество заданий",
+            "type": "integer"
+        },
+        "platform_name": {
+            "description": "Платформа",
+            "type": "string"
+        }
+    },
+    "required": [
+        "platform_name"
+    ],
+    "type": "object"
+}

@@ -1,0 +1,20 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "Метод для получения данных о товаре",
+    "method": "post",
+    "properties": {
+        "users": {
+            "description": "Список пользователей вида 123:shop:url,234:user:url,111:shop:url",
+            "type": "string"
+        },
+        "platform_name": {
+            "description": "Платформа",
+            "type": "string"
+        }
+    },
+    "required": [
+        "users",
+        "platform_name"
+    ],
+    "type": "object"
+}

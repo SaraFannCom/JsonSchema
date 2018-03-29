@@ -1,0 +1,24 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "Метод для получения данных о товаре",
+    "method": "post",
+    "properties": {
+        "id": {
+            "description": "Идентификатор товара",
+            "type": "integer"
+        },
+        "text": {
+            "description": "Текст для отправки сообщения победителю. Если пусто - то текст стандартный",
+            "type": "string"
+        },
+        "bidder_id": {
+            "description": "Идентификатор победной заявки",
+            "type": "integer"
+        }
+    },
+    "required": [
+        "id",
+        "bidder_id"
+    ],
+    "type": "object"
+}

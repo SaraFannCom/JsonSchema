@@ -1,0 +1,19 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "description": "Коныертация заявок в деньги",
+  "properties": {
+	"count": {
+	  "type": "integer",
+	  "description": "Количество заявок"
+	},
+	"payment_id": {
+	  "type": "integer",
+	  "description": "Идентификатор платёжной системы"
+	}
+  },
+  "required": [
+	"count",
+	"payment_id"
+  ],
+  "type": "object"
+}

@@ -86,13 +86,29 @@
                     "description": "Рейтинг >= 4",
                     "type": "boolean"
                 },
+                "order": {
+                    "description": "Сортировка",
+                    "type": "string",
+                    "enum": [
+                        "id_desc",
+                        "id_asc",
+                        "price_desc",
+                        "price_asc",
+                        "distance_desc",
+                        "distance_asc"
+                    ]
+                },
                 "status": {
-                    "description": "Статус товара",
+                    "description": "Список статусов товара через запятую",
                     "type": "string",
                     "enum": [
                         "live",
+                        "live,upcoming",
+                        "live,upcoming,archive",
                         "upcoming",
-                        "archive"
+                        "upcoming,archive",
+                        "archive",
+                        "archive,live"
                     ]
                 }
             },

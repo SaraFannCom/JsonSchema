@@ -1,0 +1,46 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "method": "post",
+  "properties": {
+    "landing_type": {
+      "type": "string",
+      "description": "Тип лендинга",
+      "enum": [
+        "advert",
+        "penny",
+        "tender",
+        "quick",
+        "classic"
+      ]
+    },
+    "name": {
+      "type": "string",
+      "description": "ФИО"
+    },
+    "phone": {
+      "type": "string",
+      "description": "Телефон"
+    },
+    "email": {
+      "type": "string",
+      "description": "email"
+    },
+    "url": {
+      "type": "string",
+      "description": "Ссылка"
+    },
+    "comment": {
+      "type": "string",
+      "description": "Комментарий"
+    }
+  },
+  "required": [
+    "landing_type",
+    "name",
+    "phone",
+    "email",
+    "url",
+    "comment"
+  ],
+  "type": "object"
+}

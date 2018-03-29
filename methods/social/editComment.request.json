@@ -1,0 +1,25 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#", 
+    "description": "Метод для получения списка лайков",
+    "method": "post",
+    "properties": {
+        "id": {
+            "type": "integer"
+        },
+        "text": {
+            "description": "Текст комментария",
+            "minLength": 1,
+            "type": "string"
+        },
+        "shop_id": {
+            "description": "ИД магазина, от имени которого постится комментарий",
+            "type": "integer"
+        }
+    }, 
+    "required": [
+        "id",
+        "type",
+        "text"
+    ],
+    "type": "object"
+}

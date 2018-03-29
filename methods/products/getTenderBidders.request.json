@@ -1,0 +1,23 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "Метод для получения данных о товаре",
+    "method": "post",
+    "properties": {
+        "id": {
+            "description": "Идентификатор товара",
+            "type": "integer"
+        },
+        "limit": {
+            "description": "Лимит",
+            "type": "integer"
+        },
+        "last_id": {
+            "description": "Последний дентификатор",
+            "type": "integer"
+        }
+    },
+    "required": [
+        "id"
+    ],
+    "type": "object"
+}

@@ -1,0 +1,25 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "Метод для получения данных о товаре",
+    "method": "post",
+    "properties": {
+        "platform_name": {
+            "description": "Платформа",
+            "type": "string"
+        },
+        "login": {
+            "description": "Логин",
+            "type": "string"
+        },
+        "error_text": {
+            "description": "Текст ошибки",
+            "type": "string"
+        }
+    },
+    "required": [
+        "login",
+        "error_text",
+        "platform_name"
+    ],
+    "type": "object"
+}

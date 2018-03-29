@@ -1,0 +1,27 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "Метод для получения данных о товаре",
+    "method": "post",
+    "properties": {
+        "id": {
+            "description": "Идентификатор товара",
+            "type": "integer"
+        },
+        "count": {
+            "description": "Количество заявок для автоматических ставок",
+            "type": "integer"
+        },
+        "time_before": {
+            "description": "Время в секундах до окончания торгов, когда ставить автоставку",
+            "type": "integer"
+        },
+        "is_edit": {
+            "description": "Флаг редактирования автоставок. Если не прищёл, или пришёл false - значит либо удаление, либо создание автоставки.",
+            "type": "boolean"
+        }
+    },
+    "required": [
+        "id"
+    ],
+    "type": "object"
+}
