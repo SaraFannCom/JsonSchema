@@ -1,7 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "description": "Метод для получения авторизации в центрифуге",
-  "method": "post",
   "properties": {
 	"client": {
 	  "type": "string"

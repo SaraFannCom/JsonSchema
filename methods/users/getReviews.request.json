@@ -1,7 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "description": "Метод для редактирования информации о пользователе",
-    "method": "post",
     "properties": {
         "is_new": {
             "type": "boolean",

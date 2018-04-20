@@ -1,0 +1,24 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "Метод для получения заказ",
+    "method": "post",
+    "properties": {
+        "id": {
+            "description": "Идентификатор заказа",
+            "type": "integer"
+        },
+        "track_number": {
+            "description": "Track-номер",
+            "type": "string"
+        },
+        "track_url": {
+            "description": "Track-ссылка",
+            "type": "string"
+        },
+        "recive_date": {
+            "description": "Время в секундах до получения заказа",
+            "type": "string"
+        }
+    },
+    "type": "object"
+}

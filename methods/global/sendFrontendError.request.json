@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "properties": {
+    "url": {
+      "type": "string",
+      "description": "Ссылка"
+    },
+    "error": {
+      "type": "string",
+      "description": "Ошибка"
+    },
+    "timestamp": {
+      "type": "integer",
+      "description": "Временная метка"
+    }
+  },
+  "required": [
+    "url",
+    "error",
+    "timestamp"
+  ],
+  "type": "object"
+}

@@ -6,6 +6,10 @@
             "description": "Последний идентификатор",
             "type": "integer"
         },
+        "shop_id": {
+            "description": "Идентификатор магазина. Если путо - то текущий пользователь",
+            "type": "integer"
+        },
         "limit": {
             "description": "Лимит",
             "type": "integer"

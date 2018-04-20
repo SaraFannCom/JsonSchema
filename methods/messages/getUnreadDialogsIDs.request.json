@@ -1,0 +1,12 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "properties": {
+        "shop_id": {
+            "type": "integer",
+            "description": "Идентификатор магазина, для которого запрашивается количество. Если пусто - то для текущего пользователя"
+        }
+    },
+    "required": [
+    ],
+    "type": "object"
+}

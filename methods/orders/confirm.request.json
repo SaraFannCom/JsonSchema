@@ -1,0 +1,14 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "Метод для получения заказ",
+    "properties": {
+        "id": {
+            "type": "integer",
+            "description": "Идентификатор заказа"
+        }
+    },
+    "required": [
+        "id"
+    ],
+    "type": "object"
+}

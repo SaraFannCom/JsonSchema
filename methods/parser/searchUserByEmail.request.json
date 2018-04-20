@@ -2,17 +2,13 @@
     "$schema": "http://json-schema.org/draft-04/schema#",
     "description": "Метод для получения данных о товаре",
     "properties": {
-        "limit": {
-            "description": "Количество заданий",
-            "type": "integer"
-        },
-        "platform_name": {
-            "description": "Платформа",
+        "email": {
+            "description": "email",
             "type": "string"
         }
     },
     "required": [
-        "platform_name"
+        "email"
     ],
     "type": "object"
 }
